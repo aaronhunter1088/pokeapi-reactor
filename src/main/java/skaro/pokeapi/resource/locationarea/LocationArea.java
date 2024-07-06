@@ -13,7 +13,7 @@ public class LocationArea implements PokeApiResource, Localizable {
 	private Integer Id;
 	private String name;
 	private Integer gameIndex;
-	private List<EncounterMethodRate> encoutnerMethodRates;
+	private List<EncounterMethodRate> encounterMethodRates;
 	private NamedApiResource<Location> location;
 	private List<Name> names;
 	private List<PokemonEncounter> pokemonEncounters;
@@ -36,11 +36,11 @@ public class LocationArea implements PokeApiResource, Localizable {
 	public void setGameIndex(Integer gameIndex) {
 		this.gameIndex = gameIndex;
 	}
-	public List<EncounterMethodRate> getEncoutnerMethodRates() {
-		return encoutnerMethodRates;
+	public List<EncounterMethodRate> getEncounterMethodRates() {
+		return encounterMethodRates;
 	}
-	public void setEncoutnerMethodRates(List<EncounterMethodRate> encoutnerMethodRates) {
-		this.encoutnerMethodRates = encoutnerMethodRates;
+	public void setEncounterMethodRates(List<EncounterMethodRate> encounterMethodRates) {
+		this.encounterMethodRates = encounterMethodRates;
 	}
 	public NamedApiResource<Location> getLocation() {
 		return location;

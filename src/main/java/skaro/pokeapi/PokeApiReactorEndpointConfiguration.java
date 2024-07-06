@@ -40,6 +40,7 @@ import skaro.pokeapi.resource.movedamageclass.MoveDamageClass;
 import skaro.pokeapi.resource.movelearnmethod.MoveLearnMethod;
 import skaro.pokeapi.resource.movetarget.MoveTarget;
 import skaro.pokeapi.resource.nature.Nature;
+import skaro.pokeapi.resource.palparkarea.PalParkArea;
 import skaro.pokeapi.resource.pokedex.Pokedex;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 import skaro.pokeapi.resource.pokemoncolor.PokemonColor;
@@ -92,6 +93,7 @@ public class PokeApiReactorEndpointConfiguration {
 		endpoints.put(MoveLearnMethod.class, "move-learn-method");
 		endpoints.put(MoveTarget.class, "move-target");
 		endpoints.put(Nature.class, "nature");
+		endpoints.put(PalParkArea.class, "pal-park-area");
 		endpoints.put(Pokedex.class, "pokedex");
 		endpoints.put(Pokemon.class, "pokemon");
 		endpoints.put(PokemonColor.class, "pokemon-color");
@@ -99,7 +101,7 @@ public class PokeApiReactorEndpointConfiguration {
 		endpoints.put(PokemonHabitat.class, "pokemon-habitat");
 		endpoints.put(PokemonShape.class, "pokemon-shape");
 		endpoints.put(PokemonSpecies.class, "pokemon-species");
-		endpoints.put(Region.class, "pokemon-region");
+		endpoints.put(Region.class, "region");
 		endpoints.put(Stat.class, "stat");
 		endpoints.put(SuperContestEffect.class, "super-contest-effect");
 		endpoints.put(Type.class, "type");
