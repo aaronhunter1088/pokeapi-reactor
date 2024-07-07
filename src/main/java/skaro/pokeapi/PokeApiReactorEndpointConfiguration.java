@@ -43,6 +43,7 @@ import skaro.pokeapi.resource.movetarget.MoveTarget;
 import skaro.pokeapi.resource.nature.Nature;
 import skaro.pokeapi.resource.palparkarea.PalParkArea;
 import skaro.pokeapi.resource.pokedex.Pokedex;
+import skaro.pokeapi.resource.pokemon.PokeathlonStat;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 import skaro.pokeapi.resource.pokemoncolor.PokemonColor;
 import skaro.pokeapi.resource.pokemonform.PokemonForm;
@@ -96,6 +97,7 @@ public class PokeApiReactorEndpointConfiguration {
 		endpoints.put(MoveTarget.class, "move-target");
 		endpoints.put(Nature.class, "nature");
 		endpoints.put(PalParkArea.class, "pal-park-area");
+		endpoints.put(PokeathlonStat.class, "pokeathlon-stat");
 		endpoints.put(Pokedex.class, "pokedex");
 		endpoints.put(Pokemon.class, "pokemon");
 		endpoints.put(PokemonColor.class, "pokemon-color");
