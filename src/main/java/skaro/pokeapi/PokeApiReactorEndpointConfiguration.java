@@ -35,6 +35,7 @@ import skaro.pokeapi.resource.locationarea.LocationArea;
 import skaro.pokeapi.resource.machine.Machine;
 import skaro.pokeapi.resource.move.Move;
 import skaro.pokeapi.resource.moveailment.MoveAilment;
+import skaro.pokeapi.resource.movebattlestyle.MoveBattleStyle;
 import skaro.pokeapi.resource.movecategory.MoveCategory;
 import skaro.pokeapi.resource.movedamageclass.MoveDamageClass;
 import skaro.pokeapi.resource.movelearnmethod.MoveLearnMethod;
@@ -88,6 +89,7 @@ public class PokeApiReactorEndpointConfiguration {
 		endpoints.put(Machine.class, "machine");
 		endpoints.put(Move.class, "move");
 		endpoints.put(MoveAilment.class, "move-ailment");
+		endpoints.put(MoveBattleStyle.class, "move-battle-style");
 		endpoints.put(MoveCategory.class, "move-category");
 		endpoints.put(MoveDamageClass.class, "move-damage-class");
 		endpoints.put(MoveLearnMethod.class, "move-learn-method");
