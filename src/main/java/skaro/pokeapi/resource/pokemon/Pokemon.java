@@ -194,8 +194,9 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 		this.pastTypes = pastTypes;
 	}
 
-	/** Returns whether the given object o
-	 *  is equal to this instance of Pokemon
+	/**
+	 * Returns whether the given object o
+	 * is equal to this instance of Pokemon
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -237,7 +238,7 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 
 	/**
 	 * Compares the id and name of the pokemon
-	 * @param pokemon the pokedex pokemon to be compared.
+	 * @param pokemon the pokemon to be compared.
 	 * @return 0 if the id and name are the same, 1 otherwise
 	 */
 	@Override
