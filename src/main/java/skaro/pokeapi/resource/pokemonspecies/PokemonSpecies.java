@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.pokemonspecies;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.ApiResource;
 import skaro.pokeapi.resource.Description;
 import skaro.pokeapi.resource.FlavorText;
@@ -23,26 +24,42 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	private Integer id;
 	private String name;
 	private Integer order;
+	@JsonProperty("gender_rate")
 	private Integer genderRate;
+	@JsonProperty("capture_rate")
 	private Integer captureRate;
+	@JsonProperty("base_happiness")
 	private Integer baseHappiness;
+	@JsonProperty("is_baby")
 	private Boolean isBaby;
+	@JsonProperty("is_legendary")
 	private Boolean isLegendary;
+	@JsonProperty("is_mythical")
 	private Boolean isMythical;
+	@JsonProperty("hatch_counter")
 	private Integer hatchCounter;
+	@JsonProperty("has_gender_differences")
 	private Boolean hasGenderDifferences;
+	@JsonProperty("forms_switchable")
 	private Boolean formsSwitchable;
+	@JsonProperty("growth_rate")
 	private NamedApiResource<GrowthRate> growthRate;
+	@JsonProperty("pokedex_numbers")
 	private List<PokemonSpeciesDexEntry> pokedexNumbers;
+	@JsonProperty("egg_groups")
 	private List<NamedApiResource<EggGroup>> eggGroups;
 	private NamedApiResource<PokemonColor> color;
 	private NamedApiResource<PokemonShape> shape;
+	@JsonProperty("evolves_from_species")
 	private NamedApiResource<PokemonSpecies> evolvesFromSpecies;
+	@JsonProperty("evolution_chain")
 	private ApiResource<EvolutionChain> evolutionChain;
 	private NamedApiResource<PokemonHabitat> habitat;
 	private NamedApiResource<Generation> generation;
 	private List<Name> names;
+	@JsonProperty("flavor_text_entries")
 	private List<FlavorText> flavorTextEntries;
+	@JsonProperty("form_descriptions")
 	private List<Description> formDescriptions;
 	private List<Genus> genera;
 	private List<PokemonSpeciesVariety> varieties;
