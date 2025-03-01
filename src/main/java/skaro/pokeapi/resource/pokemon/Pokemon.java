@@ -69,7 +69,7 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	}
 
 	/** Returns whether the Pokemon is the default */
-	public Boolean getDefault() {
+	public Boolean isDefault() {
 		return isDefault;
 	}
 	/** Sets whether the Pokemon is default */
