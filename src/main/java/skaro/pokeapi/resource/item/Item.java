@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.item;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.ApiResource;
 import skaro.pokeapi.resource.GenerationGameIndex;
 import skaro.pokeapi.resource.MachineVersionDetail;
@@ -25,15 +26,21 @@ public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 	private String name;
 	private Integer cost;
 	private Integer flingPower;
+	@JsonProperty("fling_effect")
 	private NamedApiResource<ItemFlingEffect> flingEffect;
 	private List<NamedApiResource<ItemAttribute>> attributes;
 	private NamedApiResource<ItemCategory> category;
+	@JsonProperty("effect_entries")
 	private List<VerboseEffect> effectEntries;
+	@JsonProperty("flavor_text_entries")
 	private List<VersionGroupFlavorText> flavorTextEntries;
+	@JsonProperty("game_indices")
 	private List<GenerationGameIndex> gameIndices;
 	private List<Name> names;
 	private ItemSprites sprites;
+	@JsonProperty("held_by_pokemon")
 	private List<ItemHolderPokemon> heldByPokemon;
+	@JsonProperty("baby_trigger_for")
 	private ApiResource<EvolutionChain> babyTriggerFor;
 	private List<MachineVersionDetail> machines;
 
@@ -211,7 +218,7 @@ public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 	}
 
 	/**
-	 * Compares the id and name of the pokemon
+	 * Compares the id and name of the item
 	 * @param item the item to be compared.
 	 * @return 0 if the id and name are the same, 1 otherwise
 	 */
