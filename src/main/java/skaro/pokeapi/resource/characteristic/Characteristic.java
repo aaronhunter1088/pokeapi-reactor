@@ -1,8 +1,10 @@
 package skaro.pokeapi.resource.characteristic;
 
+import skaro.pokeapi.resource.PokeResource;
+
 import java.util.List;
 
-public class Characteristic {
+public class Characteristic implements PokeResource {
 
 	private Integer id;
 	private Integer geneModulo;
