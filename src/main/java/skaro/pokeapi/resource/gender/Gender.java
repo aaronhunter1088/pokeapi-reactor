@@ -2,15 +2,18 @@ package skaro.pokeapi.resource.gender;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
-import skaro.pokeapi.resource.PokeResource;
+import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 
-public class Gender implements PokeResource {
+public class Gender implements PokeApiResource {
 
 	private Integer id;
 	private String name;
+	@JsonProperty("pokemon_species_details")
 	private List<PokemonSpeciesGender> pokemonSpeciesDetails;
+	@JsonProperty("required_for_evolution")
 	private List<NamedApiResource<PokemonSpecies>> requiredForEvolution;
 	
 	public Integer getId() {

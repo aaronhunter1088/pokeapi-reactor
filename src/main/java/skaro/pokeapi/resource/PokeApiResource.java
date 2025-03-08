@@ -1,8 +1,15 @@
 package skaro.pokeapi.resource;
 
-public interface PokeApiResource extends PokeResource {
+/**
+ * Inherited by classes that are returned
+ * by the NamedApiResourceList and by the
+ * NamedApiResourceList itself
+ */
+public interface PokeApiResource {
 
-	//Integer getId();
+	Integer getId();
 	String getName();
-	
+
 }
+
+

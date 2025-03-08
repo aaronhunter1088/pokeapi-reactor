@@ -19,5 +19,12 @@ public class Name {
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Name{" +
+				"name='" + name + '\'' +
+				", language=" + language +
+				'}';
+	}
 }

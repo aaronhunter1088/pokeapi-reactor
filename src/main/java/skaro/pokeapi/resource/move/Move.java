@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import skaro.pokeapi.resource.ApiResource;
 import skaro.pokeapi.resource.MachineVersionDetail;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
@@ -36,7 +35,7 @@ public class Move implements PokeApiResource, Localizable {
 	@JsonProperty("contest_type")
 	private NamedApiResource<ContestType> contestType;
 	@JsonProperty("contest_effect")
-	private ApiResource<ContestEffect> contestEffect;
+	private NamedApiResource<ContestEffect> contestEffect;
 	@JsonProperty("damage_class")
 	private NamedApiResource<MoveDamageClass> damageClass;
 	@JsonProperty("effect_entries")
@@ -54,7 +53,7 @@ public class Move implements PokeApiResource, Localizable {
 	@JsonProperty("stat_changes")
 	private List<MoveStatChange> statChanges;
 	@JsonProperty("super_contest_effect")
-	private ApiResource<SuperContestEffect> superContestEffect;
+	private NamedApiResource<SuperContestEffect> superContestEffect;
 	private NamedApiResource<MoveTarget> target;
 	private NamedApiResource<Type> type;
 
@@ -140,11 +139,11 @@ public class Move implements PokeApiResource, Localizable {
 	}
 
 	/** Gets the contest effect of the Move */
-	public ApiResource<ContestEffect> getContestEffect() {
+	public NamedApiResource<ContestEffect> getContestEffect() {
 		return contestEffect;
 	}
 	/** Sets the contest effect of the Move */
-	public void setContestEffect(ApiResource<ContestEffect> contestEffect) {
+	public void setContestEffect(NamedApiResource<ContestEffect> contestEffect) {
 		this.contestEffect = contestEffect;
 	}
 
@@ -239,11 +238,11 @@ public class Move implements PokeApiResource, Localizable {
 	}
 
 	/** Gets the super contest effect of the Move */
-	public ApiResource<SuperContestEffect> getSuperContestEffect() {
+	public NamedApiResource<SuperContestEffect> getSuperContestEffect() {
 		return superContestEffect;
 	}
 	/** Sets the super contest effect of the Move */
-	public void setSuperContestEffect(ApiResource<SuperContestEffect> superContestEffect) {
+	public void setSuperContestEffect(NamedApiResource<SuperContestEffect> superContestEffect) {
 		this.superContestEffect = superContestEffect;
 	}
 

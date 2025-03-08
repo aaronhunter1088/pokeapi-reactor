@@ -1,16 +1,18 @@
 package skaro.pokeapi.resource.machine;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
-import skaro.pokeapi.resource.PokeResource;
+import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.item.Item;
 import skaro.pokeapi.resource.move.Move;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
-public class Machine implements PokeResource {
+public class Machine implements PokeApiResource {
 
 	private Integer id;
 	private NamedApiResource<Item> item;
 	private NamedApiResource<Move> move;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 	
 	public Integer getId() {
@@ -37,5 +39,19 @@ public class Machine implements PokeResource {
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
-	
+
+	@Override
+	public String getName() {
+		return getClass().getSimpleName();
+	}
+
+	@Override
+	public String toString() {
+		return "Machine{" +
+				"id=" + id +
+				", item=" + item +
+				", move=" + move +
+				", versionGroup=" + versionGroup +
+				'}';
+	}
 }

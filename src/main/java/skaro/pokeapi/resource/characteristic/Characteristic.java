@@ -1,32 +1,128 @@
 package skaro.pokeapi.resource.characteristic;
 
-import skaro.pokeapi.resource.PokeResource;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Description;
+import skaro.pokeapi.resource.NamedApiResource;
+import skaro.pokeapi.resource.PokeApiResource;
+import skaro.pokeapi.resource.stat.Stat;
 
 import java.util.List;
+import java.util.Objects;
 
-public class Characteristic implements PokeResource {
+public class Characteristic implements PokeApiResource {
 
 	private Integer id;
+	@JsonProperty("gene_modulo")
 	private Integer geneModulo;
+	@JsonProperty("possible_values")
 	private List<Integer> possibleValues;
-	
+	private List<Description> descriptions;
+	@JsonProperty("highest_stat")
+	private NamedApiResource<Stat> highestStat;
+
+	/**
+	 * Get the id
+	 * @return
+	 */
 	public Integer getId() {
 		return id;
 	}
+	/**
+	 * Set the id
+	 * @param id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+	/**
+	 * Get the name
+	 * @return the class name
+	 */
+	@Override
+	public String getName() {
+		return getClass().getSimpleName();
+	}
+
+	/**
+	 * Get the gene modulo
+	 * @return the gene modulo
+	 */
 	public Integer getGeneModulo() {
 		return geneModulo;
 	}
+	/**
+	 * Set the gene modulo
+	 * @param geneModulo the gene modulo
+	 */
 	public void setGeneModulo(Integer geneModulo) {
 		this.geneModulo = geneModulo;
 	}
+
+	/**
+	 * Get the possible values
+	 * @return the possible values
+	 */
 	public List<Integer> getPossibleValues() {
 		return possibleValues;
 	}
+	/**
+	 * Set the possible values
+	 * @param possibleValues the possible values
+	 */
 	public void setPossibleValues(List<Integer> possibleValues) {
 		this.possibleValues = possibleValues;
 	}
-	
+
+	/**
+	 * Get the descriptions
+	 * @return the descriptions
+	 */
+	public List<Description> getDescriptions() {
+		return descriptions;
+	}
+	/**
+	 * Set the descriptions
+	 * @param descriptions the descriptions
+	 */
+	public void setDescriptions(List<Description> descriptions) {
+		this.descriptions = descriptions;
+	}
+
+	/**
+	 * Get the highest stat
+	 * @return the highest stat
+	 */
+	public NamedApiResource<Stat> getHighestStat() {
+		return highestStat;
+	}
+	/**
+	 * Set the stat
+	 * @param highestStat the highest stat
+	 */
+	public void setHighestStat(NamedApiResource<Stat> highestStat) {
+		this.highestStat = highestStat;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Characteristic that)) return false;
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getGeneModulo(), that.getGeneModulo()) && Objects.equals(getPossibleValues(), that.getPossibleValues()) && Objects.equals(getDescriptions(), that.getDescriptions()) && Objects.equals(getHighestStat(), that.getHighestStat());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId(), getGeneModulo(), getPossibleValues(), getDescriptions(), getHighestStat());
+	}
+
+	@Override
+	public String toString() {
+		return "Characteristic{" +
+				"id=" + id +
+				", geneModulo=" + geneModulo +
+				", possibleValues=" + possibleValues +
+				", descriptions=" + descriptions +
+				", highestStat=" + highestStat +
+				'}';
+	}
 }

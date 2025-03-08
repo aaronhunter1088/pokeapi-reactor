@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import skaro.pokeapi.resource.ApiResource;
 import skaro.pokeapi.resource.GenerationGameIndex;
 import skaro.pokeapi.resource.MachineVersionDetail;
 import skaro.pokeapi.resource.Name;
@@ -41,7 +40,7 @@ public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 	@JsonProperty("held_by_pokemon")
 	private List<ItemHolderPokemon> heldByPokemon;
 	@JsonProperty("baby_trigger_for")
-	private ApiResource<EvolutionChain> babyTriggerFor;
+	private NamedApiResource<EvolutionChain> babyTriggerFor;
 	private List<MachineVersionDetail> machines;
 
 	/** Gets the id of the Item */
@@ -162,11 +161,11 @@ public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 	}
 
 	/** Gets the EvolutionChain that the Item is a baby trigger for */
-	public ApiResource<EvolutionChain> getBabyTriggerFor() {
+	public NamedApiResource<EvolutionChain> getBabyTriggerFor() {
 		return babyTriggerFor;
 	}
 	/** Sets the EvolutionChain that the Item is a baby trigger for */
-	public void setBabyTriggerFor(ApiResource<EvolutionChain> babyTriggerFor) {
+	public void setBabyTriggerFor(NamedApiResource<EvolutionChain> babyTriggerFor) {
 		this.babyTriggerFor = babyTriggerFor;
 	}
 

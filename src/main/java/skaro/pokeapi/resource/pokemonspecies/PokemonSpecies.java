@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import skaro.pokeapi.resource.ApiResource;
 import skaro.pokeapi.resource.Description;
 import skaro.pokeapi.resource.FlavorText;
 import skaro.pokeapi.resource.Name;
@@ -53,7 +52,7 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	@JsonProperty("evolves_from_species")
 	private NamedApiResource<PokemonSpecies> evolvesFromSpecies;
 	@JsonProperty("evolution_chain")
-	private ApiResource<EvolutionChain> evolutionChain;
+	private NamedApiResource<EvolutionChain> evolutionChain;
 	private NamedApiResource<PokemonHabitat> habitat;
 	private NamedApiResource<Generation> generation;
 	private List<Name> names;
@@ -229,11 +228,11 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	}
 
 	/** Gets the evolutionChain */
-	public ApiResource<EvolutionChain> getEvolutionChain() {
+	public NamedApiResource<EvolutionChain> getEvolutionChain() {
 		return evolutionChain;
 	}
 	/** Sets the evolutionChain */
-	public void setEvolutionChain(ApiResource<EvolutionChain> evolutionChain) {
+	public void setEvolutionChain(NamedApiResource<EvolutionChain> evolutionChain) {
 		this.evolutionChain = evolutionChain;
 	}
 

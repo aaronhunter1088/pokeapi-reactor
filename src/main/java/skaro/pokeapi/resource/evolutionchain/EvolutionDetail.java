@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.evolutionchain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.evolutiontrigger.EvolutionTrigger;
 import skaro.pokeapi.resource.item.Item;
@@ -13,20 +14,34 @@ public class EvolutionDetail {
 	private NamedApiResource<Item> item;
 	private NamedApiResource<EvolutionTrigger> trigger;
 	private Integer gender;
+	@JsonProperty("held_item")
 	private NamedApiResource<Item> heldItem;
+	@JsonProperty("known_move")
 	private NamedApiResource<Move> knownMove;
+	@JsonProperty("known_move_type")
 	private NamedApiResource<Type> knownMoveType;
 	private NamedApiResource<Location> location;
+	@JsonProperty("min_level")
 	private Integer minLevel;
+	@JsonProperty("min_happiness")
 	private Integer minHappiness;
+	@JsonProperty("min_beauty")
 	private Integer minBeauty;
+	@JsonProperty("min_affection")
 	private Integer minAffection;
+	@JsonProperty("needs_overworld_rain")
 	private Boolean needsOverworldRain;
+	@JsonProperty("party_species")
 	private NamedApiResource<PokemonSpecies> partySpecies;
+	@JsonProperty("party_type")
 	private NamedApiResource<Type> partyType;
+	@JsonProperty("relative_physical_stats")
 	private Integer relativePhysicalStats;
+	@JsonProperty("time_of_day")
 	private String timeOfDay;
+	@JsonProperty("trade_species")
 	private NamedApiResource<PokemonSpecies> tradeSpecies;
+	@JsonProperty("turn_upside_down")
 	private Boolean turnUpsideDown;
 	
 	public NamedApiResource<Item> getItem() {
@@ -137,5 +152,28 @@ public class EvolutionDetail {
 	public void setTurnUpsideDown(Boolean turnUpsideDown) {
 		this.turnUpsideDown = turnUpsideDown;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "EvolutionDetail{" +
+				"item=" + item +
+				", trigger=" + trigger +
+				", gender=" + gender +
+				", heldItem=" + heldItem +
+				", knownMove=" + knownMove +
+				", knownMoveType=" + knownMoveType +
+				", location=" + location +
+				", minLevel=" + minLevel +
+				", minHappiness=" + minHappiness +
+				", minBeauty=" + minBeauty +
+				", minAffection=" + minAffection +
+				", needsOverworldRain=" + needsOverworldRain +
+				", partySpecies=" + partySpecies +
+				", partyType=" + partyType +
+				", relativePhysicalStats=" + relativePhysicalStats +
+				", timeOfDay='" + timeOfDay + '\'' +
+				", tradeSpecies=" + tradeSpecies +
+				", turnUpsideDown=" + turnUpsideDown +
+				'}';
+	}
 }

@@ -51,5 +51,16 @@ public class Language implements PokeApiResource, Localizable {
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Language{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", official=" + official +
+				", iso639='" + iso639 + '\'' +
+				", iso3166='" + iso3166 + '\'' +
+				", names=" + names +
+				'}';
+	}
 }

@@ -1,12 +1,14 @@
 package skaro.pokeapi.resource.evolutionchain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
-import skaro.pokeapi.resource.PokeResource;
+import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.item.Item;
 
-public class EvolutionChain implements PokeResource {
+public class EvolutionChain implements PokeApiResource {
 
 	private Integer id;
+	@JsonProperty("baby_trigger_item")
 	private NamedApiResource<Item> babyTriggerItem;
 	private ChainLink chain;
 
@@ -44,5 +46,18 @@ public class EvolutionChain implements PokeResource {
 	public void setChain(ChainLink chain) {
 		this.chain = chain;
 	}
-	
+
+	@Override
+	public String getName() {
+		return getClass().getSimpleName();
+	}
+
+	@Override
+	public String toString() {
+		return "EvolutionChain{" +
+				"id=" + id +
+				", babyTriggerItem=" + babyTriggerItem +
+				", chain=" + chain +
+				'}';
+	}
 }

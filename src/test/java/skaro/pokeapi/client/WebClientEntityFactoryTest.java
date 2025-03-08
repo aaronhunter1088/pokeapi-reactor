@@ -93,8 +93,10 @@ public class WebClientEntityFactoryTest {
 	@Test
 	public void testGetBaseResource() throws JsonProcessingException, InterruptedException {
 		String resourceEndpoint = "/move";
-		String move1 = "Tackle";
-		String move2 = "Splash";
+		Move move1 = new Move();
+		move1.setName("Tackle");
+		Move move2 = new Move();
+		move2.setName("Splash");
 		NamedApiResourceList<PokeApiResource> resourceListResponse = createResourceList(List.of(move1, move2));
 		
 		Mockito.when(registry.getEndpoint(Move.class))
@@ -108,8 +110,8 @@ public class WebClientEntityFactoryTest {
 			Set<String> resourceNames = resources.stream()
 					.map(NamedApiResource::getName)
 					.collect(Collectors.toSet());
-			assertTrue(resourceNames.contains(move1));
-			assertTrue(resourceNames.contains(move2));
+			assertTrue(resourceNames.contains(move1.getName()));
+			assertTrue(resourceNames.contains(move2.getName()));
 		};
 		
 		StepVerifier.create(factory.getBaseResource(Move.class))
@@ -125,8 +127,10 @@ public class WebClientEntityFactoryTest {
 	@Test
 	public void testGetBaseResourceWithQuery() throws JsonProcessingException, InterruptedException {
 		String resourceEndpoint = "ability";
-		String ability1 = "Levitate";
-		String ability2 = "Pressure";
+		Ability ability1 = new Ability();
+		ability1.setName("Levitate");
+		Ability ability2 = new Ability();
+		ability2.setName("Pressure");
 		NamedApiResourceList<PokeApiResource> resourceListResponse = createResourceList(List.of(ability1, ability2));
 		PageQuery query = new PageQuery(5, 10);
 		
@@ -141,8 +145,8 @@ public class WebClientEntityFactoryTest {
 			Set<String> resourceNames = resources.stream()
 					.map(NamedApiResource::getName)
 					.collect(Collectors.toSet());
-			assertTrue(resourceNames.contains(ability1));
-			assertTrue(resourceNames.contains(ability2));
+			assertTrue(resourceNames.contains(ability1.getName()));
+			assertTrue(resourceNames.contains(ability2.getName()));
 		};
 		
 		StepVerifier.create(factory.getBaseResource(Ability.class, query))
@@ -224,11 +228,11 @@ public class WebClientEntityFactoryTest {
 				.addHeader("Content-Type", "application/json"); 
 	}
 	
-	private NamedApiResourceList<PokeApiResource> createResourceList(List<String> names) {
+	private NamedApiResourceList<PokeApiResource> createResourceList(List<? extends PokeApiResource> names) {
 		List<NamedApiResource<PokeApiResource>> resources = names.stream()
-				.map(name -> {
+				.map(pokeApiResource -> {
 					NamedApiResource<PokeApiResource> resource = new NamedApiResource<>();
-					resource.setName(name);
+					resource.setName(pokeApiResource.getName());
 					return resource;
 				}).collect(Collectors.toList());
 		
