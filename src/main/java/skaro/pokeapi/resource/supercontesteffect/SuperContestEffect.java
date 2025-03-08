@@ -4,9 +4,10 @@ import java.util.List;
 
 import skaro.pokeapi.resource.FlavorText;
 import skaro.pokeapi.resource.NamedApiResource;
+import skaro.pokeapi.resource.PokeResource;
 import skaro.pokeapi.resource.move.Move;
 
-public class SuperContestEffect {
+public class SuperContestEffect implements PokeResource {
 
 	private Integer id;
 	private Integer appeal;

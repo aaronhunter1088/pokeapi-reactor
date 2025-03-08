@@ -1,9 +1,10 @@
 package skaro.pokeapi.resource.evolutionchain;
 
 import skaro.pokeapi.resource.NamedApiResource;
+import skaro.pokeapi.resource.PokeResource;
 import skaro.pokeapi.resource.item.Item;
 
-public class EvolutionChain {
+public class EvolutionChain implements PokeResource {
 
 	private Integer id;
 	private NamedApiResource<Item> babyTriggerItem;

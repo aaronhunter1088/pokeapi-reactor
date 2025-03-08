@@ -3,9 +3,10 @@ package skaro.pokeapi.resource.gender;
 import java.util.List;
 
 import skaro.pokeapi.resource.NamedApiResource;
+import skaro.pokeapi.resource.PokeResource;
 import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 
-public class Gender {
+public class Gender implements PokeResource {
 
 	private Integer id;
 	private String name;

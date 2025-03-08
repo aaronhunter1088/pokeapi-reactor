@@ -4,8 +4,9 @@ import java.util.List;
 
 import skaro.pokeapi.resource.Effect;
 import skaro.pokeapi.resource.FlavorText;
+import skaro.pokeapi.resource.PokeResource;
 
-public class ContestEffect {
+public class ContestEffect implements PokeResource {
 
 	private Integer id;
 	private Integer appeal;

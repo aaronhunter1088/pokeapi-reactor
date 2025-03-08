@@ -1,11 +1,12 @@
 package skaro.pokeapi.resource.machine;
 
 import skaro.pokeapi.resource.NamedApiResource;
+import skaro.pokeapi.resource.PokeResource;
 import skaro.pokeapi.resource.item.Item;
 import skaro.pokeapi.resource.move.Move;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
-public class Machine {
+public class Machine implements PokeResource {
 
 	private Integer id;
 	private NamedApiResource<Item> item;

@@ -1,8 +1,8 @@
 package skaro.pokeapi.resource;
 
-public interface PokeApiResource {
+public interface PokeApiResource extends PokeResource {
 
-	Integer getId();
+	//Integer getId();
 	String getName();
 	
 }
