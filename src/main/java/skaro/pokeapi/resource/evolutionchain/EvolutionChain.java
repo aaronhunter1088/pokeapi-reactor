@@ -5,6 +5,8 @@ import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.item.Item;
 
+import java.util.Objects;
+
 public class EvolutionChain implements PokeApiResource {
 
 	private Integer id;
@@ -52,6 +54,30 @@ public class EvolutionChain implements PokeApiResource {
 		return getClass().getSimpleName();
 	}
 
+	/**
+	 * Checks whether the EvolutionChain is equal to another object
+	 * @param o the object to compare
+	 * @return true if the objects are equal, false otherwise
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof EvolutionChain that)) return false;
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getBabyTriggerItem(), that.getBabyTriggerItem()) && Objects.equals(getChain(), that.getChain());
+	}
+
+	/**
+	 * Generate a hash code for the EvolutionChain
+	 * @return a hash code value for this object
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId(), getBabyTriggerItem(), getChain());
+	}
+
+	/**
+	 * Returns a string representation of the EvolutionChain
+	 * @return a string representation of the object
+	 */
 	@Override
 	public String toString() {
 		return "EvolutionChain{" +

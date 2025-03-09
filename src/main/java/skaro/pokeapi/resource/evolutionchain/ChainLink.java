@@ -1,6 +1,7 @@
 package skaro.pokeapi.resource.evolutionchain;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
@@ -15,32 +16,94 @@ public class ChainLink {
 	private List<EvolutionDetail> evolutionDetails;
 	@JsonProperty("evolves_to")
 	private List<ChainLink> evolvesTo;
-	
-	public Boolean getIsBaby() {
+
+	/**
+	 * Get whether or not this link is for a baby Pokémon.
+	 * This would only ever be true on the base link
+	 * @return true if the link is for a baby Pokémon, false otherwise
+	 */
+	public Boolean isBaby() {
 		return isBaby;
 	}
+	/**
+	 * Set whether or not this link is for a baby Pokémon.
+	 * @param isBaby true if the link is for a baby Pokémon, false otherwise
+	 */
 	public void setIsBaby(Boolean isBaby) {
 		this.isBaby = isBaby;
 	}
+
+	/**
+	 * Get the Pokémon species at this point in the evolution chain
+	 * @return the species
+	 */
 	public NamedApiResource<PokemonSpecies> getSpecies() {
 		return species;
 	}
+	/**
+	 * Set the Pokémon species at this point in the evolution chain
+	 * @param species the species
+	 */
 	public void setSpecies(NamedApiResource<PokemonSpecies> species) {
 		this.species = species;
 	}
+
+	/**
+	 * Get all details regarding the specific details
+	 * of the referenced  Pokémon species evolution.
+	 * @return  a list of {@link EvolutionDetail} objects
+	 */
 	public List<EvolutionDetail> getEvolutionDetails() {
 		return evolutionDetails;
 	}
+	/**
+	 * Set all details regarding the specific details
+	 * of the referenced  Pokémon species evolution.
+	 * @param evolutionDetails a list of {@link EvolutionDetail} objects
+	 */
 	public void setEvolutionDetails(List<EvolutionDetail> evolutionDetails) {
 		this.evolutionDetails = evolutionDetails;
 	}
+
+	/**
+	 * Get a List of chain objects
+	 * @return a list of {@link ChainLink} objects
+	 */
 	public List<ChainLink> getEvolvesTo() {
 		return evolvesTo;
 	}
+	/**
+	 * Set a List of chain objects
+	 * @param evolvesTo a list of {@link ChainLink} objects
+	 */
 	public void setEvolvesTo(List<ChainLink> evolvesTo) {
 		this.evolvesTo = evolvesTo;
 	}
 
+	/**
+	 * Checks whether the ChainLink is equal to another object
+	 * @param o the object to compare
+	 * @return true if the objects are equal, false otherwise
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof ChainLink chainLink)) return false;
+        return Objects.equals(isBaby(), chainLink.isBaby()) && Objects.equals(getSpecies(), chainLink.getSpecies()) && Objects.equals(getEvolutionDetails(), chainLink.getEvolutionDetails()) && Objects.equals(getEvolvesTo(), chainLink.getEvolvesTo());
+	}
+
+	/**
+	 * Generate a hash code for the ChainLink
+	 * @return a hash code value for this object
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(isBaby(), getSpecies(), getEvolutionDetails(), getEvolvesTo());
+	}
+
+	/**
+	 * Returns a string representation of the ChainLink
+	 * @return a string representation of the object
+	 */
 	@Override
 	public String toString() {
 		return "ChainLink{" +

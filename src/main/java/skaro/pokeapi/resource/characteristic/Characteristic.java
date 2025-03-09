@@ -36,6 +36,70 @@ public class Characteristic implements PokeApiResource {
 	}
 
 	/**
+	 * Get the remainder of the highest stat/IV divided by 5
+	 * @return the gene modulo
+	 */
+	public Integer getGeneModulo() {
+		return geneModulo;
+	}
+	/**
+	 * Set the remainder of the highest stat/IV divided by 5
+	 * @param geneModulo the gene modulo
+	 */
+	public void setGeneModulo(Integer geneModulo) {
+		this.geneModulo = geneModulo;
+	}
+
+	/**
+	 * Get the possible values of the highest stat that
+	 * would result in a Pokémon receiving this characteristic
+	 * when divided by 5
+	 * @return the possible values
+	 */
+	public List<Integer> getPossibleValues() {
+		return possibleValues;
+	}
+	/**
+	 * Set the possible values of the highest stat that
+	 * would result in a Pokémon receiving this characteristic
+	 * when divided by 5
+	 * @param possibleValues the possible values
+	 */
+	public void setPossibleValues(List<Integer> possibleValues) {
+		this.possibleValues = possibleValues;
+	}
+
+	/**
+	 * Get the descriptions of this characteristic listed in different languages
+	 * @return the descriptions
+	 */
+	public List<Description> getDescriptions() {
+		return descriptions;
+	}
+	/**
+	 * Set the descriptions of this characteristic listed in different languages
+	 * @param descriptions the descriptions
+	 */
+	public void setDescriptions(List<Description> descriptions) {
+		this.descriptions = descriptions;
+	}
+
+	/**
+	 * Get the stat which results in this characteristic
+	 * @return the highest stat
+	 */
+	public NamedApiResource<Stat> getHighestStat() {
+		return highestStat;
+	}
+	/**
+	 * Set the stat which results in this characteristic.
+	 * @param highestStat the highest stat
+	 */
+	public void setHighestStat(NamedApiResource<Stat> highestStat) {
+		this.highestStat = highestStat;
+	}
+
+	/**
 	 * Get the name
 	 * @return the class name
 	 */
@@ -45,76 +109,29 @@ public class Characteristic implements PokeApiResource {
 	}
 
 	/**
-	 * Get the gene modulo
-	 * @return the gene modulo
+	 * Check if this Characteristic is equal to another object
+	 * @param o the object to compare
+	 * @return true if the objects are equal
 	 */
-	public Integer getGeneModulo() {
-		return geneModulo;
-	}
-	/**
-	 * Set the gene modulo
-	 * @param geneModulo the gene modulo
-	 */
-	public void setGeneModulo(Integer geneModulo) {
-		this.geneModulo = geneModulo;
-	}
-
-	/**
-	 * Get the possible values
-	 * @return the possible values
-	 */
-	public List<Integer> getPossibleValues() {
-		return possibleValues;
-	}
-	/**
-	 * Set the possible values
-	 * @param possibleValues the possible values
-	 */
-	public void setPossibleValues(List<Integer> possibleValues) {
-		this.possibleValues = possibleValues;
-	}
-
-	/**
-	 * Get the descriptions
-	 * @return the descriptions
-	 */
-	public List<Description> getDescriptions() {
-		return descriptions;
-	}
-	/**
-	 * Set the descriptions
-	 * @param descriptions the descriptions
-	 */
-	public void setDescriptions(List<Description> descriptions) {
-		this.descriptions = descriptions;
-	}
-
-	/**
-	 * Get the highest stat
-	 * @return the highest stat
-	 */
-	public NamedApiResource<Stat> getHighestStat() {
-		return highestStat;
-	}
-	/**
-	 * Set the stat
-	 * @param highestStat the highest stat
-	 */
-	public void setHighestStat(NamedApiResource<Stat> highestStat) {
-		this.highestStat = highestStat;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Characteristic that)) return false;
         return Objects.equals(getId(), that.getId()) && Objects.equals(getGeneModulo(), that.getGeneModulo()) && Objects.equals(getPossibleValues(), that.getPossibleValues()) && Objects.equals(getDescriptions(), that.getDescriptions()) && Objects.equals(getHighestStat(), that.getHighestStat());
 	}
 
+	/**
+	 * Generate a hash code for this Characteristic
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getGeneModulo(), getPossibleValues(), getDescriptions(), getHighestStat());
 	}
 
+	/**
+	 * Get a String representation of this Characteristic
+	 * @return the String representation
+	 */
 	@Override
 	public String toString() {
 		return "Characteristic{" +

@@ -64,15 +64,15 @@ public class EggGroup implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Gets the list of all Pokémon species that are members of this egg group
-	 * @return A list of all Pokémon species that are members of this egg group
+	 * Gets a list of all Pokémon species that are members of this egg group
+	 * @return list of {@link NamedApiResource<PokemonSpecies>} objects
 	 */
 	public List<NamedApiResource<PokemonSpecies>> getPokemonSpecies() {
 		return pokemonSpecies;
 	}
 	/**
 	 * Sets the list of all Pokémon species that are members of this egg group
-	 * @param pokemonSpecies A list of all Pokémon species that are members of this egg group
+	 * @param pokemonSpecies list of {@link NamedApiResource<PokemonSpecies>} objects
 	 */
 	public void setPokemonSpecies(List<NamedApiResource<PokemonSpecies>> pokemonSpecies) {
 		this.pokemonSpecies = pokemonSpecies;
