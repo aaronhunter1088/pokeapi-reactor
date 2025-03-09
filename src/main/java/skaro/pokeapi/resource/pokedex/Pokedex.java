@@ -53,47 +53,77 @@ public class Pokedex implements PokeApiResource, Localizable {
 		this.isMainSeries = isMainSeries;
 	}
 
-	/** Gets the descriptions of the pokedex */
+	/**
+	 * Gets the descriptions of the pokedex
+	 * @return the list of {@link Description} objects
+	 */
 	public List<Description> getDescriptions() {
 		return descriptions;
 	}
-	/** Sets the descriptions of the pokedex */
+	/**
+	 * Sets the descriptions of the pokedex
+	 * @param descriptions the list of {@link Description} objects
+	 */
 	public void setDescriptions(List<Description> descriptions) {
 		this.descriptions = descriptions;
 	}
 
-	/** Gets the names of the pokedex */
+	/**
+	 * Gets the names of the pokedex
+	 * @return the list of {@link Name} objects
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names of the pokedex */
+	/**
+	 * Sets the names of the pokedex
+	 * @param names the list of {@link Name} objects
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets the pokemon entries of the pokedex */
+	/**
+	 * Gets the pokemon entries of the pokedex
+	 * @return the list of {@link PokemonEntry} objects
+	 */
 	public List<PokemonEntry> getPokemonEntries() {
 		return pokemonEntries;
 	}
-	/** Sets the pokemon entries of the pokedex */
+	/**
+	 * Sets the pokemon entries of the pokedex
+	 * @param pokemonEntries the list of {@link PokemonEntry} objects
+	 */
 	public void setPokemonEntries(List<PokemonEntry> pokemonEntries) {
 		this.pokemonEntries = pokemonEntries;
 	}
 
-	/** Gets the region this pokedex is relevant to */
+	/**
+	 * Gets the region this pokedex is relevant to
+	 * @return the {@link NamedApiResource<Region>} object
+	 */
 	public NamedApiResource<Region> getRegion() {
 		return region;
 	}
-	/** Sets the region this pokedex is relevant to */
+	/**
+	 * Sets the region this pokedex is relevant to
+	 * @param region the {@link NamedApiResource<Region>} object
+	 */
 	public void setRegion(NamedApiResource<Region> region) {
 		this.region = region;
 	}
 
-	/** Gets the version groups this pokedex is relevant to */
+	/**
+	 * Gets the version groups this pokedex is relevant to
+	 * @return the list of {@link NamedApiResource<VersionGroup>} objects
+	 */
 	public List<NamedApiResource<VersionGroup>> getVersionGroups() {
 		return versionGroups;
 	}
-	/** Sets the version groups this pokedex is relevant to */
+	/**
+	 * Sets the version groups this pokedex is relevant to
+	 * @param versionGroups the list of {@link NamedApiResource<VersionGroup>} objects
+	 */
 	public void setVersionGroups(List<NamedApiResource<VersionGroup>> versionGroups) {
 		this.versionGroups = versionGroups;
 	}
