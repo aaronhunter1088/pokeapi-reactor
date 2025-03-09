@@ -40,21 +40,14 @@ public class MachineVersionDetail {
 		this.versionGroup = versionGroup;
 	}
 
-	/**
-	 * Indicates whether some other object is "equal to" this one.
-	 * @param o the object to test
-	 * @return true if the objects are equal, false otherwise
-	 */
+	/** Returns whether the MachineVersionDetail is equal to another object */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof MachineVersionDetail that)) return false;
         return Objects.equals(getMachine(), that.getMachine()) && Objects.equals(getVersionGroup(), that.getVersionGroup());
 	}
 
-	/**
-	 * Returns a hash code value for the object.
-	 * @return a hash code value for this object
-	 */
+	/** Returns the hash code of the MachineVersionDetail */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getMachine(), getVersionGroup());
