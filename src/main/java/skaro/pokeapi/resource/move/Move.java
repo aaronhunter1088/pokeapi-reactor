@@ -210,11 +210,11 @@ public class Move implements PokeApiResource, Localizable {
 		this.meta = meta;
 	}
 
-	/** Gets the names of the Move */
+	/** Gets the name of this resource listed in different languages */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names of the Move */
+	/** Sets the name of this resource listed in different languages */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
