@@ -1,6 +1,7 @@
 package skaro.pokeapi.resource.locationarea;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
@@ -30,4 +31,35 @@ public class PokemonEncounter {
 		this.versionDetails = versionDetails;
 	}
 
+	/**
+	 * Checks whether the PokemonEncounter is equal to another object
+	 * @param o the object to compare
+	 * @return true if the objects are equal, false otherwise
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof PokemonEncounter that)) return false;
+        return Objects.equals(getLocationArea(), that.getLocationArea()) && Objects.equals(getVersionDetails(), that.getVersionDetails());
+	}
+
+	/**
+	 * Generate a hash code for the PokemonEncounter
+	 * @return a hash code value for this object
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(getLocationArea(), getVersionDetails());
+	}
+
+	/**
+	 * Returns a string representation of the PokemonEncounter
+	 * @return a string representation of the object
+	 */
+	@Override
+	public String toString() {
+		return "PokemonEncounter{" +
+				"locationArea=" + locationArea +
+				", versionDetails=" + versionDetails +
+				'}';
+	}
 }
