@@ -28,5 +28,13 @@ public class PageQuery {
 	private void setOffset(Integer offset) {
 		this.offset = offset;
 	}
-	
+
+	/** Gets the string representation of the PageQuery **/
+	@Override
+	public String toString() {
+		return "PageQuery{" +
+				"limit=" + limit +
+				", offset=" + offset +
+				'}';
+	}
 }

@@ -6,6 +6,14 @@ import skaro.pokeapi.resource.Name;
 
 public class PokeApiLocaleUtils {
 
+	/**
+	 * Returns an Optional containing the Name object in
+	 * the specified locale if it exists, otherwise an
+	 * empty Optional
+	 * @param localizable the localizable object
+	 * @param locale the locale to search for
+	 * @return an Optional possibly containing a Name object
+	 */
 	public static Optional<Name> getInLocale(Localizable localizable, String locale) {
 		return localizable.getNames().stream()
 				.filter(name -> name.getLanguage().getName().equalsIgnoreCase(locale))
