@@ -1,13 +1,11 @@
 package skaro.pokeapi.resource.palparkarea;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 
 import java.util.Objects;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class PalParkEncounterSpecies {
 
     @JsonProperty("base_score")
