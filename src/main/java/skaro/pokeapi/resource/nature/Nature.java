@@ -5,14 +5,11 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import skaro.pokeapi.resource.Name;
-import skaro.pokeapi.resource.NamedApiResource;
-import skaro.pokeapi.resource.PokeApiResource;
+import skaro.pokeapi.resource.*;
 import skaro.pokeapi.resource.berryflavor.BerryFlavor;
 import skaro.pokeapi.resource.stat.Stat;
 import skaro.pokeapi.utils.locale.Localizable;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Nature implements PokeApiResource, Localizable {
 
 	private Integer id;
@@ -26,6 +23,10 @@ public class Nature implements PokeApiResource, Localizable {
 	@JsonProperty("likes_flavor")
 	private NamedApiResource<BerryFlavor> likesFlavor;
 	private List<Name> names;
+	@JsonProperty("move_battle_style_preferences")
+	private List<MoveBattleStylePreference> moveBattleStylePreferences;
+	@JsonProperty("pokeathlon_stat_changes")
+	private List<NatureStatChange> pokeathlonStatChanges;
 
 	/**
 	 * Get the id
@@ -133,6 +134,36 @@ public class Nature implements PokeApiResource, Localizable {
 	}
 
 	/**
+	 * Get the battle style preferences for this nature
+	 * @return the list of {@link MoveBattleStylePreference} objects
+	 */
+	public List<MoveBattleStylePreference> getMoveBattleStylePreferences() {
+		return moveBattleStylePreferences;
+	}
+	/**
+	 * Set the battle style preferences for this nature
+	 * @param moveBattleStylePreferences the list of {@link MoveBattleStylePreference} objects
+	 */
+	public void setMoveBattleStylePreferences(List<MoveBattleStylePreference> moveBattleStylePreferences) {
+		this.moveBattleStylePreferences = moveBattleStylePreferences;
+	}
+
+	/**
+	 * Get the stat changes for this nature
+	 * @return the list of {@link NatureStatChange} objects
+	 */
+	public List<NatureStatChange> getPokeathlonStatChanges() {
+		return pokeathlonStatChanges;
+	}
+	/**
+	 * Set the stat changes for this nature
+	 * @param pokeathlonStatChanges the list of {@link NatureStatChange} objects
+	 */
+	public void setPokeathlonStatChanges(List<NatureStatChange> pokeathlonStatChanges) {
+		this.pokeathlonStatChanges = pokeathlonStatChanges;
+	}
+
+	/**
 	 * Compares this nature to another object for equality.
 	 * @param o the object to compare
 	 * @return true if the objects are equal, false otherwise
@@ -140,7 +171,7 @@ public class Nature implements PokeApiResource, Localizable {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Nature nature)) return false;
-        return Objects.equals(getId(), nature.getId()) && Objects.equals(getName(), nature.getName()) && Objects.equals(getDecreasedStat(), nature.getDecreasedStat()) && Objects.equals(getIncreasedStat(), nature.getIncreasedStat()) && Objects.equals(getHatesFlavor(), nature.getHatesFlavor()) && Objects.equals(getLikesFlavor(), nature.getLikesFlavor()) && Objects.equals(getNames(), nature.getNames());
+        return Objects.equals(getId(), nature.getId()) && Objects.equals(getName(), nature.getName()) && Objects.equals(getDecreasedStat(), nature.getDecreasedStat()) && Objects.equals(getIncreasedStat(), nature.getIncreasedStat()) && Objects.equals(getHatesFlavor(), nature.getHatesFlavor()) && Objects.equals(getLikesFlavor(), nature.getLikesFlavor()) && Objects.equals(getNames(), nature.getNames()) && Objects.equals(getMoveBattleStylePreferences(), nature.getMoveBattleStylePreferences()) && Objects.equals(getPokeathlonStatChanges(), nature.getPokeathlonStatChanges());
 	}
 
 	/**
@@ -149,7 +180,7 @@ public class Nature implements PokeApiResource, Localizable {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), getDecreasedStat(), getIncreasedStat(), getHatesFlavor(), getLikesFlavor(), getNames());
+		return Objects.hash(getId(), getName(), getDecreasedStat(), getIncreasedStat(), getHatesFlavor(), getLikesFlavor(), getNames(), getMoveBattleStylePreferences(), getPokeathlonStatChanges());
 	}
 
 	/**
@@ -166,6 +197,8 @@ public class Nature implements PokeApiResource, Localizable {
 				", hatesFlavor=" + hatesFlavor +
 				", likesFlavor=" + likesFlavor +
 				", names=" + names +
+				", moveBattleStylePreferences=" + moveBattleStylePreferences +
+				", pokeathlonStatChanges=" + pokeathlonStatChanges +
 				'}';
 	}
 }
