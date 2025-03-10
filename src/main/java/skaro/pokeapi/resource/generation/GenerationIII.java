@@ -10,7 +10,7 @@ public class GenerationIII {
     private NameIcon emerald;
     @JsonProperty("firered-leafgreen")
     private NameIcon fireredLeafgreen;
-    @JsonProperty("ruby-saphire")
+    @JsonProperty("ruby-sapphire")
     private NameIcon rubySapphire;
     private NameIcon xd;
 

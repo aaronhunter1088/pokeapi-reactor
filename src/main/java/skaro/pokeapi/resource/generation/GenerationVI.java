@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class GenerationVI {
 
-    @JsonProperty("omega-ruby-alpha-sapphire")
+    @JsonProperty("omegaruby-alphasapphire")
     private NameIcon omegaRubyAlphaSapphire;
     @JsonProperty("x-y")
     private NameIcon xY;

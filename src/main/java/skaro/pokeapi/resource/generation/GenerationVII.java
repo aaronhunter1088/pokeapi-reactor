@@ -12,6 +12,7 @@ public class GenerationVII {
     private NameIcon sunMoon;
     @JsonProperty("ultra-sun-ultra-moon")
     private NameIcon ultraSunUltraMoon;
+    private NameIcon icons;
 
     /**
      * Gets the name and icon for the LetsGoPikachuLetsGoEevee
@@ -56,6 +57,21 @@ public class GenerationVII {
      */
     public void setUltraSunUltraMoon(NameIcon ultraSunUltraMoon) {
         this.ultraSunUltraMoon = ultraSunUltraMoon;
+    }
+
+    /**
+     * Gets the icons for the GenerationVII
+     * @return the {@link NameIcon} object
+     */
+    public NameIcon getIcons() {
+        return icons;
+    }
+    /**
+     * Sets the icons for the GenerationVII
+     * @param icons the {@link NameIcon} object
+     */
+    public void setIcons(NameIcon icons) {
+        this.icons = icons;
     }
 
     /**

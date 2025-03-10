@@ -7,6 +7,10 @@ import java.util.Objects;
 
 public class GenerationSprites {
 
+    @JsonProperty("generation-i")
+    GenerationI generationI;
+    @JsonProperty("generation-ii")
+    GenerationII generationII;
     @JsonProperty("generation-iii")
     GenerationIII generationIII;
     @JsonProperty("generation-iv")
@@ -21,6 +25,36 @@ public class GenerationSprites {
     GenerationVII generationVII;
     @JsonProperty("generation-viii")
     GenerationVIII generationVIII;
+
+    /**
+     * Returns the generationI
+     * @return the generationI
+     */
+    public GenerationI getGenerationI() {
+        return generationI;
+    }
+    /**
+     * Sets the generationI
+     * @param generationI the generationI
+     */
+    public void setGenerationI(GenerationI generationI) {
+        this.generationI = generationI;
+    }
+
+    /**
+     * Returns the generationII
+     * @return the generationII
+     */
+    public GenerationII getGenerationII() {
+        return generationII;
+    }
+    /**
+     * Sets the generationII
+     * @param generationII the generationII
+     */
+    public void setGenerationII(GenerationII generationII) {
+        this.generationII = generationII;
+    }
 
     /**
      * Returns the generationIII
@@ -136,7 +170,7 @@ public class GenerationSprites {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof GenerationSprites that)) return false;
-        return Objects.equals(getGenerationIII(), that.getGenerationIII()) && Objects.equals(getGenerationIV(), that.getGenerationIV()) && Objects.equals(getGenerationV(), that.getGenerationV()) && Objects.equals(getGenerationIX(), that.getGenerationIX()) && Objects.equals(getGenerationVI(), that.getGenerationVI()) && Objects.equals(getGenerationVII(), that.getGenerationVII()) && Objects.equals(getGenerationVIII(), that.getGenerationVIII());
+        return Objects.equals(getGenerationI(), that.getGenerationI()) && Objects.equals(getGenerationII(), that.getGenerationII()) && Objects.equals(getGenerationIII(), that.getGenerationIII()) && Objects.equals(getGenerationIV(), that.getGenerationIV()) && Objects.equals(getGenerationV(), that.getGenerationV()) && Objects.equals(getGenerationIX(), that.getGenerationIX()) && Objects.equals(getGenerationVI(), that.getGenerationVI()) && Objects.equals(getGenerationVII(), that.getGenerationVII()) && Objects.equals(getGenerationVIII(), that.getGenerationVIII());
     }
 
     /**
@@ -145,7 +179,7 @@ public class GenerationSprites {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getGenerationIII(), getGenerationIV(), getGenerationV(), getGenerationIX(), getGenerationVI(), getGenerationVII(), getGenerationVIII());
+        return Objects.hash(getGenerationI(), getGenerationII(), getGenerationIII(), getGenerationIV(), getGenerationV(), getGenerationIX(), getGenerationVI(), getGenerationVII(), getGenerationVIII());
     }
 
     /**
@@ -155,7 +189,9 @@ public class GenerationSprites {
     @Override
     public String toString() {
         return "GenerationSprites{" +
-                "generationIII=" + generationIII +
+                "generationI=" + generationI +
+                ", generationII=" + generationII +
+                ", generationIII=" + generationIII +
                 ", generationIV=" + generationIV +
                 ", generationV=" + generationV +
                 ", generationIX=" + generationIX +

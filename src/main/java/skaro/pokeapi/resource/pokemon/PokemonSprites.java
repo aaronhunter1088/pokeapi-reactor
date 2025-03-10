@@ -1,11 +1,11 @@
 package skaro.pokeapi.resource.pokemon;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
 import java.util.Objects;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class PokemonSprites {
 
 	@JsonProperty("front_default")
@@ -24,6 +24,13 @@ public class PokemonSprites {
 	private String backFemale;
 	@JsonProperty("back_shiny_female")
 	private String backShinyFemale;
+	private OtherSprites other;
+	private GenerationSprites versions;
+
+	public OtherSprites getOther() { return other; }
+	public void setOther(OtherSprites other) { this.other = other; }
+	public GenerationSprites getVersions() { return versions; }
+	public void setVersions(GenerationSprites versions) { this.versions = versions; }
 
 	/**
 	 * Get the default depiction of this

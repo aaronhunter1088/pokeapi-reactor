@@ -1,6 +1,7 @@
 package skaro.pokeapi.resource.generation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
@@ -12,6 +13,7 @@ public class GenerationVIII {
     private NameIcon legendsArceus;
     @JsonProperty("sword-shield")
     private NameIcon swordShield;
+    private Sprites icons;
 
     /**
      * Returns the brilliantDiamondShiningPearl icon for the GenerationVIII
@@ -59,6 +61,21 @@ public class GenerationVIII {
     }
 
     /**
+     * Returns the icons for the GenerationVIII
+     * @return the icons
+     */
+    public Sprites getIcons() {
+        return icons;
+    }
+    /**
+     * Sets the icons for the GenerationVIII
+     * @param icons the icons
+     */
+    public void setIcons(Sprites icons) {
+        this.icons = icons;
+    }
+
+    /**
      * Returns whether the given object o is
      * equal to this instance of GenerationVIII
      * @param o the object to compare
@@ -67,7 +84,7 @@ public class GenerationVIII {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof GenerationVIII that)) return false;
-        return Objects.equals(getBrilliantDiamondShiningPearl(), that.getBrilliantDiamondShiningPearl()) && Objects.equals(getLegendsArceus(), that.getLegendsArceus()) && Objects.equals(getSwordShield(), that.getSwordShield());
+        return Objects.equals(getBrilliantDiamondShiningPearl(), that.getBrilliantDiamondShiningPearl()) && Objects.equals(getLegendsArceus(), that.getLegendsArceus()) && Objects.equals(getSwordShield(), that.getSwordShield()) && Objects.equals(getIcons(), that.getIcons());
     }
 
     /**
@@ -76,7 +93,7 @@ public class GenerationVIII {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getBrilliantDiamondShiningPearl(), getLegendsArceus(), getSwordShield());
+        return Objects.hash(getBrilliantDiamondShiningPearl(), getLegendsArceus(), getSwordShield(), getIcons());
     }
 
     /**
@@ -89,6 +106,7 @@ public class GenerationVIII {
                 "brilliantDiamondShiningPearl=" + brilliantDiamondShiningPearl +
                 ", legendsArceus=" + legendsArceus +
                 ", swordShield=" + swordShield +
+                ", icons=" + icons +
                 '}';
     }
 }
