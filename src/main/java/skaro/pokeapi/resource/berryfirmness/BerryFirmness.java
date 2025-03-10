@@ -23,7 +23,6 @@ public class BerryFirmness implements PokeApiResource, Localizable {
 	public Integer getId() {
 		return id;
 	}
-
 	/**
 	 * Set the id
 	 * @param id the id
@@ -39,7 +38,6 @@ public class BerryFirmness implements PokeApiResource, Localizable {
 	public String getName() {
 		return name;
 	}
-
 	/**
 	 * Set the name for this resource
 	 * @param name the name
@@ -50,15 +48,14 @@ public class BerryFirmness implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of the berries with this firmness
-	 * @return a list of {@link NamedApiResource} objects
+	 * @return a list of {@link NamedApiResource<Berry>} berries
 	 */
 	public List<NamedApiResource<Berry>> getBerries() {
 		return berries;
 	}
-
 	/**
 	 * Set a list of the berries with this firmness
-	 * @param berries a list of {@link NamedApiResource} objects
+	 * @param berries a list of {@link NamedApiResource<Berry>} berries
 	 */
 	public void setBerries(List<NamedApiResource<Berry>> berries) {
 		this.berries = berries;
@@ -66,24 +63,24 @@ public class BerryFirmness implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the name of this resource listed in different languages
-	 * @return a list of {@link Name} objects
+	 * @return a list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
-
 	/**
 	 * Set the name of this resource listed in different languages
-	 * @param names a list of {@link Name} objects
+	 * @param names a list of {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
 	/**
-	 * Returns true if the object is a {@code BerryFirmness} with the same id and name
+	 * Returns whether the given object o is
+	 * equal to this instance of BerryFirmness
 	 * @param o the object to compare
-	 * @return true if the object is a {@code BerryFirmness} with the same id and name
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -92,8 +89,8 @@ public class BerryFirmness implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a hash code value for the object
-	 * @return a hash code value for the object
+	 * Returns the hash code of the BerryFirmness
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -101,8 +98,8 @@ public class BerryFirmness implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a string representation of the object
-	 * @return a string representation of the object
+	 * Returns a string representation of the BerryFirmness
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

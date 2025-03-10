@@ -3,12 +3,14 @@ package skaro.pokeapi.resource.item;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 
 public class ItemHolderPokemon {
 
 	private NamedApiResource<Pokemon> pokemon;
+	@JsonProperty("version_details")
 	private List<ItemHolderPokemonVersionDetail> versionDetails;
 
 	/** Gets the pokemon that holds the item */

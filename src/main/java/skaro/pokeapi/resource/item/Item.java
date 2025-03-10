@@ -24,6 +24,7 @@ public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 	private Integer id;
 	private String name;
 	private Integer cost;
+	@JsonProperty("fling_power")
 	private Integer flingPower;
 	@JsonProperty("fling_effect")
 	private NamedApiResource<ItemFlingEffect> flingEffect;

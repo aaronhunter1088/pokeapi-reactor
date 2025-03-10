@@ -1,11 +1,13 @@
 package skaro.pokeapi.resource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.generation.Generation;
 
 import java.util.Objects;
 
 public class GenerationGameIndex {
 
+	@JsonProperty("game_index")
 	private Integer gameIndex;
 	private NamedApiResource<Generation> generation;
 

@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.move;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.moveailment.MoveAilment;
 import skaro.pokeapi.resource.movecategory.MoveCategory;
@@ -10,15 +11,23 @@ public class MoveMetaData {
 
 	private NamedApiResource<MoveAilment> ailment;
 	private NamedApiResource<MoveCategory> category;
+	@JsonProperty("min_hits")
 	private Integer minHits;
+	@JsonProperty("max_hits")
 	private Integer maxHits;
+	@JsonProperty("min_turns")
 	private Integer minTurns;
+	@JsonProperty("max_turns")
 	private Integer maxTurns;
 	private Integer drain;
 	private Integer healing;
+	@JsonProperty("crit_rate")
 	private Integer critRate;
+	@JsonProperty("ailment_chance")
 	private Integer ailmentChance;
+	@JsonProperty("flinch_chance")
 	private Integer flinchChance;
+	@JsonProperty("stat_chance")
 	private Integer statChance;
 
 	/**

@@ -3,12 +3,15 @@ package skaro.pokeapi.resource;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.version.Version;
 
 public class VersionEncounterDetail {
 
 	private NamedApiResource<Version> version;
+	@JsonProperty("max_chance")
 	private Integer maxChance;
+	@JsonProperty("encounter_details")
 	private List<Encounter> encounterDetails;
 
 	/** Gets the game version this encounter happens in */

@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.machine.Machine;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
@@ -8,6 +9,7 @@ import java.util.Objects;
 public class MachineVersionDetail {
 
 	private NamedApiResource<Machine> machine;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**

@@ -1,15 +1,20 @@
 package skaro.pokeapi.resource.palparkarea;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 
 import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PalParkEncounterSpecies {
 
+    @JsonProperty("base_score")
     private Integer baseScore;
     private Integer rate;
-    private NamedApiResource<PokemonSpecies> pokemonSpecies;
+    @JsonProperty("pokemon_species")
+    private NamedApiResource<PalParkArea> palParkArea;
 
     /**
      * Get the base score given to the player
@@ -38,12 +43,12 @@ public class PalParkEncounterSpecies {
      * Get the Pokémon species being encountered
      * @return the {@link NamedApiResource<PokemonSpecies>}
      */
-    public NamedApiResource<PokemonSpecies> getPokemonSpecies() { return pokemonSpecies; }
+    public NamedApiResource<PalParkArea> getPalParkArea() { return palParkArea; }
     /**
      * Set the Pokémon species being encountered
-     * @param pokemonSpecies the {@link NamedApiResource<PokemonSpecies>}
+     * @param palParkArea the {@link NamedApiResource<PokemonSpecies>}
      */
-    public void setPokemonSpecies(NamedApiResource<PokemonSpecies> pokemonSpecies) { this.pokemonSpecies = pokemonSpecies; }
+    public void setPalParkArea(NamedApiResource<PalParkArea> palParkArea) { this.palParkArea = palParkArea; }
 
     /**
      * Compares this Pokémon entry to another object for equality.
@@ -53,7 +58,7 @@ public class PalParkEncounterSpecies {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof PalParkEncounterSpecies that)) return false;
-        return Objects.equals(getBaseScore(), that.getBaseScore()) && Objects.equals(getRate(), that.getRate()) && Objects.equals(getPokemonSpecies(), that.getPokemonSpecies());
+        return Objects.equals(getBaseScore(), that.getBaseScore()) && Objects.equals(getRate(), that.getRate()) && Objects.equals(getPalParkArea(), that.getPalParkArea());
     }
 
     /**
@@ -62,7 +67,7 @@ public class PalParkEncounterSpecies {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getBaseScore(), getRate(), getPokemonSpecies());
+        return Objects.hash(getBaseScore(), getRate(), getPalParkArea());
     }
 
     /**
@@ -74,7 +79,7 @@ public class PalParkEncounterSpecies {
         return "PalParkEncounterSpecies{" +
                 "baseScore=" + baseScore +
                 ", rate=" + rate +
-                ", pokemonSpecies=" + pokemonSpecies +
+                ", area=" + palParkArea +
                 '}';
     }
 }

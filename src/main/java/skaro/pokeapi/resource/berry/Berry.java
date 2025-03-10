@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.berry;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.berryfirmness.BerryFirmness;
@@ -13,15 +14,20 @@ public class Berry implements PokeApiResource {
 
 	private Integer id;
 	private String name;
+	@JsonProperty("growth_time")
 	private Integer growthTime;
+	@JsonProperty("max_harvest")
 	private Integer maxHarvest;
+	@JsonProperty("natural_gift_power")
 	private Integer naturalGiftPower;
 	private Integer size;
 	private Integer smoothness;
+	@JsonProperty("soil_dryness")
 	private Integer soilDryness;
 	private NamedApiResource<BerryFirmness> firmness;
 	private List<BerryFlavorMap> flavors;
 	private NamedApiResource<Item> item;
+	@JsonProperty("natural_gift_type")
 	private NamedApiResource<Type> naturalGiftType;
 
 	/**
@@ -123,14 +129,16 @@ public class Berry implements PokeApiResource {
 	}
 
 	/**
-	 * Get the smoothness of this Berry, used in making Pokéblocks or Poffins
+	 * Get the smoothness of this Berry, used
+	 * in making Pokéblocks or Poffins
 	 * @return the smoothness
 	 */
 	public Integer getSmoothness() {
 		return smoothness;
 	}
 	/**
-	 * Set the smoothness of this Berry, used in making Pokéblocks or Poffins
+	 * Set the smoothness of this Berry, used
+	 * in making Pokéblocks or Poffins
 	 * @param smoothness the smoothness
 	 */
 	public void setSmoothness(Integer smoothness) {
@@ -174,10 +182,10 @@ public class Berry implements PokeApiResource {
 	}
 
 	/**
-	 * Get alist of references to each flavor a berry
+	 * Get a list of references to each flavor a berry
 	 * can have and the potency of each of those flavors
 	 * in regard to this berry
-	 * @return a list of {@link BerryFlavorMap} objects
+	 * @return a list of {@link BerryFlavorMap} berryFlavorMaps
 	 */
 	public List<BerryFlavorMap> getFlavors() {
 		return flavors;
@@ -186,7 +194,7 @@ public class Berry implements PokeApiResource {
 	 * Set a list of references to each flavor a berry
 	 * can have and the potency of each of those flavors
 	 * in regard to this berry
-	 * @param flavors a list of {@link BerryFlavorMap} objects
+	 * @param flavors a list of {@link BerryFlavorMap} berryFlavorMaps
 	 */
 	public void setFlavors(List<BerryFlavorMap> flavors) {
 		this.flavors = flavors;
@@ -194,14 +202,14 @@ public class Berry implements PokeApiResource {
 
 	/**
 	 * Get the berry reference
-	 * @return the berry reference
+	 * @return the {@link NamedApiResource<Item>} berry reference
 	 */
 	public NamedApiResource<Item> getItem() {
 		return item;
 	}
 	/**
 	 * Set the berry reference
-	 * @param item the berry reference
+	 * @param item the {@link NamedApiResource<Item>} berry reference
 	 */
 	public void setItem(NamedApiResource<Item> item) {
 		this.item = item;
@@ -209,23 +217,24 @@ public class Berry implements PokeApiResource {
 
 	/**
 	 * Get the type inherited by "Natural Gift" when used with this Berry
-	 * @return the naturalGiftType
+	 * @return the {@link NamedApiResource<Type>} naturalGiftType
 	 */
 	public NamedApiResource<Type> getNaturalGiftType() {
 		return naturalGiftType;
 	}
 	/**
 	 * Set the type inherited by "Natural Gift" when used with this Berry
-	 * @param naturalGiftType the naturalGiftType
+	 * @param naturalGiftType the {@link NamedApiResource<Type>} naturalGiftType
 	 */
 	public void setNaturalGiftType(NamedApiResource<Type> naturalGiftType) {
 		this.naturalGiftType = naturalGiftType;
 	}
 
 	/**
-	 * Checks whether a Berry object is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of Berry
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -234,7 +243,7 @@ public class Berry implements PokeApiResource {
 	}
 
 	/**
-	 * Generate a hash code for this Berry
+	 * Returns the hash code of the Berry
 	 * @return the hash code
 	 */
 	@Override
@@ -243,8 +252,8 @@ public class Berry implements PokeApiResource {
 	}
 
 	/**
-	 * Returns the Berry object in the form of a string
-	 * @return a string representation of the object
+	 * Returns a string representation of the Berry
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

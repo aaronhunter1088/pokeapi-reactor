@@ -3,15 +3,22 @@ package skaro.pokeapi.resource.type;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 
 public class TypeRelations {
 
+	@JsonProperty("no_damage_to")
 	private List<NamedApiResource<Type>> noDamageTo;
+	@JsonProperty("half_damage_to")
 	private List<NamedApiResource<Type>> halfDamageTo;
+	@JsonProperty("double_damage_to")
 	private List<NamedApiResource<Type>> doubleDamageTo;
+	@JsonProperty("no_damage_from")
 	private List<NamedApiResource<Type>> noDamageFrom;
+	@JsonProperty("half_damage_from")
 	private List<NamedApiResource<Type>> halfDamageFrom;
+	@JsonProperty("double_damage_from")
 	private List<NamedApiResource<Type>> doubleDamageFrom;
 
 	/**

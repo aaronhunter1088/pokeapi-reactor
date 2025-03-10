@@ -2,6 +2,7 @@ package skaro.pokeapi.resource.contesttype;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.berryflavor.BerryFlavor;
@@ -10,6 +11,7 @@ public class ContestType implements PokeApiResource {
 
 	private Integer id;
 	private String name;
+	@JsonProperty("berry_flavor")
 	private NamedApiResource<BerryFlavor> berryFlavor;
 	private List<ContestName> names;
 	

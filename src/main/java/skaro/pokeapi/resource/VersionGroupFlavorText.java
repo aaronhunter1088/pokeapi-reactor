@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.language.Language;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
@@ -9,6 +10,7 @@ public class VersionGroupFlavorText {
 
 	private String text;
 	private NamedApiResource<Language> language;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**

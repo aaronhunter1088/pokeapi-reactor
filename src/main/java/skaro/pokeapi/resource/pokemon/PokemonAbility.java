@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemon;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.ability.Ability;
 
@@ -7,6 +8,7 @@ import java.util.Objects;
 
 public class PokemonAbility {
 
+	@JsonProperty("is_hidden")
 	private Boolean isHidden;
 	private Integer slot;
 	private NamedApiResource<Ability> ability;

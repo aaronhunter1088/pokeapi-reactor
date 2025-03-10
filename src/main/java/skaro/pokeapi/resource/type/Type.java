@@ -11,6 +11,8 @@ import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.generation.Generation;
 import skaro.pokeapi.resource.move.Move;
 import skaro.pokeapi.resource.movedamageclass.MoveDamageClass;
+import skaro.pokeapi.resource.pokemon.GenerationSprites;
+import skaro.pokeapi.resource.pokemon.PokemonSprites;
 import skaro.pokeapi.utils.locale.Localizable;
 
 public class Type implements PokeApiResource, Localizable {
@@ -29,6 +31,8 @@ public class Type implements PokeApiResource, Localizable {
 	private List<Name> names;
 	private List<TypePokemon> pokemon;
 	private List<NamedApiResource<Move>> moves;
+	@JsonProperty("sprites")
+	private GenerationSprites generationSprites;
 
 	/** Gets the id for this Type */
 	public Integer getId() {
@@ -120,20 +124,39 @@ public class Type implements PokeApiResource, Localizable {
 		this.moves = moves;
 	}
 
+	/**
+	 * Gets the sprites for this Type
+	 * @return the sprites for this Type
+	  */
+	public GenerationSprites getGenerationSprites() {
+		return null;
+	}
+	/**
+	 * Sets the sprites for this Type
+	 * @param generationSprites the sprites for this Type
+	 */
+	public void setGenerationSprites(GenerationSprites generationSprites) {
+		this.generationSprites = generationSprites;
+	}
+
 	/** Returns whether the Type is equal to another object */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Type type)) return false;
-        return Objects.equals(getId(), type.getId()) && Objects.equals(getName(), type.getName()) && Objects.equals(getDamageRelations(), type.getDamageRelations()) && Objects.equals(getPastDamageRelations(), type.getPastDamageRelations()) && Objects.equals(getGameIndices(), type.getGameIndices()) && Objects.equals(getGeneration(), type.getGeneration()) && Objects.equals(getMoveDamageClass(), type.getMoveDamageClass()) && Objects.equals(getNames(), type.getNames()) && Objects.equals(getPokemon(), type.getPokemon()) && Objects.equals(getMoves(), type.getMoves());
+        return Objects.equals(getId(), type.getId()) && Objects.equals(getName(), type.getName()) && Objects.equals(getDamageRelations(), type.getDamageRelations()) && Objects.equals(getPastDamageRelations(), type.getPastDamageRelations()) && Objects.equals(getGameIndices(), type.getGameIndices()) && Objects.equals(getGeneration(), type.getGeneration()) && Objects.equals(getMoveDamageClass(), type.getMoveDamageClass()) && Objects.equals(getNames(), type.getNames()) && Objects.equals(getPokemon(), type.getPokemon()) && Objects.equals(getMoves(), type.getMoves()) && Objects.equals(getGenerationSprites(), type.getGenerationSprites());
 	}
 
-	/** Returns the hash code of the Type */
+	/**
+	 * Returns the hash code of the Type
+	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), getDamageRelations(), getPastDamageRelations(), getGameIndices(), getGeneration(), getMoveDamageClass(), getNames(), getPokemon(), getMoves());
+		return Objects.hash(getId(), getName(), getDamageRelations(), getPastDamageRelations(), getGameIndices(), getGeneration(), getMoveDamageClass(), getNames(), getPokemon(), getMoves(), getGenerationSprites());
 	}
 
-	/** Returns the string representation of the Type */
+	/**
+	 * Returns the string representation of the Type
+	 */
 	@Override
 	public String toString() {
 		return "Type{" +
@@ -147,6 +170,7 @@ public class Type implements PokeApiResource, Localizable {
 				", names=" + names +
 				", pokemon=" + pokemon +
 				", moves=" + moves +
+				", generationSprites=" + generationSprites +
 				'}';
 	}
 }

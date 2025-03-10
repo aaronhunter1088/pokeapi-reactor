@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemon;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.movelearnmethod.MoveLearnMethod;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
@@ -8,8 +9,11 @@ import java.util.Objects;
 
 public class PokemonMoveVersion {
 
+	@JsonProperty("move_learn_method")
 	private NamedApiResource<MoveLearnMethod> moveLearnMethod;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
+	@JsonProperty("level_learned_at")
 	private Integer levelLearnedAt;
 
 	/**

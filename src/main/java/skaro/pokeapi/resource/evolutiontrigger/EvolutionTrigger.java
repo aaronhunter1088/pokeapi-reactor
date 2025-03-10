@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.evolutiontrigger;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
@@ -14,6 +15,7 @@ public class EvolutionTrigger implements PokeApiResource, Localizable {
 	private Integer id;
 	private String name;
 	private List<Name> names;
+	@JsonProperty("pokemon_species")
 	private List<NamedApiResource<PokemonSpecies>> pokemonSpecies;
 
 	/**

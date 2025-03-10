@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.type;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.generation.Generation;
 
@@ -8,6 +9,7 @@ import java.util.Objects;
 public class TypeRelationsPast {
     
     private NamedApiResource<Generation> generation;
+    @JsonProperty("damage_relations")
     private TypeRelations damageRelations;
 
     /**

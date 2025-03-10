@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemonspecies;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.pokedex.Pokedex;
 
@@ -7,6 +8,7 @@ import java.util.Objects;
 
 public class PokemonSpeciesDexEntry {
 
+	@JsonProperty("entry_number")
 	private Integer entryNumber;
 	private NamedApiResource<Pokedex> pokedex;
 

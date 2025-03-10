@@ -3,12 +3,15 @@ package skaro.pokeapi.resource.locationarea;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.encountermethod.EncounterMethod;
 
 public class EncounterMethodRate {
 
+	@JsonProperty("encounter_method")
 	private NamedApiResource<EncounterMethod> encounterMethod;
+	@JsonProperty("version_details")
 	private List<EncounterVersionDetails> versionDetails;
 
 	/**

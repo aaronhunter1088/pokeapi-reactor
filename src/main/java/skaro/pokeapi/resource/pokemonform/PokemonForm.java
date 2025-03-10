@@ -3,6 +3,8 @@ package skaro.pokeapi.resource.pokemonform;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
@@ -10,19 +12,28 @@ import skaro.pokeapi.resource.pokemon.Pokemon;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 import skaro.pokeapi.utils.locale.Localizable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PokemonForm implements PokeApiResource, Localizable {
 
 	private Integer id;
 	private String name;
 	private Integer order;
+	@JsonProperty("is_mega")
+	private Boolean isMega;
+	@JsonProperty("form_order")
 	private Integer formOrder;
+	@JsonProperty("is_default")
 	private Boolean isDefault;
+	@JsonProperty("is_battle_only")
 	private Boolean isBattleOnly;
+	@JsonProperty("form_name")
 	private String formName;
 	private NamedApiResource<Pokemon> pokemon;
 	private PokemonFormSprites sprites;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 	private List<Name> names;
+	@JsonProperty("form_names")
 	private List<Name> formNames;
 
 	/**
@@ -72,6 +83,21 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	 */
 	public void setOrder(Integer order) {
 		this.order = order;
+	}
+
+	/**
+	 * Get whether or not this form is a mega form
+	 * @return isMega
+	 */
+	public Boolean getMega() {
+		return isMega;
+	}
+	/**
+	 * Set whether or not this form is a mega form
+	 * @param mega isMega
+	 */
+	public void setMega(Boolean mega) {
+		isMega = mega;
 	}
 
 	/**
@@ -223,7 +249,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonForm that)) return false;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getOrder(), that.getOrder()) && Objects.equals(getFormOrder(), that.getFormOrder()) && Objects.equals(isDefault(), that.isDefault()) && Objects.equals(isBattleOnly(), that.isBattleOnly()) && Objects.equals(getFormName(), that.getFormName()) && Objects.equals(getPokemon(), that.getPokemon()) && Objects.equals(getSprites(), that.getSprites()) && Objects.equals(getVersionGroup(), that.getVersionGroup()) && Objects.equals(getNames(), that.getNames()) && Objects.equals(getFormNames(), that.getFormNames());
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getOrder(), that.getOrder()) && Objects.equals(isMega, that.isMega) && Objects.equals(getFormOrder(), that.getFormOrder()) && Objects.equals(isDefault, that.isDefault) && Objects.equals(isBattleOnly, that.isBattleOnly) && Objects.equals(getFormName(), that.getFormName()) && Objects.equals(getPokemon(), that.getPokemon()) && Objects.equals(getSprites(), that.getSprites()) && Objects.equals(getVersionGroup(), that.getVersionGroup()) && Objects.equals(getNames(), that.getNames()) && Objects.equals(getFormNames(), that.getFormNames());
 	}
 
 	/**
@@ -232,7 +258,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), getOrder(), getFormOrder(), isDefault(), isBattleOnly(), getFormName(), getPokemon(), getSprites(), getVersionGroup(), getNames(), getFormNames());
+		return Objects.hash(getId(), getName(), getOrder(), isMega, getFormOrder(), isDefault, isBattleOnly, getFormName(), getPokemon(), getSprites(), getVersionGroup(), getNames(), getFormNames());
 	}
 
 	/**
@@ -245,6 +271,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 				"id=" + id +
 				", name='" + name + '\'' +
 				", order=" + order +
+				", isMega=" + isMega +
 				", formOrder=" + formOrder +
 				", isDefault=" + isDefault +
 				", isBattleOnly=" + isBattleOnly +

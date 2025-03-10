@@ -3,12 +3,15 @@ package skaro.pokeapi.resource.generation;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.util.Named;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.ability.Ability;
 import skaro.pokeapi.resource.move.Move;
 import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
+import skaro.pokeapi.resource.region.Region;
 import skaro.pokeapi.resource.type.Type;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 import skaro.pokeapi.utils.locale.Localizable;
@@ -20,9 +23,13 @@ public class Generation implements PokeApiResource, Localizable {
 	private List<NamedApiResource<Ability>> abilities;
 	private List<Name> names;
 	private List<NamedApiResource<Move>> moves;
+	@JsonProperty("pokemon_species")
 	private List<NamedApiResource<PokemonSpecies>> pokemonSpecies;
 	private List<NamedApiResource<Type>> types;
+	@JsonProperty("version_groups")
 	private List<NamedApiResource<VersionGroup>> versionGroups;
+	@JsonProperty("main_region")
+	private NamedApiResource<Region> mainRegion;
 
 	/**
 	 * Get the id
@@ -145,6 +152,21 @@ public class Generation implements PokeApiResource, Localizable {
 	}
 
 	/**
+	 * Get the main region travelled in this generation
+	 * @return the {@link NamedApiResource<Region>} object
+	 */
+	public NamedApiResource<Region> getMainRegion() {
+		return mainRegion;
+	}
+	/**
+	 * Set the main region travelled in this generation
+	 * @param mainRegion the {@link NamedApiResource<Region>} object
+	 */
+	public void setMainRegion(NamedApiResource<Region> mainRegion) {
+		this.mainRegion = mainRegion;
+	}
+
+	/**
 	 * Checks whether the Generation is equal to another object
 	 * @param o the object
 	 * @return the name
@@ -152,7 +174,7 @@ public class Generation implements PokeApiResource, Localizable {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Generation that)) return false;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getAbilities(), that.getAbilities()) && Objects.equals(getNames(), that.getNames()) && Objects.equals(getMoves(), that.getMoves()) && Objects.equals(getPokemonSpecies(), that.getPokemonSpecies()) && Objects.equals(getTypes(), that.getTypes()) && Objects.equals(getVersionGroups(), that.getVersionGroups());
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getAbilities(), that.getAbilities()) && Objects.equals(getNames(), that.getNames()) && Objects.equals(getMoves(), that.getMoves()) && Objects.equals(getPokemonSpecies(), that.getPokemonSpecies()) && Objects.equals(getTypes(), that.getTypes()) && Objects.equals(getVersionGroups(), that.getVersionGroups()) && Objects.equals(getMainRegion(), that.getMainRegion());
 	}
 
 	/**
@@ -161,7 +183,7 @@ public class Generation implements PokeApiResource, Localizable {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), getAbilities(), getNames(), getMoves(), getPokemonSpecies(), getTypes(), getVersionGroups());
+		return Objects.hash(getId(), getName(), getAbilities(), getNames(), getMoves(), getPokemonSpecies(), getTypes(), getVersionGroups(), getMainRegion());
 	}
 
 	/**
@@ -179,6 +201,7 @@ public class Generation implements PokeApiResource, Localizable {
 				", pokemonSpecies=" + pokemonSpecies +
 				", types=" + types +
 				", versionGroups=" + versionGroups +
+				", mainRegion=" + mainRegion +
 				'}';
 	}
 }

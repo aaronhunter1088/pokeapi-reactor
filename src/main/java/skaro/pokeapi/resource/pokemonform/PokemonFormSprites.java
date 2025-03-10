@@ -1,12 +1,20 @@
 package skaro.pokeapi.resource.pokemonform;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PokemonFormSprites {
 
+	@JsonProperty("front_default")
 	private String frontDefault;
+	@JsonProperty("front_shiny")
 	private String frontShiny;
+	@JsonProperty("back_default")
 	private String backDefault;
+	@JsonProperty("back_shiny")
 	private String backShiny;
 
 	/**

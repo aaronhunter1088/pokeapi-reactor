@@ -3,13 +3,16 @@ package skaro.pokeapi.resource.ability;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Effect;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
 public class AbilityEffectChange {
 
+	@JsonProperty("effect_entries")
 	private List<Effect> effectEntries;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**
@@ -29,27 +32,28 @@ public class AbilityEffectChange {
 	}
 
 	/**
-	 * Get The version group in which the
+	 * Get the version group in which the
 	 * previous effect of this ability originated
-	 * @return the version group
+	 * @return the {@link NamedApiResource<VersionGroup>} versionGroup
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 
 	/**
-	 * Set The version group in which the
+	 * Set the version group in which the
 	 * previous effect of this ability originated
-	 * @param versionGroup the version group
+	 * @param versionGroup the {@link NamedApiResource<VersionGroup>} versionGroup
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
 
 	/**
-	 * Checks whether the object is equal to this ability effect change
+	 * Returns whether the given object o is
+	 * equal to this instance of AbilityEffectChange
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -58,7 +62,7 @@ public class AbilityEffectChange {
 	}
 
 	/**
-	 * Generate a hash code for this ability effect change
+	 * Returns the hash code of the AbilityEffectChange
 	 * @return the hash code
 	 */
 	@Override
@@ -67,8 +71,8 @@ public class AbilityEffectChange {
 	}
 
 	/**
-	 * Get a string representation of this ability effect change
-	 * @return a string representation of the object
+	 * Returns a string representation of the AbilityEffectChange
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

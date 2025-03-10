@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemonspecies;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 
@@ -7,6 +8,7 @@ import java.util.Objects;
 
 public class PokemonSpeciesVariety {
 
+	@JsonProperty("is_default")
 	private Boolean isDefault;
 	private NamedApiResource<Pokemon> pokemon;
 

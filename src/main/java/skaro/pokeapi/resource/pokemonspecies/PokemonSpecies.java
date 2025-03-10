@@ -13,6 +13,7 @@ import skaro.pokeapi.resource.egggroup.EggGroup;
 import skaro.pokeapi.resource.evolutionchain.EvolutionChain;
 import skaro.pokeapi.resource.generation.Generation;
 import skaro.pokeapi.resource.growthrate.GrowthRate;
+import skaro.pokeapi.resource.palparkarea.PalParkEncounterSpecies;
 import skaro.pokeapi.resource.pokemoncolor.PokemonColor;
 import skaro.pokeapi.resource.pokemonhabitat.PokemonHabitat;
 import skaro.pokeapi.resource.pokemonshape.PokemonShape;
@@ -62,6 +63,8 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	private List<Description> formDescriptions;
 	private List<Genus> genera;
 	private List<PokemonSpeciesVariety> varieties;
+	@JsonProperty("pal_park_encounters")
+	private List<PalParkEncounterSpecies> palParkEncounters;
 
 	/** Gets the id of the PokemonSpecies */
 	@Override

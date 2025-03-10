@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemonshape;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.language.Language;
 
@@ -7,6 +8,7 @@ import java.util.Objects;
 
 public class AwesomeName {
 
+	@JsonProperty("awesome_name")
 	private String awesomeName;
 	private NamedApiResource<Language> language;
 

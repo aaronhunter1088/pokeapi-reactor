@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemon;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.nature.Nature;
 
@@ -7,6 +8,7 @@ import java.util.Objects;
 
 public class NaturePokeathlonStatAffect {
 
+    @JsonProperty("max_change")
     private Integer maxChange;
     private NamedApiResource<Nature> nature;
 

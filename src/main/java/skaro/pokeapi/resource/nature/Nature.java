@@ -3,6 +3,8 @@ package skaro.pokeapi.resource.nature;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
@@ -10,13 +12,18 @@ import skaro.pokeapi.resource.berryflavor.BerryFlavor;
 import skaro.pokeapi.resource.stat.Stat;
 import skaro.pokeapi.utils.locale.Localizable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Nature implements PokeApiResource, Localizable {
 
 	private Integer id;
 	private String name;
+	@JsonProperty("decreased_stat")
 	private NamedApiResource<Stat> decreasedStat;
+	@JsonProperty("increased_stat")
 	private NamedApiResource<Stat> increasedStat;
+	@JsonProperty("hates_flavor")
 	private NamedApiResource<BerryFlavor> hatesFlavor;
+	@JsonProperty("likes_flavor")
 	private NamedApiResource<BerryFlavor> likesFlavor;
 	private List<Name> names;
 

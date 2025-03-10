@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemon;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.stat.Stat;
 
@@ -9,6 +10,7 @@ public class PokemonStat {
 
 	private NamedApiResource<Stat> stat;
 	private Integer effort;
+	@JsonProperty("base_stat")
 	private Integer baseStat;
 
 	/**

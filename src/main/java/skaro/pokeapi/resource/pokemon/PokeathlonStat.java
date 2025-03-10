@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.pokemon;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.utils.locale.Localizable;
@@ -12,6 +13,7 @@ public class PokeathlonStat implements PokeApiResource, Localizable {
     private Integer id;
     private String name;
     private List<Name> names;
+    @JsonProperty("affecting_natures")
     private NaturePokeathlonStatAffectSets affectingNatures;
 
     /**

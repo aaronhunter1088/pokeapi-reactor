@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.pokemon;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.VersionGameIndex;
@@ -13,21 +14,31 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 
 	private Integer id;
 	private String name;
+	@JsonProperty("base_experience")
 	private Integer baseExperience;
+	@JsonProperty("cries")
+	private PokemonCries pokemonCries;
 	private Integer height;
+	@JsonProperty("is_default")
 	private Boolean isDefault;
 	private Integer order;
 	private Integer weight;
 	private List<PokemonAbility> abilities;
+	@JsonProperty("past_abilities")
+	private List<PokemonAbility> pastAbilities;
 	private List<NamedApiResource<PokemonForm>> forms;
+	@JsonProperty("game_indices")
 	private List<VersionGameIndex> gameIndices;
+	@JsonProperty("held_items")
 	private List<PokemonHeldItem> heldItems;
+	@JsonProperty("location_area_encounters")
 	private String locationAreaEncounters;
 	private List<PokemonMove> moves;
 	private PokemonSprites sprites;
 	private NamedApiResource<PokemonSpecies> species;
 	private List<PokemonStat> stats;
 	private List<PokemonType> types;
+	@JsonProperty("past_types")
 	private List<PokemonTypePast> pastTypes;
 
 	/** Returns the id of the Pokemon */
@@ -57,6 +68,21 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	/** Sets the baseExperience of the Pokemon */
 	public void setBaseExperience(Integer baseExperience) {
 		this.baseExperience = baseExperience;
+	}
+
+	/**
+	 * Get the cries of the Pokemon
+	 * @return the cries
+	 */
+	public PokemonCries getPokemonCries() {
+		return pokemonCries;
+	}
+	/**
+	 * Set the cries of the Pokemon
+	 * @param pokemonCries the cries
+	 */
+	public void setPokemonCries(PokemonCries pokemonCries) {
+		this.pokemonCries = pokemonCries;
 	}
 
 	/** Returns the height of the Pokemon */
@@ -102,6 +128,15 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	/** Sets the abilities of the Pokemon */
 	public void setAbilities(List<PokemonAbility> abilities) {
 		this.abilities = abilities;
+	}
+
+	/** Returns the past abilities of the Pokemon */
+	public List<PokemonAbility> getPastAbilities() {
+		return pastAbilities;
+	}
+	/** Sets the past abilities of the Pokemon */
+	public void setPastAbilities(List<PokemonAbility> pastAbilities) {
+		this.pastAbilities = pastAbilities;
 	}
 
 	/** Returns the forms of the Pokemon */

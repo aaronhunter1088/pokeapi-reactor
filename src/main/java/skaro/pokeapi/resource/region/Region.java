@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.region;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
@@ -18,8 +19,10 @@ public class Region implements PokeApiResource, Localizable {
 	private List<NamedApiResource<Location>> locations;
 	private String name;
 	private List<Name> names;
+	@JsonProperty("main_generation")
 	private NamedApiResource<Generation> mainGeneration;
 	private List<NamedApiResource<Pokedex>> pokedexes;
+	@JsonProperty("version_groups")
 	private List<NamedApiResource<VersionGroup>> versionGroups;
 
 	/**

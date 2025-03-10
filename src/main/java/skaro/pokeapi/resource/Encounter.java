@@ -3,6 +3,7 @@ package skaro.pokeapi.resource;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.encounterconditionvalue.EncounterConditionValue;
 import skaro.pokeapi.resource.encountermethod.EncounterMethod;
 
@@ -12,8 +13,11 @@ import skaro.pokeapi.resource.encountermethod.EncounterMethod;
  */
 public class Encounter {
 
+	@JsonProperty("min_level")
 	private Integer minLevel;
+	@JsonProperty("max_level")
 	private Integer maxLevel;
+	@JsonProperty("condition_values")
 	private List<NamedApiResource<EncounterConditionValue>> conditionValues;
 	private Integer chance;
 	private NamedApiResource<EncounterMethod> method;

@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.berryflavor;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
@@ -14,6 +15,7 @@ public class BerryFlavor implements PokeApiResource, Localizable {
 	private Integer id;
 	private String name;
 	private List<FlavorBerryMap> berries;
+	@JsonProperty("contest_type")
 	private NamedApiResource<ContestType> contestType;
 	private List<Name> names;
 

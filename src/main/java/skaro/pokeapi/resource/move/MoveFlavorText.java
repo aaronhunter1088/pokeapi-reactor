@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.move;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.language.Language;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
@@ -9,8 +10,10 @@ import java.util.Objects;
 
 public class MoveFlavorText {
 
+	@JsonProperty("flavor_text")
 	private String flavorText;
 	private NamedApiResource<Language> language;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**

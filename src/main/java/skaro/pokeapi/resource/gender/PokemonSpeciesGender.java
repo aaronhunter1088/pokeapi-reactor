@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.gender;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 
@@ -8,6 +9,7 @@ import java.util.Objects;
 public class PokemonSpeciesGender {
 
 	private Integer rate;
+	@JsonProperty("pokemon_species")
 	private NamedApiResource<PokemonSpecies> pokemonSpecies;
 
 	/**

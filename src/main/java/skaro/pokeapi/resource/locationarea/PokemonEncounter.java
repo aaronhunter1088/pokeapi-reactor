@@ -10,16 +10,24 @@ import skaro.pokeapi.resource.pokemon.Pokemon;
 
 public class PokemonEncounter {
 
-	private NamedApiResource<LocationArea> locationArea;
+	@JsonProperty("pokemon")
+	private NamedApiResource<Pokemon> pokemon;
+	@JsonProperty("version_details")
 	private List<VersionEncounterDetail> versionDetails;
 
-	/** Gets the location area the encounter can occur in */
-	public NamedApiResource<LocationArea> getLocationArea() {
-		return locationArea;
+	/**
+	 * Gets the Pokemon being encountered
+	 * @return the {@link NamedApiResource<Pokemon>} Pokemon
+	 */
+	public NamedApiResource<Pokemon> getPokemon() {
+		return pokemon;
 	}
-	/** Sets the location area the encounter can occur in */
-	public void setLocationArea(NamedApiResource<LocationArea> locationArea) {
-		this.locationArea = locationArea;
+	/**
+	 * Sets the Pokemon being encountered
+	 * @param pokemon the {@link NamedApiResource<Pokemon>} Pokemon
+	 */
+	public void setPokemon(NamedApiResource<Pokemon> pokemon) {
+		this.pokemon = pokemon;
 	}
 
 	/** Gets the details of the encounter */
@@ -39,7 +47,7 @@ public class PokemonEncounter {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonEncounter that)) return false;
-        return Objects.equals(getLocationArea(), that.getLocationArea()) && Objects.equals(getVersionDetails(), that.getVersionDetails());
+        return Objects.equals(getPokemon(), that.getPokemon()) && Objects.equals(getVersionDetails(), that.getVersionDetails());
 	}
 
 	/**
@@ -48,7 +56,7 @@ public class PokemonEncounter {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getLocationArea(), getVersionDetails());
+		return Objects.hash(getPokemon(), getVersionDetails());
 	}
 
 	/**
@@ -58,7 +66,7 @@ public class PokemonEncounter {
 	@Override
 	public String toString() {
 		return "PokemonEncounter{" +
-				"locationArea=" + locationArea +
+				"pokemon=" + pokemon +
 				", versionDetails=" + versionDetails +
 				'}';
 	}

@@ -15,6 +15,7 @@ import skaro.pokeapi.resource.contesttype.ContestType;
 import skaro.pokeapi.resource.generation.Generation;
 import skaro.pokeapi.resource.movedamageclass.MoveDamageClass;
 import skaro.pokeapi.resource.movetarget.MoveTarget;
+import skaro.pokeapi.resource.pokemon.Pokemon;
 import skaro.pokeapi.resource.supercontesteffect.SuperContestEffect;
 import skaro.pokeapi.resource.type.Type;
 import skaro.pokeapi.utils.locale.Localizable;
@@ -56,6 +57,8 @@ public class Move implements PokeApiResource, Localizable {
 	private NamedApiResource<SuperContestEffect> superContestEffect;
 	private NamedApiResource<MoveTarget> target;
 	private NamedApiResource<Type> type;
+	@JsonProperty("learned_by_pokemon")
+	private List<NamedApiResource<Pokemon>> learnedByPokemon;
 
 	/** Gets the id of the Move */
 	public Integer getId() {
@@ -262,6 +265,21 @@ public class Move implements PokeApiResource, Localizable {
 	/** Sets the type of the Move */
 	public void setType(NamedApiResource<Type> type) {
 		this.type = type;
+	}
+
+	/**
+	 * Get a list of Pokemon that can learn moves of this form
+	 * @return the learned by Pokemon
+	 */
+	public List<NamedApiResource<Pokemon>> getLearnedByPokemon() {
+		return learnedByPokemon;
+	}
+	/**
+	 * Set a list of Pokemon that can learn moves of this form
+	 * @param learnedByPokemon the learned by Pokemon
+	 */
+	public void setLearnedByPokemon(List<NamedApiResource<Pokemon>> learnedByPokemon) {
+		this.learnedByPokemon = learnedByPokemon;
 	}
 
 	/** Returns whether the Move is equal to another object */

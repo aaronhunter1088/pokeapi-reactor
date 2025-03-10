@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.language.Language;
 
 import java.util.Objects;
@@ -7,6 +8,7 @@ import java.util.Objects;
 public class VerboseEffect {
 
 	private String effect;
+	@JsonProperty("short_effect")
 	private String shortEffect;
 	private NamedApiResource<Language> language;
 

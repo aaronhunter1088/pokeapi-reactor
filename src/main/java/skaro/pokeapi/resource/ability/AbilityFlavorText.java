@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.ability;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.language.Language;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
@@ -8,20 +9,22 @@ import java.util.Objects;
 
 public class AbilityFlavorText {
 
+	@JsonProperty("flavor_text")
 	private String flavorText;
 	private NamedApiResource<Language> language;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**
 	 * Get the localized name for an API resource in a specific language
-	 * @return the name
+	 * @return the flavorText
 	 */
 	public String getFlavorText() {
 		return flavorText;
 	}
 	/**
 	 * Set the localized name for an API resource in a specific language
-	 * @param flavorText the name
+	 * @param flavorText the flavorText
 	 */
 	public void setFlavorText(String flavorText) {
 		this.flavorText = flavorText;
@@ -29,14 +32,14 @@ public class AbilityFlavorText {
 
 	/**
 	 * Get the language this text resource is in
-	 * @return
+	 * @return language the {@link NamedApiResource<Language>} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
 	 * Set the language this text resource is in
-	 * @param language the language
+	 * @param language the {@link NamedApiResource<Language>} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
@@ -44,23 +47,24 @@ public class AbilityFlavorText {
 
 	/**
 	 * Get the version group that uses this flavor text
-	 * @return the version group
+	 * @return the {@link NamedApiResource<VersionGroup>} versionGroup
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
 	 * Set the version group that uses this flavor text
-	 * @param versionGroup the version group
+	 * @param versionGroup the {@link NamedApiResource<VersionGroup>} versionGroup
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
 
 	/**
-	 * Checks whether the object is equal to this ability flavor text
+	 * Returns whether the given object o is
+	 * equal to this instance of AbilityFlavorText
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -69,7 +73,7 @@ public class AbilityFlavorText {
 	}
 
 	/**
-	 * Returns a hash code value for the object
+	 * Returns the hash code of the AbilityFlavorText
 	 * @return the hash code
 	 */
 	@Override
@@ -78,8 +82,8 @@ public class AbilityFlavorText {
 	}
 
 	/**
-	 * Returns the AbilityFlavorText object in the form of a string
-	 * @return a string representation of the object
+	 * Returns a string representation of the AbilityFlavorText
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

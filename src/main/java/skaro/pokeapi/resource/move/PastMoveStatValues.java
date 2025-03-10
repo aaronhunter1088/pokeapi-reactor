@@ -3,6 +3,7 @@ package skaro.pokeapi.resource.move;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.VerboseEffect;
 import skaro.pokeapi.resource.type.Type;
@@ -11,11 +12,14 @@ import skaro.pokeapi.resource.versiongroup.VersionGroup;
 public class PastMoveStatValues {
 
 	private Integer accuracy;
+	@JsonProperty("effect_chance")
 	private Integer effectChance;
 	private Integer power;
 	private Integer pp;
+	@JsonProperty("effect_entries")
 	private List<VerboseEffect> effectEntries;
 	private NamedApiResource<Type> type;
+	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**
