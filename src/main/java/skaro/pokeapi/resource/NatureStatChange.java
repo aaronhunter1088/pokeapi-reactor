@@ -13,6 +13,36 @@ public class NatureStatChange {
     private NamedApiResource<Stat> pokeathlonStat;
 
     /**
+     * Returns the maximum change in the stat
+     * @return the maxChange
+     */
+    public Integer getMaxChange() {
+        return maxChange;
+    }
+    /**
+     * Sets the maximum change in the stat
+     * @param maxChange the maxChange
+     */
+    public void setMaxChange(Integer maxChange) {
+        this.maxChange = maxChange;
+    }
+
+    /**
+     * Returns the stat that is affected by the nature
+     * @return the pokeathlonStat
+     */
+    public NamedApiResource<Stat> getPokeathlonStat() {
+        return pokeathlonStat;
+    }
+    /**
+     * Sets the stat that is affected by the nature
+     * @param pokeathlonStat the pokeathlonStat
+     */
+    public void setPokeathlonStat(NamedApiResource<Stat> pokeathlonStat) {
+        this.pokeathlonStat = pokeathlonStat;
+    }
+
+    /**
      * Returns whether the given object o is
      * equal to this instance of NatureStatChange
      * @param o the object to compare
