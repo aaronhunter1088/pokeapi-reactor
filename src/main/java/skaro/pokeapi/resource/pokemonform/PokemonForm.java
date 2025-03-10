@@ -9,10 +9,10 @@ import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.pokemon.Pokemon;
+import skaro.pokeapi.resource.pokemon.PokemonType;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 import skaro.pokeapi.utils.locale.Localizable;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class PokemonForm implements PokeApiResource, Localizable {
 
 	private Integer id;
@@ -35,6 +35,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	private List<Name> names;
 	@JsonProperty("form_names")
 	private List<Name> formNames;
+	private List<PokemonType> types;
 
 	/**
 	 * Get the id
@@ -240,6 +241,23 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	public void setFormNames(List<Name> formNames) {
 		this.formNames = formNames;
 	}
+
+	/**
+	 * Get the types of this Pokémon form
+	 * @return the list of types
+	 */
+	public List<PokemonType> getTypes() {
+		return types;
+	}
+	/**
+	 * Set the types of this Pokémon form
+	 * @param list of {@link PokemonType} types
+	 */
+	public void setTypes(List<PokemonType> types) {
+		this.types = types;
+	}
+
+
 
 	/**
 	 * This method is used to compare two objects of the same type based on their attributes

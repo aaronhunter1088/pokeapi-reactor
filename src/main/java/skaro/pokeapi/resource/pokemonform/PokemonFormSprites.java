@@ -1,11 +1,9 @@
 package skaro.pokeapi.resource.pokemonform;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class PokemonFormSprites {
 
 	@JsonProperty("front_default")
@@ -16,6 +14,14 @@ public class PokemonFormSprites {
 	private String backDefault;
 	@JsonProperty("back_shiny")
 	private String backShiny;
+	@JsonProperty("back_female")
+	private String backFemale;
+	@JsonProperty("back_shiny_female")
+	private String backShinyFemale;
+	@JsonProperty("front_female")
+	private String frontFemale;
+	@JsonProperty("front_shiny_female")
+	private String frontShinyFemale;
 
 	/**
 	 * The default depiction of this Pokémon form from the front in battle
@@ -78,6 +84,74 @@ public class PokemonFormSprites {
 	}
 
 	/**
+	 * Get the back female depiction
+	 * of this Pokemon
+	 * @return the backFemale
+	 */
+	public String getBackFemale() {
+		return backFemale;
+	}
+	/**
+	 * Set the back female depiction
+	 * of this Pokemon
+	 * @param backFemale the backFemale to set
+	 */
+	public void setBackFemale(String backFemale) {
+		this.backFemale = backFemale;
+	}
+
+	/**
+	 * Get the back shiny female depiction
+	 * of this Pokemon
+	 * @return the backShinyFemale
+	 */
+	public String getBackShinyFemale() {
+		return backShinyFemale;
+	}
+	/**
+	 * Set the back shiny female depiction
+	 * of this Pokemon
+	 * @param backShinyFemale the backShinyFemale to set
+	 */
+	public void setBackShinyFemale(String backShinyFemale) {
+		this.backShinyFemale = backShinyFemale;
+	}
+
+	/**
+	 * Get the front female depiction
+	 * of this Pokemon
+	 * @return the frontFemale
+	 */
+	public String getFrontFemale() {
+		return frontFemale;
+	}
+	/**
+	 * Set the front female depiction
+	 * of this Pokemon
+	 * @param frontFemale the frontFemale to set
+	 */
+	public void setFrontFemale(String frontFemale) {
+		this.frontFemale = frontFemale;
+	}
+
+	/**
+	 * Get the front shiny female depiction
+	 * of this Pokemon
+	 * @return the frontShinyFemale
+	 */
+	public String getFrontShinyFemale() {
+		return frontShinyFemale;
+	}
+	/**
+	 * Set the front female depiction
+	 * of this Pokemon
+	 * @param frontShinyFemale the frontShinyFemale to set
+	 */
+	public void setFrontShinyFemale(String frontShinyFemale) {
+		this.frontShinyFemale = frontShinyFemale;
+	}
+
+	/**
 	 * Determines whether this PokemonFormSprites is equal to another object
 	 * @param o the object to compare
 	 * @return true if the objects are equal, false otherwise
@@ -85,7 +159,7 @@ public class PokemonFormSprites {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonFormSprites that)) return false;
-        return Objects.equals(getFrontDefault(), that.getFrontDefault()) && Objects.equals(getFrontShiny(), that.getFrontShiny()) && Objects.equals(getBackDefault(), that.getBackDefault()) && Objects.equals(getBackShiny(), that.getBackShiny());
+        return Objects.equals(getFrontDefault(), that.getFrontDefault()) && Objects.equals(getFrontShiny(), that.getFrontShiny()) && Objects.equals(getBackDefault(), that.getBackDefault()) && Objects.equals(getBackShiny(), that.getBackShiny()) && Objects.equals(getBackFemale(), that.getBackFemale()) && Objects.equals(getBackShinyFemale(), that.getBackShinyFemale()) && Objects.equals(getFrontFemale(), that.getFrontFemale()) && Objects.equals(getFrontShinyFemale(), that.getFrontShinyFemale());
 	}
 
 	/**
@@ -94,7 +168,7 @@ public class PokemonFormSprites {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getFrontDefault(), getFrontShiny(), getBackDefault(), getBackShiny());
+		return Objects.hash(getFrontDefault(), getFrontShiny(), getBackDefault(), getBackShiny(), getBackFemale(), getBackShinyFemale(), getFrontFemale(), getFrontShinyFemale());
 	}
 
 	/**
@@ -108,6 +182,10 @@ public class PokemonFormSprites {
 				", frontShiny='" + frontShiny + '\'' +
 				", backDefault='" + backDefault + '\'' +
 				", backShiny='" + backShiny + '\'' +
+				", backFemale='" + backFemale + '\'' +
+				", backShinyFemale='" + backShinyFemale + '\'' +
+				", frontFemale='" + frontFemale + '\'' +
+				", frontShinyFemale='" + frontShinyFemale + '\'' +
 				'}';
 	}
 }
