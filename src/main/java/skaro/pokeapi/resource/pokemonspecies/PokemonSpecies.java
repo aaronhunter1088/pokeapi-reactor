@@ -304,6 +304,21 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	}
 
 	/**
+	 * Gets the palParkEncounters
+	 * @return the list of {@link PalParkEncounterSpecies}
+	 */
+	public List<PalParkEncounterSpecies> getPalParkEncounters() {
+		return palParkEncounters;
+	}
+	/**
+	 * Sets the palParkEncounters
+	 * @param palParkEncounters the list of {@link PalParkEncounterSpecies}
+	 */
+	public void setPalParkEncounters(List<PalParkEncounterSpecies> palParkEncounters) {
+		this.palParkEncounters = palParkEncounters;
+	}
+
+	/**
 	 * Returns true if the object is an instance
 	 * of PokemonSpecies and all of its fields are
 	 * equal to this PokemonSpecies' fields
@@ -311,34 +326,21 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonSpecies species)) return false;
-        return Objects.equals(getId(), species.getId()) && Objects.equals(getName(), species.getName()) &&
-			   Objects.equals(getOrder(), species.getOrder()) && Objects.equals(getGenderRate(), species.getGenderRate()) &&
-			   Objects.equals(getCaptureRate(), species.getCaptureRate()) && Objects.equals(getBaseHappiness(), species.getBaseHappiness()) &&
-			   Objects.equals(isBaby, species.isBaby) && Objects.equals(isLegendary, species.isLegendary) &&
-			   Objects.equals(isMythical, species.isMythical) && Objects.equals(getHatchCounter(), species.getHatchCounter()) &&
-			   Objects.equals(hasGenderDifferences(), species.hasGenderDifferences()) && Objects.equals(isFormsSwitchable(), species.isFormsSwitchable()) &&
-			   Objects.equals(getGrowthRate(), species.getGrowthRate()) && Objects.equals(getPokedexNumbers(), species.getPokedexNumbers()) &&
-			   Objects.equals(getEggGroups(), species.getEggGroups()) && Objects.equals(getColor(), species.getColor()) &&
-			   Objects.equals(getShape(), species.getShape()) && Objects.equals(getEvolvesFromSpecies(), species.getEvolvesFromSpecies()) &&
-			   Objects.equals(getEvolutionChain(), species.getEvolutionChain()) && Objects.equals(getHabitat(), species.getHabitat()) &&
-			   Objects.equals(getGeneration(), species.getGeneration()) && Objects.equals(getNames(), species.getNames()) &&
-			   Objects.equals(getFlavorTextEntries(), species.getFlavorTextEntries()) && Objects.equals(getFormDescriptions(), species.getFormDescriptions()) &&
-			   Objects.equals(getGenera(), species.getGenera()) && Objects.equals(getVarieties(), species.getVarieties());
+        return Objects.equals(getId(), species.getId()) && Objects.equals(getName(), species.getName()) && Objects.equals(getOrder(), species.getOrder()) && Objects.equals(getGenderRate(), species.getGenderRate()) && Objects.equals(getCaptureRate(), species.getCaptureRate()) && Objects.equals(getBaseHappiness(), species.getBaseHappiness()) && Objects.equals(isBaby, species.isBaby) && Objects.equals(isLegendary, species.isLegendary) && Objects.equals(isMythical, species.isMythical) && Objects.equals(getHatchCounter(), species.getHatchCounter()) && Objects.equals(hasGenderDifferences, species.hasGenderDifferences) && Objects.equals(formsSwitchable, species.formsSwitchable) && Objects.equals(getGrowthRate(), species.getGrowthRate()) && Objects.equals(getPokedexNumbers(), species.getPokedexNumbers()) && Objects.equals(getEggGroups(), species.getEggGroups()) && Objects.equals(getColor(), species.getColor()) && Objects.equals(getShape(), species.getShape()) && Objects.equals(getEvolvesFromSpecies(), species.getEvolvesFromSpecies()) && Objects.equals(getEvolutionChain(), species.getEvolutionChain()) && Objects.equals(getHabitat(), species.getHabitat()) && Objects.equals(getGeneration(), species.getGeneration()) && Objects.equals(getNames(), species.getNames()) && Objects.equals(getFlavorTextEntries(), species.getFlavorTextEntries()) && Objects.equals(getFormDescriptions(), species.getFormDescriptions()) && Objects.equals(getGenera(), species.getGenera()) && Objects.equals(getVarieties(), species.getVarieties()) && Objects.equals(getPalParkEncounters(), species.getPalParkEncounters());
 	}
 
-	/** Returns the hash code of the PokemonSpecies */
+	/**
+	 * Returns the hash code of the PokemonSpecies
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), getOrder(), getGenderRate(), getCaptureRate(),
-				getBaseHappiness(), isBaby, isLegendary, isMythical, getHatchCounter(),
-				hasGenderDifferences(), isFormsSwitchable(), getGrowthRate(), getPokedexNumbers(),
-				getEggGroups(), getColor(), getShape(), getEvolvesFromSpecies(), getEvolutionChain(),
-				getHabitat(), getGeneration(), getNames(), getFlavorTextEntries(), getFormDescriptions(),
-				getGenera(), getVarieties());
+		return Objects.hash(getId(), getName(), getOrder(), getGenderRate(), getCaptureRate(), getBaseHappiness(), isBaby, isLegendary, isMythical, getHatchCounter(), hasGenderDifferences, formsSwitchable, getGrowthRate(), getPokedexNumbers(), getEggGroups(), getColor(), getShape(), getEvolvesFromSpecies(), getEvolutionChain(), getHabitat(), getGeneration(), getNames(), getFlavorTextEntries(), getFormDescriptions(), getGenera(), getVarieties(), getPalParkEncounters());
 	}
 
 	/**
 	 * Returns a string representation of the PokemonSpecies
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {
@@ -369,6 +371,7 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 				", formDescriptions=" + formDescriptions +
 				", genera=" + genera +
 				", varieties=" + varieties +
+				", palParkEncounters=" + palParkEncounters +
 				'}';
 	}
 }

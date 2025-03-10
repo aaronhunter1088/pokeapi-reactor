@@ -14,7 +14,7 @@ public class PalParkEncounterSpecies {
     private Integer baseScore;
     private Integer rate;
     @JsonProperty("pokemon_species")
-    private NamedApiResource<PalParkArea> palParkArea;
+    private NamedApiResource<PokemonSpecies> pokemonSpecies;
 
     /**
      * Get the base score given to the player
@@ -43,12 +43,12 @@ public class PalParkEncounterSpecies {
      * Get the Pokémon species being encountered
      * @return the {@link NamedApiResource<PokemonSpecies>}
      */
-    public NamedApiResource<PalParkArea> getPalParkArea() { return palParkArea; }
+    public NamedApiResource<PokemonSpecies> getPokemonSpecies() { return pokemonSpecies; }
     /**
      * Set the Pokémon species being encountered
-     * @param palParkArea the {@link NamedApiResource<PokemonSpecies>}
+     * @param pokemonSpecies the {@link NamedApiResource<PokemonSpecies>}
      */
-    public void setPalParkArea(NamedApiResource<PalParkArea> palParkArea) { this.palParkArea = palParkArea; }
+    public void setPokemonSpecies(NamedApiResource<PokemonSpecies> pokemonSpecies) { this.pokemonSpecies = pokemonSpecies; }
 
     /**
      * Compares this Pokémon entry to another object for equality.
@@ -58,7 +58,7 @@ public class PalParkEncounterSpecies {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof PalParkEncounterSpecies that)) return false;
-        return Objects.equals(getBaseScore(), that.getBaseScore()) && Objects.equals(getRate(), that.getRate()) && Objects.equals(getPalParkArea(), that.getPalParkArea());
+        return Objects.equals(getBaseScore(), that.getBaseScore()) && Objects.equals(getRate(), that.getRate()) && Objects.equals(getPokemonSpecies(), that.getPokemonSpecies());
     }
 
     /**
@@ -67,7 +67,7 @@ public class PalParkEncounterSpecies {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getBaseScore(), getRate(), getPalParkArea());
+        return Objects.hash(getBaseScore(), getRate(), getPokemonSpecies());
     }
 
     /**
@@ -79,7 +79,7 @@ public class PalParkEncounterSpecies {
         return "PalParkEncounterSpecies{" +
                 "baseScore=" + baseScore +
                 ", rate=" + rate +
-                ", area=" + palParkArea +
+                ", area=" + pokemonSpecies +
                 '}';
     }
 }
