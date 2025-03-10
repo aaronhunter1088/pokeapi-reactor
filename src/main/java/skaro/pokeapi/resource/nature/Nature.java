@@ -3,7 +3,6 @@ package skaro.pokeapi.resource.nature;
 import java.util.List;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.*;
 import skaro.pokeapi.resource.berryflavor.BerryFlavor;
