@@ -16,12 +16,14 @@ public class MoveBattleStylePreference {
 
     /**
      * Get the high hp preference
+     * @return the high hp preference
      */
     public Integer getHighHpPreference() {
         return highHpPreference;
     }
     /**
      * Set the high hp preference
+     * @param highHpPreference the high hp preference
      */
     public void setHighHpPreference(Integer highHpPreference) {
         this.highHpPreference = highHpPreference;
@@ -29,12 +31,14 @@ public class MoveBattleStylePreference {
 
     /**
      * Get the low hp preference
+     * @return the low hp preference
      */
     public Integer getLowHpPreference() {
         return lowHpPreference;
     }
     /**
      * Set the low hp preference
+     * @param lowHpPreference the low hp preference
      */
     public void setLowHpPreference(Integer lowHpPreference) {
         this.lowHpPreference = lowHpPreference;
@@ -42,12 +46,14 @@ public class MoveBattleStylePreference {
 
     /**
      * Get the move battle style
+     * @return the move battle style
      */
     public NamedApiResource<MoveBattleStyle> getMoveBattleStyle() {
         return moveBattleStyle;
     }
     /**
      * Set the move battle style
+     * @param moveBattleStyle the move battle style
      */
     public void setMoveBattleStyle(NamedApiResource<MoveBattleStyle> moveBattleStyle) {
         this.moveBattleStyle = moveBattleStyle;
