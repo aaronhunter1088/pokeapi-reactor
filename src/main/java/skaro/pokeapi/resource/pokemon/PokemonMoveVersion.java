@@ -15,6 +15,7 @@ public class PokemonMoveVersion {
 	private NamedApiResource<VersionGroup> versionGroup;
 	@JsonProperty("level_learned_at")
 	private Integer levelLearnedAt;
+	private Integer order;
 
 	/**
 	 * Get the method by which the move is learned
@@ -62,6 +63,21 @@ public class PokemonMoveVersion {
 	}
 
 	/**
+	 * Get the order in which the move is learned
+	 * @return the order in which the move is learned
+	 */
+	public Integer getOrder() {
+		return order;
+	}
+	/**
+	 * Set the order in which the move is learned
+	 * @param order the order in which the move is learned
+	 */
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
+
+	/**
 	 * Check if this PokemonMoveVersion is equal to another object
 	 * @param o the object to compare
 	 * @return true if the objects are equal, false otherwise
@@ -69,7 +85,7 @@ public class PokemonMoveVersion {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonMoveVersion that)) return false;
-        return Objects.equals(getMoveLearnMethod(), that.getMoveLearnMethod()) && Objects.equals(getVersionGroup(), that.getVersionGroup()) && Objects.equals(getLevelLearnedAt(), that.getLevelLearnedAt());
+        return Objects.equals(getMoveLearnMethod(), that.getMoveLearnMethod()) && Objects.equals(getVersionGroup(), that.getVersionGroup()) && Objects.equals(getLevelLearnedAt(), that.getLevelLearnedAt()) && Objects.equals(getOrder(), that.getOrder());
 	}
 
 	/**
@@ -78,7 +94,7 @@ public class PokemonMoveVersion {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getMoveLearnMethod(), getVersionGroup(), getLevelLearnedAt());
+		return Objects.hash(getMoveLearnMethod(), getVersionGroup(), getLevelLearnedAt(), getOrder());
 	}
 
 	/**
@@ -91,6 +107,7 @@ public class PokemonMoveVersion {
 				"moveLearnMethod=" + moveLearnMethod +
 				", versionGroup=" + versionGroup +
 				", levelLearnedAt=" + levelLearnedAt +
+				", order=" + order +
 				'}';
 	}
 }
