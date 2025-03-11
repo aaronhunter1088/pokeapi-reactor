@@ -1,5 +1,6 @@
 package skaro.pokeapi.resource.generation;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
@@ -10,7 +11,8 @@ public class GenerationIII {
     private NameIcon emerald;
     @JsonProperty("firered-leafgreen")
     private NameIcon fireredLeafgreen;
-    @JsonProperty("ruby-sapphire")
+    //@JsonProperty("ruby-sapphire")
+    @JsonAlias({"ruby-sapphire", "ruby-saphire"})
     private NameIcon rubySapphire;
     private NameIcon xd;
 

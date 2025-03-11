@@ -1,12 +1,13 @@
 package skaro.pokeapi.resource.generation;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
 public class GenerationVI {
 
-    @JsonProperty("omegaruby-alphasapphire")
+    @JsonAlias({"omegaruby-alphasapphire", "omega-ruby-alpha-sapphire"})
     private NameIcon omegaRubyAlphaSapphire;
     @JsonProperty("x-y")
     private NameIcon xY;
