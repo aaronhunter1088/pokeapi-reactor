@@ -11,8 +11,8 @@ public class PalParkEncounterSpecies {
     @JsonProperty("base_score")
     private Integer baseScore;
     private Integer rate;
-    @JsonProperty("pokemon_species")
-    private NamedApiResource<PokemonSpecies> pokemonSpecies;
+    @JsonProperty("area")
+    private NamedApiResource<PalParkArea> pokemonSpecies;
 
     /**
      * Get the base score given to the player
@@ -41,12 +41,12 @@ public class PalParkEncounterSpecies {
      * Get the Pokémon species being encountered
      * @return the {@link NamedApiResource<PokemonSpecies>}
      */
-    public NamedApiResource<PokemonSpecies> getPokemonSpecies() { return pokemonSpecies; }
+    public NamedApiResource<PalParkArea> getPokemonSpecies() { return pokemonSpecies; }
     /**
      * Set the Pokémon species being encountered
      * @param pokemonSpecies the {@link NamedApiResource<PokemonSpecies>}
      */
-    public void setPokemonSpecies(NamedApiResource<PokemonSpecies> pokemonSpecies) { this.pokemonSpecies = pokemonSpecies; }
+    public void setPokemonSpecies(NamedApiResource<PalParkArea> pokemonSpecies) { this.pokemonSpecies = pokemonSpecies; }
 
     /**
      * Compares this Pokémon entry to another object for equality.
