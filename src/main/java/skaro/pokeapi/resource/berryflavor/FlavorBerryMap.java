@@ -27,23 +27,24 @@ public class FlavorBerryMap {
 
 	/**
 	 * Get the berry with the referenced flavor
-	 * @return the berry
+	 * @return the {@link Berry} berry
 	 */
 	public NamedApiResource<Berry> getBerry() {
 		return berry;
 	}
 	/**
 	 * Set the berry with the referenced flavor
-	 * @param berry the berry
+	 * @param berry the {@link Berry} berry
 	 */
 	public void setBerry(NamedApiResource<Berry> berry) {
 		this.berry = berry;
 	}
 
 	/**
-	 * Checks whether a FlavorBerryMap object is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of FlavorBerryMap
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -52,7 +53,7 @@ public class FlavorBerryMap {
 	}
 
 	/**
-	 * Returns a hash code value for the object
+	 * Returns the hash code of the FlavorBerryMap
 	 * @return the hash code
 	 */
 	@Override
@@ -61,8 +62,8 @@ public class FlavorBerryMap {
 	}
 
 	/**
-	 * Returns the FlavorBerryMap object in the form of a string
-	 * @return a string representation of the object
+	 * Returns a string representation of the FlavorBerryMap
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {
