@@ -46,9 +46,10 @@ public class ContestComboSets {
 	}
 
 	/**
-	 * Checks whether the ContestComboSets is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ContestComboSets
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -57,7 +58,7 @@ public class ContestComboSets {
 	}
 
 	/**
-	 * Generate a hash code for the ContestComboSets
+	 * Returns the hash code of the ContestComboSets
 	 * @return the hash code
 	 */
 	@Override
@@ -66,7 +67,7 @@ public class ContestComboSets {
 	}
 
 	/**
-	 * Get the string representation of the ContestComboSets
+	 * Returns a string representation of the ContestComboSets
 	 * @return the string representation
 	 */
 	@Override

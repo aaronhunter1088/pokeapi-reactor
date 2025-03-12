@@ -13,14 +13,14 @@ public class NatureStatAffectSets {
 
 	/**
 	 * Get a list of natures and how they change the referenced stat
-	 * @return increase
+	 * @return the list of {@link Nature} increase
 	 */
 	public List<NamedApiResource<Nature>> getIncrease() {
 		return increase;
 	}
 	/**
 	 * Set a list of natures and how they change the referenced stat
-	 * @param increase the increase
+	 * @param increase the list of {@link Nature} increase
 	 */
 	public void setIncrease(List<NamedApiResource<Nature>> increase) {
 		this.increase = increase;
@@ -28,23 +28,24 @@ public class NatureStatAffectSets {
 
 	/**
 	 * Get a list of natures and how they change the referenced stat
-	 * @return decrease
+	 * @return the list of {@link Nature} decrease
 	 */
 	public List<NamedApiResource<Nature>> getDecrease() {
 		return decrease;
 	}
 	/**
 	 * Set a list of natures and how they change the referenced stat
-	 * @param decrease the decrease
+	 * @param decrease the list of {@link Nature} decrease
 	 */
 	public void setDecrease(List<NamedApiResource<Nature>> decrease) {
 		this.decrease = decrease;
 	}
 
 	/**
-	 * Checks if the NatureStatAffectSets is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of NatureStatAffectSets
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -53,7 +54,8 @@ public class NatureStatAffectSets {
 	}
 
 	/**
-	 * Generates a hash code for the NatureStatAffectSets
+	 * Returns the hash code of the NatureStatAffectSets
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -62,6 +64,7 @@ public class NatureStatAffectSets {
 
 	/**
 	 * Returns a string representation of the NatureStatAffectSets
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

@@ -30,7 +30,7 @@ public class PokemonSpeciesDexEntry {
 	/**
 	 * Get the Pokédex the referenced
 	 * Pokémon species can be found in.
-	 * @return the {@link NamedApiResource} of the Pokédex
+	 * @return the {@link Pokedex} of the Pokédex
 	 */
 	public NamedApiResource<Pokedex> getPokedex() {
 		return pokedex;
@@ -38,16 +38,17 @@ public class PokemonSpeciesDexEntry {
 	/**
 	 * Set the Pokédex the referenced
 	 * Pokémon species can be found in.
-	 * @param pokedex the {@link NamedApiResource} of the Pokédex
+	 * @param pokedex the {@link Pokedex} of the Pokédex
 	 */
 	public void setPokedex(NamedApiResource<Pokedex> pokedex) {
 		this.pokedex = pokedex;
 	}
 
 	/**
-	 * Checks if the PokemonSpeciesDexEntry is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonSpeciesDexEntry
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -56,7 +57,7 @@ public class PokemonSpeciesDexEntry {
 	}
 
 	/**
-	 * Generates a hash code for the PokemonSpeciesDexEntry
+	 * Returns the hash code of the PokemonSpeciesDexEntry
 	 * @return the hash code
 	 */
 	@Override
@@ -65,7 +66,7 @@ public class PokemonSpeciesDexEntry {
 	}
 
 	/**
-	 * Generates a string representation of the PokemonSpeciesDexEntry
+	 * Returns a string representation of the PokemonSpeciesDexEntry
 	 * @return the string representation
 	 */
 	@Override

@@ -35,14 +35,14 @@ public class ChainLink {
 
 	/**
 	 * Get the Pokémon species at this point in the evolution chain
-	 * @return the species
+	 * @return the {@link PokemonSpecies} species
 	 */
 	public NamedApiResource<PokemonSpecies> getSpecies() {
 		return species;
 	}
 	/**
 	 * Set the Pokémon species at this point in the evolution chain
-	 * @param species the species
+	 * @param species the {@link PokemonSpecies} species
 	 */
 	public void setSpecies(NamedApiResource<PokemonSpecies> species) {
 		this.species = species;
@@ -50,40 +50,41 @@ public class ChainLink {
 
 	/**
 	 * Get all details regarding the specific details
-	 * of the referenced  Pokémon species evolution.
-	 * @return  a list of {@link EvolutionDetail} objects
+	 * of the referenced Pokémon species evolution.
+	 * @return a list of {@link EvolutionDetail} evolution details
 	 */
 	public List<EvolutionDetail> getEvolutionDetails() {
 		return evolutionDetails;
 	}
 	/**
 	 * Set all details regarding the specific details
-	 * of the referenced  Pokémon species evolution.
-	 * @param evolutionDetails a list of {@link EvolutionDetail} objects
+	 * of the referenced Pokémon species evolution.
+	 * @param evolutionDetails a list of {@link EvolutionDetail} evolution details
 	 */
 	public void setEvolutionDetails(List<EvolutionDetail> evolutionDetails) {
 		this.evolutionDetails = evolutionDetails;
 	}
 
 	/**
-	 * Get a List of chain objects
-	 * @return a list of {@link ChainLink} objects
+	 * Get a list of chain links
+	 * @return a list of {@link ChainLink} chain links
 	 */
 	public List<ChainLink> getEvolvesTo() {
 		return evolvesTo;
 	}
 	/**
-	 * Set a List of chain objects
-	 * @param evolvesTo a list of {@link ChainLink} objects
+	 * Set a list of chain links
+	 * @param evolvesTo a list of {@link ChainLink} chain links
 	 */
 	public void setEvolvesTo(List<ChainLink> evolvesTo) {
 		this.evolvesTo = evolvesTo;
 	}
 
 	/**
-	 * Checks whether the ChainLink is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ChainLink
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -92,8 +93,8 @@ public class ChainLink {
 	}
 
 	/**
-	 * Generate a hash code for the ChainLink
-	 * @return a hash code value for this object
+	 * Returns the hash code of the ChainLink
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -102,7 +103,7 @@ public class ChainLink {
 
 	/**
 	 * Returns a string representation of the ChainLink
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

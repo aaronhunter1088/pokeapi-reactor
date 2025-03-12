@@ -27,7 +27,7 @@ public class BerryFlavorMap {
 
 	/**
 	 * Get the referenced berry flavor
-	 * @return the {@link NamedApiResource<BerryFlavor>} berry flavor
+	 * @return the {@link BerryFlavor} berry flavor
 	 */
 	public NamedApiResource<BerryFlavor> getFlavor() {
 		return flavor;
@@ -35,7 +35,7 @@ public class BerryFlavorMap {
 
 	/**
 	 * Set the referenced berry flavor
-	 * @param flavor the {@link NamedApiResource<BerryFlavor>} berry flavor
+	 * @param flavor the {@link BerryFlavor} berry flavor
 	 */
 	public void setFlavor(NamedApiResource<BerryFlavor> flavor) {
 		this.flavor = flavor;

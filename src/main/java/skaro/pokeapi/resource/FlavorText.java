@@ -40,49 +40,60 @@ public class FlavorText {
 	}
 
 	/**
-	 * Get the language
-	 * @return the {@link NamedApiResource} language
+	 * Get the language this name is in
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
-	 * Set the language
-	 * @param language the {@link NamedApiResource} language
+	 * Set the language this name is in
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
 
 	/**
-	 * Get the version
-	 * @return the {@link NamedApiResource} version
+	 * Get the game version this flavor text is extracted from
+	 * @return the {@link Version} version
 	 */
 	public NamedApiResource<Version> getVersion() {
 		return version;
 	}
 	/**
-	 * Set the version
-	 * @param version the {@link NamedApiResource} version
+	 * Set the game version this flavor text is extracted from
+	 * @param version the {@link Version} version
 	 */
 	public void setVersion(NamedApiResource<Version> version) {
 		this.version = version;
 	}
 
-	/** Returns whether the FlavorText is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of FlavorText
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof FlavorText that)) return false;
         return Objects.equals(getFlavorText(), that.getFlavorText()) && Objects.equals(getLanguage(), that.getLanguage()) && Objects.equals(getVersion(), that.getVersion());
 	}
 
-	/** Returns the hash code of the FlavorText */
+	/**
+	 * Returns the hash code of the FlavorText
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getFlavorText(), getLanguage(), getVersion());
 	}
 
-	/** Returns the string representation of the FlavorText */
+	/**
+	 * Returns a string representation of the FlavorText
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "FlavorText{" +

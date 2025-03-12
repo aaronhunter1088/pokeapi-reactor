@@ -100,14 +100,14 @@ public class PastMoveStatValues {
 
 	/**
 	 * Get the elemental type of this move
-	 * @return a {@link NamedApiResource<Type>} object
+	 * @return the {@link Type} type
 	 */
 	public NamedApiResource<Type> getType() {
 		return type;
 	}
 	/**
 	 * Set the elemental type of this move
-	 * @param type a {@link NamedApiResource<Type>} object
+	 * @param type the {@link Type} type
 	 */
 	public void setType(NamedApiResource<Type> type) {
 		this.type = type;
@@ -115,23 +115,24 @@ public class PastMoveStatValues {
 
 	/**
 	 * Get the version group in which these move stat values were in effect
-	 * @return a {@link NamedApiResource<VersionGroup>} object
+	 * @return the {@link VersionGroup} versionGroup
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
 	 * Set the version group in which these move stat values were in effect
-	 * @param versionGroup a {@link NamedApiResource<VersionGroup>} object
+	 * @param versionGroup the {@link VersionGroup} versionGroup
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
 
 	/**
-	 * Checks whether the PastMoveStatValues is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PastMoveStatValues
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -140,8 +141,8 @@ public class PastMoveStatValues {
 	}
 
 	/**
-	 * Generate a hash code for the PastMoveStatValues
-	 * @return an integer hash code
+	 * Returns the hash code of the PastMoveStatValues
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -149,7 +150,7 @@ public class PastMoveStatValues {
 	}
 
 	/**
-	 * Get the string representation of the PastMoveStatValues
+	 * Returns a string representation of the PastMoveStatValues
 	 * @return the string representation
 	 */
 	@Override

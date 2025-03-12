@@ -14,14 +14,16 @@ public class Description {
 	private NamedApiResource<Language> language;
 
 	/**
-	 * Get the description
+	 * Get the localized description for an
+	 * API resource in a specific language
 	 * @return the description
 	 */
 	public String getDescription() {
 		return description;
 	}
 	/**
-	 * Set the description
+	 * Set the localized description for an
+	 * API resource in a specific language
 	 * @param description the description
 	 */
 	public void setDescription(String description) {
@@ -29,34 +31,45 @@ public class Description {
 	}
 
 	/**
-	 * Get the language
-	 * @return the {@link NamedApiResource} language
+	 * Get the language this name is in
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
-	 * Set the language
-	 * @param language the {@link NamedApiResource} language
+	 * Set the language this name is in
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
 
-	/** Returns whether the Description is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of Description
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Description that)) return false;
         return Objects.equals(getDescription(), that.getDescription()) && Objects.equals(getLanguage(), that.getLanguage());
 	}
 
-	/** Returns the hash code of the Description */
+	/**
+	 * Returns the hash code of the Description
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getDescription(), getLanguage());
 	}
 
-	/** Returns the string representation of the Description */
+	/**
+	 * Returns a string representation of the Description
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Description{" +

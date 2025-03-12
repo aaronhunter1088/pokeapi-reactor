@@ -108,9 +108,10 @@ public class Language implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Checks whether the Language is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of Language
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -119,8 +120,8 @@ public class Language implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Generate a hash code for the Language
-	 * @return a hash code value for this object
+	 * Returns the hash code of the Language
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -129,7 +130,7 @@ public class Language implements PokeApiResource, Localizable {
 
 	/**
 	 * Returns a string representation of the Language
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

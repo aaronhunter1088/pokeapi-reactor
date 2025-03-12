@@ -22,14 +22,14 @@ public class Characteristic implements PokeApiResource {
 
 	/**
 	 * Get the id
-	 * @return
+	 * @return id
 	 */
 	public Integer getId() {
 		return id;
 	}
 	/**
 	 * Set the id
-	 * @param id
+	 * @param id the id
 	 */
 	public void setId(Integer id) {
 		this.id = id;
@@ -71,14 +71,14 @@ public class Characteristic implements PokeApiResource {
 
 	/**
 	 * Get the descriptions of this characteristic listed in different languages
-	 * @return the descriptions
+	 * @return the {@link Description} descriptions
 	 */
 	public List<Description> getDescriptions() {
 		return descriptions;
 	}
 	/**
 	 * Set the descriptions of this characteristic listed in different languages
-	 * @param descriptions the descriptions
+	 * @param descriptions the {@link Description} descriptions
 	 */
 	public void setDescriptions(List<Description> descriptions) {
 		this.descriptions = descriptions;
@@ -86,14 +86,14 @@ public class Characteristic implements PokeApiResource {
 
 	/**
 	 * Get the stat which results in this characteristic
-	 * @return the highest stat
+	 * @return the {@link Stat} highest stat
 	 */
 	public NamedApiResource<Stat> getHighestStat() {
 		return highestStat;
 	}
 	/**
 	 * Set the stat which results in this characteristic.
-	 * @param highestStat the highest stat
+	 * @param highestStat the {@link Stat} highest stat
 	 */
 	public void setHighestStat(NamedApiResource<Stat> highestStat) {
 		this.highestStat = highestStat;
@@ -109,9 +109,10 @@ public class Characteristic implements PokeApiResource {
 	}
 
 	/**
-	 * Check if this Characteristic is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of Characteristic
 	 * @param o the object to compare
-	 * @return true if the objects are equal
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -120,7 +121,7 @@ public class Characteristic implements PokeApiResource {
 	}
 
 	/**
-	 * Generate a hash code for this Characteristic
+	 * Returns the hash code of the Characteristic
 	 * @return the hash code
 	 */
 	@Override
@@ -129,8 +130,8 @@ public class Characteristic implements PokeApiResource {
 	}
 
 	/**
-	 * Get a String representation of this Characteristic
-	 * @return the String representation
+	 * Returns a string representation of the Characteristic
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

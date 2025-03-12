@@ -66,252 +66,451 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	@JsonProperty("pal_park_encounters")
 	private List<PalParkEncounterSpecies> palParkEncounters;
 
-	/** Gets the id of the PokemonSpecies */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	@Override
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id of the PokemonSpecies */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name of the PokemonSpecies */
+	/**
+	 * Get the name of this resource
+	 * @return the name
+	 */
 	@Override
 	public String getName() {
 		return name;
 	}
-	/** Sets the name of the PokemonSpecies */
+	/**
+	 * Set the name of this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the order */
+	/**
+	 * Get the order in which species should be sorted.
+	 * Based on National Dex order, except families are
+	 * grouped together and sorted by stage
+	 * @return the order
+	 */
 	public Integer getOrder() {
 		return order;
 	}
-	/** Sets the order */
+	/**
+	 * Set the order in which species should be sorted.
+	 * Based on National Dex order, except families are
+	 * grouped together and sorted by stage
+	 * @param order the order
+	 */
 	public void setOrder(Integer order) {
 		this.order = order;
 	}
 
-	/** Gets the genderRate */
+	/**
+	 * Get the chance of this Pokémon being
+	 * female, in eighths; or -1 for genderless
+	 * @return the genderRate
+	 */
 	public Integer getGenderRate() {
 		return genderRate;
 	}
-	/** Sets the genderRate */
+	/**
+	 * Set the chance of this Pokémon being
+	 * female, in eighths; or -1 for genderless
+	 * @param genderRate the genderRate
+	 */
 	public void setGenderRate(Integer genderRate) {
 		this.genderRate = genderRate;
 	}
 
-	/** Gets the captureRate */
+	/**
+	 * Get the base capture rate; up to 255.
+	 * The higher the number, the easier the catch
+	 * @return the captureRate
+	 */
 	public Integer getCaptureRate() {
 		return captureRate;
 	}
-	/** Sets the captureRate */
+	/**
+	 * Set the base capture rate; up to 255.
+	 * The higher the number, the easier the catch
+	 * @param captureRate the captureRate
+	 */
 	public void setCaptureRate(Integer captureRate) {
 		this.captureRate = captureRate;
 	}
 
-	/** Gets the baseHappiness */
+	/**
+	 * Get the happiness when caught by a normal
+	 * Pokéball; up to 255. The higher the number,
+	 * the happier the Pokémon
+	 * @return the baseHappiness
+	 */
 	public Integer getBaseHappiness() {
 		return baseHappiness;
 	}
-	/** Sets the baseHappiness */
+	/**
+	 * Set the happiness when caught by a normal
+	 * Pokéball; up to 255. The higher the number,
+	 * the happier the Pokémon
+	 * @param baseHappiness the baseHappiness
+	 */
 	public void setBaseHappiness(Integer baseHappiness) {
 		this.baseHappiness = baseHappiness;
 	}
 
-	/** Gets the isBaby */
+	/**
+	 * Get whether or not this is a baby Pokémon
+	 */
 	public Boolean isBaby() {
 		return isBaby;
 	}
-	/** Sets the isBaby */
+	/**
+	 * Set whether or not this is a baby Pokémon
+	 * @param baby the value to set
+	 */
 	public void setBaby(Boolean baby) {
 		isBaby = baby;
 	}
 
-	/** Gets the isLegendary */
+	/**
+	 * Get whether or not this is a legendary Pokémon
+	 */
 	public Boolean isLegendary() {
 		return isLegendary;
 	}
-	/** Sets the isLegendary */
+	/**
+	 * Set whether or not this is a legendary Pokémon
+	 * @param legendary the value to set
+	 */
 	public void setLegendary(Boolean legendary) {
 		isLegendary = legendary;
 	}
 
-	/** Gets the isMythical */
+	/**
+	 * Get whether or not this is a mythical Pokémon
+	 */
 	public Boolean isMythical() {
 		return isMythical;
 	}
-	/** Sets the isMythical */
+	/**
+	 * Set whether or not this is a mythical Pokémon
+	 * @param mythical the value to set
+	 */
 	public void setMythical(Boolean mythical) {
 		isMythical = mythical;
 	}
 
-	/** Gets the hatchCounter */
+	/**
+	 * Get the initial hatch counter: one must walk
+	 * Y × (hatch_counter + 1) steps before this Pokémon's
+	 * egg hatches, unless utilizing bonuses like Flame
+	 * Body's. Y varies per generation. In Generations II,
+	 * III, and VII, Egg cycles are 256 steps long. In
+	 * Generation IV, Egg cycles are 255 steps long. In
+	 * Pokémon Brilliant Diamond and Shining Pearl, Egg
+	 * cycles are also 255 steps long, but are shorter on
+	 * special dates. In Generations V and VI, Egg cycles
+	 * are 257 steps long. In Pokémon Sword and Shield, and
+	 * in Pokémon Scarlet and Violet, Egg cycles are 128
+	 * steps long
+	 * @return the hatchCounter
+	 */
 	public Integer getHatchCounter() {
 		return hatchCounter;
 	}
-	/** Sets the hatchCounter */
+	/**
+	 * Set the initial hatch counter: one must walk
+	 * Y × (hatch_counter + 1) steps before this Pokémon's
+	 * egg hatches, unless utilizing bonuses like Flame
+	 * Body's. Y varies per generation. In Generations II,
+	 * III, and VII, Egg cycles are 256 steps long. In
+	 * Generation IV, Egg cycles are 255 steps long. In
+	 * Pokémon Brilliant Diamond and Shining Pearl, Egg
+	 * cycles are also 255 steps long, but are shorter on
+	 * special dates. In Generations V and VI, Egg cycles
+	 * are 257 steps long. In Pokémon Sword and Shield, and
+	 * in Pokémon Scarlet and Violet, Egg cycles are 128
+	 * steps long
+	 * @param hatchCounter the hatchCounter
+	 */
 	public void setHatchCounter(Integer hatchCounter) {
 		this.hatchCounter = hatchCounter;
 	}
 
-	/** Gets the hasGenderDifferences */
+	/**
+	 * Get whether or not this Pokémon has visual gender differences
+	 * @return the hasGenderDifferences
+	 */
 	public Boolean hasGenderDifferences() {
 		return hasGenderDifferences;
 	}
-	/** Sets the hasGenderDifferences */
+	/**
+	 * Set whether or not this Pokémon has visual gender differences
+	 * @param hasGenderDifferences the value to set
+	 */
 	public void setHasGenderDifferences(Boolean hasGenderDifferences) {
 		this.hasGenderDifferences = hasGenderDifferences;
 	}
 
-	/** Gets the formsSwitchable */
+	/**
+	 * Get whether or not this Pokémon has multiple
+	 * forms and can switch between them
+	 * @return the formsSwitchable
+	 */
 	public Boolean isFormsSwitchable() {
 		return formsSwitchable;
 	}
-	/** Sets the formsSwitchable */
+	/**
+	 * Set whether or not this Pokémon has multiple
+	 * forms and can switch between them
+	 * @param formsSwitchable the value to set
+	 */
 	public void setFormsSwitchable(Boolean formsSwitchable) {
 		this.formsSwitchable = formsSwitchable;
 	}
 
-	/** Gets the growthRate */
+	/**
+	 * Get the rate at which this Pokémon species gains levels
+	 * @return the {@link GrowthRate} growthRate
+	 */
 	public NamedApiResource<GrowthRate> getGrowthRate() {
 		return growthRate;
 	}
-	/** Sets the growthRate */
+	/**
+	 * Set the rate at which this Pokémon species gains levels
+	 * @param growthRate the {@link GrowthRate} growthRate
+	 */
 	public void setGrowthRate(NamedApiResource<GrowthRate> growthRate) {
 		this.growthRate = growthRate;
 	}
 
-	/** Gets the pokedexNumbers */
+	/**
+	 * Get a list of Pokedexes and the indexes
+	 * reserved within them for this Pokémon species
+	 * @return the list of {@link PokemonSpeciesDexEntry} pokedexNumbers
+	 */
 	public List<PokemonSpeciesDexEntry> getPokedexNumbers() {
 		return pokedexNumbers;
 	}
-	/** Sets the pokedexNumbers */
+	/**
+	 * Set a list of Pokedexes and the indexes
+	 * reserved within them for this Pokémon species
+	 * @param pokedexNumbers the list of {@link PokemonSpeciesDexEntry} pokedexNumbers
+	 */
 	public void setPokedexNumbers(List<PokemonSpeciesDexEntry> pokedexNumbers) {
 		this.pokedexNumbers = pokedexNumbers;
 	}
 
-	/** Gets the eggGroups */
+	/**
+	 * Get a list of egg groups this Pokémon
+	 * species is a member of
+	 * @return the list of {@link EggGroup} eggGroups
+	 */
 	public List<NamedApiResource<EggGroup>> getEggGroups() {
 		return eggGroups;
 	}
-	/** Sets the eggGroups */
+	/**
+	 * Set a list of egg groups this Pokémon
+	 * species is a member of
+	 * @param eggGroups the list of {@link EggGroup} eggGroups
+	 */
 	public void setEggGroups(List<NamedApiResource<EggGroup>> eggGroups) {
 		this.eggGroups = eggGroups;
 	}
 
-	/** Gets the color */
+	/**
+	 * Get the color of this Pokémon for Pokédex search
+	 * @return the {@link PokemonColor} color
+	 */
 	public NamedApiResource<PokemonColor> getColor() {
 		return color;
 	}
-	/** Sets the color */
+	/**
+	 * Set the color of this Pokémon for Pokédex search
+	 * @param color the {@link PokemonColor} color
+	 */
 	public void setColor(NamedApiResource<PokemonColor> color) {
 		this.color = color;
 	}
 
-	/** Gets the shape */
+	/**
+	 * Get the shape of this Pokémon for Pokédex search
+	 * @return the {@link PokemonShape} shape
+	 */
 	public NamedApiResource<PokemonShape> getShape() {
 		return shape;
 	}
-	/** Sets the shape */
+	/**
+	 * Set the shape of this Pokémon for Pokédex search
+	 * @param shape the {@link PokemonShape} shape
+	 */
 	public void setShape(NamedApiResource<PokemonShape> shape) {
 		this.shape = shape;
 	}
 
-	/** Gets the evolvesFromSpecies */
+	/**
+	 * Get the Pokémon species that evolves
+	 * into this Pokemon_species
+	 * @return the {@link PokemonSpecies} evolvesFromSpecies
+	 */
 	public NamedApiResource<PokemonSpecies> getEvolvesFromSpecies() {
 		return evolvesFromSpecies;
 	}
-	/** Sets the evolvesFromSpecies */
+	/**
+	 * Set the Pokémon species that evolves
+	 * into this Pokemon_species
+	 * @param evolvesFromSpecies the {@link PokemonSpecies} evolvesFromSpecies
+	 */
 	public void setEvolvesFromSpecies(NamedApiResource<PokemonSpecies> evolvesFromSpecies) {
 		this.evolvesFromSpecies = evolvesFromSpecies;
 	}
 
-	/** Gets the evolutionChain */
+	/**
+	 * Get the evolution chain this
+	 * Pokémon species is a member of
+	 * @return the {@link EvolutionChain} evolutionChain
+	 */
 	public NamedApiResource<EvolutionChain> getEvolutionChain() {
 		return evolutionChain;
 	}
-	/** Sets the evolutionChain */
+	/**
+	 * Set the evolution chain this
+	 * Pokémon species is a member of
+	 * @param evolutionChain the {@link EvolutionChain} evolutionChain
+	 */
 	public void setEvolutionChain(NamedApiResource<EvolutionChain> evolutionChain) {
 		this.evolutionChain = evolutionChain;
 	}
 
-	/** Gets the habitat */
+	/**
+	 * Get the habitat this Pokémon species can be encountered in
+	 * @return the {@link PokemonHabitat} habitat
+	 */
 	public NamedApiResource<PokemonHabitat> getHabitat() {
 		return habitat;
 	}
-	/** Sets the habitat */
+	/**
+	 * Set the habitat this Pokémon species can be encountered in
+	 * @param habitat the {@link PokemonHabitat} habitat
+	 */
 	public void setHabitat(NamedApiResource<PokemonHabitat> habitat) {
 		this.habitat = habitat;
 	}
 
-	/** Gets the generation */
+	/**
+	 * Get the generation this Pokémon species was introduced in
+	 * @return the {@link Generation} generation
+	 */
 	public NamedApiResource<Generation> getGeneration() {
 		return generation;
 	}
-	/** Sets the generation */
+	/**
+	 * Set the generation this Pokémon species was introduced in
+	 * @param generation the {@link Generation} generation
+	 */
 	public void setGeneration(NamedApiResource<Generation> generation) {
 		this.generation = generation;
 	}
 
-	/** Gets the names */
+	/**
+	 * Get the name of this resource listed in different languages
+	 * @return the list of {@link Name} names
+	 */
 	@Override
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names */
+	/**
+	 * Set the name of this resource listed in different languages
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets the flavorTextEntries */
+	/**
+	 * Get a list of flavor text entries for this Pokémon species
+	 * @return the list of {@link FlavorText} flavorTextEntries
+	 */
 	public List<FlavorText> getFlavorTextEntries() {
 		return flavorTextEntries;
 	}
-	/** Sets the flavorTextEntries */
+	/**
+	 * Set a list of flavor text entries for this Pokémon species
+	 * @param flavorTextEntries the list of {@link FlavorText} flavorTextEntries
+	 */
 	public void setFlavorTextEntries(List<FlavorText> flavorTextEntries) {
 		this.flavorTextEntries = flavorTextEntries;
 	}
 
-	/** Gets the formDescriptions */
+	/**
+	 * Get the descriptions of different forms Pokémon
+	 * take on within the Pokémon species
+	 * @return the list of {@link Description} formDescriptions
+	 */
 	public List<Description> getFormDescriptions() {
 		return formDescriptions;
 	}
-	/** Sets the formDescriptions */
+	/**
+	 * Set the descriptions of different forms Pokémon
+	 * take on within the Pokémon species
+	 * @param formDescriptions the list of {@link Description} formDescriptions
+	 */
 	public void setFormDescriptions(List<Description> formDescriptions) {
 		this.formDescriptions = formDescriptions;
 	}
 
-	/** Gets the genera */
+	/**
+	 * Get the genus of this Pokémon species listed in multiple languages
+	 * @return the list of {@link Genus} genera
+	 */
 	public List<Genus> getGenera() {
 		return genera;
 	}
-	/** Sets the genera */
+	/**
+	 * Set the genus of this Pokémon species listed in multiple languages
+	 * @param genera the list of {@link Genus} genera
+	 */
 	public void setGenera(List<Genus> genera) {
 		this.genera = genera;
 	}
 
-	/** Gets the varieties */
+	/**
+	 * Get a list of the Pokémon that exist within this Pokémon species
+	 * @return the list of {@link PokemonSpeciesVariety} varieties
+	 */
 	public List<PokemonSpeciesVariety> getVarieties() {
 		return varieties;
 	}
-	/** Sets the varieties */
+	/**
+	 * Set a list of the Pokémon that exist within this Pokémon species
+	 * @param varieties the list of {@link PokemonSpeciesVariety} varieties
+	 */
 	public void setVarieties(List<PokemonSpeciesVariety> varieties) {
 		this.varieties = varieties;
 	}
 
 	/**
-	 * Gets the palParkEncounters
+	 * Get a list of encounters that can be had with this Pokémon species in pal park
 	 * @return the list of {@link PalParkEncounterSpecies}
 	 */
 	public List<PalParkEncounterSpecies> getPalParkEncounters() {
 		return palParkEncounters;
 	}
 	/**
-	 * Sets the palParkEncounters
+	 * Set a list of encounters that can be had with this Pokémon species in pal park
 	 * @param palParkEncounters the list of {@link PalParkEncounterSpecies}
 	 */
 	public void setPalParkEncounters(List<PalParkEncounterSpecies> palParkEncounters) {
@@ -319,9 +518,10 @@ public class PokemonSpecies implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns true if the object is an instance
-	 * of PokemonSpecies and all of its fields are
-	 * equal to this PokemonSpecies' fields
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonSpecies
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {

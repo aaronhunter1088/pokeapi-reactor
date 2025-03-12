@@ -77,7 +77,7 @@ public class Stat implements PokeApiResource, Localizable {
 	 * Get whether this stat is only used in battle
 	 * @return isBattleOnly
 	 */
-	public Boolean getIsBattleOnly() {
+	public Boolean isBattleOnly() {
 		return isBattleOnly;
 	}
 	/**
@@ -90,29 +90,31 @@ public class Stat implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the maximum amount of change to the referenced stat
-	 * @return the maximum amount of change
+	 * @return the {@link MoveStatAffect} maximum amount of change
 	 */
 	public MoveStatAffectSets getAffectingMoves() {
 		return affectingMoves;
 	}
 	/**
 	 * Set the maximum amount of change to the referenced stat
-	 * @param affectingMoves the maximum amount of change
+	 * @param affectingMoves the {@link MoveStatAffect} maximum amount of change
 	 */
 	public void setAffectingMoves(MoveStatAffectSets affectingMoves) {
 		this.affectingMoves = affectingMoves;
 	}
 
 	/**
-	 * Get a list of moves and how they change the referenced stat
-	 * @return increase
+	 * Get a detail of natures which affect
+	 * this stat positively or negatively
+	 * @return the {@link NatureStatAffectSets} increase
 	 */
 	public NatureStatAffectSets getAffectingNatures() {
 		return affectingNatures;
 	}
 	/**
-	 * Set a list of moves and how they change the referenced stat
-	 * @param affectingNatures the increase
+	 * Set a detail of natures which affect
+	 * this stat positively or negatively
+	 * @param affectingNatures the {@link NatureStatAffectSets} increase
 	 */
 	public void setAffectingNatures(NatureStatAffectSets affectingNatures) {
 		this.affectingNatures = affectingNatures;
@@ -121,14 +123,14 @@ public class Stat implements PokeApiResource, Localizable {
 	/**
 	 * Get a list of characteristics that are set on
 	 * a Pokémon when its highest base stat is this stat
-	 * @return characteristics the {@link NamedApiResource} list of characteristics
+	 * @return characteristics the {@link Characteristic} list of characteristics
 	 */
 	public List<NamedApiResource<Characteristic>> getCharacteristics() {
 		return characteristics;
 	}
 	/**
 	 * Set a list of characteristics that are set on
-	 * @param characteristics the {@link NamedApiResource} list of characteristics
+	 * @param characteristics the {@link Characteristic} list of characteristics
 	 */
 	public void setCharacteristics(List<NamedApiResource<Characteristic>> characteristics) {
 		this.characteristics = characteristics;
@@ -136,14 +138,14 @@ public class Stat implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the move damage class that this stat is directly related to
-	 * @return the {@link NamedApiResource} of the move damage class
+	 * @return the {@link MoveDamageClass} of the move damage class
 	 */
 	public NamedApiResource<MoveDamageClass> getMoveDamageClass() {
 		return moveDamageClass;
 	}
 	/**
 	 * Set the move damage class that this stat is directly related to
-	 * @param moveDamageClass the {@link NamedApiResource} of the move damage class
+	 * @param moveDamageClass the {@link MoveDamageClass} of the move damage class
 	 */
 	public void setMoveDamageClass(NamedApiResource<MoveDamageClass> moveDamageClass) {
 		this.moveDamageClass = moveDamageClass;
@@ -151,40 +153,43 @@ public class Stat implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the name of this resource in different languages
-	 * @return the names
+	 * @return the list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
 	 * Set the name of this resource in different languages
-	 * @param names the names
+	 * @param names the {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
 	/**
-	 * Checks whether this Stat is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of Stat
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Stat stat)) return false;
-        return Objects.equals(getId(), stat.getId()) && Objects.equals(getName(), stat.getName()) && Objects.equals(getGameIndex(), stat.getGameIndex()) && Objects.equals(getIsBattleOnly(), stat.getIsBattleOnly()) && Objects.equals(getAffectingMoves(), stat.getAffectingMoves()) && Objects.equals(getAffectingNatures(), stat.getAffectingNatures()) && Objects.equals(getCharacteristics(), stat.getCharacteristics()) && Objects.equals(getMoveDamageClass(), stat.getMoveDamageClass()) && Objects.equals(getNames(), stat.getNames());
+        return Objects.equals(getId(), stat.getId()) && Objects.equals(getName(), stat.getName()) && Objects.equals(getGameIndex(), stat.getGameIndex()) && Objects.equals(isBattleOnly(), stat.isBattleOnly()) && Objects.equals(getAffectingMoves(), stat.getAffectingMoves()) && Objects.equals(getAffectingNatures(), stat.getAffectingNatures()) && Objects.equals(getCharacteristics(), stat.getCharacteristics()) && Objects.equals(getMoveDamageClass(), stat.getMoveDamageClass()) && Objects.equals(getNames(), stat.getNames());
 	}
 
 	/**
-	 * Generates a hash code for the Stat
+	 * Returns the hash code of the Stat
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), getGameIndex(), getIsBattleOnly(), getAffectingMoves(), getAffectingNatures(), getCharacteristics(), getMoveDamageClass(), getNames());
+		return Objects.hash(getId(), getName(), getGameIndex(), isBattleOnly(), getAffectingMoves(), getAffectingNatures(), getCharacteristics(), getMoveDamageClass(), getNames());
 	}
 
 	/**
-	 * Returns a string representation of the Stat object
+	 * Returns a string representation of the Stat
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

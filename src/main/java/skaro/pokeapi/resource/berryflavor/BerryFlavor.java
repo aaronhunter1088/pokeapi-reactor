@@ -66,14 +66,14 @@ public class BerryFlavor implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the contest type that correlates with this berry flavor
-	 * @return the {@link NamedApiResource<ContestType>} contest type
+	 * @return the {@link ContestType} contest type
 	 */
 	public NamedApiResource<ContestType> getContestType() {
 		return contestType;
 	}
 	/**
 	 * Set the contest type that correlates with this berry flavor
-	 * @param contestType the {@link NamedApiResource<ContestType>} contest type
+	 * @param contestType the {@link ContestType} contest type
 	 */
 	public void setContestType(NamedApiResource<ContestType> contestType) {
 		this.contestType = contestType;
@@ -95,9 +95,10 @@ public class BerryFlavor implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns true if the object is compared to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of BerryFlavor
 	 * @param o the object to compare
-	 * @return true if the object is equal to this object based on the id, name, berries, contestType, and names
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -106,7 +107,7 @@ public class BerryFlavor implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a hash code value for the object
+	 * Returns the hash code of the BerryFlavor
 	 * @return the hash code
 	 */
 	@Override
@@ -115,8 +116,8 @@ public class BerryFlavor implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a string representation of the object
-	 * @return a string representation of the object
+	 * Returns a string representation of the BerryFlavor
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

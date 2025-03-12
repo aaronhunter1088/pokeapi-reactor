@@ -78,9 +78,10 @@ public class PokemonMoveVersion {
 	}
 
 	/**
-	 * Check if this PokemonMoveVersion is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonMoveVersion
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -89,7 +90,7 @@ public class PokemonMoveVersion {
 	}
 
 	/**
-	 * Generate a hash code for this PokemonMoveVersion
+	 * Returns the hash code of the PokemonMoveVersion
 	 * @return the hash code
 	 */
 	@Override
@@ -98,8 +99,8 @@ public class PokemonMoveVersion {
 	}
 
 	/**
-	 * Get a String representation of this PokemonMoveVersion
-	 * @return the String representation
+	 * Returns a string representation of the PokemonMoveVersion
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

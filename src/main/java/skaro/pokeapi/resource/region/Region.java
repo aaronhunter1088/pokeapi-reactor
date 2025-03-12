@@ -42,14 +42,14 @@ public class Region implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the locations within this region
-	 * @return the {@link NamedApiResource} list of locations
+	 * @return the {@link Location} list of locations
 	 */
 	public List<NamedApiResource<Location>> getLocations() {
 		return locations;
 	}
 	/**
 	 * Set the locations within this region
-	 * @param locations the {@link NamedApiResource} list of locations
+	 * @param locations the {@link Location} list of locations
 	 */
 	public void setLocations(List<NamedApiResource<Location>> locations) {
 		this.locations = locations;
@@ -72,14 +72,14 @@ public class Region implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the name of this resource listed in different languages
-	 * @return the list of names
+	 * @return the list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
 	 * Set the name of this resource listed in different languages
-	 * @param names the list of names
+	 * @param names the list of {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
@@ -87,29 +87,29 @@ public class Region implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the generation this region was introduced in
-	 * @return the {@link NamedApiResource} of the main generation
+	 * @return the {@link Generation} of the main generation
 	 */
 	public NamedApiResource<Generation> getMainGeneration() {
 		return mainGeneration;
 	}
 	/**
 	 * Set the generation this region was introduced in
-	 * @param mainGeneration the {@link NamedApiResource} of the main generation
+	 * @param mainGeneration the {@link Generation} of the main generation
 	 */
 	public void setMainGeneration(NamedApiResource<Generation> mainGeneration) {
 		this.mainGeneration = mainGeneration;
 	}
 
 	/**
-	 * Get a list of pokedexes that catalogue pokemon in this region
-	 * @return the {@link NamedApiResource} list of pokedexes
+	 * Get a list of Pokédexes that catalogue Pokémon in this region
+	 * @return the {@link Pokedex} list of Pokédexes
 	 */
 	public List<NamedApiResource<Pokedex>> getPokedexes() {
 		return pokedexes;
 	}
 	/**
-	 * Set a list of pokedexes that catalogue pokemon in this region
-	 * @param pokedexes the {@link NamedApiResource} list of pokedexes
+	 * Set a list of Pokédexes that catalogue pokemon in this region
+	 * @param pokedexes the {@link Pokedex} list of Pokédexes
 	 */
 	public void setPokedexes(List<NamedApiResource<Pokedex>> pokedexes) {
 		this.pokedexes = pokedexes;
@@ -117,33 +117,44 @@ public class Region implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of version groups this region can be visited
-	 * @return the {@link NamedApiResource} list of version groups
+	 * @return the {@link VersionGroup} list of version groups
 	 */
 	public List<NamedApiResource<VersionGroup>> getVersionGroups() {
 		return versionGroups;
 	}
 	/**
 	 * Set a list of version groups this region can be visited
-	 * @param versionGroups the {@link NamedApiResource} list of version groups
+	 * @param versionGroups the {@link VersionGroup} list of version groups
 	 */
 	public void setVersionGroups(List<NamedApiResource<VersionGroup>> versionGroups) {
 		this.versionGroups = versionGroups;
 	}
 
-	/** Returns whether this Region is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of Region
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Region region)) return false;
         return Objects.equals(getId(), region.getId()) && Objects.equals(getLocations(), region.getLocations()) && Objects.equals(getName(), region.getName()) && Objects.equals(getNames(), region.getNames()) && Objects.equals(getMainGeneration(), region.getMainGeneration()) && Objects.equals(getPokedexes(), region.getPokedexes()) && Objects.equals(getVersionGroups(), region.getVersionGroups());
 	}
 
-	/** Generates a hash code for the Region */
+	/**
+	 * Returns the hash code of the Region
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getLocations(), getName(), getNames(), getMainGeneration(), getPokedexes(), getVersionGroups());
 	}
 
-	/** Returns a string representation of the Region */
+	/**
+	 * Returns a string representation of the Region
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Region{" +

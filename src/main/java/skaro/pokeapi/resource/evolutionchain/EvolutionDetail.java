@@ -49,7 +49,7 @@ public class EvolutionDetail {
 	/**
 	 * Get the item required to cause
 	 * evolution this into Pokémon species
-	 * @return the item
+	 * @return the {@link Item} item
 	 */
 	public NamedApiResource<Item> getItem() {
 		return item;
@@ -57,7 +57,7 @@ public class EvolutionDetail {
 	/**
 	 * Set the item required to cause
 	 * evolution this into Pokémon species
-	 * @param item the item
+	 * @param item the {@link Item} item
 	 */
 	public void setItem(NamedApiResource<Item> item) {
 		this.item = item;
@@ -66,7 +66,7 @@ public class EvolutionDetail {
 	/**
 	 * Get the type of event that triggers
 	 * evolution into this Pokémon species
-	 * @return the trigger
+	 * @return the {@link EvolutionTrigger} trigger
 	 */
 	public NamedApiResource<EvolutionTrigger> getTrigger() {
 		return trigger;
@@ -74,7 +74,7 @@ public class EvolutionDetail {
 	/**
 	 * Set the type of event that triggers
 	 * evolution into this Pokémon species
-	 * @param trigger the trigger
+	 * @param trigger the {@link EvolutionTrigger} trigger
 	 */
 	public void setTrigger(NamedApiResource<EvolutionTrigger> trigger) {
 		this.trigger = trigger;
@@ -91,7 +91,7 @@ public class EvolutionDetail {
 	/**
 	 * Set the id of the gender of the evolving Pokémon species
 	 * must be in order to evolve into this Pokémon species
-	 * @param gender
+	 * @param gender the gender
 	 */
 	public void setGender(Integer gender) {
 		this.gender = gender;
@@ -101,7 +101,7 @@ public class EvolutionDetail {
 	 * Get The item the evolving Pokémon species must
 	 * be holding during the evolution trigger event
 	 * to evolve into this Pokémon species
-	 * @return the held item
+	 * @return the {@link Item} held item
 	 */
 	public NamedApiResource<Item> getHeldItem() {
 		return heldItem;
@@ -110,7 +110,7 @@ public class EvolutionDetail {
 	 * Set The item the evolving Pokémon species must
 	 * be holding during the evolution trigger event
 	 * to evolve into this Pokémon species
-	 * @param heldItem the held item
+	 * @param heldItem the {@link Item} held item
 	 */
 	public void setHeldItem(NamedApiResource<Item> heldItem) {
 		this.heldItem = heldItem;
@@ -120,7 +120,7 @@ public class EvolutionDetail {
 	 * Get the move that must be known by the evolving
 	 * Pokémon species during the evolution trigger
 	 * event in order to evolve into this Pokémon species
-	 * @return the known move
+	 * @return the {@link Move} known move
 	 */
 	public NamedApiResource<Move> getKnownMove() {
 		return knownMove;
@@ -130,7 +130,7 @@ public class EvolutionDetail {
 	 * The move that must be known by the evolving
 	 * Pokémon species during the evolution trigger
 	 * event in order to evolve into this Pokémon species
-	 * @param knownMove the known move
+	 * @param knownMove the {@link Move} known move
 	 */
 	public void setKnownMove(NamedApiResource<Move> knownMove) {
 		this.knownMove = knownMove;
@@ -140,7 +140,7 @@ public class EvolutionDetail {
 	 * Get the evolving Pokémon species must know a move
 	 * with this type during the evolution trigger event
 	 * in order to evolve into this Pokémon species
-	 * @return the known move type
+	 * @return the {@link Type} known move type
 	 */
 	public NamedApiResource<Type> getKnownMoveType() {
 		return knownMoveType;
@@ -149,7 +149,7 @@ public class EvolutionDetail {
 	 * Set the evolving Pokémon species must know a move
 	 * with this type during the evolution trigger event
 	 * in order to evolve into this Pokémon species
-	 * @param knownMoveType the known move type
+	 * @param knownMoveType the {@link Type} known move type
 	 */
 	public void setKnownMoveType(NamedApiResource<Type> knownMoveType) {
 		this.knownMoveType = knownMoveType;
@@ -157,7 +157,7 @@ public class EvolutionDetail {
 
 	/**
 	 * Get the location the evolution must be triggered at
-	 * @return the {@link NamedApiResource<Location>} location
+	 * @return the {@link Location} location
 	 */
 	public NamedApiResource<Location> getLocation() {
 		return location;
@@ -165,7 +165,7 @@ public class EvolutionDetail {
 
 	/**
 	 * Set the location the evolution must be triggered at
-	 * @param location the {@link NamedApiResource<Location>} location
+	 * @param location the {@link Location} location
 	 */
 	public void setLocation(NamedApiResource<Location> location) {
 		this.location = location;
@@ -266,7 +266,7 @@ public class EvolutionDetail {
 	 * Get the Pokémon species that must be in the players
 	 * party in order for the evolving Pokémon species to
 	 * evolve into this Pokémon species
-	 * @return the {@link NamedApiResource<PokemonSpecies>} party species
+	 * @return the {@link PokemonSpecies} party species
 	 */
 	public NamedApiResource<PokemonSpecies> getPartySpecies() {
 		return partySpecies;
@@ -275,7 +275,7 @@ public class EvolutionDetail {
 	 * Set the Pokémon species that must be in the players
 	 * party in order for the evolving Pokémon species to
 	 * evolve into this Pokémon species
-	 * @param partySpecies the {@link NamedApiResource<PokemonSpecies>} party species
+	 * @param partySpecies the {@link PokemonSpecies} party species
 	 */
 	public void setPartySpecies(NamedApiResource<PokemonSpecies> partySpecies) {
 		this.partySpecies = partySpecies;
@@ -286,7 +286,7 @@ public class EvolutionDetail {
 	 * their party during the evolution trigger event in
 	 * order for the evolving Pokémon species to evolve
 	 * into this Pokémon species
-	 * @return the {@link NamedApiResource<Type>} party type
+	 * @return the {@link Type} party type
 	 */
 	public NamedApiResource<Type> getPartyType() {
 		return partyType;
@@ -296,7 +296,7 @@ public class EvolutionDetail {
 	 * their party during the evolution trigger event in
 	 * order for the evolving Pokémon species to evolve
 	 * into this Pokémon species
-	 * @param partyType the {@link NamedApiResource<Type>} party type
+	 * @param partyType the {@link Type} party type
 	 */
 	public void setPartyType(NamedApiResource<Type> partyType) {
 		this.partyType = partyType;
@@ -338,14 +338,14 @@ public class EvolutionDetail {
 
 	/**
 	 * Get the Pokémon species for which this one must be traded.
-	 * @return the {@link NamedApiResource<PokemonSpecies>} trade species
+	 * @return the {@link PokemonSpecies} trade species
 	 */
 	public NamedApiResource<PokemonSpecies> getTradeSpecies() {
 		return tradeSpecies;
 	}
 	/**
 	 * Set the Pokémon species for which this one must be traded.
-	 * @param tradeSpecies the {@link NamedApiResource<PokemonSpecies>} trade species
+	 * @param tradeSpecies the {@link PokemonSpecies} trade species
 	 */
 	public void setTradeSpecies(NamedApiResource<PokemonSpecies> tradeSpecies) {
 		this.tradeSpecies = tradeSpecies;
@@ -369,9 +369,10 @@ public class EvolutionDetail {
 	}
 
 	/**
-	 * Checks whether the EvolutionDetail is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of EvolutionDetail
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -380,8 +381,8 @@ public class EvolutionDetail {
 	}
 
 	/**
-	 * Generate a hash code for the EvolutionDetail
-	 * @return a hash code value for this object
+	 * Returns the hash code of the EvolutionDetail
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -390,7 +391,7 @@ public class EvolutionDetail {
 
 	/**
 	 * Returns a string representation of the EvolutionDetail
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

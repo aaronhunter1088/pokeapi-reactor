@@ -15,7 +15,7 @@ public class TypeRelationsPast {
     /**
      * Get the last generation in which the
      * referenced type had the listed damage relations
-     * @return the {@link NamedApiResource} generation
+     * @return the {@link Generation} generation
      */
     public NamedApiResource<Generation> getGeneration() {
         return generation;
@@ -23,7 +23,7 @@ public class TypeRelationsPast {
     /**
      * Set the last generation in which the
      * referenced type had the listed damage relations
-     * @param generation the {@link NamedApiResource} generation
+     * @param generation the {@link Generation} generation
      */
     public void setGeneration(NamedApiResource<Generation> generation) {
         this.generation = generation;
@@ -32,34 +32,45 @@ public class TypeRelationsPast {
     /**
      * Get the damage relations the referenced type
      * had up to and including the listed generation
-     * @return damageRelations the damageRelations
+     * @return damageRelations the {@link TypeRelations} damageRelations
      */
     public TypeRelations getDamageRelations() {
         return damageRelations;
     }
     /**
-     * Setet the damage relations the referenced type
+     * Set the damage relations the referenced type
      * had up to and including the listed generation
-     * @param damageRelations the damageRelations
+     * @param damageRelations the {@link TypeRelations} damageRelations
      */
     public void setDamageRelations(TypeRelations damageRelations) {
         this.damageRelations = damageRelations;
     }
 
-    /** Returns whether the TypeRelationsPast is equal to another object */
+    /**
+     * Returns whether the given object o is
+     * equal to this instance of TypeRelationsPast
+     * @param o the object to compare
+     * @return true if equal otherwise false
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof TypeRelationsPast that)) return false;
         return Objects.equals(getGeneration(), that.getGeneration()) && Objects.equals(getDamageRelations(), that.getDamageRelations());
     }
 
-    /** Returns the hash code of the TypeRelationsPast */
+    /**
+     * Returns the hash code of the TypeRelationsPast
+     * @return the hash code
+     */
     @Override
     public int hashCode() {
         return Objects.hash(getGeneration(), getDamageRelations());
     }
 
-    /** Returns the string representation of the TypeRelationsPast */
+    /**
+     * Returns a string representation of the TypeRelationsPast
+     * @return the string representation
+     */
     @Override
     public String toString() {
         return "TypeRelationsPast{" +

@@ -18,56 +18,91 @@ public class Version implements PokeApiResource, Localizable {
 	@JsonProperty("version_group")
 	private NamedApiResource<VersionGroup> versionGroup;
 
-	/** Gets the id for this Version */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id for this Version */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name for this Version */
+	/**
+	 * Get the name for this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name for this Version */
+	/**
+	 * Set the name for this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the names for this Version in different languages */
+	/**
+	 * Get the name of this resource listed in different languages
+	 * @return the list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names for this Version in different languages */
+	/**
+	 * Set the name of this resource listed in different languages
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets the version group this version belongs to */
+	/**
+	 * Get the version group this version belongs to
+	 * @return the {@link VersionGroup} version group
+	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
-	/** Sets the version group this version belongs to */
+	/**
+	 * Set the version group this version belongs to
+	 * @param versionGroup the {@link VersionGroup} version group
+	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
 
-	/** Returns whether the Version is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of Version
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Version version)) return false;
         return Objects.equals(getId(), version.getId()) && Objects.equals(getName(), version.getName()) && Objects.equals(getNames(), version.getNames()) && Objects.equals(getVersionGroup(), version.getVersionGroup());
 	}
 
-	/** Returns the hash code of the Version */
+	/**
+	 * Returns the hash code of the Version
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getNames(), getVersionGroup());
 	}
 
-	/** Returns the String representation of the Version */
+	/**
+	 * Returns a string representation of the Version
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Version{" +

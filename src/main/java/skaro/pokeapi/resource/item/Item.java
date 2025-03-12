@@ -44,144 +44,242 @@ public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 	private NamedApiResource<EvolutionChain> babyTriggerFor;
 	private List<MachineVersionDetail> machines;
 
-	/** Gets the id of the Item */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id of the Item */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name of the Item */
+	/**
+	 * Get the name of this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name of the Item */
+	/**
+	 * Set the name of this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the cost of the Item */
+	/**
+	 * Get the price of this item in stores
+	 * @return the cost
+	 */
 	public Integer getCost() {
 		return cost;
 	}
-	/** Sets the cost of the Item */
+	/**
+	 * Set the price of this item in stores
+	 * @param cost the cost
+	 */
 	public void setCost(Integer cost) {
 		this.cost = cost;
 	}
 
-	/** Gets the fling power of the Item */
+	/**
+	 * Get the power of the move Fling when
+	 * used with this item
+	 * @return the flingPower
+	 */
 	public Integer getFlingPower() {
 		return flingPower;
 	}
-	/** Sets the fling power of the Item */
+	/**
+	 * Set the power of the move Fling when
+	 * used with this item
+	 * @param flingPower the flingPower
+	 */
 	public void setFlingPower(Integer flingPower) {
 		this.flingPower = flingPower;
 	}
 
-	/** Gets the fling effect of the Item */
+	/**
+	 * Gets the fling effect of the Item
+	 * @return the {@link ItemFlingEffect} fling effect of the Item
+	 */
 	public NamedApiResource<ItemFlingEffect> getFlingEffect() {
 		return flingEffect;
 	}
-	/** Sets the fling effect of the Item */
+	/**
+	 * Sets the fling effect of the Item
+	 * @param flingEffect the {@link ItemFlingEffect} fling effect of the Item
+	 */
 	public void setFlingEffect(NamedApiResource<ItemFlingEffect> flingEffect) {
 		this.flingEffect = flingEffect;
 	}
 
-	/** Gets the attributes of the Item */
+	/**
+	 * Get a list of attributes this item has
+	 * @return a list of {@link ItemAttribute} attributes
+	 */
 	public List<NamedApiResource<ItemAttribute>> getAttributes() {
 		return attributes;
 	}
-	/** Sets the attributes of the Item */
+	/**
+	 * Set a list of attributes this item has
+	 * @param attributes a list of {@link ItemAttribute} attributes
+	 */
 	public void setAttributes(List<NamedApiResource<ItemAttribute>> attributes) {
 		this.attributes = attributes;
 	}
 
-	/** Gets the category of the Item */
+	/**
+	 * Get the category of items this item falls into
+	 * @return the {@link ItemCategory} category
+	 */
 	public NamedApiResource<ItemCategory> getCategory() {
 		return category;
 	}
-	/** Sets the category of the Item */
+	/**
+	 * Set the category of items this item falls into
+	 * @param category the {@link ItemCategory} category
+	 */
 	public void setCategory(NamedApiResource<ItemCategory> category) {
 		this.category = category;
 	}
 
-	/** Gets the effect entries of the Item */
+	/**
+	 * Get the effect of this ability listed in different languages
+	 * @return list of {@link VerboseEffect} verboseEffects
+	 */
 	public List<VerboseEffect> getEffectEntries() {
 		return effectEntries;
 	}
-	/** Sets the effect entries of the Item */
+	/**
+	 * Sets the effect of this ability listed in different languages
+	 * @param effectEntries list of {@link VerboseEffect} verboseEffects
+	 */
 	public void setEffectEntries(List<VerboseEffect> effectEntries) {
 		this.effectEntries = effectEntries;
 	}
 
-	/** Gets the flavor text entries of the Item */
+	/**
+	 * Get the flavor text of this ability listed in different languages
+	 * @return list of {@link VersionGroupFlavorText} flavorTextEntries
+	 */
 	public List<VersionGroupFlavorText> getFlavorTextEntries() {
 		return flavorTextEntries;
 	}
-	/** Sets the flavor text entries of the Item */
+	/**
+	 * Sets the flavor text of this ability listed in different languages
+	 * @param flavorTextEntries list of {@link VersionGroupFlavorText} flavorTextEntries
+	 */
 	public void setFlavorTextEntries(List<VersionGroupFlavorText> flavorTextEntries) {
 		this.flavorTextEntries = flavorTextEntries;
 	}
 
-	/** Gets the game indices of the Item */
+	/**
+	 * Get a list of game indices relevant to this item by generation
+	 * @return a list of {@link GenerationGameIndex} game indices
+	 */
 	public List<GenerationGameIndex> getGameIndices() {
 		return gameIndices;
 	}
-	/** Sets the game indices of the Item */
+	/**
+	 * Set a list of game indices relevant to this item by generation
+	 * @param gameIndices a list of {@link GenerationGameIndex} game indices
+	 */
 	public void setGameIndices(List<GenerationGameIndex> gameIndices) {
 		this.gameIndices = gameIndices;
 	}
 
-	/** Gets the names of the Item */
+	/**
+	 * Get the name of this item listed in different languages
+	 * @return list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names of the Item */
+	/**
+	 * Sets the names of this item listed in different languages
+	 * @param names the names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets the sprites of the Item */
+	/**
+	 * Get a set of sprites used to depict this item in the game
+	 * @return the {@link ItemSprites} sprites
+	 */
 	public ItemSprites getSprites() {
 		return sprites;
 	}
-	/** Sets the sprites of the Item */
+	/**
+	 * Set a set of sprites used to depict this item in the game
+	 * @param sprites the {@link ItemSprites} sprites
+	 */
 	public void setSprites(ItemSprites sprites) {
 		this.sprites = sprites;
 	}
 
-	/** Gets the Pokemon that hold the Item */
+	/**
+	 * Get a list of Pokémon that might be found
+	 * in the wild holding this item
+	 * @return a list of {@link ItemHolderPokemon} heldByPokemon
+	 */
 	public List<ItemHolderPokemon> getHeldByPokemon() {
 		return heldByPokemon;
 	}
-	/** Sets the Pokemon that hold the Item */
+	/**
+	 * Set a list of Pokémon that might be found
+	 * in the wild holding this item
+	 * @param heldByPokemon a list of {@link ItemHolderPokemon} heldByPokemon
+	 */
 	public void setHeldByPokemon(List<ItemHolderPokemon> heldByPokemon) {
 		this.heldByPokemon = heldByPokemon;
 	}
 
-	/** Gets the EvolutionChain that the Item is a baby trigger for */
+	/**
+	 * Get an evolution chain this item requires to
+	 * produce a bay during mating
+	 * @return the {@link EvolutionChain} babyTriggerFor
+	 */
 	public NamedApiResource<EvolutionChain> getBabyTriggerFor() {
 		return babyTriggerFor;
 	}
-	/** Sets the EvolutionChain that the Item is a baby trigger for */
+	/**
+	 * Set an evolution chain this item requires to
+	 * produce a bay during mating
+	 * @param babyTriggerFor the {@link EvolutionChain} babyTriggerFor
+	 */
 	public void setBabyTriggerFor(NamedApiResource<EvolutionChain> babyTriggerFor) {
 		this.babyTriggerFor = babyTriggerFor;
 	}
 
-	/** Gets the machines that teach the Item to Pokemon */
+	/**
+	 * Get a list of the machines related to this item
+	 * @return a list of {@link MachineVersionDetail} machines
+	 */
 	public List<MachineVersionDetail> getMachines() {
 		return machines;
 	}
-	/** Sets the machines that teach the Item to Pokemon */
+	/**
+	 * Set a list of the machines related to this item
+	 * @param machines a list of {@link MachineVersionDetail} machines
+	 */
 	public void setMachines(List<MachineVersionDetail> machines) {
 		this.machines = machines;
 	}
 
 	/**
-	 * Returns whether the given object o
-	 * is equal to this instance of Item
+	 * Returns whether the given object o is
+	 * equal to this instance of Item
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -189,13 +287,19 @@ public class Item implements PokeApiResource, Localizable, Comparable<Item> {
         return Objects.equals(getId(), item.getId()) && Objects.equals(getName(), item.getName()) && Objects.equals(getCost(), item.getCost()) && Objects.equals(getFlingPower(), item.getFlingPower()) && Objects.equals(getFlingEffect(), item.getFlingEffect()) && Objects.equals(getAttributes(), item.getAttributes()) && Objects.equals(getCategory(), item.getCategory()) && Objects.equals(getEffectEntries(), item.getEffectEntries()) && Objects.equals(getFlavorTextEntries(), item.getFlavorTextEntries()) && Objects.equals(getGameIndices(), item.getGameIndices()) && Objects.equals(getNames(), item.getNames()) && Objects.equals(getSprites(), item.getSprites()) && Objects.equals(getHeldByPokemon(), item.getHeldByPokemon()) && Objects.equals(getBabyTriggerFor(), item.getBabyTriggerFor()) && Objects.equals(getMachines(), item.getMachines());
 	}
 
-	/** Returns the hash code of the Item */
+	/**
+	 * Returns the hash code of the Item
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getCost(), getFlingPower(), getFlingEffect(), getAttributes(), getCategory(), getEffectEntries(), getFlavorTextEntries(), getGameIndices(), getNames(), getSprites(), getHeldByPokemon(), getBabyTriggerFor(), getMachines());
 	}
 
-	/** Returns a string representation of the Item */
+	/**
+	 * Returns a string representation of the Item
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Item{" +

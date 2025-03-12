@@ -48,14 +48,14 @@ public class MoveAilment implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of moves that cause this ailment
-	 * @return the list of {@link NamedApiResource<Move>} moves
+	 * @return the list of {@link Move} moves
 	 */
 	public List<NamedApiResource<Move>> getMoves() {
 		return moves;
 	}
 	/**
 	 * Set the list of moves that cause this ailment
-	 * @param moves the list of {@link NamedApiResource<Move>} moves
+	 * @param moves the list of {@link Move} moves
 	 */
 	public void setMoves(List<NamedApiResource<Move>> moves) {
 		this.moves = moves;
@@ -63,23 +63,24 @@ public class MoveAilment implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the name of this resource listed in different languages
-	 * @return the names
+	 * @return the list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
 	 * Set the name of this resource listed in different languages
-	 * @param names the names
+	 * @param names the list of {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
 	/**
-	 * Returns true if the MoveAilment is equal to another MoveAilment
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveAilment
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -89,7 +90,7 @@ public class MoveAilment implements PokeApiResource, Localizable {
 
 	/**
 	 * Returns the hash code of the MoveAilment
-	 * @return the hash code of the MoveAilment
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -97,8 +98,8 @@ public class MoveAilment implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns the string representation of the MoveAilment
-	 * @return the MoveAilment as a string
+	 * Returns a string representation of the MoveAilment
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

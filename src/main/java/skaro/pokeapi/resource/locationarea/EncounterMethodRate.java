@@ -16,14 +16,14 @@ public class EncounterMethodRate {
 
 	/**
 	 * Get the method in which Pokémon may be encountered in an area
-	 * @return a {@link NamedApiResource<EncounterMethod>} object
+	 * @return a {@link EncounterMethod} object
 	 */
 	public NamedApiResource<EncounterMethod> getEncounterMethod() {
 		return encounterMethod;
 	}
 	/**
 	 * Set the method in which Pokémon may be encountered in an area
-	 * @param encounterMethod a {@link NamedApiResource<EncounterMethod>} object
+	 * @param encounterMethod a {@link EncounterMethod} object
 	 */
 	public void setEncounterMethod(NamedApiResource<EncounterMethod> encounterMethod) {
 		this.encounterMethod = encounterMethod;
@@ -45,9 +45,10 @@ public class EncounterMethodRate {
 	}
 
 	/**
-	 * Checks whether the EncounterMethodRate is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of EncounterMethodRate
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -56,8 +57,8 @@ public class EncounterMethodRate {
 	}
 
 	/**
-	 * Generate a hash code for the EncounterMethodRate
-	 * @return a hash code value for this object
+	 * Returns the hash code of the EncounterMethodRate
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -65,8 +66,8 @@ public class EncounterMethodRate {
 	}
 
 	/**
-	 * Convert the EncounterMethodRate to a String
-	 * @return a String representation of this object
+	 * Returns a string representation of the EncounterMethodRate
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

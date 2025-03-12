@@ -41,223 +41,358 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	@JsonProperty("past_types")
 	private List<PokemonTypePast> pastTypes;
 
-	/** Returns the id of the Pokemon */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	@Override
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id of the Pokemon */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Returns the name of the Pokemon */
+	/**
+	 * Get the name of this resource
+	 * @return the name
+	 */
 	@Override
 	public String getName() {
 		return name;
 	}
-	/** Sets the name of the Pokemon */
+	/**
+	 * Set the name of this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Returns the baseExperience of the Pokemon */
+	/**
+	 * Returns the baseExperience of the Pokémon
+	 * @return the baseExperience
+	 */
 	public Integer getBaseExperience() {
 		return baseExperience;
 	}
-	/** Sets the baseExperience of the Pokemon */
+	/**
+	 * Sets the baseExperience of the Pokémon
+	 * @param baseExperience the baseExperience
+	 */
 	public void setBaseExperience(Integer baseExperience) {
 		this.baseExperience = baseExperience;
 	}
 
 	/**
-	 * Get the cries of the Pokemon
-	 * @return the cries
+	 * Get the cries of the Pokémon
+	 * @return pokemonCries the cries
 	 */
 	public PokemonCries getPokemonCries() {
 		return pokemonCries;
 	}
 	/**
-	 * Set the cries of the Pokemon
+	 * Set the cries of the Pokémon
 	 * @param pokemonCries the cries
 	 */
 	public void setPokemonCries(PokemonCries pokemonCries) {
 		this.pokemonCries = pokemonCries;
 	}
 
-	/** Returns the height of the Pokemon */
+	/**
+	 * Get the height of this Pokémon in decimeters
+	 * @return the height
+	 */
 	public Integer getHeight() {
 		return height;
 	}
-	/** Sets the height of the Pokemon */
+	/**
+	 * Set the height of this Pokémon in decimeters
+	 * @param height the height
+	 */
 	public void setHeight(Integer height) {
 		this.height = height;
 	}
 
-	/** Returns whether the Pokemon is the default */
+	/**
+	 * Get for exactly one Pokémon used as
+	 * the default for each species
+	 * @return isDefault
+	 */
 	public Boolean isDefault() {
 		return isDefault;
 	}
-	/** Sets whether the Pokemon is default */
-	public void setDefault(Boolean aDefault) {
-		isDefault = aDefault;
+	/**
+	 * Set for exactly one Pokémon used as
+	 * the default for each species
+	 * @param isDefault the isDefault
+	 */
+	public void setDefault(Boolean isDefault) {
+		isDefault = isDefault;
 	}
 
-	/** Returns the order of the Pokemon */
+	/**
+	 * Get the order for sorting. Almost national order,
+	 * except families are grouped together
+	 * @return the order
+	 */
 	public Integer getOrder() {
 		return order;
 	}
-	/** Sets the order of the Pokemon */
+	/**
+	 * Set the order for sorting. Almost national order,
+	 * except families are grouped together
+	 * @param order the order
+	 */
 	public void setOrder(Integer order) {
 		this.order = order;
 	}
 
-	/** Returns the weight of the Pokemon */
+	/**
+	 * Get the weight of this Pokémon in hectograms
+	 * @return the weight
+	 */
 	public Integer getWeight() {
 		return weight;
 	}
-	/** Sets the weight of the Pokemon */
+	/**
+	 * Set the weight of this Pokémon in hectograms
+	 * @param weight the weight
+	 */
 	public void setWeight(Integer weight) {
 		this.weight = weight;
 	}
 
-	/** Returns the abilities of the Pokemon */
+	/**
+	 * Get a list of abilities this Pokémon could potentially have
+	 * @return the list of {@link PokemonAbility} abilities
+	 */
 	public List<PokemonAbility> getAbilities() {
 		return abilities;
 	}
-	/** Sets the abilities of the Pokemon */
+	/**
+	 * Set a list of abilities this Pokémon could potentially have
+	 * @param abilities the list of {@link PokemonAbility} abilities
+	 */
 	public void setAbilities(List<PokemonAbility> abilities) {
 		this.abilities = abilities;
 	}
 
-	/** Returns the past abilities of the Pokemon */
+	/**
+	 * Get a list of abilities this Pokémon had
+	 * @return the list of {@link PokemonAbility} pastAbilities
+	 */
 	public List<PokemonAbility> getPastAbilities() {
 		return pastAbilities;
 	}
-	/** Sets the past abilities of the Pokemon */
+	/**
+	 * Set a list of abilities this Pokémon had
+	 * @param pastAbilities the list of {@link PokemonAbility} pastAbilities
+	 */
 	public void setPastAbilities(List<PokemonAbility> pastAbilities) {
 		this.pastAbilities = pastAbilities;
 	}
 
-	/** Returns the forms of the Pokemon */
+	/**
+	 * Get a list of forms this Pokémon can take on
+	 * @return the list of {@link PokemonForm} forms
+	 */
 	public List<NamedApiResource<PokemonForm>> getForms() {
 		return forms;
 	}
-	/** Sets the forms of the Pokemon */
+	/**
+	 * Set a list of forms this Pokémon can take on
+	 * @param forms the list of {@link PokemonForm} forms
+	 */
 	public void setForms(List<NamedApiResource<PokemonForm>> forms) {
 		this.forms = forms;
 	}
 
-	/** Returns the gameIndices of the Pokemon */
+	/**
+	 * Get a list of game indices relevant to Pokémon item by generation
+	 * @return the list of {@link VersionGameIndex} gameIndices
+	 */
 	public List<VersionGameIndex> getGameIndices() {
 		return gameIndices;
 	}
-	/** Sets the gameIndices of the Pokemon */
+	/**
+	 * Set a list of game indices relevant to Pokémon item by generation
+	 * @param gameIndices the list of {@link VersionGameIndex} gameIndices
+	 */
 	public void setGameIndices(List<VersionGameIndex> gameIndices) {
 		this.gameIndices = gameIndices;
 	}
 
-	/** Returns the heldItems of the Pokemon */
+	/**
+	 * Get a list of items this Pokémon may be holding when encountered
+	 * @return the list of {@link PokemonHeldItem} heldItems
+	 */
 	public List<PokemonHeldItem> getHeldItems() {
 		return heldItems;
 	}
-	/** Sets the heldItems of the Pokemon */
+	/**
+	 * Set a list of items this Pokémon may be holding when encountered
+	 * @param heldItems the list of {@link PokemonHeldItem} heldItems
+	 */
 	public void setHeldItems(List<PokemonHeldItem> heldItems) {
 		this.heldItems = heldItems;
 	}
 
-	/** Returns the locationAreaEncounters of the Pokemon */
+	/**
+	 * Get a link to a list of location areas, as well as
+	 * encounter details pertaining to specific versions
+	 * @return the locationAreaEncounters
+	 */
 	public String getLocationAreaEncounters() {
 		return locationAreaEncounters;
 	}
-	/** Sets the locationAreaEncounters of the Pokemon */
+	/**
+	 * Set a link to a list of location areas, as well as
+	 * encounter details pertaining to specific versions
+	 * @param locationAreaEncounters the locationAreaEncounters
+	 */
 	public void setLocationAreaEncounters(String locationAreaEncounters) {
 		this.locationAreaEncounters = locationAreaEncounters;
 	}
 
-	/** Returns the moves of the Pokemon */
+	/**
+	 * Get a list of moves along with learn methods and
+	 * level details pertaining to specific version groups
+	 * @return the list of {@link PokemonMove} moves
+	 */
 	public List<PokemonMove> getMoves() {
 		return moves;
 	}
-	/** Sets the moves of the Pokemon */
+	/**
+	 * Set a list of moves along with learn methods and
+	 * level details pertaining to specific version groups
+	 * @param moves the list of {@link PokemonMove} moves
+	 */
 	public void setMoves(List<PokemonMove> moves) {
 		this.moves = moves;
 	}
 
-	/** Returns the sprites of the Pokemon */
+	/**
+	 * Get a set of sprites used to depict this Pokémon in the game.
+	 * A visual representation of the various sprites can be found
+	 * <a href="https://github.com/PokeAPI/sprites#sprites">here</a>.
+	 */
 	public PokemonSprites getSprites() {
 		return sprites;
 	}
-	/** Sets the sprites of the Pokemon */
+	/**
+	 * Set a set of sprites used to depict this Pokémon in the game.
+	 * A visual representation of the various sprites can be found
+	 * <a href="https://github.com/PokeAPI/sprites#sprites">here</a>.
+	 */
 	public void setSprites(PokemonSprites sprites) {
 		this.sprites = sprites;
 	}
 
-	/** Returns the species of the Pokemon */
+	/**
+	 * Get the species this Pokémon belongs to
+	 * @return the {@link PokemonSpecies} species
+	 */
 	public NamedApiResource<PokemonSpecies> getSpecies() {
 		return species;
 	}
-	/** Sets the species of the Pokemon */
+	/**
+	 * Set the species this Pokémon belongs to
+	 * @param species the {@link PokemonSpecies} species
+	 */
 	public void setSpecies(NamedApiResource<PokemonSpecies> species) {
 		this.species = species;
 	}
 
-	/** Returns the stats of the Pokemon */
+	/**
+	 * Get a list of base stat values for this Pokémon
+	 * @return the list of {@link PokemonStat} stats
+	 */
 	public List<PokemonStat> getStats() {
 		return stats;
 	}
-	/** Sets the stats of the Pokemon */
+	/**
+	 * Set a list of base stat values for this Pokémon
+	 * @param stats the list of {@link PokemonStat} stats
+	 */
 	public void setStats(List<PokemonStat> stats) {
 		this.stats = stats;
 	}
 
-	/** Returns the types of the Pokemon */
+	/**
+	 * Get a list of details showing types this Pokémon has
+	 * @return the list of {@link PokemonType} types
+	 */
 	public List<PokemonType> getTypes() {
 		return types;
 	}
-	/** Sets the types of the Pokemon */
+	/**
+	 * Set a list of details showing types this Pokémon has
+	 * @param types the list of {@link PokemonType} types
+	 */
 	public void setTypes(List<PokemonType> types) {
 		this.types = types;
 	}
 
-	/** Returns the pastTypes of the Pokemon */
+	/**
+	 * Get a list of details showing types this pokémon had
+	 * in previous generations
+	 * @return the list of {@link PokemonTypePast} pastTypes
+	 */
 	public List<PokemonTypePast> getPastTypes() {
 		return pastTypes;
 	}
-	/** Sets the pastTypes of the Pokemon */
+	/**
+	 * Set a list of details showing types this pokémon had
+	 * in previous generations
+	 * @param pastTypes the list of {@link PokemonTypePast} pastTypes
+	 */
 	public void setPastTypes(List<PokemonTypePast> pastTypes) {
 		this.pastTypes = pastTypes;
 	}
 
 	/**
-	 * Returns whether the given object o
-	 * is equal to this instance of Pokemon
+	 * Returns whether the given object o is
+	 * equal to this instance of Pokemon
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
-		if (!(o instanceof Pokemon)) return false;
-		Pokemon pokemon = (Pokemon) o;
-		return Objects.equals(getId(), pokemon.getId()) && Objects.equals(getName(), pokemon.getName()) && Objects.equals(getBaseExperience(), pokemon.getBaseExperience()) && Objects.equals(getHeight(), pokemon.getHeight()) && Objects.equals(isDefault, pokemon.isDefault) && Objects.equals(getOrder(), pokemon.getOrder()) && Objects.equals(getWeight(), pokemon.getWeight()) && Objects.equals(getAbilities(), pokemon.getAbilities()) && Objects.equals(getForms(), pokemon.getForms()) && Objects.equals(getGameIndices(), pokemon.getGameIndices()) && Objects.equals(getHeldItems(), pokemon.getHeldItems()) && Objects.equals(getLocationAreaEncounters(), pokemon.getLocationAreaEncounters()) && Objects.equals(getMoves(), pokemon.getMoves()) && Objects.equals(getSprites(), pokemon.getSprites()) && Objects.equals(getSpecies(), pokemon.getSpecies()) && Objects.equals(getStats(), pokemon.getStats()) && Objects.equals(getTypes(), pokemon.getTypes()) && Objects.equals(getPastTypes(), pokemon.getPastTypes());
+		if (!(o instanceof Pokemon pokemon)) return false;
+        return Objects.equals(getId(), pokemon.getId()) && Objects.equals(getName(), pokemon.getName()) && Objects.equals(getBaseExperience(), pokemon.getBaseExperience()) && Objects.equals(getPokemonCries(), pokemon.getPokemonCries()) && Objects.equals(getHeight(), pokemon.getHeight()) && Objects.equals(isDefault, pokemon.isDefault) && Objects.equals(getOrder(), pokemon.getOrder()) && Objects.equals(getWeight(), pokemon.getWeight()) && Objects.equals(getAbilities(), pokemon.getAbilities()) && Objects.equals(getPastAbilities(), pokemon.getPastAbilities()) && Objects.equals(getForms(), pokemon.getForms()) && Objects.equals(getGameIndices(), pokemon.getGameIndices()) && Objects.equals(getHeldItems(), pokemon.getHeldItems()) && Objects.equals(getLocationAreaEncounters(), pokemon.getLocationAreaEncounters()) && Objects.equals(getMoves(), pokemon.getMoves()) && Objects.equals(getSprites(), pokemon.getSprites()) && Objects.equals(getSpecies(), pokemon.getSpecies()) && Objects.equals(getStats(), pokemon.getStats()) && Objects.equals(getTypes(), pokemon.getTypes()) && Objects.equals(getPastTypes(), pokemon.getPastTypes());
 	}
 
-	/** Returns the hash code of the Pokemon */
+	/**
+	 * Returns the hash code of the Ability
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), getBaseExperience(), getHeight(), isDefault, getOrder(), getWeight(), getAbilities(), getForms(), getGameIndices(), getHeldItems(), getLocationAreaEncounters(), getMoves(), getSprites(), getSpecies(), getStats(), getTypes(), getPastTypes());
+		return Objects.hash(getId(), getName(), getBaseExperience(), getPokemonCries(), getHeight(), isDefault, getOrder(), getWeight(), getAbilities(), getPastAbilities(), getForms(), getGameIndices(), getHeldItems(), getLocationAreaEncounters(), getMoves(), getSprites(), getSpecies(), getStats(), getTypes(), getPastTypes());
 	}
 
-	/** Returns a string representation of the Pokemon */
+	/**
+	 * Returns a string representation of the Pokemon
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Pokemon{" +
 				"id=" + id +
 				", name='" + name + '\'' +
 				", baseExperience=" + baseExperience +
+				", pokemonCries=" + pokemonCries +
 				", height=" + height +
 				", isDefault=" + isDefault +
 				", order=" + order +
 				", weight=" + weight +
 				", abilities=" + abilities +
+				", pastAbilities=" + pastAbilities +
 				", forms=" + forms +
 				", gameIndices=" + gameIndices +
 				", heldItems=" + heldItems +

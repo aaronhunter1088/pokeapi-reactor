@@ -152,9 +152,10 @@ public class PokemonFormSprites {
 	}
 
 	/**
-	 * Determines whether this PokemonFormSprites is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonFormSprites
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -163,7 +164,7 @@ public class PokemonFormSprites {
 	}
 
 	/**
-	 * Generates a hash code for this PokemonFormSprites
+	 * Returns the hash code of the PokemonFormSprites
 	 * @return the hash code
 	 */
 	@Override
@@ -172,7 +173,7 @@ public class PokemonFormSprites {
 	}
 
 	/**
-	 * Generates a string representation of the PokemonFormSprites
+	 * Returns a string representation of the PokemonFormSprites
 	 * @return the string representation
 	 */
 	@Override

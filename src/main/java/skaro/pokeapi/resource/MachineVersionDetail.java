@@ -13,50 +13,58 @@ public class MachineVersionDetail {
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**
-	 * Get the machine
-	 * @return the machine
+	 * Get the machine that teaches a move from an item
+	 * @return the {@link Machine} machine
 	 */
 	public NamedApiResource<Machine> getMachine() {
 		return machine;
 	}
 	/**
-	 * Set the machine
-	 * @param machine the machine to set
+	 * Set the machine that teaches a move from an item
+	 * @param machine the {@link Machine} machine
 	 */
 	public void setMachine(NamedApiResource<Machine> machine) {
 		this.machine = machine;
 	}
 
 	/**
-	 * Get the version group
-	 * @return the version group
+	 * Get the version group of this specific machine
+	 * @return the {@link VersionGroup} versionGroup
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
-	 * Set the version group
-	 * @param versionGroup the version group to set
+	 * Set the version group of this specific machine
+	 * @param versionGroup the {@link VersionGroup} versionGroup
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
 
-	/** Returns whether the MachineVersionDetail is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of MachineVersionDetail
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof MachineVersionDetail that)) return false;
         return Objects.equals(getMachine(), that.getMachine()) && Objects.equals(getVersionGroup(), that.getVersionGroup());
 	}
 
-	/** Returns the hash code of the MachineVersionDetail */
+	/**
+	 * Returns the hash code of the MachineVersionDetail
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getMachine(), getVersionGroup());
 	}
 
 	/**
-	 * Returns a string representation of a MachineVersionDetail.
+	 * Returns a string representation of the MachineVersionDetail
 	 * @return the string representation
 	 */
 	@Override

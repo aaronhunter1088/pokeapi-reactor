@@ -16,33 +16,42 @@ public class PokemonEncounter {
 	private List<VersionEncounterDetail> versionDetails;
 
 	/**
-	 * Gets the Pokemon being encountered
-	 * @return the {@link NamedApiResource<Pokemon>} Pokemon
+	 * Gets the Pokémon being encountered
+	 * @return the {@link Pokemon} Pokemon
 	 */
 	public NamedApiResource<Pokemon> getPokemon() {
 		return pokemon;
 	}
 	/**
-	 * Sets the Pokemon being encountered
-	 * @param pokemon the {@link NamedApiResource<Pokemon>} Pokemon
+	 * Sets the Pokémon being encountered
+	 * @param pokemon the {@link Pokemon} Pokemon
 	 */
 	public void setPokemon(NamedApiResource<Pokemon> pokemon) {
 		this.pokemon = pokemon;
 	}
 
-	/** Gets the details of the encounter */
+	/**
+	 * Get a list of versions and encounters with Pokémon
+	 * that might happen in the referenced location area
+	 * @return a list of {@link VersionEncounterDetail} objects
+	 */
 	public List<VersionEncounterDetail> getVersionDetails() {
 		return versionDetails;
 	}
-	/** Sets the details of the encounter */
+	/**
+	 * Set a list of versions and encounters with Pokémon
+	 * that might happen in the referenced location area
+	 * @param versionDetails a list of {@link VersionEncounterDetail} objects
+	 */
 	public void setVersionDetails(List<VersionEncounterDetail> versionDetails) {
 		this.versionDetails = versionDetails;
 	}
 
 	/**
-	 * Checks whether the PokemonEncounter is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonEncounter
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -51,8 +60,8 @@ public class PokemonEncounter {
 	}
 
 	/**
-	 * Generate a hash code for the PokemonEncounter
-	 * @return a hash code value for this object
+	 * Returns the hash code of the PokemonEncounter
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -61,7 +70,7 @@ public class PokemonEncounter {
 
 	/**
 	 * Returns a string representation of the PokemonEncounter
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

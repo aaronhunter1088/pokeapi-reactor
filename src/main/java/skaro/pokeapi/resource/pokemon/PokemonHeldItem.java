@@ -30,7 +30,7 @@ public class PokemonHeldItem {
 
 	/**
 	 * Get the details of the versions in which the item is held
-	 * @return versionDetails the {@link PokemonHeldItemVersion}
+	 * @return versionDetails the list of {@link PokemonHeldItemVersion}
 	 * details of the versions in which the item is held
 	 */
 	public List<PokemonHeldItemVersion> getVersionDetails() {
@@ -38,16 +38,18 @@ public class PokemonHeldItem {
 	}
 	/**
 	 * Set the details of the versions in which the item is held
-	 * @param versionDetails the {@link PokemonHeldItemVersion}
+	 * @param versionDetails the list of {@link PokemonHeldItemVersion}
+	 * details of the versions in which the item is held
 	 */
 	public void setVersionDetails(List<PokemonHeldItemVersion> versionDetails) {
 		this.versionDetails = versionDetails;
 	}
 
 	/**
-	 * Check if this PokemonHeldItem is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonHeldItem
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -56,7 +58,7 @@ public class PokemonHeldItem {
 	}
 
 	/**
-	 * Generate a hash code for this PokemonHeldItem
+	 * Returns the hash code of the PokemonHeldItem
 	 * @return the hash code
 	 */
 	@Override
@@ -65,7 +67,8 @@ public class PokemonHeldItem {
 	}
 
 	/**
-	 * Get a String representation of this PokemonHeldItem
+	 * Returns a string representation of the PokemonHeldItem
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

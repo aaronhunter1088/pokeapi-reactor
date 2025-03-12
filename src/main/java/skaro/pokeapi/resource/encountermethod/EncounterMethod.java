@@ -75,9 +75,10 @@ public class EncounterMethod implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns true if the object is equal to this object based on the id, name, order, and names.
+	 * Returns whether the given object o is
+	 * equal to this instance of EncounterMethod
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -86,8 +87,8 @@ public class EncounterMethod implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Generate a hash code for the EncounterMethod
-	 * @return a hash code value for this object
+	 * Returns the hash code of the Ability
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -95,8 +96,8 @@ public class EncounterMethod implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a string representation of the EncounterMethod
-	 * @return a string representation of the object
+	 * Returns a string representation of the Ability
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

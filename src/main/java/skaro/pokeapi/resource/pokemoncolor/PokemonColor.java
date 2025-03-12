@@ -18,56 +18,91 @@ public class PokemonColor implements PokeApiResource, Localizable {
 	@JsonProperty("pokemon_species")
 	private List<NamedApiResource<PokemonSpecies>> pokemonSpecies;
 
-	/** Gets the id for this PokemonColor */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id for this PokemonColor */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name for this PokemonColor */
+	/**
+	 * Get the name for this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name for this PokemonColor */
+	/**
+	 * Set the name for this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the names for this PokemonColor in different languages */
+	/**
+	 * Get the names for this resource in different languages
+	 * @return the list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names for this PokemonColor in different languages */
+	/**
+	 * Set the names for this resource in different languages
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets a list of PokemonSpecies that have this PokemonColor */
+	/**
+	 * Get a list of PokemonSpecies that have this PokemonColor
+	 * @return the list of {@link PokemonSpecies} PokemonSpecies
+	 */
 	public List<NamedApiResource<PokemonSpecies>> getPokemonSpecies() {
 		return pokemonSpecies;
 	}
-	/** Sets a list of PokemonSpecies that have this PokemonColor */
+	/**
+	 * Set the list of PokemonSpecies that have this PokemonColor
+	 * @param pokemonSpecies the list of {@link PokemonSpecies} PokemonSpecies
+	 */
 	public void setPokemonSpecies(List<NamedApiResource<PokemonSpecies>> pokemonSpecies) {
 		this.pokemonSpecies = pokemonSpecies;
 	}
 
-	/** Returns whether the PokemonColor is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonColor
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonColor that)) return false;
         return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getNames(), that.getNames()) && Objects.equals(getPokemonSpecies(), that.getPokemonSpecies());
 	}
 
-	/** Returns the hash code of the PokemonColor */
+	/**
+	 * Returns the hash code of the PokemonColor
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getNames(), getPokemonSpecies());
 	}
 
-	/** Returns the string representation of the PokemonColor */
+	/**
+	 * Returns a string representation of the PokemonColor
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "PokemonColor{" +

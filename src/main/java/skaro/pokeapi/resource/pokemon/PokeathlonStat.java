@@ -63,9 +63,10 @@ public class PokeathlonStat implements PokeApiResource, Localizable {
     public void setAffectingNatures(NaturePokeathlonStatAffectSets affectingNatures) { this.affectingNatures = affectingNatures; }
 
     /**
-     * Check if this PokeathlonStat is equal to another object
+     * Returns whether the given object o is
+     * equal to this instance of PokeathlonStat
      * @param o the object to compare
-     * @return true if the objects are equal, false otherwise
+     * @return true if equal otherwise false
      */
     @Override
     public boolean equals(Object o) {
@@ -74,7 +75,7 @@ public class PokeathlonStat implements PokeApiResource, Localizable {
     }
 
     /**
-     * Generate a hash code for this PokeathlonStat
+     * Returns the hash code of the PokeathlonStat
      * @return the hash code
      */
     @Override
@@ -83,8 +84,8 @@ public class PokeathlonStat implements PokeApiResource, Localizable {
     }
 
     /**
-     * Get a String representation of this PokeathlonStat
-     * @return the String representation
+     * Returns a string representation of the PokeathlonStat
+     * @return the string representation
      */
     @Override
     public String toString() {

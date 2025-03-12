@@ -27,23 +27,24 @@ public class MoveStatAffect {
 
 	/**
 	 * Get the move causing the change
-	 * @return the {@link NamedApiResource} causing the move
+	 * @return the {@link Move} causing the move
 	 */
 	public NamedApiResource<Move> getMove() {
 		return move;
 	}
 	/**
 	 * Set the move causing the change
-	 * @param move the {@link NamedApiResource} causing the move
+	 * @param move the {@link Move} causing the move
 	 */
 	public void setMove(NamedApiResource<Move> move) {
 		this.move = move;
 	}
 
 	/**
-	 * Checks if the MoveStatAffect is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveStatAffect
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -52,7 +53,7 @@ public class MoveStatAffect {
 	}
 
 	/**
-	 * Generates a hash code for the MoveStatAffect
+	 * Returns the hash code of the MoveStatAffect
 	 * @return the hash code
 	 */
 	@Override
@@ -61,7 +62,7 @@ public class MoveStatAffect {
 	}
 
 	/**
-	 * Generates a string representation of the MoveStatAffect
+	 * Returns a string representation of the MoveStatAffect
 	 * @return the string representation
 	 */
 	@Override

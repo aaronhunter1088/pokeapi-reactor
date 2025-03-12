@@ -20,56 +20,86 @@ public class MoveLearnMethod implements PokeApiResource, Localizable {
 	@JsonProperty("version_groups")
 	private List<NamedApiResource<VersionGroup>> versionGroups;
 
-	/** Gets the id of this move learn method */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id of this move learn method */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name of this move learn method */
+	/**
+	 * Get the name of this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name of this move learn method */
+	/**
+	 * Set the name of this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the descriptions of this move learn method */
+	/**
+	 * Gets the descriptions of this move learn method
+	 * @return the list of {@link Description} descriptions
+	 */
 	public List<Description> getDescriptions() {
 		return descriptions;
 	}
-	/** Sets the descriptions of this move learn method */
+	/**
+	 * Sets the descriptions of this move learn method
+	 * @param descriptions the list of {@link Description} descriptions
+	 */
 	public void setDescriptions(List<Description> descriptions) {
 		this.descriptions = descriptions;
 	}
 
-	/** Gets the names of this move learn method */
+	/**
+	 * Get the names of this move learn method
+	 * @return the list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names of this move learn method */
+	/**
+	 * Set the names of this move learn method
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets the version groups this move learn method can be performed in */
+	/**
+	 * Get the version groups this move learn method can be performed in
+	 * @return the list of {@link VersionGroup} version groups
+	 */
 	public List<NamedApiResource<VersionGroup>> getVersionGroups() {
 		return versionGroups;
 	}
-	/** Sets the version groups this move learn method can be performed in */
+	/**
+	 * Set the version groups this move learn method can be performed in
+	 * @param versionGroups the list of {@link VersionGroup} version groups
+	 */
 	public void setVersionGroups(List<NamedApiResource<VersionGroup>> versionGroups) {
 		this.versionGroups = versionGroups;
 	}
 
 	/**
-	 * Returns true if the MoveLearnMethod object being compared
-	 * is the same as the current MoveLearnMethod object.
-	 * @param o The object being compared
-	 * @return true if the same, false otherwise
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveLearnMethod
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -77,13 +107,19 @@ public class MoveLearnMethod implements PokeApiResource, Localizable {
         return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getDescriptions(), that.getDescriptions()) && Objects.equals(getNames(), that.getNames()) && Objects.equals(getVersionGroups(), that.getVersionGroups());
 	}
 
-	/** Returns the hash code of the MoveLearnMethod */
+	/**
+	 * Returns the hash code of the MoveLearnMethod
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getDescriptions(), getNames(), getVersionGroups());
 	}
 
-	/** Returns a string representation of the MoveLearnMethod */
+	/**
+	 * Returns a string representation of the MoveLearnMethod
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "MoveLearnMethod{" +

@@ -11,33 +11,34 @@ public class NaturePokeathlonStatAffectSets {
     /**
      * Get a list of natures and how they
      * change the referenced Pokéathlon stat
-     * @return increase a list of natures
+     * @return increase a list of {@link NaturePokeathlonStatAffect} natures
      */
     public List<NaturePokeathlonStatAffect> getIncrease() { return increase; }
     /**
      * Set a list of natures and how they
      * change the referenced Pokéathlon stat
-     * @param increase a list of natures
+     * @param increase a list of {@link NaturePokeathlonStatAffect} natures
      */
     public void setIncrease(List<NaturePokeathlonStatAffect> increase) { this.increase = increase; }
 
     /**
      * Get a list of natures and how they
      * change the referenced Pokéathlon stat
-     * @return decrease a list of natures
+     * @return decrease a list of {@link NaturePokeathlonStatAffect} natures
      */
     public List<NaturePokeathlonStatAffect> getDecrease() { return decrease; }
     /**
      * Set a list of natures and how they
      * change the referenced Pokéathlon stat
-     * @param decrease a list of natures
+     * @param decrease a list of {@link NaturePokeathlonStatAffect} natures
      */
     public void setDecrease(List<NaturePokeathlonStatAffect> decrease) { this.decrease = decrease; }
 
     /**
-     * Check if this NaturePokeathlonStatAffectSets is equal to another object
+     * Returns whether the given object o is
+     * equal to this instance of NaturePokeathlonStatAffectSets
      * @param o the object to compare
-     * @return true if the objects are equal, false otherwise
+     * @return true if equal otherwise false
      */
     @Override
     public boolean equals(Object o) {
@@ -46,7 +47,7 @@ public class NaturePokeathlonStatAffectSets {
     }
 
     /**
-     * Generate a hash code for this NaturePokeathlonStatAffectSets
+     * Returns the hash code of the NaturePokeathlonStatAffectSets
      * @return the hash code
      */
     @Override
@@ -55,8 +56,8 @@ public class NaturePokeathlonStatAffectSets {
     }
 
     /**
-     * Get a String representation of this NaturePokeathlonStatAffectSets
-     * @return the String representation
+     * Returns a string representation of the NaturePokeathlonStatAffectSets
+     * @return the string representation
      */
     @Override
     public String toString() {

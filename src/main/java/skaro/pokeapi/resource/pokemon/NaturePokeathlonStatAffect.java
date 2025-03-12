@@ -35,9 +35,10 @@ public class NaturePokeathlonStatAffect {
     public void setNature(NamedApiResource<Nature> nature) { this.nature = nature; }
 
     /**
-     * Check if this NaturePokeathlonStatAffect is equal to another object
+     * Returns whether the given object o is
+     * equal to this instance of NaturePokeathlonStatAffect
      * @param o the object to compare
-     * @return true if the objects are equal, false otherwise
+     * @return true if equal otherwise false
      */
     @Override
     public boolean equals(Object o) {
@@ -46,7 +47,7 @@ public class NaturePokeathlonStatAffect {
     }
 
     /**
-     * Generate a hash code for this NaturePokeathlonStatAffect
+     * Returns the hash code of the NaturePokeathlonStatAffect
      * @return the hash code
      */
     @Override
@@ -55,8 +56,8 @@ public class NaturePokeathlonStatAffect {
     }
 
     /**
-     * Get a String representation of this NaturePokeathlonStatAffect
-     * @return the String representation
+     * Returns a string representation of the NaturePokeathlonStatAffect
+     * @return the string representation
      */
     @Override
     public String toString() {

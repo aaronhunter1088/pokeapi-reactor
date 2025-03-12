@@ -30,14 +30,14 @@ public class VerboseEffect {
 	}
 
 	/**
-	 * Get the localized effect text in brief.
+	 * Get the localized effect text in brief
 	 * @return the shortEffect
 	 */
 	public String getShortEffect() {
 		return shortEffect;
 	}
 	/**
-	 * Set the localized effect text in brief.
+	 * Set the localized effect text in brief
 	 * @param shortEffect the shortEffect
 	 */
 	public void setShortEffect(String shortEffect) {
@@ -45,34 +45,45 @@ public class VerboseEffect {
 	}
 
 	/**
-	 * Get the language
-	 * @return the {@link NamedApiResource} language
+	 * Get the language this effect is in
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
-	 * Set the language
-	 * @param language the {@link NamedApiResource} language
+	 * Set the language this effect is in
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
 
-	/** Returns whether the VerboseEffect is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of VerboseEffect
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof VerboseEffect that)) return false;
         return Objects.equals(getEffect(), that.getEffect()) && Objects.equals(getShortEffect(), that.getShortEffect()) && Objects.equals(getLanguage(), that.getLanguage());
 	}
 
-	/** Returns the hash code of the VerboseEffect */
+	/**
+	 * Returns the hash code of the VerboseEffect
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getEffect(), getShortEffect(), getLanguage());
 	}
 
-	/** Returns the string representation of the VerboseEffect */
+	/**
+	 * Returns a string representation of the VerboseEffect
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "VerboseEffect{" +

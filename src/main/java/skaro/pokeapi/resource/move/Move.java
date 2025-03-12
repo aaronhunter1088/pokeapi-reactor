@@ -60,242 +60,391 @@ public class Move implements PokeApiResource, Localizable {
 	@JsonProperty("learned_by_pokemon")
 	private List<NamedApiResource<Pokemon>> learnedByPokemon;
 
-	/** Gets the id of the Move */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id of the Move */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name of the Move */
+	/**
+	 * Get the name of this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name of the Move */
+	/**
+	 * Set the name of this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the accuracy of the Move */
+	/**
+	 * Get the accuracy of the Move
+	 * @return the accuracy
+	 */
 	public Integer getAccuracy() {
 		return accuracy;
 	}
-	/** Sets the accuracy of the Move */
+	/**
+	 * Set the accuracy of the Move
+	 * @param accuracy the accuracy
+	 */
 	public void setAccuracy(Integer accuracy) {
 		this.accuracy = accuracy;
 	}
 
-	/** Gets the effect chance of the Move */
+	/**
+	 * Get the effect chance of the Move
+	 * @return the effect chance
+	 */
 	public Integer getEffectChance() {
 		return effectChance;
 	}
-	/** Sets the effect chance of the Move */
+	/**
+	 * Set the effect chance of the Move
+	 * @param effectChance the effect chance
+	 */
 	public void setEffectChance(Integer effectChance) {
 		this.effectChance = effectChance;
 	}
 
-	/** Gets the power points of the Move */
+	/**
+	 * Get the power points of the Move
+	 * @return the power points
+	 */
 	public Integer getPowerPoints() {
 		return powerPoints;
 	}
-	/** Sets the power points of the Move */
+	/**
+	 * Set the power points of the Move
+	 * @param powerPoints the power points
+	 */
 	public void setPowerPoints(Integer powerPoints) {
 		this.powerPoints = powerPoints;
 	}
 
-	/** Gets the priority of the Move */
+	/**
+	 * Get the priority of the Move
+	 * @return the priority
+	 */
 	public Integer getPriority() {
 		return priority;
 	}
-	/** Sets the priority of the Move */
+	/**
+	 * Set the priority of the Move
+	 * @param priority the priority
+	 */
 	public void setPriority(Integer priority) {
 		this.priority = priority;
 	}
 
-	/** Gets the power of the Move */
+	/**
+	 * Get the power of the Move
+	 * @return the power
+	 */
 	public Integer getPower() {
 		return power;
 	}
-	/** Sets the power of the Move */
+	/**
+	 * Set the power of the Move
+	 * @param power the power
+	 */
 	public void setPower(Integer power) {
 		this.power = power;
 	}
 
-	/** Gets the contest combos of the Move */
+	/**
+	 * Get the contest combos of the Move
+	 * @return the {@link ContestComboSets} contest combos
+	 */
 	public ContestComboSets getContestCombos() {
 		return contestCombos;
 	}
-	/** Sets the contest combos of the Move */
+	/**
+	 * Set the contest combos of the Move
+	 * @param contestCombos the {@link ContestComboSets} contest combos
+	 */
 	public void setContestCombos(ContestComboSets contestCombos) {
 		this.contestCombos = contestCombos;
 	}
 
-	/** Gets the contest type of the Move */
+	/**
+	 * Get the contest type of the Move
+	 * @return the {@link ContestType} contest type
+	 */
 	public NamedApiResource<ContestType> getContestType() {
 		return contestType;
 	}
-	/** Sets the contest type of the Move */
+	/**
+	 * Set the contest type of the Move
+	 * @param contestType the {@link ContestType} contest type
+	 */
 	public void setContestType(NamedApiResource<ContestType> contestType) {
 		this.contestType = contestType;
 	}
 
-	/** Gets the contest effect of the Move */
+	/**
+	 * Get the contest effect of the Move
+	 * @return the {@link ContestEffect} contest effect
+	 */
 	public NamedApiResource<ContestEffect> getContestEffect() {
 		return contestEffect;
 	}
-	/** Sets the contest effect of the Move */
+	/**
+	 * Set the contest effect of the Move
+	 * @param contestEffect the {@link ContestEffect} contest effect
+	 */
 	public void setContestEffect(NamedApiResource<ContestEffect> contestEffect) {
 		this.contestEffect = contestEffect;
 	}
 
-	/** Gets the damage class of the Move */
+	/**
+	 * Get the damage class of the Move
+	 * @return the {@link MoveDamageClass} damage class
+	 */
 	public NamedApiResource<MoveDamageClass> getDamageClass() {
 		return damageClass;
 	}
-	/** Sets the damage class of the Move */
+	/**
+	 * Set the damage class of the Move
+	 * @param damageClass the {@link MoveDamageClass} damage class
+	 */
 	public void setDamageClass(NamedApiResource<MoveDamageClass> damageClass) {
 		this.damageClass = damageClass;
 	}
 
-	/** Gets the effect entries of the Move */
+	/**
+	 * Get the effect entries of the Move
+	 * @return the list of {@link VerboseEffect} effect entries
+	 */
 	public List<VerboseEffect> getEffectEntries() {
 		return effectEntries;
 	}
-	/** Sets the effect entries of the Move */
+	/**
+	 * Set the effect entries of the Move
+	 * @param effectEntries the list of {@link VerboseEffect} effect entries
+	 */
 	public void setEffectEntries(List<VerboseEffect> effectEntries) {
 		this.effectEntries = effectEntries;
 	}
 
-	/** Gets the effect changes of the Move */
+	/**
+	 * Get the effect changes of the Move
+	 * @return the list of {@link AbilityEffectChange} effect changes
+	 */
 	public List<AbilityEffectChange> getEffectChanges() {
 		return effectChanges;
 	}
-	/** Sets the effect changes of the Move */
+	/**
+	 * Set the effect changes of the Move
+	 * @param effectChanges the list of {@link AbilityEffectChange} effect changes
+	 */
 	public void setEffectChanges(List<AbilityEffectChange> effectChanges) {
 		this.effectChanges = effectChanges;
 	}
 
-	/** Gets the flavor text entries of the Move */
+	/**
+	 * Get the flavor text entries of the Move
+	 * @return the list of {@link MoveFlavorText} flavor text entries
+	 */
 	public List<MoveFlavorText> getFlavorTextEntries() {
 		return flavorTextEntries;
 	}
-	/** Sets the flavor text entries of the Move */
+	/**
+	 * Set the flavor text entries of the Move
+	 * @param flavorTextEntries the list of {@link MoveFlavorText} flavor text entries
+	 */
 	public void setFlavorTextEntries(List<MoveFlavorText> flavorTextEntries) {
 		this.flavorTextEntries = flavorTextEntries;
 	}
 
-	/** Gets the generation of the Move */
+	/**
+	 * Get the generation of the Move
+	 * @return the {@link Generation} generation
+	 */
 	public NamedApiResource<Generation> getGeneration() {
 		return generation;
 	}
-	/** Sets the generation of the Move */
+	/**
+	 * Set the generation of the Move
+	 * @param generation the {@link Generation} generation
+	 */
 	public void setGeneration(NamedApiResource<Generation> generation) {
 		this.generation = generation;
 	}
 
-	/** Gets the machines that teach the Move */
+	/**
+	 * Get the machines that teach the Move
+	 * @return the list of {@link MachineVersionDetail} machines
+	 */
 	public List<MachineVersionDetail> getMachines() {
 		return machines;
 	}
-	/** Sets the machines that teach the Move */
+	/**
+	 * Set the machines that teach the Move
+	 * @param machines the list of {@link MachineVersionDetail} machines
+	 */
 	public void setMachines(List<MachineVersionDetail> machines) {
 		this.machines = machines;
 	}
 
-	/** Gets the meta data of the Move */
+	/**
+	 * Get the meta data of the Move
+	 * @return the {@link MoveMetaData} meta
+	 */
 	public MoveMetaData getMeta() {
 		return meta;
 	}
-	/** Sets the meta data of the Move */
+	/**
+	 * Set the meta data of the Move
+	 * @param meta the {@link MoveMetaData} meta
+	 */
 	public void setMeta(MoveMetaData meta) {
 		this.meta = meta;
 	}
 
-	/** Gets the name of this resource listed in different languages */
+	/**
+	 * Get the name of this resource listed in different languages
+	 * @return the list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the name of this resource listed in different languages */
+	/**
+	 * Set the name of this resource listed in different languages
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets the past values of the Move */
+	/**
+	 * Get the past values of the Move
+	 * @return the list of {@link PastMoveStatValues} past values
+	 */
 	public List<PastMoveStatValues> getPastValues() {
 		return pastValues;
 	}
-	/** Sets the past values of the Move */
+	/**
+	 * Set the past values of the Move
+	 * @param pastValues the list of {@link PastMoveStatValues} past values
+	 */
 	public void setPastValues(List<PastMoveStatValues> pastValues) {
 		this.pastValues = pastValues;
 	}
 
-	/** Gets the stat changes of the Move */
+	/**
+	 * Get the stat changes of the Move
+	 * @return the list of {@link MoveStatChange} stat changes
+	 */
 	public List<MoveStatChange> getStatChanges() {
 		return statChanges;
 	}
-	/** Sets the stat changes of the Move */
+	/**
+	 * Set the stat changes of the Move
+	 * @param statChanges the list of {@link MoveStatChange} stat changes
+	 */
 	public void setStatChanges(List<MoveStatChange> statChanges) {
 		this.statChanges = statChanges;
 	}
 
-	/** Gets the super contest effect of the Move */
+	/**
+	 * Get the super contest effect of the Move
+	 * @return the {@link SuperContestEffect} super contest effect
+	 */
 	public NamedApiResource<SuperContestEffect> getSuperContestEffect() {
 		return superContestEffect;
 	}
-	/** Sets the super contest effect of the Move */
+	/**
+	 * Set the super contest effect of the Move
+	 * @param superContestEffect the {@link SuperContestEffect} super contest effect
+	 */
 	public void setSuperContestEffect(NamedApiResource<SuperContestEffect> superContestEffect) {
 		this.superContestEffect = superContestEffect;
 	}
 
-	/** Gets the target of the Move */
+	/**
+	 * Get the target of the Move
+	 * @return the {@link MoveTarget} target
+	 */
 	public NamedApiResource<MoveTarget> getTarget() {
 		return target;
 	}
-	/** Sets the target of the Move */
+	/**
+	 * Set the target of the Move
+	 * @param target the {@link MoveTarget} target
+	 */
 	public void setTarget(NamedApiResource<MoveTarget> target) {
 		this.target = target;
 	}
 
-	/** Gets the type of the Move */
+	/**
+	 * Get the type of the Move
+	 * @return the {@link Type} type
+	 */
 	public NamedApiResource<Type> getType() {
 		return type;
 	}
-	/** Sets the type of the Move */
+	/**
+	 * Set the type of the Move
+	 * @param type the {@link Type} type
+	 */
 	public void setType(NamedApiResource<Type> type) {
 		this.type = type;
 	}
 
 	/**
-	 * Get a list of Pokemon that can learn moves of this form
-	 * @return the learned by Pokemon
+	 * Get a list of Pokémon that can learn moves of this form
+	 * @return the list of {@link Pokemon} learnedByPokemon
 	 */
 	public List<NamedApiResource<Pokemon>> getLearnedByPokemon() {
 		return learnedByPokemon;
 	}
 	/**
-	 * Set a list of Pokemon that can learn moves of this form
-	 * @param learnedByPokemon the learned by Pokemon
+	 * Set a list of Pokémon that can learn moves of this form
+	 * @param learnedByPokemon the list of {@link Pokemon} learnedByPokemon
 	 */
 	public void setLearnedByPokemon(List<NamedApiResource<Pokemon>> learnedByPokemon) {
 		this.learnedByPokemon = learnedByPokemon;
 	}
 
-	/** Returns whether the Move is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of Move
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Move move)) return false;
         return Objects.equals(getId(), move.getId()) && Objects.equals(getName(), move.getName()) && Objects.equals(getAccuracy(), move.getAccuracy()) && Objects.equals(getEffectChance(), move.getEffectChance()) && Objects.equals(getPowerPoints(), move.getPowerPoints()) && Objects.equals(getPriority(), move.getPriority()) && Objects.equals(getPower(), move.getPower()) && Objects.equals(getContestCombos(), move.getContestCombos()) && Objects.equals(getContestType(), move.getContestType()) && Objects.equals(getContestEffect(), move.getContestEffect()) && Objects.equals(getDamageClass(), move.getDamageClass()) && Objects.equals(getEffectEntries(), move.getEffectEntries()) && Objects.equals(getEffectChanges(), move.getEffectChanges()) && Objects.equals(getFlavorTextEntries(), move.getFlavorTextEntries()) && Objects.equals(getGeneration(), move.getGeneration()) && Objects.equals(getMachines(), move.getMachines()) && Objects.equals(getMeta(), move.getMeta()) && Objects.equals(getNames(), move.getNames()) && Objects.equals(getPastValues(), move.getPastValues()) && Objects.equals(getStatChanges(), move.getStatChanges()) && Objects.equals(getSuperContestEffect(), move.getSuperContestEffect()) && Objects.equals(getTarget(), move.getTarget()) && Objects.equals(getType(), move.getType());
 	}
 
-	/** Returns the hash code of the Move */
+	/**
+	 * Returns the hash code of the Move
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getAccuracy(), getEffectChance(), getPowerPoints(), getPriority(), getPower(), getContestCombos(), getContestType(), getContestEffect(), getDamageClass(), getEffectEntries(), getEffectChanges(), getFlavorTextEntries(), getGeneration(), getMachines(), getMeta(), getNames(), getPastValues(), getStatChanges(), getSuperContestEffect(), getTarget(), getType());
 	}
 
-	/** Returns the string representation of the Move */
+	/**
+	 * Returns a string representation of the Move
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Move{" +

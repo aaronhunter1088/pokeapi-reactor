@@ -34,112 +34,183 @@ public class Type implements PokeApiResource, Localizable {
 	@JsonProperty("sprites")
 	private GenerationSprites generationSprites;
 
-	/** Gets the id for this Type */
+	/**
+	 * Get the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id for this Type */
+	/**
+	 * Set the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name for this Type */
+	/**
+	 * Get the name for this resource
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name for this Type */
+	/**
+	 * Set the name for this resource
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the damage relations for this Type */
+	/**
+	 * Get a detail of how effective this
+	 * type is toward others and vice versa
+	 * @return the {@link TypeRelations} damageRelations
+	 */
 	public TypeRelations getDamageRelations() {
 		return damageRelations;
 	}
-	/** Sets the damage relations for this Type */
+	/**
+	 * Set a detail of how effective this
+	 * type is toward others and vice versa
+	 * @param damageRelations the {@link TypeRelations} damageRelations
+	 */
 	public void setDamageRelations(TypeRelations damageRelations) {
 		this.damageRelations = damageRelations;
 	}
 
-	/** Gets the past damage relations for this Type */
+	/**
+	 * Get a list of details of how effective this
+	 * type was toward others and vice versa in
+	 * previous generations
+	 * @return a list of {@link TypeRelationsPast} pastDamageRelations
+	 */
 	public List<TypeRelationsPast> getPastDamageRelations() {
 		return pastDamageRelations;
 	}
-	/** Sets the past damage relations for this Type */
+	/**
+	 * Set a list of details of how effective this
+	 * type was toward others and vice versa in
+	 * previous generations
+	 * @param pastDamageRelations a list of {@link TypeRelationsPast} pastDamageRelations
+	 */
 	public void setPastDamageRelations(List<TypeRelationsPast> pastDamageRelations) {
 		this.pastDamageRelations = pastDamageRelations;
 	}
 
-	/** Gets the game indices for this Type */
+	/**
+	 * Get a list of game indices relevant
+	 * to this item by generation.
+	 * @return the list of {@link GenerationGameIndex} gameIndices
+	 */
 	public List<GenerationGameIndex> getGameIndices() {
 		return gameIndices;
 	}
-	/** Sets the game indices for this Type */
+	/**
+	 * Set a list of game indices relevant
+	 * to this item by generation.
+	 * @param gameIndices the list of {@link GenerationGameIndex} gameIndices
+	 */
 	public void setGameIndices(List<GenerationGameIndex> gameIndices) {
 		this.gameIndices = gameIndices;
 	}
 
-	/** Gets the generation this Type was introduced in */
+	/**
+	 * Get the generation this type was introduced in
+	 * @return the {@link Generation} generation
+	 */
 	public NamedApiResource<Generation> getGeneration() {
 		return generation;
 	}
-	/** Sets the generation this Type was introduced in */
+	/**
+	 * Set the generation this type was introduced in
+	 * @param generation the {@link Generation} generation
+	 */
 	public void setGeneration(NamedApiResource<Generation> generation) {
 		this.generation = generation;
 	}
 
-	/** Gets the move damage class for this Type */
+	/**
+	 * Get the class of damage inflicted by this type
+	 * @return the {@link MoveDamageClass} damage inflicted by this type
+	 */
 	public NamedApiResource<MoveDamageClass> getMoveDamageClass() {
 		return moveDamageClass;
 	}
-	/** Sets the move damage class for this Type */
+	/**
+	 * Set the class of damage inflicted by this type
+	 * @param moveDamageClass the  {@link MoveDamageClass} damage inflicted by this type
+	 */
 	public void setMoveDamageClass(NamedApiResource<MoveDamageClass> moveDamageClass) {
 		this.moveDamageClass = moveDamageClass;
 	}
 
-	/** Gets the names for this Type in different languages */
+	/**
+	 * Get the name of this resource
+	 * listed in different languages
+	 * @return list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names for this Type in different languages */
+	/**
+	 * Set the name of this resource
+	 * listed in different languages
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets a list of Pokemon that have this Type */
+	/**
+	 * Get a list of details of Pokémon that have this type
+	 * @return a list of {@link TypePokemon} Pokémon
+	 */
 	public List<TypePokemon> getPokemon() {
 		return pokemon;
 	}
-	/** Sets a list of Pokemon that have this Type */
+	/**
+	 * Set a list of Pokemon that have this Type
+	 * @param pokemon a list of {@link TypePokemon} pokemon
+	 */
 	public void setPokemon(List<TypePokemon> pokemon) {
 		this.pokemon = pokemon;
 	}
 
-	/** Gets a list of moves that have this Type */
+	/**
+	 * Get a list of moves that have this Type
+	 * @return a list of {@link NamedApiResource<Move>} moves
+	 */
 	public List<NamedApiResource<Move>> getMoves() {
 		return moves;
 	}
-	/** Sets a list of moves that have this Type */
+	/**
+	 * Set a list of moves that have this Type
+	 * @param moves a list of {@link NamedApiResource<Move>} moves
+	 */
 	public void setMoves(List<NamedApiResource<Move>> moves) {
 		this.moves = moves;
 	}
 
 	/**
-	 * Gets the sprites for this Type
-	 * @return the sprites for this Type
+	 * Gets the sprites for this type
+	 * @return the {@link GenerationSprites} sprites for this type
 	  */
 	public GenerationSprites getGenerationSprites() {
-		return null;
+		return generationSprites;
 	}
 	/**
-	 * Sets the sprites for this Type
-	 * @param generationSprites the sprites for this Type
+	 * Sets the sprites for this type
+	 * @param generationSprites the {@link GenerationSprites} sprites for this type
 	 */
 	public void setGenerationSprites(GenerationSprites generationSprites) {
 		this.generationSprites = generationSprites;
 	}
 
-	/** Returns whether the Type is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of Type
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Type type)) return false;
@@ -148,6 +219,7 @@ public class Type implements PokeApiResource, Localizable {
 
 	/**
 	 * Returns the hash code of the Type
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -155,7 +227,8 @@ public class Type implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns the string representation of the Type
+	 * Returns a string representation of the Type
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

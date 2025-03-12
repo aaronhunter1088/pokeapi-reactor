@@ -10,28 +10,43 @@ public class ItemHolderPokemonVersionDetail {
 	private Integer rarity;
 	private NamedApiResource<Version> version;
 
-	/** Gets the rarity of the item held by the pokemon */
+	/**
+	 * Get how often this Pokémon holds
+	 * this item in this version
+	 * @return the rarity
+	 */
 	public Integer getRarity() {
 		return rarity;
 	}
-	/** Sets the rarity of the item held by the pokemon */
+	/**
+	 * Set how often this Pokémon holds
+	 * this item in this version
+	 * @param rarity the rarity to set
+	 */
 	public void setRarity(Integer rarity) {
 		this.rarity = rarity;
 	}
 
-	/** Gets the version the item is held in by the pokemon */
+	/**
+	 * Get the version that this item is held in by the Pokémon
+	 * @return the {@link Version} version
+	 */
 	public NamedApiResource<Version> getVersion() {
 		return version;
 	}
-	/** Sets the version the item is held in by the pokemon */
+	/**
+	 * Set the version that this item is held in by the Pokémon
+	 * @param version the {@link Version} version to set
+	 */
 	public void setVersion(NamedApiResource<Version> version) {
 		this.version = version;
 	}
 
 	/**
-	 * Checks whether the ItemHolderPokemonVersionDetail is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ItemHolderPokemonVersionDetail
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -40,8 +55,8 @@ public class ItemHolderPokemonVersionDetail {
 	}
 
 	/**
-	 * Generate a hash code for the ItemHolderPokemonVersionDetail
-	 * @return a hash code value for this object
+	 * Returns the hash code of the ItemHolderPokemonVersionDetail
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -50,7 +65,7 @@ public class ItemHolderPokemonVersionDetail {
 
 	/**
 	 * Returns a string representation of the ItemHolderPokemonVersionDetail
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

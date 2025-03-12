@@ -22,74 +22,123 @@ public class Location implements PokeApiResource, Localizable {
 	private List<GenerationGameIndex> gameIndices;
 	private List<NamedApiResource<LocationArea>> areas;
 
-	/** Gets the id of the location */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id of the location */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name of the location */
+	/**
+	 * Get the name of this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name of the location */
+	/**
+	 * Set the name of this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the region this location can be found in */
+	/**
+	 * Get the region this location can be found in
+	 * @return the {@link Region} region
+	 */
 	public NamedApiResource<Region> getRegion() {
 		return region;
 	}
-	/** Sets the region this location can be found in */
+	/**
+	 * Set the region this location can be found in
+	 * @param region the {@link Region} region
+	 */
 	public void setRegion(NamedApiResource<Region> region) {
 		this.region = region;
 	}
 
-	/** Gets the names of the location */
+	/**
+	 * Get the name of this resource listed in different languages
+	 * @return the list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names of the location */
+	/**
+	 * Set the name of this resource listed in different languages
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets the game indices of the location */
+	/**
+	 * Get a list of game indices relevant to this
+	 * location by generation
+	 * @return a list of {@link GenerationGameIndex} objects
+	 */
 	public List<GenerationGameIndex> getGameIndices() {
 		return gameIndices;
 	}
-	/** Sets the game indices of the location */
+	/**
+	 * Set a list of game indices relevant to this
+	 * location by generation
+	 * @param gameIndices a list of {@link GenerationGameIndex} objects
+	 */
 	public void setGameIndices(List<GenerationGameIndex> gameIndices) {
 		this.gameIndices = gameIndices;
 	}
 
-	/** Gets the areas that can be found within this location */
+	/**
+	 * Get the areas that can be found within this location
+	 * @return a list of {@link LocationArea} objects
+	 */
 	public List<NamedApiResource<LocationArea>> getAreas() {
 		return areas;
 	}
-	/** Sets the areas that can be found within this location */
+	/**
+	 * Set the areas that can be found within this location
+	 * @param areas a list of {@link LocationArea} objects
+	 */
 	public void setAreas(List<NamedApiResource<LocationArea>> areas) {
 		this.areas = areas;
 	}
 
-	/** Returns true if the Location is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of Location
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Location location)) return false;
         return Objects.equals(getId(), location.getId()) && Objects.equals(getName(), location.getName()) && Objects.equals(getRegion(), location.getRegion()) && Objects.equals(getNames(), location.getNames()) && Objects.equals(getGameIndices(), location.getGameIndices()) && Objects.equals(getAreas(), location.getAreas());
 	}
 
-	/** Returns the hash code of the Location */
+	/**
+	 * Returns the hash code of the Location
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getRegion(), getNames(), getGameIndices(), getAreas());
 	}
 
-	/** Returns a string representation of the Location */
+	/**
+	 * Returns a string representation of the Location
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Location{" +

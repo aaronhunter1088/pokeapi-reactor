@@ -47,14 +47,14 @@ public class MoveCategory implements PokeApiResource {
 
 	/**
 	 * Get a list of moves that fall into this category
-	 * @return the list of {@link NamedApiResource<Move>} moves
+	 * @return the list of {@link Move} moves
 	 */
 	public List<NamedApiResource<Move>> getMoves() {
 		return moves;
 	}
 	/**
 	 * Set the list of moves that fall into this category
-	 * @param moves the list of {@link NamedApiResource<Move>} moves
+	 * @param moves the list of {@link Move} moves
 	 */
 	public void setMoves(List<NamedApiResource<Move>> moves) {
 		this.moves = moves;
@@ -62,23 +62,24 @@ public class MoveCategory implements PokeApiResource {
 
 	/**
 	 * Get the descriptions of this resource in different languages
-	 * @return the descriptions
+	 * @return the list of {@link Description} descriptions
 	 */
 	public List<Description> getDescriptions() {
 		return descriptions;
 	}
 	/**
 	 * Set the descriptions of this resource in different languages
-	 * @param descriptions the descriptions
+	 * @param descriptions the list of {@link Description} descriptions
 	 */
 	public void setDescriptions(List<Description> descriptions) {
 		this.descriptions = descriptions;
 	}
 
 	/**
-	 * Checks whether this MoveCategory is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveCategory
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -87,7 +88,7 @@ public class MoveCategory implements PokeApiResource {
 	}
 
 	/**
-	 * Calculate the hash code for this MoveCategory
+	 * Returns the hash code of the MoveCategory
 	 * @return the hash code
 	 */
 	@Override
@@ -96,7 +97,7 @@ public class MoveCategory implements PokeApiResource {
 	}
 
 	/**
-	 * Get the string representation of this MoveCategory
+	 * Returns a string representation of the MoveCategory
 	 * @return the string representation
 	 */
 	@Override

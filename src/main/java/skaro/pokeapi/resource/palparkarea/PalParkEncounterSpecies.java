@@ -18,7 +18,7 @@ public class PalParkEncounterSpecies {
     private Integer baseScore;
     private Integer rate;
     @JsonAlias({"area", "pokemon_species"})
-    private NamedApiResource<? extends PokeApiResource> namedApiResource;
+    private NamedApiResource<? extends PokeApiResource> pokeApiResource;
 
     /**
      * Get the base score given to the player
@@ -45,39 +45,38 @@ public class PalParkEncounterSpecies {
 
     /**
      * Get the Pokémon species being encountered
-     * PokemonSpecies (area), or PalParkArea (pokemon_species)
-     * @return the {@link NamedApiResource<PokemonSpecies>}
+     * @return the {@link PokemonSpecies} or {@link PalParkArea} pokeApiResource
      */
-    public NamedApiResource<? extends PokeApiResource> getNamedApiResource() { return namedApiResource; }
+    public NamedApiResource<? extends PokeApiResource> getPokeApiResource() { return pokeApiResource; }
     /**
      * Set the Pokémon species being encountered
-     * PokemonSpecies (area), or PalParkArea (pokemon_species)
-     * @param namedApiResource the {@link NamedApiResource<PokemonSpecies>}
+     * @param pokeApiResource the {@link PokemonSpecies} or {@link PalParkArea} pokeApiResource
      */
-    public void setNamedApiResource(NamedApiResource<? extends PokeApiResource> namedApiResource) { this.namedApiResource = namedApiResource; }
+    public void setPokeApiResource(NamedApiResource<? extends PokeApiResource> pokeApiResource) { this.pokeApiResource = pokeApiResource; }
 
     /**
-     * Compares this Pokémon entry to another object for equality.
+     * Returns whether the given object o is
+     * equal to this instance of PalParkEncounterSpecies
      * @param o the object to compare
-     * @return true if the objects are equal, false otherwise
+     * @return true if equal otherwise false
      */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof PalParkEncounterSpecies that)) return false;
-        return Objects.equals(getBaseScore(), that.getBaseScore()) && Objects.equals(getRate(), that.getRate()) && Objects.equals(getNamedApiResource(), that.getNamedApiResource());
+        return Objects.equals(getBaseScore(), that.getBaseScore()) && Objects.equals(getRate(), that.getRate()) && Objects.equals(getPokeApiResource(), that.getPokeApiResource());
     }
 
     /**
-     * Generates a hash code for this Pokémon entry
+     * Returns the hash code of the PalParkEncounterSpecies
      * @return the hash code
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getBaseScore(), getRate(), getNamedApiResource());
+        return Objects.hash(getBaseScore(), getRate(), getPokeApiResource());
     }
 
     /**
-     * Returns a string representation of the Pokémon entry
+     * Returns a string representation of the PalParkEncounterSpecies
      * @return the string representation
      */
     @Override
@@ -85,7 +84,7 @@ public class PalParkEncounterSpecies {
         return "PalParkEncounterSpecies{" +
                 "baseScore=" + baseScore +
                 ", rate=" + rate +
-                ", namedApiResource=" + namedApiResource +
+                ", namedApiResource=" + pokeApiResource +
                 '}';
     }
 }

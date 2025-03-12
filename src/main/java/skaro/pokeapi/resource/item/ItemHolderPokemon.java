@@ -13,28 +13,43 @@ public class ItemHolderPokemon {
 	@JsonProperty("version_details")
 	private List<ItemHolderPokemonVersionDetail> versionDetails;
 
-	/** Gets the pokemon that holds the item */
+	/**
+	 * Get the pokemon that holds this item
+	 * @return the {@link Pokemon} pokemon
+	 */
 	public NamedApiResource<Pokemon> getPokemon() {
 		return pokemon;
 	}
-	/** Sets the pokemon that holds the item */
+	/**
+	 * Set the pokemon that holds this item
+	 * @param pokemon the {@link Pokemon} pokemon
+	 */
 	public void setPokemon(NamedApiResource<Pokemon> pokemon) {
 		this.pokemon = pokemon;
 	}
 
-	/** Gets the details for the version that the item is held in by the pokemon */
+	/**
+	 * Get the details for the version that this
+	 * item is held in by the Pokémon
+	 * @return the list of {@link ItemHolderPokemonVersionDetail} version details
+	 */
 	public List<ItemHolderPokemonVersionDetail> getVersionDetails() {
 		return versionDetails;
 	}
-	/** Sets the details for the version that the item is held in by the pokemon */
+	/**
+	 * Set the details for the version that this
+	 * item is held in by the Pokémon
+	 * @param versionDetails the list of {@link ItemHolderPokemonVersionDetail} version details
+	 */
 	public void setVersionDetails(List<ItemHolderPokemonVersionDetail> versionDetails) {
 		this.versionDetails = versionDetails;
 	}
 
 	/**
-	 * Checks whether the ItemHolderPokemon is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ItemHolderPokemon
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -43,8 +58,8 @@ public class ItemHolderPokemon {
 	}
 
 	/**
-	 * Generate a hash code for the ItemHolderPokemon
-	 * @return a hash code value for this object
+	 * Returns the hash code of the ItemHolderPokemon
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -53,7 +68,7 @@ public class ItemHolderPokemon {
 
 	/**
 	 * Returns a string representation of the ItemHolderPokemon
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

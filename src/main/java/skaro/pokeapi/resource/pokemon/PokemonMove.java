@@ -44,9 +44,10 @@ public class PokemonMove {
 	}
 
 	/**
-	 * Check if this PokemonMove is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonMove
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -55,7 +56,7 @@ public class PokemonMove {
 	}
 
 	/**
-	 * Generate a hash code for this PokemonMove
+	 * Returns the hash code of the PokemonMove
 	 * @return the hash code
 	 */
 	@Override
@@ -64,8 +65,8 @@ public class PokemonMove {
 	}
 
 	/**
-	 * Get a String representation of this PokemonMove
-	 * @return the String representation
+	 * Returns a string representation of the PokemonMove
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

@@ -50,14 +50,14 @@ public class MoveDamageClass implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the descriptions of this resource in different languages
-	 * @return the descriptions
+	 * @return the list of {@link Description} descriptions
 	 */
 	public List<Description> getDescriptions() {
 		return descriptions;
 	}
 	/**
 	 * Set the descriptions of this resource in different languages
-	 * @param descriptions the descriptions
+	 * @param descriptions the list of {@link Description} descriptions
 	 */
 	public void setDescriptions(List<Description> descriptions) {
 		this.descriptions = descriptions;
@@ -65,14 +65,14 @@ public class MoveDamageClass implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of moves that fall into this damage class
-	 * @return the list of {@link NamedApiResource<Move>} moves
+	 * @return the list of {@link Move} moves
 	 */
 	public List<NamedApiResource<Move>> getMoves() {
 		return moves;
 	}
 	/**
 	 * Set a list of moves that fall into this damage class
-	 * @param moves the list of {@link NamedApiResource<Move>} moves
+	 * @param moves the list of {@link Move} moves
 	 */
 	public void setMoves(List<NamedApiResource<Move>> moves) {
 		this.moves = moves;
@@ -80,23 +80,24 @@ public class MoveDamageClass implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the names of this resource listed in other languages
-	 * @return the names
+	 * @return the list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
 	 * Set the names of this resource listed in other languages
-	 * @param names the names
+	 * @param names the list of {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
 	/**
-	 * Compares this MoveDamageClass to another object to determine if they are equal
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveDamageClass
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -105,7 +106,7 @@ public class MoveDamageClass implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Calculate the hash code of this MoveDamageClass
+	 * Returns the hash code of the MoveDamageClass
 	 * @return the hash code
 	 */
 	@Override
@@ -114,8 +115,8 @@ public class MoveDamageClass implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a String representation of this MoveDamageClass
-	 * @return the MoveDamageClass as a String
+	 * Returns a string representation of the MoveDamageClass
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

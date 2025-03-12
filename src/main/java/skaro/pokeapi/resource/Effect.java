@@ -14,14 +14,16 @@ public class Effect {
 	private NamedApiResource<Language> language;
 
 	/**
-	 * Get the effect
+	 * Get the localized effect text for an
+	 * API resource in a specific language
 	 * @return the effect
 	 */
 	public String getEffect() {
 		return effect;
 	}
 	/**
-	 * Set the effect
+	 * Set the localized effect text for an
+	 * API resource in a specific language
 	 * @param effect the effect
 	 */
 	public void setEffect(String effect) {
@@ -29,34 +31,45 @@ public class Effect {
 	}
 
 	/**
-	 * Get the language
-	 * @return the {@link NamedApiResource} language
+	 * Get the language this effect is in
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
-	 * Set the language
-	 * @param language the {@link NamedApiResource} language
+	 * Set the language this effect is in
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
 
-	/** Returns whether the Effect is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of Effect
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Effect effect1)) return false;
         return Objects.equals(getEffect(), effect1.getEffect()) && Objects.equals(getLanguage(), effect1.getLanguage());
 	}
 
-	/** Returns the hash code of the Effect */
+	/**
+	 * Returns the hash code of the Effect
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getEffect(), getLanguage());
 	}
 
-	/** Returns the string representation of the Effect */
+	/**
+	 * Returns a string representation of the Effect
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "Effect{" +

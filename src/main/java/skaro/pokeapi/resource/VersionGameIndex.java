@@ -28,33 +28,44 @@ public class VersionGameIndex {
 
 	/**
 	 * Get the version relevant to this game index
-	 * @return the {@link NamedApiResource} version
+	 * @return the {@link Version} version
 	 */
 	public NamedApiResource<Version> getVersion() {
 		return version;
 	}
 	/**
 	 * Set the version relevant to this game index
-	 * @param version the {@link NamedApiResource} version to set
+	 * @param version the {@link Version} version
 	 */
 	public void setVersion(NamedApiResource<Version> version) {
 		this.version = version;
 	}
 
-	/** Returns whether the VersionGameIndex is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of VersionGameIndex
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof VersionGameIndex that)) return false;
         return Objects.equals(getGameIndex(), that.getGameIndex()) && Objects.equals(getVersion(), that.getVersion());
 	}
 
-	/** Returns the hash code of the VersionGameIndex */
+	/**
+	 * Returns the hash code of the VersionGameIndex
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getGameIndex(), getVersion());
 	}
 
-	/** Returns the string representation of the VersionGameIndex */
+	/**
+	 * Returns a string representation of the VersionGameIndex
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "VersionGameIndex{" +

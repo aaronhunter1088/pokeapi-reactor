@@ -79,14 +79,14 @@ public class Ability implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the generation this ability originated in
-	 * @return generation
+	 * @return the {@link Generation} generation
 	 */
 	public NamedApiResource<Generation> getGeneration() {
 		return generation;
 	}
 	/**
 	 * Sets the generation this ability originated in
-	 * @param generation the generation
+	 * @param generation the {@link Generation} generation
 	 * */
 	public void setGeneration(NamedApiResource<Generation> generation) {
 		this.generation = generation;
@@ -94,7 +94,7 @@ public class Ability implements PokeApiResource, Localizable {
 
 	/**
 	 * Gets the names of this resource listed in different languages
-	 * @return names
+	 * @return the list of {@link Name} name
 	 */
 	@Override
 	public List<Name> getNames() {
@@ -103,7 +103,7 @@ public class Ability implements PokeApiResource, Localizable {
 
 	/**
 	 * Sets the names of this resource listed in different languages
-	 * @param names the names
+	 * @param names the {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;

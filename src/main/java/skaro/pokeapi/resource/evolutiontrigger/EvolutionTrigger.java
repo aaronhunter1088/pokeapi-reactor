@@ -65,24 +65,24 @@ public class EvolutionTrigger implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of pokemon species that result from this evolution trigger.
-	 * @return a list of {@link NamedApiResource<PokemonSpecies>} objects
+	 * @return a list of {@link PokemonSpecies} pokemon species
 	 */
 	public List<NamedApiResource<PokemonSpecies>> getPokemonSpecies() {
 		return pokemonSpecies;
 	}
 	/**
 	 * Set a list of pokemon species that result from this evolution trigger.
-	 * @param pokemonSpecies a list of {@link NamedApiResource<PokemonSpecies>} objects
+	 * @param pokemonSpecies a list of {@link PokemonSpecies} pokemon species
 	 */
 	public void setPokemonSpecies(List<NamedApiResource<PokemonSpecies>> pokemonSpecies) {
 		this.pokemonSpecies = pokemonSpecies;
 	}
 
 	/**
-	 * Returns true if the object is an instance of
-	 * {@link EvolutionTrigger} and has the same id as this object.
-	 * @param o An object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * Returns whether the given object o is
+	 * equal to this instance of EvolutionTrigger
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -91,7 +91,7 @@ public class EvolutionTrigger implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns the hash code of this object
+	 * Returns the hash code of the EvolutionTrigger
 	 * @return the hash code
 	 */
 	@Override
@@ -100,8 +100,8 @@ public class EvolutionTrigger implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a string representation of the object
-	 * @return a string representation of the object
+	 * Returns a string representation of the EvolutionTrigger
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

@@ -10,14 +10,14 @@ public class MoveStatAffectSets {
 
 	/**
 	 * Get a list of moves and how they change the referenced stat
-	 * @return increase
+	 * @return the list of {@link MoveStatAffect} increase
 	 */
 	public List<MoveStatAffect> getIncrease() {
 		return increase;
 	}
 	/**
 	 * Set a list of moves and how they change the referenced stat
-	 * @param increase the increase
+	 * @param increase the list of {@link MoveStatAffect} increase
 	 */
 	public void setIncrease(List<MoveStatAffect> increase) {
 		this.increase = increase;
@@ -25,23 +25,24 @@ public class MoveStatAffectSets {
 
 	/**
 	 * Get a list of moves and how they change the referenced stat
-	 * @return decrease
+	 * @return the list of {@link MoveStatAffect} decrease
 	 */
 	public List<MoveStatAffect> getDecrease() {
 		return decrease;
 	}
 	/**
 	 * Set a list of moves and how they change the referenced stat
-	 * @param decrease the decrease
+	 * @param decrease the list of {@link MoveStatAffect} decrease
 	 */
 	public void setDecrease(List<MoveStatAffect> decrease) {
 		this.decrease = decrease;
 	}
 
 	/**
-	 * Checks if the MoveStatAffectSets is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveStatAffectSets
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -50,7 +51,8 @@ public class MoveStatAffectSets {
 	}
 
 	/**
-	 * Generates a hash code for the MoveStatAffectSets
+	 * Returns the hash code of the MoveStatAffectSets
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -58,7 +60,8 @@ public class MoveStatAffectSets {
 	}
 
 	/**
-	 * Generates a string representation of the MoveStatAffectSets
+	 * Returns a string representation of the MoveStatAffectSets
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

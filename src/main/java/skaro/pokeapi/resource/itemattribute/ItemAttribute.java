@@ -50,14 +50,14 @@ public class ItemAttribute implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of items that have this attribute
-	 * @return a list of {@link NamedApiResource<Item>} objects
+	 * @return a list of {@link Item} items
 	 */
 	public List<NamedApiResource<Item>> getItems() {
 		return items;
 	}
 	/**
 	 * Set a list of items that have this attribute
-	 * @param items a list of {@link NamedApiResource<Item>} objects
+	 * @param items a list of {@link Item} items
 	 */
 	public void setItems(List<NamedApiResource<Item>> items) {
 		this.items = items;
@@ -65,14 +65,14 @@ public class ItemAttribute implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the name of this item attribute listed in different languages
-	 * @return the names
+	 * @return the list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
 	 * Set the name of this item attribute listed in different languages
-	 * @param names the names
+	 * @param names the list of {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
@@ -80,23 +80,24 @@ public class ItemAttribute implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the description of this item attribute listed in different languages
-	 * @return the descriptions
+	 * @return the list of {@link Description} descriptions
 	 */
 	public List<Description> getDescriptions() {
 		return descriptions;
 	}
 	/**
 	 * Set the description of this item attribute listed in different languages
-	 * @param descriptions the descriptions
+	 * @param descriptions the list of {@link Description} descriptions
 	 */
 	public void setDescriptions(List<Description> descriptions) {
 		this.descriptions = descriptions;
 	}
 
 	/**
-	 * Returns true if the ItemAttribute is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ItemAttribute
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -105,8 +106,8 @@ public class ItemAttribute implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Generate a hash code for the ItemAttribute
-	 * @return a hash code value for this object
+	 * Returns the hash code of the ItemAttribute
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -115,7 +116,7 @@ public class ItemAttribute implements PokeApiResource, Localizable {
 
 	/**
 	 * Returns a string representation of the ItemAttribute
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

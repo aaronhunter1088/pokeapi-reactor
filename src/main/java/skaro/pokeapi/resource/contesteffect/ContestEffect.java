@@ -25,7 +25,6 @@ public class ContestEffect implements PokeApiResource {
 	public Integer getId() {
 		return id;
 	}
-
 	/**
 	 * Set the id
 	 * @param id the id
@@ -41,7 +40,6 @@ public class ContestEffect implements PokeApiResource {
 	public Integer getAppeal() {
 		return appeal;
 	}
-
 	/**
 	 * Set the base number of hearts the user of this move gets
 	 * @param appeal the appeal
@@ -72,7 +70,6 @@ public class ContestEffect implements PokeApiResource {
 	public List<Effect> getEffectEntries() {
 		return effectEntries;
 	}
-
 	/**
 	 * Set the result of this contest effect listed in different languages
 	 * @param effectEntries a list of {@link Effect} objects
@@ -88,7 +85,6 @@ public class ContestEffect implements PokeApiResource {
 	public List<FlavorText> getFlavorTextEntries() {
 		return flavorTextEntries;
 	}
-
 	/**
 	 * Set the flavor text of this contest effect listed in different languages
 	 * @param flavorTextEntries a list of {@link FlavorText} objects
@@ -107,9 +103,10 @@ public class ContestEffect implements PokeApiResource {
 	}
 
 	/**
-	 * Checks whether the object is equal to this contest effect
+	 * Returns whether the given object o is
+	 * equal to this instance of ContestEffect
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -118,7 +115,7 @@ public class ContestEffect implements PokeApiResource {
 	}
 
 	/**
-	 * Generate a hash code for this contest effect
+	 * Returns the hash code of the ContestEffect
 	 * @return the hash code
 	 */
 	@Override
@@ -127,8 +124,8 @@ public class ContestEffect implements PokeApiResource {
 	}
 
 	/**
-	 * Get a string representation of the contest effect
-	 * @return a string representation of the contest effect
+	 * Returns a string representation of the ContestEffect
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

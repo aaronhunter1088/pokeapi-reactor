@@ -41,9 +41,10 @@ public class PokemonType {
 	}
 
 	/**
-	 * Check if this PokemonType is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonType
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -52,7 +53,7 @@ public class PokemonType {
 	}
 
 	/**
-	 * Generate a hash code for this PokemonType
+	 * Returns the hash code of the PokemonType
 	 * @return the hash code
 	 */
 	@Override
@@ -61,8 +62,8 @@ public class PokemonType {
 	}
 
 	/**
-	 * Get a String representation of this PokemonType
-	 * @return the String representation
+	 * Returns a string representation of the PokemonType
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

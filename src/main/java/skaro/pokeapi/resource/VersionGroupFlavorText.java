@@ -32,14 +32,14 @@ public class VersionGroupFlavorText {
 
 	/**
 	 * Get the language this name is in
-	 * @return the {@link NamedApiResource} language
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
 	 * Set the language this name is in
-	 * @param language the {@link NamedApiResource} language
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
@@ -47,33 +47,44 @@ public class VersionGroupFlavorText {
 
 	/**
 	 * Get the version group which uses this flavor text
-	 * @return the {@link NamedApiResource} version group
+	 * @return the {@link VersionGroup} versionGroup
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
 	 * Set the version group which uses this flavor text
-	 * @param versionGroup the {@link NamedApiResource} version group
+	 * @param versionGroup the {@link VersionGroup} versionGroup
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
 
-	/** Returns whether the VersionGroupFlavorText is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of VersionGroupFlavorText
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof VersionGroupFlavorText that)) return false;
         return Objects.equals(getText(), that.getText()) && Objects.equals(getLanguage(), that.getLanguage()) && Objects.equals(getVersionGroup(), that.getVersionGroup());
 	}
 
-	/** Returns the hash code of the VersionGroupFlavorText */
+	/**
+	 * Returns the hash code of the VersionGroupFlavorText
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getText(), getLanguage(), getVersionGroup());
 	}
 
-	/** Returns the string representation of the VersionGroupFlavorText */
+	/**
+	 * Returns a string representation of the VersionGroupFlavorText
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "VersionGroupFlavorText{" +

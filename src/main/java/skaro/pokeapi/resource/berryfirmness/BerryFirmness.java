@@ -48,14 +48,14 @@ public class BerryFirmness implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of the berries with this firmness
-	 * @return a list of {@link NamedApiResource<Berry>} berries
+	 * @return a list of {@link Berry} berries
 	 */
 	public List<NamedApiResource<Berry>> getBerries() {
 		return berries;
 	}
 	/**
 	 * Set a list of the berries with this firmness
-	 * @param berries a list of {@link NamedApiResource<Berry>} berries
+	 * @param berries a list of {@link Berry} berries
 	 */
 	public void setBerries(List<NamedApiResource<Berry>> berries) {
 		this.berries = berries;

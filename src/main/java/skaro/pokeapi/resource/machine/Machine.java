@@ -34,14 +34,14 @@ public class Machine implements PokeApiResource {
 
 	/**
 	 * Get the Technical or Hidden Machine item that corresponds to this machine
-	 * @return a {@link NamedApiResource<Item>} object
+	 * @return a {@link Item} object
 	 */
 	public NamedApiResource<Item> getItem() {
 		return item;
 	}
 	/**
 	 * Set the Technical or Hidden Machine item that corresponds to this machine
-	 * @param item a {@link NamedApiResource<Item>} object
+	 * @param item a {@link Item} object
 	 */
 	public void setItem(NamedApiResource<Item> item) {
 		this.item = item;
@@ -49,14 +49,14 @@ public class Machine implements PokeApiResource {
 
 	/**
 	 * Get the move that is taught by this machine
-	 * @return a {@link NamedApiResource<Move>} object
+	 * @return a {@link Move} object
 	 */
 	public NamedApiResource<Move> getMove() {
 		return move;
 	}
 	/**
 	 * Set the move that is taught by this machine
-	 * @param move a {@link NamedApiResource<Move>} object
+	 * @param move a {@link Move} object
 	 */
 	public void setMove(NamedApiResource<Move> move) {
 		this.move = move;
@@ -64,14 +64,14 @@ public class Machine implements PokeApiResource {
 
 	/**
 	 * Get the version group that this machine applies to
-	 * @return a {@link NamedApiResource<VersionGroup>} object
+	 * @return a {@link VersionGroup} object
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
 	 * Set the version group that this machine applies to
-	 * @param versionGroup a {@link NamedApiResource<VersionGroup>} object
+	 * @param versionGroup a {@link VersionGroup} object
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
@@ -87,9 +87,10 @@ public class Machine implements PokeApiResource {
 	}
 
 	/**
-	 * Checks whether the Machine is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of Machine
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -98,8 +99,8 @@ public class Machine implements PokeApiResource {
 	}
 
 	/**
-	 * Generate a hash code for the Machine
-	 * @return an integer hash code
+	 * Returns the hash code of the Machine
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -107,8 +108,8 @@ public class Machine implements PokeApiResource {
 	}
 
 	/**
-	 * Get the string representation of the Machine
-	 * @return a string representation
+	 * Returns a string representation of the Machine
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

@@ -43,23 +43,24 @@ public class ContestName {
 
 	/**
 	 * Get the language this contest's name is in
-	 * @return the language
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
 	 * Set the language this contest's name is in
-	 * @param language the language
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
 
 	/**
-	 * Two ContestName objects are considered equal if they have the same name, color, and language.
+	 * Returns whether the given object o is
+	 * equal to this instance of ContestName
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -68,7 +69,7 @@ public class ContestName {
 	}
 
 	/**
-	 * The hash code of a ContestName object is based on the name, color, and language.
+	 * Returns the hash code of the ContestName
 	 * @return the hash code
 	 */
 	@Override
@@ -77,8 +78,8 @@ public class ContestName {
 	}
 
 	/**
-	 * Returns the name of the contest in the form of a string
-	 * @return the name
+	 * Returns a string representation of the ContestName
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

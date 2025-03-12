@@ -50,14 +50,14 @@ public class ItemCategory implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of items that are a part of this category
-	 * @return a list of {@link NamedApiResource<Item>} objects
+	 * @return a list of {@link Item} items
 	 */
 	public List<NamedApiResource<Item>> getItems() {
 		return items;
 	}
 	/**
 	 * Set a list of items that are a part of this category
-	 * @param items a list of {@link NamedApiResource<Item>} objects
+	 * @param items a list of {@link Item} items
 	 */
 	public void setItems(List<NamedApiResource<Item>> items) {
 		this.items = items;
@@ -80,23 +80,24 @@ public class ItemCategory implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the pocket containing this category
-	 * @return a {@link NamedApiResource<ItemPocket>} object
+	 * @return the {@link ItemPocket} pocket
 	 */
 	public NamedApiResource<ItemPocket> getPocket() {
 		return pocket;
 	}
 	/**
 	 * Set the pocket containing this category
-	 * @param pocket a {@link NamedApiResource<ItemPocket>} object
+	 * @param pocket the {@link ItemPocket} pocket
 	 */
 	public void setPocket(NamedApiResource<ItemPocket> pocket) {
 		this.pocket = pocket;
 	}
 
 	/**
-	 * Checks whether the ItemCategory is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ItemCategory
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -105,8 +106,8 @@ public class ItemCategory implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Generate a hash code for the ItemCategory
-	 * @return a hash code value for this object
+	 * Returns the hash code of the ItemCategory
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -114,8 +115,8 @@ public class ItemCategory implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Convert the ItemCategory to a String
-	 * @return a String representation of this object
+	 * Returns a string representation of the ItemCategory
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

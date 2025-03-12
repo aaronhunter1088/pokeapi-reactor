@@ -24,92 +24,155 @@ public class VersionGroup implements PokeApiResource {
 	private List<NamedApiResource<Region>> regions;
 	private List<NamedApiResource<Version>> versions;
 
-	/** Gets the id for this VersionGroup */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id for this VersionGroup */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name for this VersionGroup */
+	/**
+	 * Get the name for this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name for this VersionGroup */
+	/**
+	 * Set the name for this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the order for this VersionGroup */
+	/**
+	 * Get the order for sorting. Almost by date of
+	 * release, except similar versions are grouped together
+	 * @return the order
+	 */
 	public Integer getOrder() {
 		return order;
 	}
-	/** Sets the order for this VersionGroup */
+	/**
+	 * Set the order for sorting. Almost by date of
+	 * release, except similar versions are grouped together
+	 * @param order the order
+	 */
 	public void setOrder(Integer order) {
 		this.order = order;
 	}
 
-	/** Gets the generation this VersionGroup belongs to */
+	/**
+	 * Get the generation this version was introduced in
+	 * @return the {@link Generation} generation
+	 */
 	public NamedApiResource<Generation> getGeneration() {
 		return generation;
 	}
-	/** Sets the generation this VersionGroup belongs to */
+	/**
+	 * Set the generation this version was introduced in
+	 * @param generation the {@link Generation} generation
+	 */
 	public void setGeneration(NamedApiResource<Generation> generation) {
 		this.generation = generation;
 	}
 
-	/** Gets the move learn methods that are used in this VersionGroup */
+	/**
+	 * Get the list of methods in which Pokémon
+	 * can learn moves in this version group
+	 * @return the list of {@link MoveLearnMethod} moveLearnMethods
+	 */
 	public List<NamedApiResource<MoveLearnMethod>> getMoveLearnMethods() {
 		return moveLearnMethods;
 	}
-	/** Sets the move learn methods that are used in this VersionGroup */
+	/**
+	 * Set the list of methods in which Pokémon
+	 * can learn moves in this version group
+	 * @param moveLearnMethods the list of {@link MoveLearnMethod} moveLearnMethods
+	 */
 	public void setMoveLearnMethods(List<NamedApiResource<MoveLearnMethod>> moveLearnMethods) {
 		this.moveLearnMethods = moveLearnMethods;
 	}
 
-	/** Gets the pokedexes that are used in this VersionGroup */
+	/**
+	 * Get the list of Pokédexes introduced in this version group
+	 * @return the list of {@link Pokedex} pokedexes
+	 */
 	public List<NamedApiResource<Pokedex>> getPokedexes() {
 		return pokedexes;
 	}
-	/** Sets the pokedexes that are used in this VersionGroup */
+	/**
+	 * Set the list of pokedexes introduced in this version group
+	 * @param pokedexes the list of {@link Pokedex} pokedexes
+	 */
 	public void setPokedexes(List<NamedApiResource<Pokedex>> pokedexes) {
 		this.pokedexes = pokedexes;
 	}
 
-	/** Gets the regions that are used in this VersionGroup */
+	/**
+	 * Get a list of regions that can be visited in this version group
+	 * @return the list of {@link Region} regions
+	 */
 	public List<NamedApiResource<Region>> getRegions() {
 		return regions;
 	}
-	/** Sets the regions that are used in this VersionGroup */
+	/**
+	 * Set a list of regions that can be visited in this version group
+	 * @param regions the list of {@link Region} regions
+	 */
 	public void setRegions(List<NamedApiResource<Region>> regions) {
 		this.regions = regions;
 	}
 
-	/** Gets the versions that are used in this VersionGroup */
+	/**
+	 * Gets the versions this version group owns
+	 * @return the list of {@link Version} versions
+	 */
 	public List<NamedApiResource<Version>> getVersions() {
 		return versions;
 	}
-	/** Sets the versions that are used in this VersionGroup */
+	/**
+	 * Sets the versions this version group owns
+	 * @param versions the list of {@link Version} versions
+	 */
 	public void setVersions(List<NamedApiResource<Version>> versions) {
 		this.versions = versions;
 	}
 
-	/** Returns whether the VersionGroup is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of VersionGroup
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof VersionGroup that)) return false;
         return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getOrder(), that.getOrder()) && Objects.equals(getGeneration(), that.getGeneration()) && Objects.equals(getMoveLearnMethods(), that.getMoveLearnMethods()) && Objects.equals(getPokedexes(), that.getPokedexes()) && Objects.equals(getRegions(), that.getRegions()) && Objects.equals(getVersions(), that.getVersions());
 	}
 
-	/** Returns the hash code of the VersionGroup */
+	/**
+	 * Returns the hash code of the VersionGroup
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getOrder(), getGeneration(), getMoveLearnMethods(), getPokedexes(), getRegions(), getVersions());
 	}
 
-	/** Returns the String representation of the VersionGroup */
+	/**
+	 * Returns a string representation of the VersionGroup
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "VersionGroup{" +

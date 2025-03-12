@@ -3,7 +3,6 @@ package skaro.pokeapi.resource.pokemonform;
 import java.util.List;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
@@ -90,14 +89,14 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	 * Get whether or not this form is a mega form
 	 * @return isMega
 	 */
-	public Boolean getMega() {
+	public Boolean isMega() {
 		return isMega;
 	}
 	/**
 	 * Set whether or not this form is a mega form
 	 * @param mega isMega
 	 */
-	public void setMega(Boolean mega) {
+	public void setIsMega(Boolean mega) {
 		isMega = mega;
 	}
 
@@ -164,15 +163,15 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Get the Pokemon that this form belongs to
-	 * @return the {@link NamedApiResource} Pokemon
+	 * Get the Pokémon that this form belongs to
+	 * @return the {@link Pokemon} Pokémon
 	 */
 	public NamedApiResource<Pokemon> getPokemon() {
 		return pokemon;
 	}
 	/**
-	 * Set the Pokemon that this form belongs to
-	 * @param pokemon the {@link NamedApiResource} Pokemon
+	 * Set the Pokémon that this form belongs to
+	 * @param pokemon the {@link Pokemon} Pokémon
 	 */
 	public void setPokemon(NamedApiResource<Pokemon> pokemon) {
 		this.pokemon = pokemon;
@@ -195,14 +194,14 @@ public class PokemonForm implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the version group this Pokémon form was introduced in
-	 * @return the {@link NamedApiResource} version group
+	 * @return the {@link VersionGroup} version group
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
 	 * Set the version group this Pokémon form was introduced in
-	 * @param versionGroup the {@link NamedApiResource} version group
+	 * @param versionGroup the {@link VersionGroup} version group
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
@@ -228,7 +227,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	/**
 	 * Get the form specific form name of this Pokémon form,
 	 * or empty if the form does not have a specific name.
-	 * @return the form names
+	 * @return the list of {@link Name} form names
 	 */
 	public List<Name> getFormNames() {
 		return formNames;
@@ -236,7 +235,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	/**
 	 * Set the form specific form name of this Pokémon form,
 	 * or empty if the form does not have a specific name.
-	 * @param formNames the form names
+	 * @param formNames the list of {@link Name} form names
 	 */
 	public void setFormNames(List<Name> formNames) {
 		this.formNames = formNames;
@@ -244,25 +243,24 @@ public class PokemonForm implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the types of this Pokémon form
-	 * @return the list of types
+	 * @return the list of {@link PokemonType} types
 	 */
 	public List<PokemonType> getTypes() {
 		return types;
 	}
 	/**
 	 * Set the types of this Pokémon form
-	 * @param list of {@link PokemonType} types
+	 * @param types the list of {@link PokemonType} types
 	 */
 	public void setTypes(List<PokemonType> types) {
 		this.types = types;
 	}
 
-
-
 	/**
-	 * This method is used to compare two objects of the same type based on their attributes
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonForm
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -271,7 +269,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * This method is used to generate a hash code for this object
+	 * Returns the hash code of the PokemonForm
 	 * @return the hash code
 	 */
 	@Override
@@ -280,7 +278,7 @@ public class PokemonForm implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * This method is used to generate a string representation of the object
+	 * Returns a string representation of the PokemonForm
 	 * @return the string representation
 	 */
 	@Override

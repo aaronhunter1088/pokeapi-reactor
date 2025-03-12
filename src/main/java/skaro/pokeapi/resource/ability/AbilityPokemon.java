@@ -55,7 +55,7 @@ public class AbilityPokemon {
 
 	/**
 	 * Get the Pokémon this ability could belong to
-	 * @return the {@link NamedApiResource<Pokemon>} pokemon
+	 * @return the {@link Pokemon} pokemon
 	 */
 	public NamedApiResource<Pokemon> getPokemon() {
 		return pokemon;
@@ -63,7 +63,7 @@ public class AbilityPokemon {
 
 	/**
 	 * Set the Pokémon this ability could belong to
-	 * @param pokemon the {@link NamedApiResource<Pokemon>} pokemon
+	 * @param pokemon the {@link Pokemon} pokemon
 	 */
 	public void setPokemon(NamedApiResource<Pokemon> pokemon) {
 		this.pokemon = pokemon;

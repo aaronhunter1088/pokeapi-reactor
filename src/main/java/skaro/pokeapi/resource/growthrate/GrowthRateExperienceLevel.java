@@ -23,24 +23,25 @@ public class GrowthRateExperienceLevel {
 	}
 
 	/**
-	 * Get The amount of experience required to reach the referenced level
-	 * @return The amount of experience required to reach the referenced level
+	 * Get the amount of experience required to reach the referenced level
+	 * @return the amount of experience required to reach the referenced level
 	 */
 	public Integer getExperience() {
 		return experience;
 	}
 	/**
-	 * Set The amount of experience required to reach the referenced level
-	 * @param experience The amount of experience required to reach the referenced level
+	 * Set the amount of experience required to reach the referenced level
+	 * @param experience the amount of experience required to reach the referenced level
 	 */
 	public void setExperience(Integer experience) {
 		this.experience = experience;
 	}
 
 	/**
-	 * Two GrowthRateExperienceLevel are considered equal if they have the same level and experience
-	 * @param o object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * Returns whether the given object o is
+	 * equal to this instance of GrowthRateExperienceLevel
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -49,8 +50,8 @@ public class GrowthRateExperienceLevel {
 	}
 
 	/**
-	 * Generate a hash code for the GrowthRateExperienceLevel
-	 * @return a hash code value for this object
+	 * Returns the hash code of the GrowthRateExperienceLevel
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -59,7 +60,7 @@ public class GrowthRateExperienceLevel {
 
 	/**
 	 * Returns a string representation of the GrowthRateExperienceLevel
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

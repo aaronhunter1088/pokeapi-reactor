@@ -27,23 +27,24 @@ public class MoveStatChange {
 
 	/**
 	 * Get the stat being affected
-	 * @return a {@link NamedApiResource<Stat>} object
+	 * @return a {@link Stat} object
 	 */
 	public NamedApiResource<Stat> getStat() {
 		return stat;
 	}
 	/**
 	 * Set the stat being affected
-	 * @param stat a {@link NamedApiResource<Stat>} object
+	 * @param stat a {@link Stat} object
 	 */
 	public void setStat(NamedApiResource<Stat> stat) {
 		this.stat = stat;
 	}
 
 	/**
-	 * Checks whether the MoveStatChange is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveStatChange
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -52,8 +53,8 @@ public class MoveStatChange {
 	}
 
 	/**
-	 * Generate a hash code for the MoveStatChange
-	 * @return an integer hash code
+	 * Returns the hash code of the MoveStatChange
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -61,8 +62,8 @@ public class MoveStatChange {
 	}
 
 	/**
-	 * Get the string representation of the MoveStatChange
-	 * @return a string representation
+	 * Returns a string representation of the MoveStatChange
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

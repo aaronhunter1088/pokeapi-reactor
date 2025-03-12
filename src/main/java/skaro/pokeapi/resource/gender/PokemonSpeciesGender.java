@@ -13,14 +13,16 @@ public class PokemonSpeciesGender {
 	private NamedApiResource<PokemonSpecies> pokemonSpecies;
 
 	/**
-	 * Get the chance of this Pokémon being female, in eighths; or -1 for genderless
+	 * Get the chance of this Pokémon being female,
+	 * in eighths; or -1 for genderless
 	 * @return the rate
 	 */
 	public Integer getRate() {
 		return rate;
 	}
 	/**
-	 * Set the chance of this Pokémon being female, in eighths; or -1 for genderless
+	 * Set the chance of this Pokémon being female,
+	 * in eighths; or -1 for genderless
 	 * @param rate the rate
 	 */
 	public void setRate(Integer rate) {
@@ -29,7 +31,7 @@ public class PokemonSpeciesGender {
 
 	/**
 	 * Get a Pokémon species that can be the referenced gender
-	 * @return the Pokémon species
+	 * @return the {@link PokemonSpecies} Pokémon species
 	 */
 	public NamedApiResource<PokemonSpecies> getPokemonSpecies() {
 		return pokemonSpecies;
@@ -43,9 +45,10 @@ public class PokemonSpeciesGender {
 	}
 
 	/**
-	 * Two PokemonSpeciesGender are considered equal if they have the same rate and PokemonSpecies
-	 * @param o object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonSpeciesGender
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -54,8 +57,8 @@ public class PokemonSpeciesGender {
 	}
 
 	/**
-	 * Generate a hash code for the PokemonSpeciesGender
-	 * @return a hash code value for this object
+	 * Returns the hash code of the PokemonSpeciesGender
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -64,7 +67,7 @@ public class PokemonSpeciesGender {
 
 	/**
 	 * Returns a string representation of the PokemonSpeciesGender
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

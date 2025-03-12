@@ -167,7 +167,7 @@ public class Berry implements PokeApiResource {
 	/**
 	 * Get the firmness of this berry, used
 	 * in making Pokéblocks or Poffins
-	 * @return the firmness
+	 * @return the {@link BerryFirmness} firmness
 	 */
 	public NamedApiResource<BerryFirmness> getFirmness() {
 		return firmness;
@@ -175,7 +175,7 @@ public class Berry implements PokeApiResource {
 	/**
 	 * Set the firmness of this berry, used
 	 * in making Pokéblocks or Poffins
-	 * @param firmness the firmness
+	 * @param firmness the {@link BerryFirmness} firmness
 	 */
 	public void setFirmness(NamedApiResource<BerryFirmness> firmness) {
 		this.firmness = firmness;
@@ -202,14 +202,14 @@ public class Berry implements PokeApiResource {
 
 	/**
 	 * Get the berry reference
-	 * @return the {@link NamedApiResource<Item>} berry reference
+	 * @return the {@link Item} berry reference
 	 */
 	public NamedApiResource<Item> getItem() {
 		return item;
 	}
 	/**
 	 * Set the berry reference
-	 * @param item the {@link NamedApiResource<Item>} berry reference
+	 * @param item the {@link Item} berry reference
 	 */
 	public void setItem(NamedApiResource<Item> item) {
 		this.item = item;
@@ -217,14 +217,14 @@ public class Berry implements PokeApiResource {
 
 	/**
 	 * Get the type inherited by "Natural Gift" when used with this Berry
-	 * @return the {@link NamedApiResource<Type>} naturalGiftType
+	 * @return the {@link Type} naturalGiftType
 	 */
 	public NamedApiResource<Type> getNaturalGiftType() {
 		return naturalGiftType;
 	}
 	/**
 	 * Set the type inherited by "Natural Gift" when used with this Berry
-	 * @param naturalGiftType the {@link NamedApiResource<Type>} naturalGiftType
+	 * @param naturalGiftType the {@link Type} naturalGiftType
 	 */
 	public void setNaturalGiftType(NamedApiResource<Type> naturalGiftType) {
 		this.naturalGiftType = naturalGiftType;

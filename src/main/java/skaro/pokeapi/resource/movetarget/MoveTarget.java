@@ -51,7 +51,7 @@ public class MoveTarget implements PokeApiResource, Localizable {
 	/**
 	 * Get the descriptions of this resource
 	 * in different languages
-	 * @return the descriptions
+	 * @return the list of {@link Description} descriptions
 	 */
 	public List<Description> getDescriptions() {
 		return descriptions;
@@ -59,7 +59,7 @@ public class MoveTarget implements PokeApiResource, Localizable {
 	/**
 	 * Set the descriptions of this resource
 	 * in different languages
-	 * @param descriptions the descriptions
+	 * @param descriptions the list of {@link Description} descriptions
 	 */
 	public void setDescriptions(List<Description> descriptions) {
 		this.descriptions = descriptions;
@@ -67,14 +67,14 @@ public class MoveTarget implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of moves that that are directed at this target
-	 * @return the list of {@link NamedApiResource<Move>} moves
+	 * @return the list of {@link Move} moves
 	 */
 	public List<NamedApiResource<Move>> getMoves() {
 		return moves;
 	}
 	/**
 	 * Set a list of moves that that are directed at this target
-	 * @param moves the list of {@link NamedApiResource<Move>} moves
+	 * @param moves the list of {@link Move} moves
 	 */
 	public void setMoves(List<NamedApiResource<Move>> moves) {
 		this.moves = moves;
@@ -82,23 +82,24 @@ public class MoveTarget implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the names of this resource in different languages
-	 * @return the names
+	 * @return the list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
 	 * Set the names of this resource in different languages
-	 * @param names the names
+	 * @param names the list of {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
 	/**
-	 * Compares this MoveTarget to another object for equality.
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveTarget
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -107,7 +108,7 @@ public class MoveTarget implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Generates a hash code for this MoveTarget
+	 * Returns the hash code of the MoveTarget
 	 * @return the hash code
 	 */
 	@Override
@@ -116,7 +117,7 @@ public class MoveTarget implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns the string representation of this MoveTarget
+	 * Returns a string representation of the MoveTarget
 	 * @return the string representation
 	 */
 	@Override

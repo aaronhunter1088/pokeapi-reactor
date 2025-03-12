@@ -1,6 +1,7 @@
 package skaro.pokeapi.resource.supercontesteffect;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.FlavorText;
@@ -49,7 +50,7 @@ public class SuperContestEffect implements PokeApiResource {
 	/**
 	 * Get the flavor text of this super contest
 	 * effect listed in different languages
-	 * @return the flavor text entries
+	 * @return the list of {@link FlavorText} flavor text entries
 	 */
 	public List<FlavorText> getFlavorTextEntries() {
 		return flavorTextEntries;
@@ -57,7 +58,7 @@ public class SuperContestEffect implements PokeApiResource {
 	/**
 	 * Set the flavor text of this super contest
 	 * effect listed in different languages
-	 * @param flavorTextEntries the flavor text entries
+	 * @param flavorTextEntries the list of {@link FlavorText} flavor text entries
 	 */
 	public void setFlavorTextEntries(List<FlavorText> flavorTextEntries) {
 		this.flavorTextEntries = flavorTextEntries;
@@ -66,7 +67,7 @@ public class SuperContestEffect implements PokeApiResource {
 	/**
 	 * Get a list of moves that have the
 	 * effect when used in super contests
-	 * @return the {@link NamedApiResource} lits of moves
+	 * @return the list of {@link Move} moves
 	 */
 	public List<NamedApiResource<Move>> getMoves() {
 		return moves;
@@ -74,19 +75,46 @@ public class SuperContestEffect implements PokeApiResource {
 	/**
 	 * Set a list of moves that have the
 	 * effect when used in super contests
-	 * @param moves the {@link NamedApiResource} list of moves
+	 * @param moves the list of {@link Move} moves
 	 */
 	public void setMoves(List<NamedApiResource<Move>> moves) {
 		this.moves = moves;
 	}
 
-	/** Returns the name of this class */
+	/**
+	 * Returns the name of this class
+	 * @return the name of this class
+	 */
 	@Override
 	public String getName() {
 		return getClass().getSimpleName();
 	}
 
-	/** Returns a string representation of the object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of SuperContestEffect
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof SuperContestEffect that)) return false;
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getAppeal(), that.getAppeal()) && Objects.equals(getFlavorTextEntries(), that.getFlavorTextEntries()) && Objects.equals(getMoves(), that.getMoves());
+	}
+
+	/**
+	 * Returns the hash code of the SuperContestEffect
+	 * @return the hash code
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId(), getAppeal(), getFlavorTextEntries(), getMoves());
+	}
+
+	/**
+	 * Returns a string representation of the SuperContestEffect
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "SuperContestEffect{" +

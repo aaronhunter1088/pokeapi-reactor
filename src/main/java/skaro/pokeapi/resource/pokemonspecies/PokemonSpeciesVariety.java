@@ -16,7 +16,7 @@ public class PokemonSpeciesVariety {
 	 * Get whether this variety is the default variety.
 	 * @return isDefault
 	 */
-	public Boolean getIsDefault() {
+	public Boolean isDefault() {
 		return isDefault;
 	}
 	/**
@@ -29,41 +29,42 @@ public class PokemonSpeciesVariety {
 
 	/**
 	 * Get the Pokémon variety
-	 * @return the {@link NamedApiResource} of the Pokémon
+	 * @return the {@link Pokemon} of the Pokémon
 	 */
 	public NamedApiResource<Pokemon> getPokemon() {
 		return pokemon;
 	}
 	/**
 	 * Set the Pokémon variety
-	 * @param pokemon the {@link NamedApiResource} of the Pokémon
+	 * @param pokemon the {@link Pokemon} of the Pokémon
 	 */
 	public void setPokemon(NamedApiResource<Pokemon> pokemon) {
 		this.pokemon = pokemon;
 	}
 
 	/**
-	 * Checks if the PokemonSpeciesVariety is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonSpeciesVariety
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonSpeciesVariety that)) return false;
-        return Objects.equals(getIsDefault(), that.getIsDefault()) && Objects.equals(getPokemon(), that.getPokemon());
+        return Objects.equals(isDefault(), that.isDefault()) && Objects.equals(getPokemon(), that.getPokemon());
 	}
 
 	/**
-	 * Generates a hash code for the PokemonSpeciesVariety
+	 * Returns the hash code of the PokemonSpeciesVariety
 	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getIsDefault(), getPokemon());
+		return Objects.hash(isDefault(), getPokemon());
 	}
 
 	/**
-	 * Generates a string representation of the PokemonSpeciesVariety
+	 * Returns a string representation of the PokemonSpeciesVariety
 	 * @return the string representation
 	 */
 	@Override

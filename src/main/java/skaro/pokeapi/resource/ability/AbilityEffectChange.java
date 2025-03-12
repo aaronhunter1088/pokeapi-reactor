@@ -34,7 +34,7 @@ public class AbilityEffectChange {
 	/**
 	 * Get the version group in which the
 	 * previous effect of this ability originated
-	 * @return the {@link NamedApiResource<VersionGroup>} versionGroup
+	 * @return the {@link VersionGroup} versionGroup
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
@@ -43,7 +43,7 @@ public class AbilityEffectChange {
 	/**
 	 * Set the version group in which the
 	 * previous effect of this ability originated
-	 * @param versionGroup the {@link NamedApiResource<VersionGroup>} versionGroup
+	 * @param versionGroup the {@link VersionGroup} versionGroup
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;

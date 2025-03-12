@@ -30,23 +30,24 @@ public class AwesomeName {
 
 	/**
 	 * Get the language this "scientific" name is in
-	 * @return the language
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
 	 * Set the language this "scientific" name is in
-	 * @param language the language
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
 
 	/**
-	 * Checks if the AwesomeName is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of AwesomeName
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -55,7 +56,7 @@ public class AwesomeName {
 	}
 
 	/**
-	 * Generates a hash code for the AwesomeName
+	 * Returns the hash code of the AwesomeName
 	 * @return the hash code
 	 */
 	@Override
@@ -64,7 +65,7 @@ public class AwesomeName {
 	}
 
 	/**
-	 * Generates a string representation of the AwesomeName
+	 * Returns a string representation of the AwesomeName
 	 * @return the string representation
 	 */
 	@Override

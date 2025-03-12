@@ -48,14 +48,14 @@ public class EncounterConditionValue implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the condition this encounter condition value pertains to
-	 * @return the condition
+	 * @return the {@link EncounterCondition} condition
 	 */
 	public NamedApiResource<EncounterCondition> getCondition() {
 		return condition;
 	}
 	/**
 	 * Set the condition this encounter condition value pertains to
-	 * @param condition the condition
+	 * @param condition the {@link EncounterCondition} condition
 	 */
 	public void setCondition(NamedApiResource<EncounterCondition> condition) {
 		this.condition = condition;
@@ -77,9 +77,10 @@ public class EncounterConditionValue implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns true if the object is equal to this object based on the id and name
+	 * Returns whether the given object o is
+	 * equal to this instance of EncounterConditionValue
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -88,8 +89,8 @@ public class EncounterConditionValue implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a hash code value for the object
-	 * @return a hash code value
+	 * Returns the hash code of the EncounterConditionValue
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -97,8 +98,8 @@ public class EncounterConditionValue implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a string representation of the object
-	 * @return a string representation of the object
+	 * Returns a string representation of the EncounterConditionValue
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

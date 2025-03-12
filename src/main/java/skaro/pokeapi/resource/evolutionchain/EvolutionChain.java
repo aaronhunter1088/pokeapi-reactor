@@ -24,27 +24,27 @@ public class EvolutionChain implements PokeApiResource {
 	}
 
 	/**
-	 * Gets the item that a Pokemon must be holding
-	 * when leveling up to evolve into a Pokemon in
+	 * Gets the item that a Pokémon must be holding
+	 * when leveling up to evolve into a Pokémon in
 	 * this evolution chain
 	 */
 	public NamedApiResource<Item> getBabyTriggerItem() {
 		return babyTriggerItem;
 	}
 	/**
-	 * Sets the item that a Pokemon must be holding
-	 * when leveling up to evolve into a Pokemon in
+	 * Sets the item that a Pokémon must be holding
+	 * when leveling up to evolve into a Pokémon in
 	 * this evolution chain
 	 */
 	public void setBabyTriggerItem(NamedApiResource<Item> babyTriggerItem) {
 		this.babyTriggerItem = babyTriggerItem;
 	}
 
-	/** Gets the chain of Pokemon species that make up this evolution chain */
+	/** Gets the chain of Pokémon species that make up this evolution chain */
 	public ChainLink getChain() {
 		return chain;
 	}
-	/** Sets the chain of Pokemon species that make up this evolution chain */
+	/** Sets the chain of Pokémon species that make up this evolution chain */
 	public void setChain(ChainLink chain) {
 		this.chain = chain;
 	}

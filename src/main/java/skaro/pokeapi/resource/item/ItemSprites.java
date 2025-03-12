@@ -8,21 +8,28 @@ public class ItemSprites {
 
 	private String imageUrl;
 
-	/** Gets the default image for the item */
+	/**
+	 * Get the default depiction of this item
+	 * @return the imageUrl
+	 */
 	@JsonProperty("default")
 	public String getImageUrl() {
 		return imageUrl;
 	}
-	/** Sets the default image for the item */
+	/**
+	 * Set the default depiction of this item
+	 * @param imageUrl the imageUrl to set
+	 */
 	@JsonProperty("default")
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
 
 	/**
-	 * Checks whether the ItemSprites is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ItemSprites
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -31,8 +38,8 @@ public class ItemSprites {
 	}
 
 	/**
-	 * Generate a hash code for the ItemSprites
-	 * @return a hash code value for this object
+	 * Returns the hash code of the ItemSprites
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -41,7 +48,7 @@ public class ItemSprites {
 
 	/**
 	 * Returns a string representation of the ItemSprites
-	 * @return a string representation of the object
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

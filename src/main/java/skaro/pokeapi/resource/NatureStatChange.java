@@ -13,14 +13,14 @@ public class NatureStatChange {
     private NamedApiResource<Stat> pokeathlonStat;
 
     /**
-     * Returns the maximum change in the stat
+     * Get the amount of change
      * @return the maxChange
      */
     public Integer getMaxChange() {
         return maxChange;
     }
     /**
-     * Sets the maximum change in the stat
+     * Sets the amount of change
      * @param maxChange the maxChange
      */
     public void setMaxChange(Integer maxChange) {
@@ -28,15 +28,15 @@ public class NatureStatChange {
     }
 
     /**
-     * Returns the stat that is affected by the nature
-     * @return the pokeathlonStat
+     * Returns the stat that is affected
+     * @return the {@link Stat} pokeathlonStat
      */
     public NamedApiResource<Stat> getPokeathlonStat() {
         return pokeathlonStat;
     }
     /**
-     * Sets the stat that is affected by the nature
-     * @param pokeathlonStat the pokeathlonStat
+     * Sets the stat that is affected
+     * @param pokeathlonStat the {@link Stat} pokeathlonStat
      */
     public void setPokeathlonStat(NamedApiResource<Stat> pokeathlonStat) {
         this.pokeathlonStat = pokeathlonStat;

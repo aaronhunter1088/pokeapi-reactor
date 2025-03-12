@@ -37,19 +37,20 @@ public class MoveBattleStyle implements PokeApiResource, Localizable {
 
     /**
      * Get the name of this resource listed in different languages
-     * @return the names
+     * @return the list of {@link Name} names
      */
     public List<Name> getNames() { return names; }
     /**
      * Set the name of this resource listed in different languages
-     * @param names the names
+     * @param names the list of {@link Name} names
      */
     public void setNames(List<Name> names) { this.names = names; }
 
     /**
-     * Check if two MoveBattleStyle objects are equal
-     * @param o the other object
-     * @return true if the objects are equal, false otherwise
+     * Returns whether the given object o is
+     * equal to this instance of MoveBattleStyle
+     * @param o the object to compare
+     * @return true if equal otherwise false
      */
     @Override
     public boolean equals(Object o) {
@@ -58,7 +59,7 @@ public class MoveBattleStyle implements PokeApiResource, Localizable {
     }
 
     /**
-     * Generate a hash code for a MoveBattleStyle object
+     * Returns the hash code of the MoveBattleStyle
      * @return the hash code
      */
     @Override
@@ -67,7 +68,8 @@ public class MoveBattleStyle implements PokeApiResource, Localizable {
     }
 
     /**
-     * Get the string representation of a MoveBattleStyle object
+     * Returns a string representation of the MoveBattleStyle
+     * @return the string representation
      */
     @Override
     public String toString() {

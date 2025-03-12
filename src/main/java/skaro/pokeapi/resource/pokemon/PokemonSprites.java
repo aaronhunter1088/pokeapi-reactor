@@ -2,7 +2,6 @@ package skaro.pokeapi.resource.pokemon;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
 import java.util.Objects;
 
 public class PokemonSprites {
@@ -25,11 +24,6 @@ public class PokemonSprites {
 	private String backShinyFemale;
 	private OtherSprites other;
 	private GenerationSprites versions;
-
-	public OtherSprites getOther() { return other; }
-	public void setOther(OtherSprites other) { this.other = other; }
-	public GenerationSprites getVersions() { return versions; }
-	public void setVersions(GenerationSprites versions) { this.versions = versions; }
 
 	/**
 	 * Get the default depiction of this
@@ -158,9 +152,32 @@ public class PokemonSprites {
 	}
 
 	/**
-	 * Check if this PokemonSprites is equal to another object
+	 * Get the other sprites
+	 * @return the {@link OtherSprites} other sprites
+	 */
+	public OtherSprites getOther() { return other; }
+	/**
+	 * Set the other sprites
+	 * @param other the {@link OtherSprites} other sprites to set
+	 */
+	public void setOther(OtherSprites other) { this.other = other; }
+
+	/**
+	 * Get the versions generation sprites
+	 * @return the {@link GenerationSprites} versions
+	 */
+	public GenerationSprites getVersions() { return versions; }
+	/**
+	 * Set the versions generation sprites
+	 * @param versions the {@link GenerationSprites} versions to set
+	 */
+	public void setVersions(GenerationSprites versions) { this.versions = versions; }
+
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonSprites
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -169,7 +186,7 @@ public class PokemonSprites {
 	}
 
 	/**
-	 * Generate a hash code for this PokemonSprites
+	 * Returns the hash code of the PokemonSprites
 	 * @return the hash code
 	 */
 	@Override
@@ -178,8 +195,8 @@ public class PokemonSprites {
 	}
 
 	/**
-	 * Get a String representation of this PokemonSprites
-	 * @return the String representation
+	 * Returns a string representation of the PokemonSprites
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

@@ -27,23 +27,24 @@ public class Genus {
 
 	/**
 	 * Get the language this genus is in
-	 * @return the {@link NamedApiResource} of the language
+	 * @return the {@link Language} of the language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
 	 * Set the language this genus is in
-	 * @param language the {@link NamedApiResource} of the language
+	 * @param language the {@link Language} of the language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
 	}
 
 	/**
-	 * Checks if the Genus is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of Genus
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -52,7 +53,7 @@ public class Genus {
 	}
 
 	/**
-	 * Generates a hash code for the Genus
+	 * Returns the hash code of the Genus
 	 * @return the hash code
 	 */
 	@Override
@@ -61,7 +62,7 @@ public class Genus {
 	}
 
 	/**
-	 * Generates a string representation of the Genus
+	 * Returns a string representation of the Genus
 	 * @return the string representation
 	 */
 	@Override

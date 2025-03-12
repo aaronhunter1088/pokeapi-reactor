@@ -59,14 +59,14 @@ public class Nature implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the stat decreased by 10% in Pokémon with this nature
-	 * @return the {@link NamedApiResource<Stat>} of the decreased stat
+	 * @return the {@link Stat} of the decreased stat
 	 */
 	public NamedApiResource<Stat> getDecreasedStat() {
 		return decreasedStat;
 	}
 	/**
 	 * Set the stat decreased by 10% in Pokémon with this nature
-	 * @param decreasedStat the {@link NamedApiResource<Stat>} of the decreased stat
+	 * @param decreasedStat the {@link Stat} of the decreased stat
 	 */
 	public void setDecreasedStat(NamedApiResource<Stat> decreasedStat) {
 		this.decreasedStat = decreasedStat;
@@ -74,14 +74,14 @@ public class Nature implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the stat increased by 10% in Pokémon with this nature
-	 * @return the {@link NamedApiResource<Stat>} of the increased stat
+	 * @return the {@link Stat} of the increased stat
 	 */
 	public NamedApiResource<Stat> getIncreasedStat() {
 		return increasedStat;
 	}
 	/**
 	 * Set the stat increased by 10% in Pokémon with this nature
-	 * @param increasedStat the {@link NamedApiResource<Stat>} of the increased stat
+	 * @param increasedStat the {@link Stat} of the increased stat
 	 */
 	public void setIncreasedStat(NamedApiResource<Stat> increasedStat) {
 		this.increasedStat = increasedStat;
@@ -89,14 +89,14 @@ public class Nature implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the flavor hated by Pokémon with this nature
-	 * @return the {@link NamedApiResource<BerryFlavor>} of the hated flavor
+	 * @return the {@link BerryFlavor} of the hated flavor
 	 */
 	public NamedApiResource<BerryFlavor> getHatesFlavor() {
 		return hatesFlavor;
 	}
 	/**
 	 * Set the flavor hated by Pokémon with this nature
-	 * @param hatesFlavor the {@link NamedApiResource<BerryFlavor>} of the hated flavor
+	 * @param hatesFlavor the {@link BerryFlavor} of the hated flavor
 	 */
 	public void setHatesFlavor(NamedApiResource<BerryFlavor> hatesFlavor) {
 		this.hatesFlavor = hatesFlavor;
@@ -104,14 +104,14 @@ public class Nature implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the flavor liked by Pokémon with this nature
-	 * @return the {@link NamedApiResource<BerryFlavor>} of the liked flavor
+	 * @return the {@link BerryFlavor} of the liked flavor
 	 */
 	public NamedApiResource<BerryFlavor> getLikesFlavor() {
 		return likesFlavor;
 	}
 	/**
 	 * Set the flavor liked by Pokémon with this nature
-	 * @param likesFlavor the {@link NamedApiResource<BerryFlavor>} of the liked flavor
+	 * @param likesFlavor the {@link BerryFlavor} of the liked flavor
 	 */
 	public void setLikesFlavor(NamedApiResource<BerryFlavor> likesFlavor) {
 		this.likesFlavor = likesFlavor;
@@ -134,14 +134,14 @@ public class Nature implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the battle style preferences for this nature
-	 * @return the list of {@link MoveBattleStylePreference} objects
+	 * @return the list of {@link MoveBattleStylePreference} move battle style preferences
 	 */
 	public List<MoveBattleStylePreference> getMoveBattleStylePreferences() {
 		return moveBattleStylePreferences;
 	}
 	/**
 	 * Set the battle style preferences for this nature
-	 * @param moveBattleStylePreferences the list of {@link MoveBattleStylePreference} objects
+	 * @param moveBattleStylePreferences the list of {@link MoveBattleStylePreference} move battle style preferences
 	 */
 	public void setMoveBattleStylePreferences(List<MoveBattleStylePreference> moveBattleStylePreferences) {
 		this.moveBattleStylePreferences = moveBattleStylePreferences;
@@ -149,23 +149,24 @@ public class Nature implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the stat changes for this nature
-	 * @return the list of {@link NatureStatChange} objects
+	 * @return the list of {@link NatureStatChange} pokeathlon stat changes
 	 */
 	public List<NatureStatChange> getPokeathlonStatChanges() {
 		return pokeathlonStatChanges;
 	}
 	/**
 	 * Set the stat changes for this nature
-	 * @param pokeathlonStatChanges the list of {@link NatureStatChange} objects
+	 * @param pokeathlonStatChanges the list of {@link NatureStatChange} pokeathlon stat changes
 	 */
 	public void setPokeathlonStatChanges(List<NatureStatChange> pokeathlonStatChanges) {
 		this.pokeathlonStatChanges = pokeathlonStatChanges;
 	}
 
 	/**
-	 * Compares this nature to another object for equality.
+	 * Returns whether the given object o is
+	 * equal to this instance of Nature
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -174,7 +175,7 @@ public class Nature implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Generates a hash code for this nature
+	 * Returns the hash code of the Nature
 	 * @return the hash code
 	 */
 	@Override
@@ -183,7 +184,7 @@ public class Nature implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns the string representation of this nature
+	 * Returns a string representation of the Nature
 	 * @return the string representation
 	 */
 	@Override

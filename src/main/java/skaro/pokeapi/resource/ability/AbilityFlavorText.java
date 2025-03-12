@@ -32,14 +32,14 @@ public class AbilityFlavorText {
 
 	/**
 	 * Get the language this text resource is in
-	 * @return language the {@link NamedApiResource<Language>} language
+	 * @return the {@link Language} language
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
 	 * Set the language this text resource is in
-	 * @param language the {@link NamedApiResource<Language>} language
+	 * @param language the {@link Language} language
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
@@ -47,14 +47,14 @@ public class AbilityFlavorText {
 
 	/**
 	 * Get the version group that uses this flavor text
-	 * @return the {@link NamedApiResource<VersionGroup>} versionGroup
+	 * @return the {@link VersionGroup} versionGroup
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
 	 * Set the version group that uses this flavor text
-	 * @param versionGroup the {@link NamedApiResource<VersionGroup>} versionGroup
+	 * @param versionGroup the {@link VersionGroup} versionGroup
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;

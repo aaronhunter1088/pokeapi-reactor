@@ -41,9 +41,10 @@ public class PokemonHeldItemVersion {
 	}
 
 	/**
-	 * Check if this PokemonHeldItemVersion is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonHeldItemVersion
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -52,7 +53,7 @@ public class PokemonHeldItemVersion {
 	}
 
 	/**
-	 * Generate a hash code for this PokemonHeldItemVersion
+	 * Returns the hash code of the Ability
 	 * @return the hash code
 	 */
 	@Override
@@ -61,8 +62,8 @@ public class PokemonHeldItemVersion {
 	}
 
 	/**
-	 * Get a String representation of this PokemonHeldItemVersion
-	 * @return the String representation
+	 * Returns a string representation of the Ability
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

@@ -32,14 +32,14 @@ public class MoveMetaData {
 
 	/**
 	 * Get the status ailment this move inflicts on its target
-	 * @return a {@link NamedApiResource} object
+	 * @return a {@link MoveAilment} object
 	 */
 	public NamedApiResource<MoveAilment> getAilment() {
 		return ailment;
 	}
 	/**
 	 * Set the status ailment this move inflicts on its target
-	 * @param ailment a {@link NamedApiResource} object
+	 * @param ailment the {@link MoveAilment} ailment
 	 */
 	public void setAilment(NamedApiResource<MoveAilment> ailment) {
 		this.ailment = ailment;
@@ -47,14 +47,14 @@ public class MoveMetaData {
 
 	/**
 	 * Get the category of move this move falls under, e.g. damage or ailment
-	 * @return a {@link NamedApiResource} object
+	 * @return the {@link MoveCategory} category
 	 */
 	public NamedApiResource<MoveCategory> getCategory() {
 		return category;
 	}
 	/**
 	 * Set the category of move this move falls under, e.g. damage or ailment
-	 * @param category a {@link NamedApiResource} object
+	 * @param category the {@link MoveCategory} category
 	 */
 	public void setCategory(NamedApiResource<MoveCategory> category) {
 		this.category = category;
@@ -142,7 +142,7 @@ public class MoveMetaData {
 
 	/**
 	 * Get the amount of hp gained by the attacking
-	 * Pokemon, in percent of it's maximum HP
+	 * Pokémon, in percent of it's maximum HP
 	 * @return an integer representing the amount of healing
 	 */
 	public Integer getHealing() {
@@ -188,18 +188,18 @@ public class MoveMetaData {
 
 	/**
 	 * Get the likelihood this attack will
-	 * cause the target  Pokémon to flinch
+	 * cause the target Pokémon to flinch
 	 * @return the likelihood this attack
-	 * will cause the target  Pokémon to flinch
+	 * will cause the target Pokémon to flinch
 	 */
 	public Integer getFlinchChance() {
 		return flinchChance;
 	}
 	/**
 	 * Set the likelihood this attack will
-	 * cause the target  Pokémon to flinch
+	 * cause the target Pokémon to flinch
 	 * @param flinchChance the likelihood this
-	 * attack will cause the target  Pokémon to flinch
+	 * attack will cause the target Pokémon to flinch
 	 */
 	public void setFlinchChance(Integer flinchChance) {
 		this.flinchChance = flinchChance;
@@ -222,9 +222,10 @@ public class MoveMetaData {
 	}
 
 	/**
-	 * Checks whether the MoveMetaData is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveMetaData
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -233,7 +234,7 @@ public class MoveMetaData {
 	}
 
 	/**
-	 * Calculate the hash code of the MoveMetaData
+	 * Returns the hash code of the MoveMetaData
 	 * @return the hash code
 	 */
 	@Override
@@ -242,7 +243,7 @@ public class MoveMetaData {
 	}
 
 	/**
-	 * Get the string representation of the MoveMetaData
+	 * Returns a string representation of the MoveMetaData
 	 * @return the string representation
 	 */
 	@Override

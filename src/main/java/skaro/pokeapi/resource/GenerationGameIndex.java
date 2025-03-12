@@ -28,33 +28,44 @@ public class GenerationGameIndex {
 
 	/**
 	 * Get the generation relevant to this game index
-	 * @return the generation
+	 * @return the {@link Generation} generation
 	 */
 	public NamedApiResource<Generation> getGeneration() {
 		return generation;
 	}
 	/**
 	 * Set the generation relevant to this game index
-	 * @param generation the generation
+	 * @param generation the {@link Generation} generation
 	 */
 	public void setGeneration(NamedApiResource<Generation> generation) {
 		this.generation = generation;
 	}
 
-	/** Returns whether the GenerationGameIndex is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of GenerationGameIndex
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof GenerationGameIndex that)) return false;
         return Objects.equals(getGameIndex(), that.getGameIndex()) && Objects.equals(getGeneration(), that.getGeneration());
 	}
 
-	/** Returns the hash code of the GenerationGameIndex */
+	/**
+	 * Returns the hash code of the GenerationGameIndex
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getGameIndex(), getGeneration());
 	}
 
-	/** Returns the string representation of the GenerationGameIndex */
+	/**
+	 * Returns a string representation of the GenerationGameIndex
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "GenerationGameIndex{" +

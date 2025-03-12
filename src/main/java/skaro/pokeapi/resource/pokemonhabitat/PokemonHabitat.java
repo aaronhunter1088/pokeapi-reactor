@@ -19,14 +19,14 @@ public class PokemonHabitat implements PokeApiResource, Localizable {
 	private List<NamedApiResource<PokemonSpecies>> pokemonSpecies;
 
 	/**
-	 * Gets the id of the PokemonHabitat
+	 * Get the id
 	 * @return the id
 	 */
 	public Integer getId() {
 		return id;
 	}
 	/**
-	 * Sets the id of the PokemonHabitat
+	 * Set the id
 	 * @param id the id
 	 */
 	public void setId(Integer id) {
@@ -34,14 +34,14 @@ public class PokemonHabitat implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Gets the name for this resource
+	 * Get the name for this resource
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * Sets the name for this resource
+	 * Set the name for this resource
 	 * @param name the name
 	 */
 	public void setName(String name) {
@@ -50,14 +50,14 @@ public class PokemonHabitat implements PokeApiResource, Localizable {
 
 	/**
 	 * Get the name of this resource listed in different languages
-	 * @return the names
+	 * @return the list of {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
 	 * Set the name of this resource listed in different languages
-	 * @param names the names
+	 * @param names the list of {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
@@ -65,24 +65,24 @@ public class PokemonHabitat implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of PokemonSpecies that can be found in this habitat
-	 * @return the {@link NamedApiResource} list of PokemonSpecies
+	 * @return the list of {@link PokemonSpecies} PokemonSpecies
 	 */
 	public List<NamedApiResource<PokemonSpecies>> getPokemonSpecies() {
 		return pokemonSpecies;
 	}
 	/**
 	 * Set a list of PokemonSpecies that can be found in this habitat
-	 * @param pokemonSpecies the {@link NamedApiResource} list of PokemonSpecies
+	 * @param pokemonSpecies the list of  {@link PokemonSpecies} PokemonSpecies
 	 */
 	public void setPokemonSpecies(List<NamedApiResource<PokemonSpecies>> pokemonSpecies) {
 		this.pokemonSpecies = pokemonSpecies;
 	}
 
 	/**
-	 * Returns true if the object is an instance of PokemonHabitat
-	 * and all of its attributes are equal to this object
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonHabitat
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -100,7 +100,7 @@ public class PokemonHabitat implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns the string representation of the PokemonHabitat
+	 * Returns a string representation of the PokemonHabitat
 	 * @return the string representation
 	 */
 	@Override

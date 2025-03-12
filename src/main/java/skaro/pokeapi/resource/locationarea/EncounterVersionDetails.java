@@ -27,23 +27,24 @@ public class EncounterVersionDetails {
 
 	/**
 	 * Get the version of the game in which the encounter can occur with the given chance
-	 * @return a {@link NamedApiResource<Version>} object
+	 * @return the {@link Version} version
 	 */
 	public NamedApiResource<Version> getVersion() {
 		return version;
 	}
 	/**
 	 * Set the version of the game in which the encounter can occur with the given chance
-	 * @param version a {@link NamedApiResource<Version>} object
+	 * @param version the {@link Version} version
 	 */
 	public void setVersion(NamedApiResource<Version> version) {
 		this.version = version;
 	}
 
 	/**
-	 * Checks whether the EncounterVersionDetails is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of EncounterVersionDetails
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -52,8 +53,8 @@ public class EncounterVersionDetails {
 	}
 
 	/**
-	 * Generate a hash code for the EncounterVersionDetails
-	 * @return a hash code value for this object
+	 * Returns the hash code of the EncounterVersionDetails
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -61,8 +62,8 @@ public class EncounterVersionDetails {
 	}
 
 	/**
-	 * Generate a string representation of the EncounterVersionDetails
-	 * @return a string representation of this object
+	 * Returns a string representation of the EncounterVersionDetails
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

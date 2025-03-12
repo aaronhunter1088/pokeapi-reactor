@@ -42,9 +42,10 @@ public class PokemonTypePast {
     }
 
     /**
-     * Check if this PokemonTypePast is equal to another object
+     * Returns whether the given object o is
+     * equal to this instance of PokemonTypePast
      * @param o the object to compare
-     * @return true if the objects are equal, false otherwise
+     * @return true if equal otherwise false
      */
     @Override
     public boolean equals(Object o) {
@@ -53,7 +54,7 @@ public class PokemonTypePast {
     }
 
     /**
-     * Generate a hash code for this PokemonTypePast
+     * Returns the hash code of the PokemonTypePast
      * @return the hash code
      */
     @Override
@@ -62,8 +63,8 @@ public class PokemonTypePast {
     }
 
     /**
-     * Generate a string representation of this PokemonTypePast
-     * @return a string representation
+     * Returns a string representation of the PokemonTypePast
+     * @return the string representation
      */
     @Override
     public String toString() {

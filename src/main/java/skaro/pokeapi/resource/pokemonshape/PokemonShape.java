@@ -20,65 +20,108 @@ public class PokemonShape implements PokeApiResource, Localizable {
 	@JsonProperty("pokemon_species")
 	private List<NamedApiResource<PokemonSpecies>> pokemonSpecies;
 
-	/** Gets the id for this PokemonShape */
+	/**
+	 * Get the id
+	 * @return the id
+	 */
 	public Integer getId() {
 		return id;
 	}
-	/** Sets the id for this PokemonShape */
+	/**
+	 * Set the id
+	 * @param id the id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/** Gets the name for this PokemonShape */
+	/**
+	 * Get the name for this resource
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
-	/** Sets the name for this PokemonShape */
+	/**
+	 * Set the name for this resource
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** Gets the awesome names for this PokemonShape */
+	/**
+	 * Get the "scientific" name of this Pokémon
+	 * shape listed in different languages
+	 * @return the list of {@link AwesomeName} awesome names
+	 */
 	public List<AwesomeName> getAwesomeNames() {
 		return awesomeNames;
 	}
-	/** Sets the awesome names for this PokemonShape */
+	/**
+	 * Set the "scientific" name of this Pokémon
+	 * shape listed in different languages
+	 * @param awesomeNames the list of {@link AwesomeName} awesome names
+	 */
 	public void setAwesomeNames(List<AwesomeName> awesomeNames) {
 		this.awesomeNames = awesomeNames;
 	}
 
-	/** Gets the names for this PokemonShape in different languages */
+	/**
+	 * Get the name of this resource listed in different languages
+	 * @return the list of {@link Name} names
+	 */
 	public List<Name> getNames() {
 		return names;
 	}
-	/** Sets the names for this PokemonShape in different languages */
+	/**
+	 * Set the name of this resource listed in different languages
+	 * @param names the list of {@link Name} names
+	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
-	/** Gets a list of PokemonSpecies that have this PokemonShape */
+	/**
+	 * Get a list of the Pokémon species that have this shape
+	 * @return the list of {@link PokemonSpecies} pokemon species
+	 */
 	public List<NamedApiResource<PokemonSpecies>> getPokemonSpecies() {
 		return pokemonSpecies;
 	}
-	/** Sets a list of PokemonSpecies that have this PokemonShape */
+	/**
+	 * Set a list of the Pokémon species that have this shape
+	 * @param pokemonSpecies the list of {@link PokemonSpecies} pokemon species
+	 */
 	public void setPokemonSpecies(List<NamedApiResource<PokemonSpecies>> pokemonSpecies) {
 		this.pokemonSpecies = pokemonSpecies;
 	}
 
-	/** Returns whether the PokemonShape is equal to another object */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of PokemonShape
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof PokemonShape that)) return false;
         return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getAwesomeNames(), that.getAwesomeNames()) && Objects.equals(getNames(), that.getNames()) && Objects.equals(getPokemonSpecies(), that.getPokemonSpecies());
 	}
 
-	/** Returns the hash code of the PokemonShape */
+	/**
+	 * Returns the hash code of the PokemonShape
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getAwesomeNames(), getNames(), getPokemonSpecies());
 	}
 
-	/** Returns the string representation of the PokemonShape */
+	/**
+	 * Returns a string representation of the PokemonShape
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "PokemonShape{" +

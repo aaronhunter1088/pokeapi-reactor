@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.language.Language;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
-import skaro.pokeapi.utils.locale.Localizable;
 
 import java.util.Objects;
 
@@ -17,14 +16,14 @@ public class MoveFlavorText {
 	private NamedApiResource<VersionGroup> versionGroup;
 
 	/**
-	 * Get the {@link Localizable} flavor text for an api resource in a specific language
+	 * Get the localizable flavor text for an api resource in a specific language
 	 * @return a string representing the flavor text
 	 */
 	public String getFlavorText() {
 		return flavorText;
 	}
 	/**
-	 * Set the {@link Localizable} flavor text for an api resource in a specific language
+	 * Set the localizable flavor text for an api resource in a specific language
 	 * @param flavorText a string representing the flavor text
 	 */
 	public void setFlavorText(String flavorText) {
@@ -33,14 +32,14 @@ public class MoveFlavorText {
 
 	/**
 	 * Get the language this move flavor text is in
-	 * @return a {@link NamedApiResource<Language>} object
+	 * @return a {@link Language} object
 	 */
 	public NamedApiResource<Language> getLanguage() {
 		return language;
 	}
 	/**
 	 * Set the language this move flavor text is in
-	 * @param language a {@link NamedApiResource<Language>} object
+	 * @param language a {@link Language} object
 	 */
 	public void setLanguage(NamedApiResource<Language> language) {
 		this.language = language;
@@ -48,23 +47,24 @@ public class MoveFlavorText {
 
 	/**
 	 * Get the version group that this move flavor text uses
-	 * @return a {@link NamedApiResource<VersionGroup>} object
+	 * @return a {@link VersionGroup} object
 	 */
 	public NamedApiResource<VersionGroup> getVersionGroup() {
 		return versionGroup;
 	}
 	/**
 	 * Set the version group that this move flavor text uses
-	 * @param versionGroup a {@link NamedApiResource<VersionGroup>} object
+	 * @param versionGroup a {@link VersionGroup} object
 	 */
 	public void setVersionGroup(NamedApiResource<VersionGroup> versionGroup) {
 		this.versionGroup = versionGroup;
 	}
 
 	/**
-	 * Checks whether the MoveFlavorText is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of MoveFlavorText
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -73,7 +73,7 @@ public class MoveFlavorText {
 	}
 
 	/**
-	 * Generate a hash code for the MoveFlavorText
+	 * Returns the hash code of the MoveFlavorText
 	 * @return the hash code
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class MoveFlavorText {
 	}
 
 	/**
-	 * Get the string representation of the MoveFlavorText
+	 * Returns a string representation of the MoveFlavorText
 	 * @return the string representation
 	 */
 	@Override

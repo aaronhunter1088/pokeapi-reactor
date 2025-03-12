@@ -19,79 +19,92 @@ public class EggGroup implements PokeApiResource, Localizable {
 	private List<NamedApiResource<PokemonSpecies>> pokemonSpecies;
 
 	/**
-	 * Gets the id of this egg group
-	 * @return The id of this egg group
+	 * Get the id
+	 * @return the id
 	 */
 	public Integer getId() {
 		return id;
 	}
 	/**
-	 * Sets the id of this egg group
-	 * @param id The id of this egg group
+	 * Set the id
+	 * @param id the id
 	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * Gets the name of this egg group
-	 * @return The name of this egg group
+	 * Get the name of this resource
+	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * Sets the name of this egg group
-	 * @param name The name of this egg group
+	 * Set the name of this resource
+	 * @param name the name
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * Gets the names of this egg group
-	 * @return The names of this egg group
+	 * Get the names of this resource listed in different languages
+	 * @return the {@link Name} names
 	 */
 	public List<Name> getNames() {
 		return names;
 	}
 	/**
-	 * Sets the names of this egg group
-	 * @param names The names of this egg group
+	 * Set the names of this resource listed in different languages
+	 * @param names the {@link Name} names
 	 */
 	public void setNames(List<Name> names) {
 		this.names = names;
 	}
 
 	/**
-	 * Gets a list of all Pokémon species that are members of this egg group
-	 * @return list of {@link NamedApiResource<PokemonSpecies>} objects
+	 * Gets a list of all Pokémon species that are members
+	 * of this egg group
+	 * @return list of {@link PokemonSpecies} objects
 	 */
 	public List<NamedApiResource<PokemonSpecies>> getPokemonSpecies() {
 		return pokemonSpecies;
 	}
 	/**
-	 * Sets the list of all Pokémon species that are members of this egg group
-	 * @param pokemonSpecies list of {@link NamedApiResource<PokemonSpecies>} objects
+	 * Sets the list of all Pokémon species that are members
+	 * of this egg group
+	 * @param pokemonSpecies list of {@link PokemonSpecies} objects
 	 */
 	public void setPokemonSpecies(List<NamedApiResource<PokemonSpecies>> pokemonSpecies) {
 		this.pokemonSpecies = pokemonSpecies;
 	}
 
-	/** Returns true if the EggGroup is equal to another EggGroup */
+	/**
+	 * Returns whether the given object o is
+	 * equal to this instance of EggGroup
+	 * @param o the object to compare
+	 * @return true if equal otherwise false
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof EggGroup eggGroup)) return false;
         return Objects.equals(getId(), eggGroup.getId()) && Objects.equals(getName(), eggGroup.getName()) && Objects.equals(getNames(), eggGroup.getNames()) && Objects.equals(getPokemonSpecies(), eggGroup.getPokemonSpecies());
 	}
 
-	/** Returns the hash code of the EggGroup */
+	/**
+	 * Returns the hash code of the EggGroup
+	 * @return the hash code
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getNames(), getPokemonSpecies());
 	}
 
-	/** Returns a string representation of the EggGroup */
+	/**
+	 * Returns a string representation of the EggGroup
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "EggGroup{" +

@@ -32,14 +32,14 @@ public class PalParkArea implements PokeApiResource, Localizable {
     }
 
     /**
-     * Get the name for this resource.
+     * Get the name for this resource
      * @return the name
      */
     public String getName() {
         return name;
     }
     /**
-     * Set the name for this resource.
+     * Set the name for this resource
      * @param name the name
      */
     public void setName(String name) {
@@ -47,15 +47,15 @@ public class PalParkArea implements PokeApiResource, Localizable {
     }
 
     /**
-     * Get the names in other languages.
-     * @return the names
+     * Get the names in other languages
+     * @return the list of {@link Name} names
      */
     public List<Name> getNames() {
         return names;
     }
     /**
-     * Set the names in other languages.
-     * @param names the names
+     * Set the names in other languages
+     * @param names the list of {@link Name} names
      */
     public void setNames(List<Name> names) {
         this.names = names;
@@ -64,21 +64,22 @@ public class PalParkArea implements PokeApiResource, Localizable {
     /**
      * Get a list of Pokémon encountered in
      * the pal park area along with details
-     * @return the list of {@link PalParkEncounterSpecies}
+     * @return the list of {@link PalParkEncounterSpecies} pokemon encounters
      */
     public List<PalParkEncounterSpecies> getPokemonEncounters() {
         return pokemonEncounters;
     }
     /**
      * Set the pokemon encounters
-     * @param pokemonEncounters the list of {@link PalParkEncounterSpecies}
+     * @param pokemonEncounters the list of {@link PalParkEncounterSpecies} pokemon encounters
      */
     public void setPokemonEncounters(List<PalParkEncounterSpecies> pokemonEncounters) { this.pokemonEncounters = pokemonEncounters; }
 
     /**
-     * Compares this pal park area to another object for equality.
+     * Returns whether the given object o is
+     * equal to this instance of PalParkArea
      * @param o the object to compare
-     * @return true if the objects are equal, false otherwise
+     * @return true if equal otherwise false
      */
     @Override
     public boolean equals(Object o) {
@@ -87,7 +88,7 @@ public class PalParkArea implements PokeApiResource, Localizable {
     }
 
     /**
-     * Generates a hash code for this pal park area
+     * Returns the hash code of the PalParkArea
      * @return the hash code
      */
     @Override
@@ -96,7 +97,7 @@ public class PalParkArea implements PokeApiResource, Localizable {
     }
 
     /**
-     * Returns the string representation of the pal park area
+     * Returns a string representation of the PalParkArea
      * @return the string representation
      */
     @Override

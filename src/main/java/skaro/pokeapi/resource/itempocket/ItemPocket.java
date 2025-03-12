@@ -48,14 +48,14 @@ public class ItemPocket implements PokeApiResource, Localizable {
 
 	/**
 	 * Get a list of item categories that are relevant to this item pocket
-	 * @return a list of {@link NamedApiResource<ItemCategory>} objects
+	 * @return a list of {@link ItemCategory} objects
 	 */
 	public List<NamedApiResource<ItemCategory>> getCategories() {
 		return categories;
 	}
 	/**
 	 * Set a list of item categories that are relevant to this item pocket
-	 * @param categories a list of {@link NamedApiResource<ItemCategory>} objects
+	 * @param categories a list of {@link ItemCategory} objects
 	 */
 	public void setCategories(List<NamedApiResource<ItemCategory>> categories) {
 		this.categories = categories;
@@ -77,9 +77,10 @@ public class ItemPocket implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Checks whether the ItemPocket is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of ItemPocket
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -88,8 +89,8 @@ public class ItemPocket implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Generate a hash code for the ItemPocket
-	 * @return a hash code value for this object
+	 * Returns the hash code of the ItemPocket
+	 * @return the hash code
 	 */
 	@Override
 	public int hashCode() {
@@ -97,7 +98,7 @@ public class ItemPocket implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Get the string representation of the ItemPocket
+	 * Returns a string representation of the ItemPocket
 	 * @return the string representation
 	 */
 	@Override

@@ -50,7 +50,7 @@ public class Gender implements PokeApiResource {
 	/**
 	 * Get a list of Pokémon species that can be this
 	 * gender and how likely it is that they will be
-	 * @return a list of {@link PokemonSpeciesGender} objects
+	 * @return a list of {@link PokemonSpeciesGender} Pokémon species details
 	 */
 	public List<PokemonSpeciesGender> getPokemonSpeciesDetails() {
 		return pokemonSpeciesDetails;
@@ -58,16 +58,16 @@ public class Gender implements PokeApiResource {
 	/**
 	 * Set a list of Pokémon species that can be this
 	 * gender and how likely it is that they will be
-	 * @param pokemonSpeciesDetails a list of {@link PokemonSpeciesGender} objects
+	 * @param pokemonSpeciesDetails a list of {@link PokemonSpeciesGender} Pokémon species details
 	 */
 	public void setPokemonSpeciesDetails(List<PokemonSpeciesGender> pokemonSpeciesDetails) {
 		this.pokemonSpeciesDetails = pokemonSpeciesDetails;
 	}
 
 	/**
-	 * Get A list of Pokémon species that required this
+	 * Get a list of Pokémon species that required this
 	 * gender in order for a Pokémon to evolve into them.
-	 * @return a list of {@link NamedApiResource<PokemonSpecies>} objects
+	 * @return a list of {@link PokemonSpecies} objects
 	 */
 	public List<NamedApiResource<PokemonSpecies>> getRequiredForEvolution() {
 		return requiredForEvolution;
@@ -75,16 +75,17 @@ public class Gender implements PokeApiResource {
 	/**
 	 * Set A list of Pokémon species that required this
 	 * gender in order for a Pokémon to evolve into them.
-	 * @param requiredForEvolution a list of {@link NamedApiResource<PokemonSpecies>} objects
+	 * @param requiredForEvolution a list of {@link PokemonSpecies} objects
 	 */
 	public void setRequiredForEvolution(List<NamedApiResource<PokemonSpecies>> requiredForEvolution) {
 		this.requiredForEvolution = requiredForEvolution;
 	}
 
 	/**
-	 * Checks whether this Gender is equal to another object
+	 * Returns whether the given object o is
+	 * equal to this instance of Gender
 	 * @param o the object to compare
-	 * @return true if the objects are equal, false otherwise
+	 * @return true if equal otherwise false
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -93,7 +94,7 @@ public class Gender implements PokeApiResource {
 	}
 
 	/**
-	 * Generate a hash code
+	 * Returns the hash code of the Gender
 	 * @return the hash code
 	 */
 	@Override
@@ -102,8 +103,8 @@ public class Gender implements PokeApiResource {
 	}
 
 	/**
-	 * Gets the string representation of Gender
-	 * @return a string representation of the object
+	 * Returns a string representation of the Gender
+	 * @return the string representation
 	 */
 	@Override
 	public String toString() {

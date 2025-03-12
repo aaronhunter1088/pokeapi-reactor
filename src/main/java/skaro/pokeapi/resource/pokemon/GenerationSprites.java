@@ -27,14 +27,14 @@ public class GenerationSprites {
     GenerationVIII generationVIII;
 
     /**
-     * Returns the generationI
+     * Get the generationI
      * @return the generationI
      */
     public GenerationI getGenerationI() {
         return generationI;
     }
     /**
-     * Sets the generationI
+     * Set the generationI
      * @param generationI the generationI
      */
     public void setGenerationI(GenerationI generationI) {
@@ -42,14 +42,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationII
+     * Get the generationII
      * @return the generationII
      */
     public GenerationII getGenerationII() {
         return generationII;
     }
     /**
-     * Sets the generationII
+     * Set the generationII
      * @param generationII the generationII
      */
     public void setGenerationII(GenerationII generationII) {
@@ -57,14 +57,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationIII
+     * Get the generationIII
      * @return the generationIII
      */
     public GenerationIII getGenerationIII() {
         return generationIII;
     }
     /**
-     * Sets the generationIII
+     * Set the generationIII
      * @param generationIII the generationIII
      */
     public void setGenerationIII(GenerationIII generationIII) {
@@ -72,14 +72,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationIV
+     * Get the generationIV
      * @return the generationIV
      */
     public GenerationIV getGenerationIV() {
         return generationIV;
     }
     /**
-     * Sets the generationIV
+     * Set the generationIV
      * @param generationIV the generationIV
      */
     public void setGenerationIV(GenerationIV generationIV) {
@@ -87,14 +87,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationV
+     * Get the generationV
      * @return the generationV
      */
     public GenerationV getGenerationV() {
         return generationV;
     }
     /**
-     * Sets the generationV
+     * Set the generationV
      * @param generationV the generationV
      */
     public void setGenerationV(GenerationV generationV) {
@@ -102,14 +102,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationIX
+     * Get the generationIX
      * @return the generationIX
      */
     public GenerationIX getGenerationIX() {
         return generationIX;
     }
     /**
-     * Sets the generationIX
+     * Set the generationIX
      * @param generationIX the generationIX
      */
     public void setGenerationIX(GenerationIX generationIX) {
@@ -117,14 +117,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationVI
+     * Get the generationVI
      * @return the generationVI
      */
     public GenerationVI getGenerationVI() {
         return generationVI;
     }
     /**
-     * Sets the generationVI
+     * Set the generationVI
      * @param generationVI the generationVI
      */
     public void setGenerationVI(GenerationVI generationVI) {
@@ -132,14 +132,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationVII
+     * Get the generationVII
      * @return the generationVII
      */
     public GenerationVII getGenerationVII() {
         return generationVII;
     }
     /**
-     * Sets the generationVII
+     * Set the generationVII
      * @param generationVII the generationVII
      */
     public void setGenerationVII(GenerationVII generationVII) {
@@ -147,14 +147,14 @@ public class GenerationSprites {
     }
 
     /**
-     * Returns the generationVIII
+     * Get the generationVIII
      * @return the generationVIII
      */
     public GenerationVIII getGenerationVIII() {
         return generationVIII;
     }
     /**
-     * Sets the generationVIII
+     * Set the generationVIII
      * @param generationVIII the generationVIII
      */
     public void setGenerationVIII(GenerationVIII generationVIII) {
