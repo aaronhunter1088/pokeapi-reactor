@@ -28,12 +28,12 @@ public class ReactiveNonCachingPokeApiClientTest {
 	private ReactiveNonCachingPokeApiClient pokeApiClient;
 	
 	@BeforeEach
-	public void setup() {
+	void setup() {
 		pokeApiClient = new ReactiveNonCachingPokeApiClient(entityFactory);
 	}
 	
 	@Test
-	public void testGetResource() {
+	void testGetResource() {
 		NamedApiResourceList<Pokemon> resourceList = new NamedApiResourceList<>();
 
 		Mockito.when(entityFactory.getBaseResource(Pokemon.class))
@@ -46,7 +46,7 @@ public class ReactiveNonCachingPokeApiClientTest {
 	}
 	
 	@Test
-	public void testGetResourceById() {
+	void testGetResourceById() {
 		String resourceId = UUID.randomUUID().toString();
 		Pokemon pokemon = new Pokemon();
 		
@@ -60,7 +60,7 @@ public class ReactiveNonCachingPokeApiClientTest {
 	}
 	
 	@Test
-	public void testGetResourceWithQuery() {
+	void testGetResourceWithQuery() {
 		NamedApiResourceList<Pokemon> resourceList = new NamedApiResourceList<>();
 		PageQuery query = new PageQuery(1, 1);
 
@@ -74,7 +74,7 @@ public class ReactiveNonCachingPokeApiClientTest {
 	}
 	
 	@Test
-	public void testFollowResource() {
+	void testFollowResource() {
 		NamedApiResource<PokemonSpecies> speciesResource = new NamedApiResource<>(); 
 		PokemonSpecies species = new PokemonSpecies();
 		Pokemon pokemon = new Pokemon();
@@ -90,7 +90,7 @@ public class ReactiveNonCachingPokeApiClientTest {
 	}
 	
 	@Test
-	public void testFollowResources() {
+	void testFollowResources() {
 		NamedApiResource<PokemonForm> formResource1 = new NamedApiResource<>(); 
 		NamedApiResource<PokemonForm> formResource2 = new NamedApiResource<>();
 		List<NamedApiResource<PokemonForm>> resourcesList = List.of(formResource1, formResource2);
@@ -108,7 +108,5 @@ public class ReactiveNonCachingPokeApiClientTest {
 			.expectComplete()
 			.verify();
 	}
-	
-	
-	
+
 }

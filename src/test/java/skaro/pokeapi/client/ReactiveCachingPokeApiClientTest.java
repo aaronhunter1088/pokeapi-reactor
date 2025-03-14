@@ -26,7 +26,7 @@ import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 
 @ExtendWith(SpringExtension.class)
-public class ReactiveCachingPokeApiClientTest {
+class ReactiveCachingPokeApiClientTest {
 
 	@Mock
 	private PokeApiEntityFactory entityFactory;	
@@ -38,12 +38,12 @@ public class ReactiveCachingPokeApiClientTest {
 	private ReactiveCachingPokeApiClient pokeApiClient;
 	
 	@BeforeEach
-	public void setup() {
+	void setup() {
 		this.pokeApiClient = new ReactiveCachingPokeApiClient(entityFactory, cacheFacade);
 	}
 	
 	@Test
-	public void getResourceByIdTest() {
+	void getResourceByIdTest() {
 		String resourceId = UUID.randomUUID().toString();
 		Pokemon resource = Mockito.mock(Pokemon.class);
 		
@@ -66,7 +66,7 @@ public class ReactiveCachingPokeApiClientTest {
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void getResourceTest() {
+	void getResourceTest() {
 		NamedApiResourceList<Pokemon> resource = Mockito.mock(NamedApiResourceList.class);
 		
 		Mockito.when(cacheFacade.get(cacheSpecCaptor.capture()))
@@ -88,7 +88,7 @@ public class ReactiveCachingPokeApiClientTest {
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void getResourceTest_withPageQuery() {
+	void getResourceTest_withPageQuery() {
 		NamedApiResourceList<Pokemon> resource = Mockito.mock(NamedApiResourceList.class);
 		PageQuery query = new PageQuery(1, 20);
 		
@@ -111,7 +111,7 @@ public class ReactiveCachingPokeApiClientTest {
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void followResourceTest() {
+	void followResourceTest() {
 		Pokemon resource = Mockito.mock(Pokemon.class);
 		NamedApiResource<Pokemon> namedResource = Mockito.mock(NamedApiResource.class);
 		
@@ -134,7 +134,7 @@ public class ReactiveCachingPokeApiClientTest {
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void followResourcesTest() {
+	void followResourcesTest() {
 		Pokemon resource = Mockito.mock(Pokemon.class);
 		NamedApiResource<Pokemon> namedResource = Mockito.mock(NamedApiResource.class);
 		List<NamedApiResource<Pokemon>> namedResources = List.of(namedResource, namedResource);

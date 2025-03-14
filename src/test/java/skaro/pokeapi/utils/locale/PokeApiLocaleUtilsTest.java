@@ -14,10 +14,10 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import skaro.pokeapi.resource.Name;
 
 @ExtendWith(SpringExtension.class)
-public class PokeApiLocaleUtilsTest {
+class PokeApiLocaleUtilsTest {
 
 	@Test
-	public void getInLocaleTest_localeExists() {
+	void getInLocaleTest_localeExists() {
 		String locale = "foo";
 		Localizable localizable = Mockito.mock(Localizable.class);
 		Name localizedName = Mockito.mock(Name.class, Mockito.RETURNS_DEEP_STUBS);
@@ -34,7 +34,7 @@ public class PokeApiLocaleUtilsTest {
 	}
 	
 	@Test
-	public void getInLocaleTest_localeMissing() {
+	void getInLocaleTest_localeMissing() {
 		String locale = "bar";
 		Localizable localizable = Mockito.mock(Localizable.class);
 		

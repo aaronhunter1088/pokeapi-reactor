@@ -37,7 +37,7 @@ import skaro.pokeapi.resource.pokemon.Pokemon;
 import skaro.pokeapi.resource.stat.Stat;
 
 @ExtendWith(SpringExtension.class)
-public class WebClientEntityFactoryTest {
+class WebClientEntityFactoryTest {
 
 	private MockWebServer mockPokeApiServer;
 	private PokeApiEndpointRegistry registry;
@@ -47,18 +47,18 @@ public class WebClientEntityFactoryTest {
 	private WebClientEntityFactory factory;
 	
 	@BeforeEach
-	public void startMockPokeApiServer() throws IOException {
+	void startMockPokeApiServer() throws IOException {
 		mockPokeApiServer = new MockWebServer();
 		mockPokeApiServer.start();
 	}
 	
 	@AfterEach
-    public void tearDown() throws IOException {
+    void tearDown() throws IOException {
 		mockPokeApiServer.shutdown();
     }
 	
 	@BeforeEach
-	public void setup() {
+	void setup() {
 		objectMapper = new ObjectMapper();
 		registry = Mockito.mock(PokeApiEndpointRegistry.class);
 		webClient = WebClient.builder()
@@ -69,7 +69,7 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void testGetResource() throws JsonProcessingException, InterruptedException {
+	void testGetResource() throws JsonProcessingException, InterruptedException {
 		String resourceEndpoint = "/pokemon";
 		Pokemon pokemon = new Pokemon();
 		pokemon.setName("Mienfoobar");
@@ -91,7 +91,7 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void testGetBaseResource() throws JsonProcessingException, InterruptedException {
+	void testGetBaseResource() throws JsonProcessingException, InterruptedException {
 		String resourceEndpoint = "/move";
 		Move move1 = new Move();
 		move1.setName("Tackle");
@@ -125,7 +125,7 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void testGetBaseResourceWithQuery() throws JsonProcessingException, InterruptedException {
+	void testGetBaseResourceWithQuery() throws JsonProcessingException, InterruptedException {
 		String resourceEndpoint = "ability";
 		Ability ability1 = new Ability();
 		ability1.setName("Levitate");
@@ -163,7 +163,7 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void getNamedResourceTest() throws JsonProcessingException, InterruptedException {
+	void getNamedResourceTest() throws JsonProcessingException, InterruptedException {
 		String namedResourceEndpoint = "item";
 		Item item = new Item();
 		item.setName("Leftovers");
@@ -184,7 +184,7 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void getNamedResourcesTest() throws JsonProcessingException, InterruptedException {
+	void getNamedResourcesTest() throws JsonProcessingException, InterruptedException {
 		String namedResourceEndpoint = "stat";
 		Stat stat1 = new Stat();
 		stat1.setName("attack");

@@ -32,17 +32,17 @@ public class ReactiveCacheManagerCacheFacadeTest {
 	private CacheManager cacheManager;
 	@Mock
 	private Cache cache;
-	
+
 	private ReactiveCacheManagerCacheFacade facade;
 	
 	@BeforeEach
-	public void setup() {
+	void setup() {
 		this.facade = new ReactiveCacheManagerCacheFacade(cacheManager);
 	}
 	
 	@Test
 	@SuppressWarnings("unchecked")
-	public void getTest_cacheMiss() {
+	void getTest_cacheMiss() {
 		String key = UUID.randomUUID().toString();
 		Pokemon value = new Pokemon();
 		ArgumentCaptor<Signal<Pokemon>> cachedValueCaptor = ArgumentCaptor.forClass(Signal.class);
@@ -67,7 +67,7 @@ public class ReactiveCacheManagerCacheFacadeTest {
 	}
 	
 	@Test
-	public void getTest_cacheHit() {
+	void getTest_cacheHit() {
 		String key = UUID.randomUUID().toString();
 		Pokemon value = new Pokemon();
 
@@ -77,7 +77,7 @@ public class ReactiveCacheManagerCacheFacadeTest {
 			.thenReturn(new SimpleValueWrapper(Signal.next(value)));
 		
 		CacheSpec<Pokemon> cacheSpec = CacheSpec.get(Pokemon.class, key)
-				.orCache(() -> Mono.empty());
+				.orCache(Mono::empty);
 		
 		StepVerifier.create(facade.get(cacheSpec))
 			.expectNext(value)
@@ -88,7 +88,7 @@ public class ReactiveCacheManagerCacheFacadeTest {
 	}
 	
 	@Test
-	public void getTest_cacheDoesNotExist() {
+	void getTest_cacheDoesNotExist() {
 		String key = UUID.randomUUID().toString();
 		Pokemon value = new Pokemon();
 		
@@ -107,7 +107,7 @@ public class ReactiveCacheManagerCacheFacadeTest {
 	}
 	
 	@Test
-	public void getManyTest() {
+	void getManyTest() {
 		String key1 = UUID.randomUUID().toString();
 		Pokemon value1 = new Pokemon();
 		String key2 = UUID.randomUUID().toString();
