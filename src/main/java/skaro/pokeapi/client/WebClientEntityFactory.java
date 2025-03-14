@@ -15,6 +15,7 @@ import skaro.pokeapi.resource.NamedApiResourceList;
 import skaro.pokeapi.resource.PokeApiResource;
 
 public class WebClientEntityFactory implements PokeApiEntityFactory {
+
 	private final WebClient webClient;
 	private final PokeApiEndpointRegistry endpointRegistry;
 
