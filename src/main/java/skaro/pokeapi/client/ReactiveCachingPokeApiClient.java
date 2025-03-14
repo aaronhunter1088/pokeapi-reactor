@@ -14,8 +14,8 @@ import skaro.pokeapi.resource.NamedApiResourceList;
 import skaro.pokeapi.resource.PokeApiResource;
 
 public class ReactiveCachingPokeApiClient implements PokeApiClient {
-	private PokeApiEntityFactory entityFactory;	
-	private CacheFacade cacheFacade;
+	private final PokeApiEntityFactory entityFactory;
+	private final CacheFacade cacheFacade;
 
 	public ReactiveCachingPokeApiClient(PokeApiEntityFactory entityFactory, CacheFacade cacheFacade) {
 		this.entityFactory = entityFactory;

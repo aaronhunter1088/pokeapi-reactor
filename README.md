@@ -16,21 +16,25 @@ A non-blocking, reactive API client for [PokeAPI](https://pokeapi.co/) with cach
 ### Project Configuration
 
 #### Properties
-You can (must) configure the location of the PokeAPI instance you want to use. Add the following property to your `application.properties`:
+You can (must) configure the location of the PokeAPI instance you want to use. 
+Add the following property to your`application.properties`:
 
 ```
 skaro.pokeapi.base-uri=https://pokeapi.co/api/v2/ #or the url of your own instance
 ```
 
 You may also configure the max buffer size for the WebClient, which is used to fetch resources from PokeAPI.
-Its default value is 565000 bytes, while the API request for "/pokemon/mew" can grow over the time, you may want to increase it yourself to a higher value.
+Its default value is 565000 bytes, while the API request for "/pokemon/mew" can grow over the time, you may want to 
+increase it yourself to a higher value.
 To achieve this, add the following property to your `application.properties`:
 ```
 skaro.pokeapi.max-buffer-size=565000
 ```
 
 #### Application Context
-Import one of pokeapi-reactor's configurations as well as specify your own [reactor.netty.http.client.HttpClient](https://projectreactor.io/docs/netty/release/api/reactor/netty/http/client/HttpClient.html) bean. Two configurations are available: caching and non-caching. Below is an example of a caching configuration which uses a flexible `HttpClient` tuned for high parallel throughput.
+Import one of pokeapi-reactor's configurations as well as specify your own [reactor.netty.http.client.HttpClient](https://projectreactor.io/docs/netty/release/api/reactor/netty/http/client/HttpClient.html) 
+bean. Two configurations are available: caching and non-caching. Below is an example of a caching configuration which 
+uses a flexible `HttpClient` tuned for high parallel throughput.
 
 ```java
 @Configuration
@@ -66,7 +70,8 @@ public class MyPokeApiReactorNonCachingConfiguration {
 	public HttpClient httpClient(ConnectionProvider connectionProvider) { ... }
 }
 ```
-Both the `PokeApiReactorCachingConfiguration` and `PokeApiReactorNonCachingConfiguration` will register the appropriate `PokeApiClient` bean.
+Both the `PokeApiReactorCachingConfiguration` and `PokeApiReactorNonCachingConfiguration` will register the appropriate
+`PokeApiClient` bean.
 
 ### Fetching a resource
 Inject the registered `PokeApiClient` into your class and request a resource.
@@ -118,14 +123,18 @@ public void printPokemonForms() {
 ```
 
 ### Maven Configuration
-The latest release can be pulled from GitHub's Apache Maven repository. To pull from their repository, you must add your GitHub credentials to your [settings.xml](https://maven.apache.org/settings.html) (located in `${user.home}/.m2/settings.xml`). You can read [GitHub's article about how to do that](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry). But for impatient programmer's, below is yet another guide to configure Maven to pull from GitHub that holds your hand a little more closely - I always appreciate it when people do that.
+The latest release can be pulled from GitHub's Apache Maven repository. 
+To pull from their repository, you must add your GitHub credentials to your [settings.xml](https://maven.apache.org/settings.html) (located in `${user.home}/.m2/settings.xml`). 
+You can read [GitHub's article about how to do that](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry). But for impatient programmer's, below is yet another guide to
+configure Maven to pull from GitHub that holds your hand a little more closely - I always appreciate it when people do that.
 
 
 #### Generate a token
 [Generate a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (Personal Access Token) with the `read:packages` privilege.
 
 #### Add \<server\> and \<repository\> tags in settings.xml 
-Configure Maven to [authenticate when trying to pull from GitHub's Apache Maven repository](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-with-a-personal-access-token). If you don't have a settings.xml, create it under your .m2 directory. It should look something like this.
+Configure Maven to [authenticate when trying to pull from GitHub's Apache Maven repository](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-with-a-personal-access-token). If you don't have a 
+settings.xml, create it under your .m2 directory. It should look something like this.
 
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
