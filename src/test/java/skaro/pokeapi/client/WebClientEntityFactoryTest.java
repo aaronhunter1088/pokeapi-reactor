@@ -1,6 +1,5 @@
 package skaro.pokeapi.client;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -11,6 +10,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -41,8 +41,7 @@ class WebClientEntityFactoryTest {
 
 	private MockWebServer mockPokeApiServer;
 	private PokeApiEndpointRegistry registry;
-	private WebClient webClient;
-	private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 	
 	private WebClientEntityFactory factory;
 	
@@ -61,9 +60,9 @@ class WebClientEntityFactoryTest {
 	void setup() {
 		objectMapper = new ObjectMapper();
 		registry = Mockito.mock(PokeApiEndpointRegistry.class);
-		webClient = WebClient.builder()
-				.baseUrl(getMockPokeApiServerBaseUrl())
-				.build();
+        WebClient webClient = WebClient.builder()
+                .baseUrl(getMockPokeApiServerBaseUrl())
+                .build();
 		
 		factory = new WebClientEntityFactory(webClient, registry); 
 	}
@@ -110,8 +109,8 @@ class WebClientEntityFactoryTest {
 			Set<String> resourceNames = resources.stream()
 					.map(NamedApiResource::getName)
 					.collect(Collectors.toSet());
-			assertTrue(resourceNames.contains(move1.getName()));
-			assertTrue(resourceNames.contains(move2.getName()));
+			Assertions.assertTrue(resourceNames.contains(move1.getName()));
+			Assertions.assertTrue(resourceNames.contains(move2.getName()));
 		};
 		
 		StepVerifier.create(factory.getBaseResource(Move.class))
@@ -145,8 +144,8 @@ class WebClientEntityFactoryTest {
 			Set<String> resourceNames = resources.stream()
 					.map(NamedApiResource::getName)
 					.collect(Collectors.toSet());
-			assertTrue(resourceNames.contains(ability1.getName()));
-			assertTrue(resourceNames.contains(ability2.getName()));
+			Assertions.assertTrue(resourceNames.contains(ability1.getName()));
+			Assertions.assertTrue(resourceNames.contains(ability2.getName()));
 		};
 		
 		StepVerifier.create(factory.getBaseResource(Ability.class, query))
@@ -156,7 +155,8 @@ class WebClientEntityFactoryTest {
 		
 		RecordedRequest recordedRequest = mockPokeApiServer.takeRequest();
 		assertEquals(HttpMethod.GET.toString(), recordedRequest.getMethod());
-		assertEquals(resourceEndpoint, recordedRequest.getRequestUrl().pathSegments().get(0));
+        assert recordedRequest.getRequestUrl() != null;
+        assertEquals(resourceEndpoint, recordedRequest.getRequestUrl().pathSegments().get(0));
 		assertEquals(2, recordedRequest.getRequestUrl().querySize());
 		assertEquals(query.getLimit().toString(), recordedRequest.getRequestUrl().queryParameter("limit"));
 		assertEquals(query.getOffset().toString(), recordedRequest.getRequestUrl().queryParameter("offset"));
@@ -214,7 +214,7 @@ class WebClientEntityFactoryTest {
 		for(int i = 0; i < expectedEndpoints.size(); i++) {
 			RecordedRequest recordedRequest = mockPokeApiServer.takeRequest();
 			assertEquals(HttpMethod.GET.toString(), recordedRequest.getMethod());
-			assertTrue(expectedEndpoints.remove(recordedRequest.getPath()));
+			Assertions.assertTrue(expectedEndpoints.remove(recordedRequest.getPath()));
 		}
 	}
 	
