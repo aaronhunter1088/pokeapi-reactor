@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * A generic type that holds a reference
- * to the name and url of the resource
+ * to the name and url of the resource.
  * NamedApiResourceList has results of this type
  */
 public class NamedApiResource<T extends PokeApiResource> {
