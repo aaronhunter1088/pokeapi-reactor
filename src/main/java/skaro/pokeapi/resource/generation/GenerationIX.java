@@ -1,26 +1,27 @@
 package skaro.pokeapi.resource.generation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
 public class GenerationIX {
 
     @JsonProperty("scarlet-violet")
-    private NameIcon scarletViolet;
+    private Sprites scarletViolet;
 
     /**
-     * Get the name and icon for the generation
-     * @return the name and icon
+     * Get the sprites for the generation
+     * @return the {@link Sprites} for scarletViolet
      */
-    public NameIcon getScarletViolet() {
+    public Sprites getScarletViolet() {
         return scarletViolet;
     }
     /**
-     * Set the name and icon for the generation
-     * @param scarletViolet the name and icon
+     * Set the sprites for the generation
+     * @param scarletViolet the {@link Sprites} for scarletViolet
      */
-    public void setScarletViolet(NameIcon scarletViolet) {
+    public void setScarletViolet(Sprites scarletViolet) {
         this.scarletViolet = scarletViolet;
     }
 

@@ -2,43 +2,44 @@ package skaro.pokeapi.resource.generation;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
 public class GenerationVI {
 
     @JsonAlias({"omegaruby-alphasapphire", "omega-ruby-alpha-sapphire"})
-    private NameIcon omegaRubyAlphaSapphire;
+    private Sprites omegaRubyAlphaSapphire;
     @JsonProperty("x-y")
-    private NameIcon xY;
+    private Sprites xY;
 
     /**
-     * Gets the omega ruby alpha sapphire icon of this GenerationVI
-     * @return the {@link NameIcon} omega ruby alpha sapphire icon
+     * Gets the omega ruby alpha sapphire sprites of this GenerationVI
+     * @return the {@link Sprites} for omega ruby alpha sapphire
      */
-    public NameIcon getOmegaRubyAlphaSapphire() {
+    public Sprites getOmegaRubyAlphaSapphire() {
         return omegaRubyAlphaSapphire;
     }
     /**
-     * Sets the omega ruby alpha sapphire icon of this GenerationVI
-     * @param omegaRubyAlphaSapphire the {@link NameIcon} omega ruby alpha sapphire icon
+     * Sets the omega ruby alpha sapphire sprites of this GenerationVI
+     * @param omegaRubyAlphaSapphire the {@link Sprites} for omega ruby alpha sapphire
      */
-    public void setOmegaRubyAlphaSapphire(NameIcon omegaRubyAlphaSapphire) {
+    public void setOmegaRubyAlphaSapphire(Sprites omegaRubyAlphaSapphire) {
         this.omegaRubyAlphaSapphire = omegaRubyAlphaSapphire;
     }
 
     /**
-     * Get the xY icon of this GenerationVI
-     * @return the {@link NameIcon} xY icon
+     * Get the xY sprites of this GenerationVI
+     * @return the {@link Sprites} for x-y
      */
-    public NameIcon getxY() {
+    public Sprites getxY() {
         return xY;
     }
     /**
-     * Sets the xY icon of this GenerationVI
-     * @param xY the {@link NameIcon} xY icon
+     * Sets the xY sprites of this GenerationVI
+     * @param xY the {@link Sprites} x-y sprites
      */
-    public void setxY(NameIcon xY) {
+    public void setxY(Sprites xY) {
         this.xY = xY;
     }
 

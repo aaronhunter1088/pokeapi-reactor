@@ -1,43 +1,44 @@
 package skaro.pokeapi.resource.generation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
 public class GenerationV {
 
     @JsonProperty("black-white")
-    private NameIcon blackWhite;
+    private Sprites blackWhite;
     @JsonProperty("black-2-white-2")
-    private NameIcon black2White2;
+    private Sprites black2White2;
 
     /**
-     * Get the blackWhite icon
-     * @return the blackWhite icon
+     * Get the blackWhite sprites
+     * @return the {@link Sprites} for blackWhite
      */
-    public NameIcon getBlackWhite() {
+    public Sprites getBlackWhite() {
         return blackWhite;
     }
     /**
-     * Set the blackWhite icon
-     * @param blackWhite the blackWhite icon
+     * Set the blackWhite sprites
+     * @param blackWhite the {@link Sprites} for blackWhite
      */
-    public void setBlackWhite(NameIcon blackWhite) {
+    public void setBlackWhite(Sprites blackWhite) {
         this.blackWhite = blackWhite;
     }
 
     /**
-     * Get the black2White2 icon
-     * @return the black2White2 icon
+     * Get the black2White2 sprites
+     * @return the {@link Sprites} for black2White2
      */
-    public NameIcon getBlack2White2() {
+    public Sprites getBlack2White2() {
         return black2White2;
     }
     /**
-     * Set the black2White2 icon
-     * @param black2White2 the black2White2 icon
+     * Set the black2White2 sprites
+     * @param black2White2 the {@link Sprites} for black2White2
      */
-    public void setBlack2White2(NameIcon black2White2) {
+    public void setBlack2White2(Sprites black2White2) {
         this.black2White2 = black2White2;
     }
 

@@ -42,6 +42,10 @@ public class Sprites {
     private String frontShinyTransparent;
     @JsonProperty("back_shiny_transparent")
     private String backShinyTransparent;
+    @JsonProperty("name_icon")
+    private String nameIcon;
+    @JsonProperty("animated")
+    private Sprites animated;
 
     /**
      * The default depiction of this Pokémon form from the front in battle
@@ -224,6 +228,126 @@ public class Sprites {
     }
 
     /**
+     * Get the gray depiction of this Pokémon form from the front in battle
+     * @return the frontGray
+     */
+    public String getFrontGray() {
+        return frontGray;
+    }
+    /**
+     * Set the gray depiction of this Pokémon form from the front in battle
+     * @param frontGray the frontGray to set
+     */
+    public void setFrontGray(String frontGray) {
+        this.frontGray = frontGray;
+    }
+
+    /**
+     * Get the gray depiction of this Pokémon form from the back in battle
+     * @return the backGray
+     */
+    public String getBackGray() {
+        return backGray;
+    }
+    /**
+     * Set the gray depiction of this Pokémon form from the back in battle
+     * @param backGray the backGray to set
+     */
+    public void setBackGray(String backGray) {
+        this.backGray = backGray;
+    }
+
+    /**
+     * Get the transparent depiction of this Pokémon form from the front in battle
+     * @return the frontTransparent
+     */
+    public String getFrontTransparent() {
+        return frontTransparent;
+    }
+    /**
+     * Set the transparent depiction of this Pokémon form from the front in battle
+     * @param frontTransparent the frontTransparent to set
+     */
+    public void setFrontTransparent(String frontTransparent) {
+        this.frontTransparent = frontTransparent;
+    }
+
+    /**
+     * Get the transparent depiction of this Pokémon form from the back in battle
+     * @return the backTransparent
+     */
+    public String getBackTransparent() {
+        return backTransparent;
+    }
+    /**
+     * Set the transparent depiction of this Pokémon form from the back in battle
+     * @param backTransparent the backTransparent to set
+     */
+    public void setBackTransparent(String backTransparent) {
+        this.backTransparent = backTransparent;
+    }
+
+    /**
+     * Get the shiny transparent depiction of this Pokémon form from the front in battle
+     * @return the frontShinyTransparent
+     */
+    public String getFrontShinyTransparent() {
+        return frontShinyTransparent;
+    }
+    /**
+     * Set the shiny transparent depiction of this Pokémon form from the front in battle
+     * @param frontShinyTransparent the frontShinyTransparent to set
+     */
+    public void setFrontShinyTransparent(String frontShinyTransparent) {
+        this.frontShinyTransparent = frontShinyTransparent;
+    }
+
+    /**
+     * Get the shiny transparent depiction of this Pokémon form from the back in battle
+     * @return the backShinyTransparent
+     */
+    public String getBackShinyTransparent() {
+        return backShinyTransparent;
+    }
+    /**
+     * Set the shiny transparent depiction of this Pokémon form from the back in battle
+     * @param backShinyTransparent the backShinyTransparent to set
+     */
+    public void setBackShinyTransparent(String backShinyTransparent) {
+        this.backShinyTransparent = backShinyTransparent;
+    }
+
+    /**
+     * Get the name icon
+     * @return the nameIcon
+     */
+    public String getNameIcon() {
+        return nameIcon;
+    }
+    /**
+     * Set the name icon
+     * @param nameIcon the nameIcon to set
+     */
+    public void setNameIcon(String nameIcon) {
+        this.nameIcon = nameIcon;
+    }
+
+    /**
+     * Get the animated depiction of this Pokémon form from the front in battle
+     * @return the animated
+     */
+    public Sprites getAnimated() {
+        return animated;
+    }
+    /**
+     * Set the animated depiction of this Pokémon form from the front in battle
+     * @param animated the animated to set
+     */
+    public void setAnimated(Sprites animated) {
+        this.animated = animated;
+    }
+
+    /**
      * Returns whether the given object o is
      * equal to this instance of Sprites
      * @param o the object to compare
@@ -232,7 +356,7 @@ public class Sprites {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Sprites sprites)) return false;
-        return Objects.equals(getFrontDefault(), sprites.getFrontDefault()) && Objects.equals(getBackDefault(), sprites.getBackDefault()) && Objects.equals(getFrontMale(), sprites.getFrontMale()) && Objects.equals(getFrontFemale(), sprites.getFrontFemale()) && Objects.equals(getBackMale(), sprites.getBackMale()) && Objects.equals(getBackFemale(), sprites.getBackFemale()) && Objects.equals(getFrontShiny(), sprites.getFrontShiny()) && Objects.equals(getBackShiny(), sprites.getBackShiny()) && Objects.equals(getFrontShinyMale(), sprites.getFrontShinyMale()) && Objects.equals(getBackShinyMale(), sprites.getBackShinyMale()) && Objects.equals(getFrontShinyFemale(), sprites.getFrontShinyFemale()) && Objects.equals(getBackShinyFemale(), sprites.getBackShinyFemale());
+        return Objects.equals(getFrontDefault(), sprites.getFrontDefault()) && Objects.equals(getBackDefault(), sprites.getBackDefault()) && Objects.equals(getFrontMale(), sprites.getFrontMale()) && Objects.equals(getFrontFemale(), sprites.getFrontFemale()) && Objects.equals(getBackMale(), sprites.getBackMale()) && Objects.equals(getBackFemale(), sprites.getBackFemale()) && Objects.equals(getFrontShiny(), sprites.getFrontShiny()) && Objects.equals(getBackShiny(), sprites.getBackShiny()) && Objects.equals(getFrontShinyMale(), sprites.getFrontShinyMale()) && Objects.equals(getBackShinyMale(), sprites.getBackShinyMale()) && Objects.equals(getFrontShinyFemale(), sprites.getFrontShinyFemale()) && Objects.equals(getBackShinyFemale(), sprites.getBackShinyFemale()) && Objects.equals(getFrontGray(), sprites.getFrontGray()) && Objects.equals(getBackGray(), sprites.getBackGray()) && Objects.equals(getFrontTransparent(), sprites.getFrontTransparent()) && Objects.equals(getBackTransparent(), sprites.getBackTransparent()) && Objects.equals(getFrontShinyTransparent(), sprites.getFrontShinyTransparent()) && Objects.equals(getBackShinyTransparent(), sprites.getBackShinyTransparent()) && Objects.equals(getNameIcon(), sprites.getNameIcon()) && Objects.equals(getAnimated(), sprites.getAnimated());
     }
 
     /**
@@ -241,7 +365,7 @@ public class Sprites {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getFrontDefault(), getBackDefault(), getFrontMale(), getFrontFemale(), getBackMale(), getBackFemale(), getFrontShiny(), getBackShiny(), getFrontShinyMale(), getBackShinyMale(), getFrontShinyFemale(), getBackShinyFemale());
+        return Objects.hash(getFrontDefault(), getBackDefault(), getFrontMale(), getFrontFemale(), getBackMale(), getBackFemale(), getFrontShiny(), getBackShiny(), getFrontShinyMale(), getBackShinyMale(), getFrontShinyFemale(), getBackShinyFemale(), getFrontGray(), getBackGray(), getFrontTransparent(), getBackTransparent(), getFrontShinyTransparent(), getBackShinyTransparent(), getNameIcon(), getAnimated());
     }
 
     /**
@@ -263,6 +387,14 @@ public class Sprites {
                 ", backShinyMale='" + backShinyMale + '\'' +
                 ", frontShinyFemale='" + frontShinyFemale + '\'' +
                 ", backShinyFemale='" + backShinyFemale + '\'' +
+                ", frontGray='" + frontGray + '\'' +
+                ", backGray='" + backGray + '\'' +
+                ", frontTransparent='" + frontTransparent + '\'' +
+                ", backTransparent='" + backTransparent + '\'' +
+                ", frontShinyTransparent='" + frontShinyTransparent + '\'' +
+                ", backShinyTransparent='" + backShinyTransparent + '\'' +
+                ", nameIcon='" + nameIcon + '\'' +
+                ", animated=" + animated +
                 '}';
     }
 }

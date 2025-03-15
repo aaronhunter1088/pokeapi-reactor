@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-// TODO: Compare with NameIcon and see if we can combine
 public class PokemonSprites {
 
 	@JsonProperty("front_default")

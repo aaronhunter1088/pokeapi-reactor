@@ -8,75 +8,75 @@ import java.util.Objects;
 public class GenerationVIII {
 
     @JsonProperty("brilliant-diamond-and-shining-pearl")
-    private NameIcon brilliantDiamondShiningPearl;
+    private Sprites brilliantDiamondShiningPearl;
     @JsonProperty("legends-arceus")
-    private NameIcon legendsArceus;
+    private Sprites legendsArceus;
     @JsonProperty("sword-shield")
-    private NameIcon swordShield;
+    private Sprites swordShield;
     private Sprites icons;
 
     /**
-     * Returns the brilliantDiamondShiningPearl icon for the GenerationVIII
-     * @return the brilliantDiamondShiningPearl icon
+     * Get the brilliantDiamondShiningPearl sprites
+     * @return the {@link Sprites} for brilliantDiamondShiningPearl
      */
-    public NameIcon getBrilliantDiamondShiningPearl() {
+    public Sprites getBrilliantDiamondShiningPearl() {
         return brilliantDiamondShiningPearl;
     }
     /**
-     * Sets the brilliantDiamondShiningPearl icon for the GenerationVIII
-     * @param brilliantDiamondShiningPearl the brilliantDiamondShiningPearl icon
+     * Set the brilliantDiamondShiningPearl sprites
+     * @param brilliantDiamondShiningPearl the {@link Sprites} for brilliantDiamondShiningPearl
      */
-    public void setBrilliantDiamondShiningPearl(NameIcon brilliantDiamondShiningPearl) {
+    public void setBrilliantDiamondShiningPearl(Sprites brilliantDiamondShiningPearl) {
         this.brilliantDiamondShiningPearl = brilliantDiamondShiningPearl;
     }
 
     /**
-     * Returns the legendsArceus icon for the GenerationVIII
-     * @return the legendsArceus icon
+     * Get the legendsArceus sprites
+     * @return the {@link Sprites} for legendsArceus
      */
-    public NameIcon getLegendsArceus() {
+    public Sprites getLegendsArceus() {
         return legendsArceus;
     }
     /**
-     * Sets the legendsArceus icon for the GenerationVIII
-     * @param legendsArceus the legendsArceus icon
+     * Set the legendsArceus sprites
+     * @param legendsArceus the {@link Sprites} for legendsArceus
      */
-    public void setLegendsArceus(NameIcon legendsArceus) {
+    public void setLegendsArceus(Sprites legendsArceus) {
         this.legendsArceus = legendsArceus;
     }
 
     /**
-     * Returns the swordShield icon for the GenerationVIII
-     * @return the swordShield icon
+     * Get the swordShield sprites
+     * @return the {@link Sprites} for swordShield
      */
-    public NameIcon getSwordShield() {
+    public Sprites getSwordShield() {
         return swordShield;
     }
     /**
-     * Sets the swordShield icon for the GenerationVIII
-     * @param swordShield the swordShield icon
+     * Set the swordShield sprites
+     * @param swordShield the {@link Sprites} for swordShield
      */
-    public void setSwordShield(NameIcon swordShield) {
+    public void setSwordShield(Sprites swordShield) {
         this.swordShield = swordShield;
     }
 
     /**
-     * Returns the icons for the GenerationVIII
-     * @return the icons
+     * Get the icons
+     * @return the {@link Sprites} for icons
      */
     public Sprites getIcons() {
         return icons;
     }
     /**
-     * Sets the icons for the GenerationVIII
-     * @param icons the icons
+     * Set the icons
+     * @param icons the {@link Sprites} for icons
      */
     public void setIcons(Sprites icons) {
         this.icons = icons;
     }
 
     /**
-     * Returns whether the given object o is
+     * Get whether the given object o is
      * equal to this instance of GenerationVIII
      * @param o the object to compare
      * @return true if equal otherwise false
@@ -88,7 +88,7 @@ public class GenerationVIII {
     }
 
     /**
-     * Returns the hash code of the GenerationVIII
+     * Get the hash code of the GenerationVIII
      * @return the hash code
      */
     @Override
@@ -97,7 +97,7 @@ public class GenerationVIII {
     }
 
     /**
-     * Returns a string representation of the GenerationVIII
+     * Get a string representation of the GenerationVIII
      * @return the string representation
      */
     @Override

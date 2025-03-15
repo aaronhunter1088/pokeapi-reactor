@@ -1,59 +1,60 @@
 package skaro.pokeapi.resource.generation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
 public class GenerationIV {
 
     @JsonProperty("diamond-pearl")
-    private NameIcon diamondPearl;
+    private Sprites diamondPearl;
     @JsonProperty("heartgold-soulsilver")
-    private NameIcon heartgoldSoulsilver;
-    private NameIcon platinum;
+    private Sprites heartgoldSoulsilver;
+    private Sprites platinum;
 
     /**
-     * Gets the icon for the HeartGold SoulSilver
-     * @return the heartgoldSoulsilver
+     * Get the sprites for the HeartGold SoulSilver
+     * @return the {@link Sprites} for heartgoldSoulsilver
      */
-    public NameIcon getDiamondPearl() {
+    public Sprites getDiamondPearl() {
         return diamondPearl;
     }
     /**
-     * Sets the icon for the HeartGold SoulSilver
-     * @param diamondPearl the heartgoldSoulsilver to set
+     * Set the sprites for the HeartGold SoulSilver
+     * @param diamondPearl the {@link Sprites} for heartgoldSoulsilver
      */
-    public void setDiamondPearl(NameIcon diamondPearl) {
+    public void setDiamondPearl(Sprites diamondPearl) {
         this.diamondPearl = diamondPearl;
     }
 
     /**
-     * Gets the icon for the HeartGold SoulSilver
-     * @return the heartgoldSilve
+     * Get the sprites for the HeartGold SoulSilver
+     * @return the {@link Sprites} for heartgoldSilver
      */
-    public NameIcon getHeartgoldSoulsilver() {
+    public Sprites getHeartgoldSoulsilver() {
         return heartgoldSoulsilver;
     }
     /**
-     * Sets the icon for the HeartGold SoulSilver
-     * @param heartgoldSoulsilver the heartgoldSoulsilver to set
+     * Set the sprites for the HeartGold SoulSilver
+     * @param heartgoldSoulsilver the {@link Sprites} for heartgoldSoulsilver
      */
-    public void setHeartgoldSoulsilver(NameIcon heartgoldSoulsilver) {
+    public void setHeartgoldSoulsilver(Sprites heartgoldSoulsilver) {
         this.heartgoldSoulsilver = heartgoldSoulsilver;
     }
 
     /**
-     * Gets the icon for the Platinum
-     * @return the platinum
+     * Get the sprites for the Platinum
+     * @return the {@link Sprites} for platinum
      */
-    public NameIcon getPlatinum() {
+    public Sprites getPlatinum() {
         return platinum;
     }
     /**
-     * Sets the icon for the Platinum
-     * @param platinum the platinum to set
+     * Set the sprites for the Platinum
+     * @param platinum the {@link Sprites} for platinum
      */
-    public void setPlatinum(NameIcon platinum) {
+    public void setPlatinum(Sprites platinum) {
         this.platinum = platinum;
     }
 
@@ -70,7 +71,7 @@ public class GenerationIV {
     }
 
     /**
-     * Returns the hash code of the Ability
+     * Returns the hash code of the GenerationIV
      * @return the hash code
      */
     @Override
@@ -79,7 +80,7 @@ public class GenerationIV {
     }
 
     /**
-     * Returns a string representation of the Ability
+     * Returns a string representation of the GenerationIV
      * @return the string representation
      */
     @Override

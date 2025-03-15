@@ -2,92 +2,92 @@ package skaro.pokeapi.resource.generation;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
 public class GenerationIII {
 
-    private NameIcon colosseum;
-    private NameIcon emerald;
+    private Sprites colosseum;
+    private Sprites emerald;
     @JsonProperty("firered-leafgreen")
-    private NameIcon fireredLeafgreen;
-    //@JsonProperty("ruby-sapphire")
+    private Sprites fireredLeafgreen;
     @JsonAlias({"ruby-sapphire", "ruby-saphire"})
-    private NameIcon rubySapphire;
-    private NameIcon xd;
+    private Sprites rubySapphire;
+    private Sprites xd;
 
     /**
-     * Get the icon for the colosseum
-     * @return the colosseum
+     * Get the sprites for the colosseum
+     * @return the {@link Sprites} for colosseum
      */
-    public NameIcon getColosseum() {
+    public Sprites getColosseum() {
         return colosseum;
     }
     /**
-     * Set the icon for the colosseum
-     * @param colosseum the colosseum to set
+     * Set the sprites for the colosseum
+     * @param colosseum the {@link Sprites} for colosseum
      */
-    public void setColosseum(NameIcon colosseum) {
+    public void setColosseum(Sprites colosseum) {
         this.colosseum = colosseum;
     }
 
     /**
-     * Get the icon for the emerald
-     * @return the emerald
+     * Get the sprites for the emerald
+     * @return the {@link Sprites} for emerald
      */
-    public NameIcon getEmerald() {
+    public Sprites getEmerald() {
         return emerald;
     }
     /**
-     * Set the icon for the emerald
-     * @param emerald the emerald to set
+     * Set the sprites for the emerald
+     * @param emerald the {@link Sprites} for emerald
      */
-    public void setEmerald(NameIcon emerald) {
+    public void setEmerald(Sprites emerald) {
         this.emerald = emerald;
     }
 
     /**
-     * Get the icon for the firered-leafgreen
-     * @return the fireredLeafgreen
+     * Get the sprites for the firered-leafgreen
+     * @return the {@link Sprites} for firered-leafgreen
      */
-    public NameIcon getFireredLeafgreen() {
+    public Sprites getFireredLeafgreen() {
         return fireredLeafgreen;
     }
     /**
-     * Set the icon for the firered-leafgreen
-     * @param fireredLeafgreen the fireredLeafgreen to set
+     * Set the sprites for the firered-leafgreen
+     * @param fireredLeafgreen the {@link Sprites} for fireredLeafgreen
      */
-    public void setFireredLeafgreen(NameIcon fireredLeafgreen) {
+    public void setFireredLeafgreen(Sprites fireredLeafgreen) {
         this.fireredLeafgreen = fireredLeafgreen;
     }
 
     /**
-     * Get the icon for the ruby-sapphire
-     * @return the rubySapphire
+     * Get the sprites for the ruby-sapphire
+     * @return the {@link Sprites} for rubySapphire
      */
-    public NameIcon getRubySapphire() {
+    public Sprites getRubySapphire() {
         return rubySapphire;
     }
     /**
-     * Set the icon for the ruby-sapphire
-     * @param rubySapphire the rubySapphire to set
+     * Set the sprites for the ruby-sapphire
+     * @param rubySapphire the {@link Sprites} for rubySapphire
      */
-    public void setRubySapphire(NameIcon rubySapphire) {
+    public void setRubySapphire(Sprites rubySapphire) {
         this.rubySapphire = rubySapphire;
     }
 
     /**
-     * Get the icon for the xd
-     * @return the xd
+     * Get the sprites for the xd
+     * @return the {@link Sprites} for xd
      */
-    public NameIcon getXd() {
+    public Sprites getXd() {
         return xd;
     }
     /**
-     * Set the icon for the xd
-     * @param xd the xd to set
+     * Set the sprites for the xd
+     * @param xd the {@link Sprites} for xd
      */
-    public void setXd(NameIcon xd) {
+    public void setXd(Sprites xd) {
         this.xd = xd;
     }
 

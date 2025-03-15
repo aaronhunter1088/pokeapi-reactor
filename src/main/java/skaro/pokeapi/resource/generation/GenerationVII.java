@@ -1,76 +1,77 @@
 package skaro.pokeapi.resource.generation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
 public class GenerationVII {
 
     @JsonProperty("lets-go-pikachu-lets-go-eevee")
-    private NameIcon letsGoPikachuLetsGoEevee;
+    private Sprites letsGoPikachuLetsGoEevee;
     @JsonProperty("sun-moon")
-    private NameIcon sunMoon;
+    private Sprites sunMoon;
     @JsonProperty("ultra-sun-ultra-moon")
-    private NameIcon ultraSunUltraMoon;
-    private NameIcon icons;
+    private Sprites ultraSunUltraMoon;
+    private Sprites icons;
 
     /**
-     * Gets the name and icon for the LetsGoPikachuLetsGoEevee
-     * @return the {@link NameIcon} object
+     * Get the sprites for letsGoPikachuLetsGoEevee
+     * @return the {@link Sprites} for letsGoPikachuLetsGoEevee
      */
-    public NameIcon getLetsGoPikachuLetsGoEevee() {
+    public Sprites getLetsGoPikachuLetsGoEevee() {
         return letsGoPikachuLetsGoEevee;
     }
     /**
-     * Sets the name and icon for the LetsGoPikachuLetsGoEevee
-     * @param letsGoPikachuLetsGoEevee the {@link NameIcon} object
+     * Set the sprites for letsGoPikachuLetsGoEevee
+     * @param letsGoPikachuLetsGoEevee the {@link Sprites} for letsGoPikachuLetsGoEevee
      */
-    public void setLetsGoPikachuLetsGoEevee(NameIcon letsGoPikachuLetsGoEevee) {
+    public void setLetsGoPikachuLetsGoEevee(Sprites letsGoPikachuLetsGoEevee) {
         this.letsGoPikachuLetsGoEevee = letsGoPikachuLetsGoEevee;
     }
 
     /**
-     * Gets the name and icon for the SunMoon
-     * @return the {@link NameIcon} object
+     * Get the sprites for sunMoon
+     * @return the {@link Sprites} for sunMoon
      */
-    public NameIcon getSunMoon() {
+    public Sprites getSunMoon() {
         return sunMoon;
     }
     /**
-     * Sets the name and icon for the SunMoon
-     * @param sunMoon the {@link NameIcon} object
+     * Set the sprites for the SunMoon
+     * @param sunMoon the {@link Sprites} object
      */
-    public void setSunMoon(NameIcon sunMoon) {
+    public void setSunMoon(Sprites sunMoon) {
         this.sunMoon = sunMoon;
     }
 
     /**
-     * Gets the name and icon for the UltraSunUltraMoon
-     * @return the {@link NameIcon} object
+     * Get the sprites for the UltraSunUltraMoon
+     * @return the {@link Sprites} object
      */
-    public NameIcon getUltraSunUltraMoon() {
+    public Sprites getUltraSunUltraMoon() {
         return ultraSunUltraMoon;
     }
     /**
-     * Sets the name and icon for the UltraSunUltraMoon
-     * @param ultraSunUltraMoon the {@link NameIcon} object
+     * Set the sprites for the UltraSunUltraMoon
+     * @param ultraSunUltraMoon the {@link Sprites} object
      */
-    public void setUltraSunUltraMoon(NameIcon ultraSunUltraMoon) {
+    public void setUltraSunUltraMoon(Sprites ultraSunUltraMoon) {
         this.ultraSunUltraMoon = ultraSunUltraMoon;
     }
 
     /**
-     * Gets the icons for the GenerationVII
-     * @return the {@link NameIcon} object
+     * Get the icons for the GenerationVII
+     * @return the {@link Sprites} for icons
      */
-    public NameIcon getIcons() {
+    public Sprites getIcons() {
         return icons;
     }
     /**
-     * Sets the icons for the GenerationVII
-     * @param icons the {@link NameIcon} object
+     * Set the icons for the GenerationVII
+     * @param icons the {@link Sprites} for icons
      */
-    public void setIcons(NameIcon icons) {
+    public void setIcons(Sprites icons) {
         this.icons = icons;
     }
 
