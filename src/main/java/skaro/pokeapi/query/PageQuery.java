@@ -5,31 +5,45 @@ public class PageQuery {
 	private Integer limit;
 	private Integer offset;
 
-	/** All args constructor **/
 	public PageQuery(int limit, int offset) {
-		setLimit(limit);
-		setOffset(offset);
+		this.limit = limit;
+		this.offset = offset;
 	}
 
-	/** Gets the limit **/
+	/**
+	 * Get the limit
+	 * @return The limit
+	 */
 	public Integer getLimit() {
 		return limit;
 	}
-	/** Sets the limit **/
+	/**
+	 * Set the limit
+	 * @param limit The limit
+	 */
 	private void setLimit(Integer limit) {
 		this.limit = limit;
 	}
 
-	/** Gets the offset **/
+	/**
+	 * Get the offset
+	 * @return The offset
+	 */
 	public Integer getOffset() {
 		return offset;
 	}
-	/** Sets the offset **/
+	/**
+	 * Set the offset
+	 * @param offset The offset
+	 */
 	private void setOffset(Integer offset) {
 		this.offset = offset;
 	}
 
-	/** Gets the string representation of the PageQuery **/
+	/**
+	 * Returns a string representation of the PageQuery
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
 		return "PageQuery{" +

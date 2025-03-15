@@ -25,7 +25,7 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	private Integer weight;
 	private List<PokemonAbility> abilities;
 	@JsonProperty("past_abilities")
-	private List<PokemonAbility> pastAbilities;
+	private List<PokemonPastAbility> pastAbilities;
 	private List<NamedApiResource<PokemonForm>> forms;
 	@JsonProperty("game_indices")
 	private List<VersionGameIndex> gameIndices;
@@ -183,17 +183,17 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	}
 
 	/**
-	 * Get a list of abilities this Pokémon had
-	 * @return the list of {@link PokemonAbility} pastAbilities
+	 * Get a list of past abilities this Pokémon had
+	 * @return the list of {@link PokemonPastAbility} pastAbilities
 	 */
-	public List<PokemonAbility> getPastAbilities() {
+	public List<PokemonPastAbility> getPastAbilities() {
 		return pastAbilities;
 	}
 	/**
-	 * Set a list of abilities this Pokémon had
-	 * @param pastAbilities the list of {@link PokemonAbility} pastAbilities
+	 * Set a list of past abilities this Pokémon had
+	 * @param pastAbilities the list of {@link PokemonPastAbility} pastAbilities
 	 */
-	public void setPastAbilities(List<PokemonAbility> pastAbilities) {
+	public void setPastAbilities(List<PokemonPastAbility> pastAbilities) {
 		this.pastAbilities = pastAbilities;
 	}
 
@@ -255,9 +255,7 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	 * encounter details pertaining to specific versions
 	 * @param locationAreaEncounters the locationAreaEncounters
 	 */
-	public void setLocationAreaEncounters(String locationAreaEncounters) {
-		this.locationAreaEncounters = locationAreaEncounters;
-	}
+	public void setLocationAreaEncounters(String locationAreaEncounters) { this.locationAreaEncounters = locationAreaEncounters; }
 
 	/**
 	 * Get a list of moves along with learn methods and

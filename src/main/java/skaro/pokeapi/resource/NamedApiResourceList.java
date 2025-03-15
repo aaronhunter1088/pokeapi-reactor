@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * NamedApiResponseList, the response from
- * calling most endpoints in the registry
+ * calling endpoints in the registry
  */
 public class NamedApiResourceList<T extends PokeApiResource> implements PokeApiResource {
 
