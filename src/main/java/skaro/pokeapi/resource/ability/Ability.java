@@ -16,7 +16,7 @@ public class Ability implements PokeApiResource, Localizable {
 	private Integer id;
 	private String name;
 	@JsonProperty("is_main_series")
-	private Boolean isMainSeries;
+	private Boolean mainSeries;
 	private NamedApiResource<Generation> generation;
 	private List<Name> names;
 	@JsonProperty("effect_entries")
@@ -62,19 +62,19 @@ public class Ability implements PokeApiResource, Localizable {
 	/**
 	 * Get whether or not this ability originated
 	 * in the main series of the video games
-	 * @return isMainSeries
+	 * @return mainSeries
 	 */
 	public Boolean isMainSeries() {
-		return isMainSeries;
+		return mainSeries;
 	}
 
 	/**
 	 * Set whether or not this ability originated
 	 * in the main series of the video games
-	 * @param mainSeries the value to set
+	 * @param isMainSeries the value to set
 	 */
-	public void setMainSeries(Boolean mainSeries) {
-		isMainSeries = mainSeries;
+	public void setMainSeries(Boolean isMainSeries) {
+		this.mainSeries = isMainSeries;
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class Ability implements PokeApiResource, Localizable {
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Ability ability)) return false;
-        return Objects.equals(getId(), ability.getId()) && Objects.equals(getName(), ability.getName()) && Objects.equals(isMainSeries, ability.isMainSeries) && Objects.equals(getGeneration(), ability.getGeneration()) && Objects.equals(getNames(), ability.getNames()) && Objects.equals(getEffectEntries(), ability.getEffectEntries()) && Objects.equals(getEffectChanges(), ability.getEffectChanges()) && Objects.equals(getFlavorTextEntries(), ability.getFlavorTextEntries()) && Objects.equals(getPokemon(), ability.getPokemon());
+        return Objects.equals(getId(), ability.getId()) && Objects.equals(getName(), ability.getName()) && Objects.equals(mainSeries, ability.mainSeries) && Objects.equals(getGeneration(), ability.getGeneration()) && Objects.equals(getNames(), ability.getNames()) && Objects.equals(getEffectEntries(), ability.getEffectEntries()) && Objects.equals(getEffectChanges(), ability.getEffectChanges()) && Objects.equals(getFlavorTextEntries(), ability.getFlavorTextEntries()) && Objects.equals(getPokemon(), ability.getPokemon());
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class Ability implements PokeApiResource, Localizable {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getName(), isMainSeries, getGeneration(), getNames(), getEffectEntries(), getEffectChanges(), getFlavorTextEntries(), getPokemon());
+		return Objects.hash(getId(), getName(), mainSeries, getGeneration(), getNames(), getEffectEntries(), getEffectChanges(), getFlavorTextEntries(), getPokemon());
 	}
 
 	/**
@@ -205,7 +205,7 @@ public class Ability implements PokeApiResource, Localizable {
 		return "Ability{" +
 				"id=" + id +
 				", name='" + name + '\'' +
-				", isMainSeries=" + isMainSeries +
+				", isMainSeries=" + mainSeries +
 				", generation=" + generation +
 				", names=" + names +
 				", effectEntries=" + effectEntries +

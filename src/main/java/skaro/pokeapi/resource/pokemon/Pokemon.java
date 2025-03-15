@@ -366,7 +366,7 @@ public class Pokemon implements PokeApiResource, Comparable<Pokemon> {
 	}
 
 	/**
-	 * Returns the hash code of the Ability
+	 * Returns the hash code of the Pokemon
 	 * @return the hash code
 	 */
 	@Override

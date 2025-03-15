@@ -34,6 +34,15 @@ public class ContestEffect implements PokeApiResource {
 	}
 
 	/**
+	 * Get the name of this class
+	 * @return the name
+	 */
+	@Override
+	public String getName() {
+		return getClass().getSimpleName();
+	}
+
+	/**
 	 * Get the base number of hearts the user of this move gets
 	 * @return the appeal
 	 */
@@ -91,15 +100,6 @@ public class ContestEffect implements PokeApiResource {
 	 */
 	public void setFlavorTextEntries(List<FlavorText> flavorTextEntries) {
 		this.flavorTextEntries = flavorTextEntries;
-	}
-
-	/**
-	 * Get the name of this class
-	 * @return the name
-	 */
-	@Override
-	public String getName() {
-		return getClass().getSimpleName();
 	}
 
 	/**

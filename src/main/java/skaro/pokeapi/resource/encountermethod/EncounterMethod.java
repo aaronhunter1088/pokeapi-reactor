@@ -87,7 +87,7 @@ public class EncounterMethod implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns the hash code of the Ability
+	 * Returns the hash code of the EncounterMethod
 	 * @return the hash code
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class EncounterMethod implements PokeApiResource, Localizable {
 	}
 
 	/**
-	 * Returns a string representation of the Ability
+	 * Returns a string representation of the EncounterMethod
 	 * @return the string representation
 	 */
 	@Override

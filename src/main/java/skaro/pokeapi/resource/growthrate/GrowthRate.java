@@ -130,7 +130,7 @@ public class GrowthRate implements PokeApiResource {
 	}
 
 	/**
-	 * Returns the hash code of the Ability
+	 * Returns the hash code of the GrowthRate
 	 * @return the hash code
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class GrowthRate implements PokeApiResource {
 	}
 
 	/**
-	 * Returns a string representation of the Ability
+	 * Returns a string representation of the GrowthRate
 	 * @return the string representation
 	 */
 	@Override

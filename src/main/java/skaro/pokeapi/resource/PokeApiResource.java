@@ -11,5 +11,3 @@ public interface PokeApiResource {
 	String getName();
 
 }
-
-

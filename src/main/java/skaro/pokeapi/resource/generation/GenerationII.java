@@ -77,7 +77,7 @@ public class GenerationII {
     }
 
     /**
-     * Returns a string representation of the Ability
+     * Returns a string representation of the GenerationII
      * @return the string representation
      */
     @Override

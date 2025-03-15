@@ -53,7 +53,7 @@ public class PokemonHeldItemVersion {
 	}
 
 	/**
-	 * Returns the hash code of the Ability
+	 * Returns the hash code of the PokemonHeldItemVersion
 	 * @return the hash code
 	 */
 	@Override
@@ -62,7 +62,7 @@ public class PokemonHeldItemVersion {
 	}
 
 	/**
-	 * Returns a string representation of the Ability
+	 * Returns a string representation of the PokemonHeldItemVersion
 	 * @return the string representation
 	 */
 	@Override

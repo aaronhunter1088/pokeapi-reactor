@@ -17,7 +17,7 @@ public class AbilityEffectChange {
 
 	/**
 	 * Get the previous effect of this ability listed in different languages
-	 * @return a list of {@link Effect} objects
+	 * @return a list of {@link Effect} effect entries
 	 */
 	public List<Effect> getEffectEntries() {
 		return effectEntries;
@@ -25,7 +25,7 @@ public class AbilityEffectChange {
 
 	/**
 	 * Set the previous effect of this ability listed in different languages
-	 * @param effectEntries a list of {@link Effect} objects
+	 * @param effectEntries a list of {@link Effect} effect entries
 	 */
 	public void setEffectEntries(List<Effect> effectEntries) {
 		this.effectEntries = effectEntries;

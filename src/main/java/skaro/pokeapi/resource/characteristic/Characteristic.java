@@ -36,6 +36,15 @@ public class Characteristic implements PokeApiResource {
 	}
 
 	/**
+	 * Get the name
+	 * @return the class name
+	 */
+	@Override
+	public String getName() {
+		return getClass().getSimpleName();
+	}
+
+	/**
 	 * Get the remainder of the highest stat/IV divided by 5
 	 * @return the gene modulo
 	 */
@@ -97,15 +106,6 @@ public class Characteristic implements PokeApiResource {
 	 */
 	public void setHighestStat(NamedApiResource<Stat> highestStat) {
 		this.highestStat = highestStat;
-	}
-
-	/**
-	 * Get the name
-	 * @return the class name
-	 */
-	@Override
-	public String getName() {
-		return getClass().getSimpleName();
 	}
 
 	/**
