@@ -14,8 +14,9 @@ import skaro.pokeapi.resource.NamedApiResourceList;
 import skaro.pokeapi.resource.PokeApiResource;
 
 public class ReactiveCachingPokeApiClient implements PokeApiClient {
-	private PokeApiEntityFactory entityFactory;	
-	private CacheFacade cacheFacade;
+
+	private final PokeApiEntityFactory entityFactory;
+	private final CacheFacade cacheFacade;
 
 	public ReactiveCachingPokeApiClient(PokeApiEntityFactory entityFactory, CacheFacade cacheFacade) {
 		this.entityFactory = entityFactory;
@@ -33,8 +34,8 @@ public class ReactiveCachingPokeApiClient implements PokeApiClient {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls) {
-		Class<NamedApiResourceList<T>> collectionResourceCalss = (Class<NamedApiResourceList<T>>)(Class<?>)NamedApiResourceList.class;
-		CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceCalss, "collection")
+		Class<NamedApiResourceList<T>> collectionResourceClass = (Class<NamedApiResourceList<T>>)(Class<?>)NamedApiResourceList.class;
+		CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceClass, "collection")
 				.orCache(() -> entityFactory.getBaseResource(cls));
 		
 		return cacheFacade.get(cacheSpec);
@@ -43,9 +44,9 @@ public class ReactiveCachingPokeApiClient implements PokeApiClient {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls, PageQuery query) {
-		Class<NamedApiResourceList<T>> collectionResourceCalss = (Class<NamedApiResourceList<T>>)(Class<?>)NamedApiResourceList.class;
+		Class<NamedApiResourceList<T>> collectionResourceClass = (Class<NamedApiResourceList<T>>)(Class<?>)NamedApiResourceList.class;
 		String key = String.format("collection-offset%d-limit%d", query.getOffset(), query.getLimit());
-		CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceCalss, key)
+		CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceClass, key)
 				.orCache(() -> entityFactory.getBaseResource(cls, query));
 		
 		return cacheFacade.get(cacheSpec);

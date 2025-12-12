@@ -1,6 +1,5 @@
 package skaro.pokeapi.client;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -11,6 +10,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,9 +18,6 @@ import org.mockito.Mockito;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.reactive.function.client.WebClient;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -35,41 +32,41 @@ import skaro.pokeapi.resource.item.Item;
 import skaro.pokeapi.resource.move.Move;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 import skaro.pokeapi.resource.stat.Stat;
+import tools.jackson.databind.ObjectMapper;
 
 @ExtendWith(SpringExtension.class)
-public class WebClientEntityFactoryTest {
+class WebClientEntityFactoryTest {
 
 	private MockWebServer mockPokeApiServer;
 	private PokeApiEndpointRegistry registry;
-	private WebClient webClient;
-	private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 	
 	private WebClientEntityFactory factory;
 	
 	@BeforeEach
-	public void startMockPokeApiServer() throws IOException {
+	void startMockPokeApiServer() throws IOException {
 		mockPokeApiServer = new MockWebServer();
 		mockPokeApiServer.start();
 	}
 	
 	@AfterEach
-    public void tearDown() throws IOException {
+    void tearDown() throws IOException {
 		mockPokeApiServer.shutdown();
     }
 	
 	@BeforeEach
-	public void setup() {
+	void setup() {
 		objectMapper = new ObjectMapper();
 		registry = Mockito.mock(PokeApiEndpointRegistry.class);
-		webClient = WebClient.builder()
-				.baseUrl(getMockPokeApiServerBaseUrl())
-				.build();
+        WebClient webClient = WebClient.builder()
+                .baseUrl(getMockPokeApiServerBaseUrl())
+                .build();
 		
 		factory = new WebClientEntityFactory(webClient, registry); 
 	}
 	
 	@Test
-	public void testGetResource() throws JsonProcessingException, InterruptedException {
+	void testGetResource() throws InterruptedException {
 		String resourceEndpoint = "/pokemon";
 		Pokemon pokemon = new Pokemon();
 		pokemon.setName("Mienfoobar");
@@ -91,10 +88,12 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void testGetBaseResource() throws JsonProcessingException, InterruptedException {
+	void testGetBaseResource() throws InterruptedException {
 		String resourceEndpoint = "/move";
-		String move1 = "Tackle";
-		String move2 = "Splash";
+		Move move1 = new Move();
+		move1.setName("Tackle");
+		Move move2 = new Move();
+		move2.setName("Splash");
 		NamedApiResourceList<PokeApiResource> resourceListResponse = createResourceList(List.of(move1, move2));
 		
 		Mockito.when(registry.getEndpoint(Move.class))
@@ -108,8 +107,8 @@ public class WebClientEntityFactoryTest {
 			Set<String> resourceNames = resources.stream()
 					.map(NamedApiResource::getName)
 					.collect(Collectors.toSet());
-			assertTrue(resourceNames.contains(move1));
-			assertTrue(resourceNames.contains(move2));
+			Assertions.assertTrue(resourceNames.contains(move1.getName()));
+			Assertions.assertTrue(resourceNames.contains(move2.getName()));
 		};
 		
 		StepVerifier.create(factory.getBaseResource(Move.class))
@@ -123,10 +122,12 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void testGetBaseResourceWithQuery() throws JsonProcessingException, InterruptedException {
+	void testGetBaseResourceWithQuery() throws InterruptedException {
 		String resourceEndpoint = "ability";
-		String ability1 = "Levitate";
-		String ability2 = "Pressure";
+		Ability ability1 = new Ability();
+		ability1.setName("Levitate");
+		Ability ability2 = new Ability();
+		ability2.setName("Pressure");
 		NamedApiResourceList<PokeApiResource> resourceListResponse = createResourceList(List.of(ability1, ability2));
 		PageQuery query = new PageQuery(5, 10);
 		
@@ -141,8 +142,8 @@ public class WebClientEntityFactoryTest {
 			Set<String> resourceNames = resources.stream()
 					.map(NamedApiResource::getName)
 					.collect(Collectors.toSet());
-			assertTrue(resourceNames.contains(ability1));
-			assertTrue(resourceNames.contains(ability2));
+			Assertions.assertTrue(resourceNames.contains(ability1.getName()));
+			Assertions.assertTrue(resourceNames.contains(ability2.getName()));
 		};
 		
 		StepVerifier.create(factory.getBaseResource(Ability.class, query))
@@ -152,14 +153,15 @@ public class WebClientEntityFactoryTest {
 		
 		RecordedRequest recordedRequest = mockPokeApiServer.takeRequest();
 		assertEquals(HttpMethod.GET.toString(), recordedRequest.getMethod());
-		assertEquals(resourceEndpoint, recordedRequest.getRequestUrl().pathSegments().get(0));
+        assert recordedRequest.getRequestUrl() != null;
+        assertEquals(resourceEndpoint, recordedRequest.getRequestUrl().pathSegments().get(0));
 		assertEquals(2, recordedRequest.getRequestUrl().querySize());
 		assertEquals(query.getLimit().toString(), recordedRequest.getRequestUrl().queryParameter("limit"));
 		assertEquals(query.getOffset().toString(), recordedRequest.getRequestUrl().queryParameter("offset"));
 	}
 	
 	@Test
-	public void getNamedResourceTest() throws JsonProcessingException, InterruptedException {
+	void getNamedResourceTest() throws InterruptedException {
 		String namedResourceEndpoint = "item";
 		Item item = new Item();
 		item.setName("Leftovers");
@@ -180,7 +182,7 @@ public class WebClientEntityFactoryTest {
 	}
 	
 	@Test
-	public void getNamedResourcesTest() throws JsonProcessingException, InterruptedException {
+	void getNamedResourcesTest() throws InterruptedException {
 		String namedResourceEndpoint = "stat";
 		Stat stat1 = new Stat();
 		stat1.setName("attack");
@@ -210,7 +212,7 @@ public class WebClientEntityFactoryTest {
 		for(int i = 0; i < expectedEndpoints.size(); i++) {
 			RecordedRequest recordedRequest = mockPokeApiServer.takeRequest();
 			assertEquals(HttpMethod.GET.toString(), recordedRequest.getMethod());
-			assertTrue(expectedEndpoints.remove(recordedRequest.getPath()));
+			Assertions.assertTrue(expectedEndpoints.remove(recordedRequest.getPath()));
 		}
 	}
 	
@@ -218,17 +220,17 @@ public class WebClientEntityFactoryTest {
 		return String.format("http://localhost:%s", mockPokeApiServer.getPort());
 	}
 	
-	private MockResponse createMockResponseWithBody(Object body) throws JsonProcessingException {
+	private MockResponse createMockResponseWithBody(Object body) {
 		return new MockResponse()
 				.setBody(objectMapper.writeValueAsString(body))
 				.addHeader("Content-Type", "application/json"); 
 	}
 	
-	private NamedApiResourceList<PokeApiResource> createResourceList(List<String> names) {
+	private NamedApiResourceList<PokeApiResource> createResourceList(List<? extends PokeApiResource> names) {
 		List<NamedApiResource<PokeApiResource>> resources = names.stream()
-				.map(name -> {
+				.map(pokeApiResource -> {
 					NamedApiResource<PokeApiResource> resource = new NamedApiResource<>();
-					resource.setName(name);
+					resource.setName(pokeApiResource.getName());
 					return resource;
 				}).collect(Collectors.toList());
 		

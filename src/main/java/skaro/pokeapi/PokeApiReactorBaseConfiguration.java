@@ -1,7 +1,10 @@
 package skaro.pokeapi;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
+import org.springframework.http.codec.json.JacksonJsonDecoder;
+import org.springframework.http.codec.json.JacksonJsonEncoder;
+import tools.jackson.databind.PropertyNamingStrategies;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,21 +15,18 @@ import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
-import org.springframework.http.codec.json.Jackson2JsonDecoder;
-import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import tools.jackson.databind.DeserializationFeature;
 
 import reactor.core.publisher.Mono;
 import reactor.netty.http.client.HttpClient;
 import skaro.pokeapi.client.PokeApiEndpointRegistry;
 import skaro.pokeapi.client.PokeApiEntityFactory;
 import skaro.pokeapi.client.WebClientEntityFactory;
+import tools.jackson.databind.json.JsonMapper;
 
 @Configuration
 @Import(PokeApiReactorEndpointConfiguration.class)
@@ -44,32 +44,32 @@ public class PokeApiReactorBaseConfiguration {
 	}
 	
 	@Bean(POKEAPI_JSON_DECODER_BEAN)
-	public Jackson2JsonDecoder jsonDecoder() {
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		
-		return new Jackson2JsonDecoder(mapper, MediaType.APPLICATION_JSON);
+	public JacksonJsonDecoder jsonDecoder() {
+		JsonMapper mapper = JsonMapper.builder()
+				.propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
+				.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+				.build();
+		return new JacksonJsonDecoder(mapper, MediaType.APPLICATION_JSON);
 	}
 	
 	@Bean(POKEAPI_JSON_ENCODER_BEAN)
-	public Jackson2JsonEncoder jsonEncoder() {
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-		
-		return new Jackson2JsonEncoder(mapper, MediaType.APPLICATION_JSON);
+	public JacksonJsonEncoder jsonEncoder() {
+		JsonMapper mapper = JsonMapper.builder()
+				.propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
+				.build();
+		return new JacksonJsonEncoder(mapper, MediaType.APPLICATION_JSON);
 	}
 	
 	@Bean(POKEAPI_WEBCLIENT_BEAN)
 	public WebClient webClient(HttpClient httpClient,
-			@Qualifier(POKEAPI_JSON_ENCODER_BEAN) Jackson2JsonEncoder encoder, 
-			@Qualifier(POKEAPI_JSON_DECODER_BEAN) Jackson2JsonDecoder decoder, 
+			@Qualifier(POKEAPI_JSON_ENCODER_BEAN) JacksonJsonEncoder encoder,
+			@Qualifier(POKEAPI_JSON_DECODER_BEAN) JacksonJsonDecoder decoder,
 			PokeApiConfigurationProperties configurationProperties) {
 		
 		ExchangeStrategies strategies = ExchangeStrategies.builder()
 	            .codecs(clientDefaultCodecsConfigurer -> {
-	            	clientDefaultCodecsConfigurer.defaultCodecs().jackson2JsonEncoder(encoder);
-	                clientDefaultCodecsConfigurer.defaultCodecs().jackson2JsonDecoder(decoder);
+	            	clientDefaultCodecsConfigurer.defaultCodecs().jacksonJsonEncoder(encoder);
+	                clientDefaultCodecsConfigurer.defaultCodecs().jacksonJsonDecoder(decoder);
 	            }).build();
 		
 		ExchangeFilterFunction logRequest = ExchangeFilterFunction.ofRequestProcessor(request -> {

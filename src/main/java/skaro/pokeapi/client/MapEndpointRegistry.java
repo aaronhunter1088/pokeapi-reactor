@@ -7,7 +7,7 @@ import skaro.pokeapi.resource.PokeApiResource;
 
 public class MapEndpointRegistry implements PokeApiEndpointRegistry {
 
-	private Map<Class<?>, String> endpoints;
+	private final Map<Class<?>, String> endpoints;
 
 	public MapEndpointRegistry(Map<Class<?>, String> endpoints) {
 		this.endpoints = Collections.unmodifiableMap(endpoints);

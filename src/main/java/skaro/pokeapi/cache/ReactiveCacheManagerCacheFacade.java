@@ -21,9 +21,9 @@ import skaro.pokeapi.resource.PokeApiResource;
 
 public class ReactiveCacheManagerCacheFacade implements CacheFacade {
 	
-	private Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+	private final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 	
-	private CacheManager cacheManager;
+	private final CacheManager cacheManager;
 	
 	public ReactiveCacheManagerCacheFacade(CacheManager cacheManager) {
 		this.cacheManager = cacheManager;

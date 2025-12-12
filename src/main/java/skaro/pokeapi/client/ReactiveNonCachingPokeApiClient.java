@@ -12,7 +12,7 @@ import skaro.pokeapi.resource.PokeApiResource;
 
 public class ReactiveNonCachingPokeApiClient implements PokeApiClient {
 
-	private PokeApiEntityFactory entityFactory;
+	private final PokeApiEntityFactory entityFactory;
 	
 	public ReactiveNonCachingPokeApiClient(PokeApiEntityFactory entityFactory) {
 		this.entityFactory = entityFactory;
