@@ -17,7 +17,7 @@ import skaro.pokeapi.resource.itemcategory.ItemCategory;
 import skaro.pokeapi.resource.itemflingeffect.ItemFlingEffect;
 import skaro.pokeapi.utils.locale.Localizable;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 

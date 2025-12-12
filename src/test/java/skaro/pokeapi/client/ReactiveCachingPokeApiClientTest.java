@@ -12,8 +12,10 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -25,11 +27,11 @@ import skaro.pokeapi.resource.NamedApiResourceList;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 
-@ExtendWith(SpringExtension.class)
+@ExtendWith(MockitoExtension.class)
 class ReactiveCachingPokeApiClientTest {
 
 	@Mock
-	private PokeApiEntityFactory entityFactory;	
+	private PokeApiEntityFactory entityFactory;
 	@Mock
 	private CacheFacade cacheFacade;
 	@Captor

@@ -14,12 +14,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.support.SimpleValueWrapper;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Signal;
 import reactor.test.StepVerifier;
@@ -28,9 +28,9 @@ import skaro.pokeapi.resource.pokemon.Pokemon;
 @ExtendWith(SpringExtension.class)
 public class ReactiveCacheManagerCacheFacadeTest {
 
-	@Mock
+	@MockitoBean
 	private CacheManager cacheManager;
-	@Mock
+	@MockitoBean
 	private Cache cache;
 
 	private ReactiveCacheManagerCacheFacade facade;

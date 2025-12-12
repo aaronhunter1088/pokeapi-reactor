@@ -6,21 +6,21 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.3</version>
+		<version>4.0.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>skaro.pokeapi</groupId>
 	<artifactId>pokeapi-reactor</artifactId>
-	<version>1.0.8</version>
+	<version>1.0.9</version>
 	<name>pokeapi-reactor</name>
 	<description>Non-blocking, reactive API client for PokeAPI</description>
 
 	<properties>
-		<java.version>18</java.version>
+		<java.version>21</java.version>
 		<okhttp3.version>4.10.0</okhttp3.version>
-		<jacoco.maven.plugin.version>0.8.12</jacoco.maven.plugin.version>
-		<javax.validation.version>2.0.1.Final</javax.validation.version>
-		<maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+		<jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>
+		<javax.validation.version>3.1.1</javax.validation.version>
+		<maven.source.plugin.version>3.4.0</maven.source.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -45,8 +45,8 @@
 			<artifactId>reactor-netty</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
 			<version>${javax.validation.version}</version>
 		</dependency>
 		<!-- test dependencies below -->
