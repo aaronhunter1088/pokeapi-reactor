@@ -13,13 +13,16 @@ public class PokemonPastAbility {
 
     /**
      * Get the abilities
+     *
      * @return the abilities
      */
     public List<PokemonAbility> getAbilities() {
         return abilities;
     }
+
     /**
      * Set the abilities
+     *
      * @param abilities the abilities
      */
     public void setAbilities(List<PokemonAbility> abilities) {
@@ -28,6 +31,7 @@ public class PokemonPastAbility {
 
     /**
      * Get the generation
+     *
      * @return the generation
      */
     public NamedApiResource<Generation> getGeneration() {
@@ -36,6 +40,7 @@ public class PokemonPastAbility {
 
     /**
      * Set the generation
+     *
      * @param generation the generation
      */
     public void setGeneration(NamedApiResource<Generation> generation) {
@@ -45,6 +50,7 @@ public class PokemonPastAbility {
     /**
      * Returns whether the given object o is
      * equal to this instance of PokemonPastAbility
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -56,6 +62,7 @@ public class PokemonPastAbility {
 
     /**
      * Returns the hash code of the PokemonPastAbility
+     *
      * @return the hash code
      */
     @Override
@@ -65,6 +72,7 @@ public class PokemonPastAbility {
 
     /**
      * Returns a string representation of the PokemonPastAbility
+     *
      * @return the string representation
      */
     @Override

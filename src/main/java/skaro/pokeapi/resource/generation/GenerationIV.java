@@ -15,13 +15,16 @@ public class GenerationIV {
 
     /**
      * Get the sprites for the HeartGold SoulSilver
+     *
      * @return the {@link Sprites} for heartgoldSoulsilver
      */
     public Sprites getDiamondPearl() {
         return diamondPearl;
     }
+
     /**
      * Set the sprites for the HeartGold SoulSilver
+     *
      * @param diamondPearl the {@link Sprites} for heartgoldSoulsilver
      */
     public void setDiamondPearl(Sprites diamondPearl) {
@@ -30,13 +33,16 @@ public class GenerationIV {
 
     /**
      * Get the sprites for the HeartGold SoulSilver
+     *
      * @return the {@link Sprites} for heartgoldSilver
      */
     public Sprites getHeartgoldSoulsilver() {
         return heartgoldSoulsilver;
     }
+
     /**
      * Set the sprites for the HeartGold SoulSilver
+     *
      * @param heartgoldSoulsilver the {@link Sprites} for heartgoldSoulsilver
      */
     public void setHeartgoldSoulsilver(Sprites heartgoldSoulsilver) {
@@ -45,13 +51,16 @@ public class GenerationIV {
 
     /**
      * Get the sprites for the Platinum
+     *
      * @return the {@link Sprites} for platinum
      */
     public Sprites getPlatinum() {
         return platinum;
     }
+
     /**
      * Set the sprites for the Platinum
+     *
      * @param platinum the {@link Sprites} for platinum
      */
     public void setPlatinum(Sprites platinum) {
@@ -61,6 +70,7 @@ public class GenerationIV {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationIV
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -72,6 +82,7 @@ public class GenerationIV {
 
     /**
      * Returns the hash code of the GenerationIV
+     *
      * @return the hash code
      */
     @Override
@@ -81,6 +92,7 @@ public class GenerationIV {
 
     /**
      * Returns a string representation of the GenerationIV
+     *
      * @return the string representation
      */
     @Override

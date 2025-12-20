@@ -14,13 +14,16 @@ public class NatureStatChange {
 
     /**
      * Get the amount of change
+     *
      * @return the maxChange
      */
     public Integer getMaxChange() {
         return maxChange;
     }
+
     /**
      * Sets the amount of change
+     *
      * @param maxChange the maxChange
      */
     public void setMaxChange(Integer maxChange) {
@@ -29,13 +32,16 @@ public class NatureStatChange {
 
     /**
      * Returns the stat that is affected
+     *
      * @return the {@link Stat} pokeathlonStat
      */
     public NamedApiResource<Stat> getPokeathlonStat() {
         return pokeathlonStat;
     }
+
     /**
      * Sets the stat that is affected
+     *
      * @param pokeathlonStat the {@link Stat} pokeathlonStat
      */
     public void setPokeathlonStat(NamedApiResource<Stat> pokeathlonStat) {
@@ -45,6 +51,7 @@ public class NatureStatChange {
     /**
      * Returns whether the given object o is
      * equal to this instance of NatureStatChange
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -56,6 +63,7 @@ public class NatureStatChange {
 
     /**
      * Returns the hash code of the NatureStatChange
+     *
      * @return the hash code
      */
     @Override
@@ -65,6 +73,7 @@ public class NatureStatChange {
 
     /**
      * Returns a string representation of the NatureStatChange
+     *
      * @return the string representation
      */
     @Override

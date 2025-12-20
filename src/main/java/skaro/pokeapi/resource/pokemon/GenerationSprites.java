@@ -28,13 +28,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationI
+     *
      * @return the generationI
      */
     public GenerationI getGenerationI() {
         return generationI;
     }
+
     /**
      * Set the generationI
+     *
      * @param generationI the generationI
      */
     public void setGenerationI(GenerationI generationI) {
@@ -43,13 +46,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationII
+     *
      * @return the generationII
      */
     public GenerationII getGenerationII() {
         return generationII;
     }
+
     /**
      * Set the generationII
+     *
      * @param generationII the generationII
      */
     public void setGenerationII(GenerationII generationII) {
@@ -58,13 +64,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationIII
+     *
      * @return the generationIII
      */
     public GenerationIII getGenerationIII() {
         return generationIII;
     }
+
     /**
      * Set the generationIII
+     *
      * @param generationIII the generationIII
      */
     public void setGenerationIII(GenerationIII generationIII) {
@@ -73,13 +82,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationIV
+     *
      * @return the generationIV
      */
     public GenerationIV getGenerationIV() {
         return generationIV;
     }
+
     /**
      * Set the generationIV
+     *
      * @param generationIV the generationIV
      */
     public void setGenerationIV(GenerationIV generationIV) {
@@ -88,13 +100,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationV
+     *
      * @return the generationV
      */
     public GenerationV getGenerationV() {
         return generationV;
     }
+
     /**
      * Set the generationV
+     *
      * @param generationV the generationV
      */
     public void setGenerationV(GenerationV generationV) {
@@ -103,13 +118,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationIX
+     *
      * @return the generationIX
      */
     public GenerationIX getGenerationIX() {
         return generationIX;
     }
+
     /**
      * Set the generationIX
+     *
      * @param generationIX the generationIX
      */
     public void setGenerationIX(GenerationIX generationIX) {
@@ -118,13 +136,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationVI
+     *
      * @return the generationVI
      */
     public GenerationVI getGenerationVI() {
         return generationVI;
     }
+
     /**
      * Set the generationVI
+     *
      * @param generationVI the generationVI
      */
     public void setGenerationVI(GenerationVI generationVI) {
@@ -133,13 +154,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationVII
+     *
      * @return the generationVII
      */
     public GenerationVII getGenerationVII() {
         return generationVII;
     }
+
     /**
      * Set the generationVII
+     *
      * @param generationVII the generationVII
      */
     public void setGenerationVII(GenerationVII generationVII) {
@@ -148,13 +172,16 @@ public class GenerationSprites {
 
     /**
      * Get the generationVIII
+     *
      * @return the generationVIII
      */
     public GenerationVIII getGenerationVIII() {
         return generationVIII;
     }
+
     /**
      * Set the generationVIII
+     *
      * @param generationVIII the generationVIII
      */
     public void setGenerationVIII(GenerationVIII generationVIII) {
@@ -164,6 +191,7 @@ public class GenerationSprites {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationSprites
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -175,6 +203,7 @@ public class GenerationSprites {
 
     /**
      * Returns the hash code of the GenerationSprites
+     *
      * @return the hash code
      */
     @Override
@@ -184,6 +213,7 @@ public class GenerationSprites {
 
     /**
      * Returns a string representation of the GenerationSprites
+     *
      * @return the string representation
      */
     @Override

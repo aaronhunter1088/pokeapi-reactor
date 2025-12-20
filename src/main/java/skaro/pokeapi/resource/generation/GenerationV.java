@@ -14,13 +14,16 @@ public class GenerationV {
 
     /**
      * Get the blackWhite sprites
+     *
      * @return the {@link Sprites} for blackWhite
      */
     public Sprites getBlackWhite() {
         return blackWhite;
     }
+
     /**
      * Set the blackWhite sprites
+     *
      * @param blackWhite the {@link Sprites} for blackWhite
      */
     public void setBlackWhite(Sprites blackWhite) {
@@ -29,13 +32,16 @@ public class GenerationV {
 
     /**
      * Get the black2White2 sprites
+     *
      * @return the {@link Sprites} for black2White2
      */
     public Sprites getBlack2White2() {
         return black2White2;
     }
+
     /**
      * Set the black2White2 sprites
+     *
      * @param black2White2 the {@link Sprites} for black2White2
      */
     public void setBlack2White2(Sprites black2White2) {
@@ -45,6 +51,7 @@ public class GenerationV {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationV
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -56,6 +63,7 @@ public class GenerationV {
 
     /**
      * Returns the hash code of the GenerationV
+     *
      * @return the hash code
      */
     @Override
@@ -65,6 +73,7 @@ public class GenerationV {
 
     /**
      * Returns a string representation of the GenerationV
+     *
      * @return the string representation
      */
     @Override

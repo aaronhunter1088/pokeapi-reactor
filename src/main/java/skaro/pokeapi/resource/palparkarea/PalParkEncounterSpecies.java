@@ -23,40 +23,62 @@ public class PalParkEncounterSpecies {
     /**
      * Get the base score given to the player
      * when this Pokémon is caught during a pal park run
+     *
      * @return the base score
      */
-    public Integer getBaseScore() { return baseScore; }
+    public Integer getBaseScore() {
+        return baseScore;
+    }
+
     /**
      * Set the base score given to the player
+     *
      * @param baseScore the base score
      */
-    public void setBaseScore(Integer baseScore) { this.baseScore = baseScore; }
+    public void setBaseScore(Integer baseScore) {
+        this.baseScore = baseScore;
+    }
 
     /**
      * Get the base rate for encountering this Pokémon in this pal park area
+     *
      * @return the rate
      */
-    public Integer getRate() { return rate; }
+    public Integer getRate() {
+        return rate;
+    }
+
     /**
      * Set the base rate for encountering this Pokémon in this pal park area
+     *
      * @param rate the rate
      */
-    public void setRate(Integer rate) { this.rate = rate; }
+    public void setRate(Integer rate) {
+        this.rate = rate;
+    }
 
     /**
      * Get the Pokémon species being encountered
+     *
      * @return the {@link PokemonSpecies} or {@link PalParkArea} pokeApiResource
      */
-    public NamedApiResource<? extends PokeApiResource> getPokeApiResource() { return pokeApiResource; }
+    public NamedApiResource<? extends PokeApiResource> getPokeApiResource() {
+        return pokeApiResource;
+    }
+
     /**
      * Set the Pokémon species being encountered
+     *
      * @param pokeApiResource the {@link PokemonSpecies} or {@link PalParkArea} pokeApiResource
      */
-    public void setPokeApiResource(NamedApiResource<? extends PokeApiResource> pokeApiResource) { this.pokeApiResource = pokeApiResource; }
+    public void setPokeApiResource(NamedApiResource<? extends PokeApiResource> pokeApiResource) {
+        this.pokeApiResource = pokeApiResource;
+    }
 
     /**
      * Returns whether the given object o is
      * equal to this instance of PalParkEncounterSpecies
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -68,6 +90,7 @@ public class PalParkEncounterSpecies {
 
     /**
      * Returns the hash code of the PalParkEncounterSpecies
+     *
      * @return the hash code
      */
     @Override
@@ -77,6 +100,7 @@ public class PalParkEncounterSpecies {
 
     /**
      * Returns a string representation of the PalParkEncounterSpecies
+     *
      * @return the string representation
      */
     @Override

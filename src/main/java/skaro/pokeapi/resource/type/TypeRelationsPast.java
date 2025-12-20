@@ -7,7 +7,7 @@ import skaro.pokeapi.resource.generation.Generation;
 import java.util.Objects;
 
 public class TypeRelationsPast {
-    
+
     private NamedApiResource<Generation> generation;
     @JsonProperty("damage_relations")
     private TypeRelations damageRelations;
@@ -15,14 +15,17 @@ public class TypeRelationsPast {
     /**
      * Get the last generation in which the
      * referenced type had the listed damage relations
+     *
      * @return the {@link Generation} generation
      */
     public NamedApiResource<Generation> getGeneration() {
         return generation;
     }
+
     /**
      * Set the last generation in which the
      * referenced type had the listed damage relations
+     *
      * @param generation the {@link Generation} generation
      */
     public void setGeneration(NamedApiResource<Generation> generation) {
@@ -32,14 +35,17 @@ public class TypeRelationsPast {
     /**
      * Get the damage relations the referenced type
      * had up to and including the listed generation
+     *
      * @return damageRelations the {@link TypeRelations} damageRelations
      */
     public TypeRelations getDamageRelations() {
         return damageRelations;
     }
+
     /**
      * Set the damage relations the referenced type
      * had up to and including the listed generation
+     *
      * @param damageRelations the {@link TypeRelations} damageRelations
      */
     public void setDamageRelations(TypeRelations damageRelations) {
@@ -49,6 +55,7 @@ public class TypeRelationsPast {
     /**
      * Returns whether the given object o is
      * equal to this instance of TypeRelationsPast
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -60,6 +67,7 @@ public class TypeRelationsPast {
 
     /**
      * Returns the hash code of the TypeRelationsPast
+     *
      * @return the hash code
      */
     @Override
@@ -69,6 +77,7 @@ public class TypeRelationsPast {
 
     /**
      * Returns a string representation of the TypeRelationsPast
+     *
      * @return the string representation
      */
     @Override

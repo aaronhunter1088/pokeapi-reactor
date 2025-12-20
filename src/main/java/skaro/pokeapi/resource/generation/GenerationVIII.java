@@ -17,13 +17,16 @@ public class GenerationVIII {
 
     /**
      * Get the brilliantDiamondShiningPearl sprites
+     *
      * @return the {@link Sprites} for brilliantDiamondShiningPearl
      */
     public Sprites getBrilliantDiamondShiningPearl() {
         return brilliantDiamondShiningPearl;
     }
+
     /**
      * Set the brilliantDiamondShiningPearl sprites
+     *
      * @param brilliantDiamondShiningPearl the {@link Sprites} for brilliantDiamondShiningPearl
      */
     public void setBrilliantDiamondShiningPearl(Sprites brilliantDiamondShiningPearl) {
@@ -32,13 +35,16 @@ public class GenerationVIII {
 
     /**
      * Get the legendsArceus sprites
+     *
      * @return the {@link Sprites} for legendsArceus
      */
     public Sprites getLegendsArceus() {
         return legendsArceus;
     }
+
     /**
      * Set the legendsArceus sprites
+     *
      * @param legendsArceus the {@link Sprites} for legendsArceus
      */
     public void setLegendsArceus(Sprites legendsArceus) {
@@ -47,13 +53,16 @@ public class GenerationVIII {
 
     /**
      * Get the swordShield sprites
+     *
      * @return the {@link Sprites} for swordShield
      */
     public Sprites getSwordShield() {
         return swordShield;
     }
+
     /**
      * Set the swordShield sprites
+     *
      * @param swordShield the {@link Sprites} for swordShield
      */
     public void setSwordShield(Sprites swordShield) {
@@ -62,13 +71,16 @@ public class GenerationVIII {
 
     /**
      * Get the icons
+     *
      * @return the {@link Sprites} for icons
      */
     public Sprites getIcons() {
         return icons;
     }
+
     /**
      * Set the icons
+     *
      * @param icons the {@link Sprites} for icons
      */
     public void setIcons(Sprites icons) {
@@ -78,6 +90,7 @@ public class GenerationVIII {
     /**
      * Get whether the given object o is
      * equal to this instance of GenerationVIII
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -89,6 +102,7 @@ public class GenerationVIII {
 
     /**
      * Get the hash code of the GenerationVIII
+     *
      * @return the hash code
      */
     @Override
@@ -98,6 +112,7 @@ public class GenerationVIII {
 
     /**
      * Get a string representation of the GenerationVIII
+     *
      * @return the string representation
      */
     @Override

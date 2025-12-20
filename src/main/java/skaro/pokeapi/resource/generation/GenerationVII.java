@@ -17,13 +17,16 @@ public class GenerationVII {
 
     /**
      * Get the sprites for letsGoPikachuLetsGoEevee
+     *
      * @return the {@link Sprites} for letsGoPikachuLetsGoEevee
      */
     public Sprites getLetsGoPikachuLetsGoEevee() {
         return letsGoPikachuLetsGoEevee;
     }
+
     /**
      * Set the sprites for letsGoPikachuLetsGoEevee
+     *
      * @param letsGoPikachuLetsGoEevee the {@link Sprites} for letsGoPikachuLetsGoEevee
      */
     public void setLetsGoPikachuLetsGoEevee(Sprites letsGoPikachuLetsGoEevee) {
@@ -32,13 +35,16 @@ public class GenerationVII {
 
     /**
      * Get the sprites for sunMoon
+     *
      * @return the {@link Sprites} for sunMoon
      */
     public Sprites getSunMoon() {
         return sunMoon;
     }
+
     /**
      * Set the sprites for the SunMoon
+     *
      * @param sunMoon the {@link Sprites} object
      */
     public void setSunMoon(Sprites sunMoon) {
@@ -47,13 +53,16 @@ public class GenerationVII {
 
     /**
      * Get the sprites for the UltraSunUltraMoon
+     *
      * @return the {@link Sprites} object
      */
     public Sprites getUltraSunUltraMoon() {
         return ultraSunUltraMoon;
     }
+
     /**
      * Set the sprites for the UltraSunUltraMoon
+     *
      * @param ultraSunUltraMoon the {@link Sprites} object
      */
     public void setUltraSunUltraMoon(Sprites ultraSunUltraMoon) {
@@ -62,13 +71,16 @@ public class GenerationVII {
 
     /**
      * Get the icons for the GenerationVII
+     *
      * @return the {@link Sprites} for icons
      */
     public Sprites getIcons() {
         return icons;
     }
+
     /**
      * Set the icons for the GenerationVII
+     *
      * @param icons the {@link Sprites} for icons
      */
     public void setIcons(Sprites icons) {
@@ -78,6 +90,7 @@ public class GenerationVII {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationVII
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -89,6 +102,7 @@ public class GenerationVII {
 
     /**
      * Returns the hash code of the GenerationVII
+     *
      * @return the hash code
      */
     @Override
@@ -98,6 +112,7 @@ public class GenerationVII {
 
     /**
      * Returns a string representation of the GenerationVII
+     *
      * @return the string representation
      */
     @Override

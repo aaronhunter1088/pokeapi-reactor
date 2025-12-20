@@ -15,40 +15,62 @@ public class MoveBattleStyle implements PokeApiResource, Localizable {
 
     /**
      * Get the id
+     *
      * @return the id
      */
-    public Integer getId() { return id; }
+    public Integer getId() {
+        return id;
+    }
+
     /**
      * Set the id
+     *
      * @param id the id
      */
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     /**
      * Get the name for this resource
+     *
      * @return the name
      */
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
+
     /**
      * Set the name for this resource
+     *
      * @param name the name
      */
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * Get the name of this resource listed in different languages
+     *
      * @return the list of {@link Name} names
      */
-    public List<Name> getNames() { return names; }
+    public List<Name> getNames() {
+        return names;
+    }
+
     /**
      * Set the name of this resource listed in different languages
+     *
      * @param names the list of {@link Name} names
      */
-    public void setNames(List<Name> names) { this.names = names; }
+    public void setNames(List<Name> names) {
+        this.names = names;
+    }
 
     /**
      * Returns whether the given object o is
      * equal to this instance of MoveBattleStyle
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -60,6 +82,7 @@ public class MoveBattleStyle implements PokeApiResource, Localizable {
 
     /**
      * Returns the hash code of the MoveBattleStyle
+     *
      * @return the hash code
      */
     @Override
@@ -69,6 +92,7 @@ public class MoveBattleStyle implements PokeApiResource, Localizable {
 
     /**
      * Returns a string representation of the MoveBattleStyle
+     *
      * @return the string representation
      */
     @Override

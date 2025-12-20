@@ -1,11 +1,7 @@
 package skaro.pokeapi;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import skaro.pokeapi.client.MapEndpointRegistry;
 import skaro.pokeapi.client.PokeApiEndpointRegistry;
 import skaro.pokeapi.resource.ability.Ability;
@@ -57,62 +53,65 @@ import skaro.pokeapi.resource.type.Type;
 import skaro.pokeapi.resource.version.Version;
 import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Configuration
 public class PokeApiReactorEndpointConfiguration {
 
-	@Bean
-	public PokeApiEndpointRegistry endpointRegistry() {
-		Map<Class<?>, String> endpoints = new HashMap<>();
-		endpoints.put(Ability.class, "ability");
-		endpoints.put(Berry.class, "berry");
-		endpoints.put(BerryFirmness.class, "berry-firmness");
-		endpoints.put(BerryFlavor.class, "berry-flavor");
-		endpoints.put(Characteristic.class, "characteristic");
-		endpoints.put(ContestEffect.class, "contest-effect");
-		endpoints.put(ContestType.class, "contest-type");
-		endpoints.put(EggGroup.class, "egg-group");
-		endpoints.put(EncounterCondition.class, "encounter-condition");
-		endpoints.put(EncounterConditionValue.class, "encounter-condition-value");
-		endpoints.put(EncounterMethod.class, "encounter-method");
-		endpoints.put(EvolutionChain.class, "evolution-chain");
-		endpoints.put(EvolutionTrigger.class, "evolution-trigger");
-		endpoints.put(Gender.class, "gender");
-		endpoints.put(Generation.class, "generation");
-		endpoints.put(GrowthRate.class, "growth-rate");
-		endpoints.put(Item.class, "item");
-		endpoints.put(ItemAttribute.class, "item-attribute");
-		endpoints.put(ItemCategory.class, "item-category");
-		endpoints.put(ItemFlingEffect.class, "item-fling-effect");
-		endpoints.put(ItemPocket.class, "item-pocket");
-		endpoints.put(Language.class, "language");
-		endpoints.put(Location.class, "location");
-		endpoints.put(LocationArea.class, "location-area");
-		endpoints.put(Machine.class, "machine");
-		endpoints.put(Move.class, "move");
-		endpoints.put(MoveAilment.class, "move-ailment");
-		endpoints.put(MoveBattleStyle.class, "move-battle-style");
-		endpoints.put(MoveCategory.class, "move-category");
-		endpoints.put(MoveDamageClass.class, "move-damage-class");
-		endpoints.put(MoveLearnMethod.class, "move-learn-method");
-		endpoints.put(MoveTarget.class, "move-target");
-		endpoints.put(Nature.class, "nature");
-		endpoints.put(PalParkArea.class, "pal-park-area");
-		endpoints.put(PokeathlonStat.class, "pokeathlon-stat");
-		endpoints.put(Pokedex.class, "pokedex");
-		endpoints.put(Pokemon.class, "pokemon");
-		endpoints.put(PokemonColor.class, "pokemon-color");
-		endpoints.put(PokemonForm.class, "pokemon-form");
-		endpoints.put(PokemonHabitat.class, "pokemon-habitat");
-		endpoints.put(PokemonShape.class, "pokemon-shape");
-		endpoints.put(PokemonSpecies.class, "pokemon-species");
-		endpoints.put(Region.class, "region");
-		endpoints.put(Stat.class, "stat");
-		endpoints.put(SuperContestEffect.class, "super-contest-effect");
-		endpoints.put(Type.class, "type");
-		endpoints.put(Version.class, "version");
-		endpoints.put(VersionGroup.class, "version-group");
-		
-		return new MapEndpointRegistry(endpoints);
-	}
-	
+    @Bean
+    public PokeApiEndpointRegistry endpointRegistry() {
+        Map<Class<?>, String> endpoints = new HashMap<>();
+        endpoints.put(Ability.class, "ability");
+        endpoints.put(Berry.class, "berry");
+        endpoints.put(BerryFirmness.class, "berry-firmness");
+        endpoints.put(BerryFlavor.class, "berry-flavor");
+        endpoints.put(Characteristic.class, "characteristic");
+        endpoints.put(ContestEffect.class, "contest-effect");
+        endpoints.put(ContestType.class, "contest-type");
+        endpoints.put(EggGroup.class, "egg-group");
+        endpoints.put(EncounterCondition.class, "encounter-condition");
+        endpoints.put(EncounterConditionValue.class, "encounter-condition-value");
+        endpoints.put(EncounterMethod.class, "encounter-method");
+        endpoints.put(EvolutionChain.class, "evolution-chain");
+        endpoints.put(EvolutionTrigger.class, "evolution-trigger");
+        endpoints.put(Gender.class, "gender");
+        endpoints.put(Generation.class, "generation");
+        endpoints.put(GrowthRate.class, "growth-rate");
+        endpoints.put(Item.class, "item");
+        endpoints.put(ItemAttribute.class, "item-attribute");
+        endpoints.put(ItemCategory.class, "item-category");
+        endpoints.put(ItemFlingEffect.class, "item-fling-effect");
+        endpoints.put(ItemPocket.class, "item-pocket");
+        endpoints.put(Language.class, "language");
+        endpoints.put(Location.class, "location");
+        endpoints.put(LocationArea.class, "location-area");
+        endpoints.put(Machine.class, "machine");
+        endpoints.put(Move.class, "move");
+        endpoints.put(MoveAilment.class, "move-ailment");
+        endpoints.put(MoveBattleStyle.class, "move-battle-style");
+        endpoints.put(MoveCategory.class, "move-category");
+        endpoints.put(MoveDamageClass.class, "move-damage-class");
+        endpoints.put(MoveLearnMethod.class, "move-learn-method");
+        endpoints.put(MoveTarget.class, "move-target");
+        endpoints.put(Nature.class, "nature");
+        endpoints.put(PalParkArea.class, "pal-park-area");
+        endpoints.put(PokeathlonStat.class, "pokeathlon-stat");
+        endpoints.put(Pokedex.class, "pokedex");
+        endpoints.put(Pokemon.class, "pokemon");
+        endpoints.put(PokemonColor.class, "pokemon-color");
+        endpoints.put(PokemonForm.class, "pokemon-form");
+        endpoints.put(PokemonHabitat.class, "pokemon-habitat");
+        endpoints.put(PokemonShape.class, "pokemon-shape");
+        endpoints.put(PokemonSpecies.class, "pokemon-species");
+        endpoints.put(Region.class, "region");
+        endpoints.put(Stat.class, "stat");
+        endpoints.put(SuperContestEffect.class, "super-contest-effect");
+        endpoints.put(Type.class, "type");
+        endpoints.put(Version.class, "version");
+        endpoints.put(VersionGroup.class, "version-group");
+
+        return new MapEndpointRegistry(endpoints);
+    }
+
 }

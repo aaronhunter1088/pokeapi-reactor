@@ -11,32 +11,47 @@ public class NaturePokeathlonStatAffectSets {
     /**
      * Get a list of natures and how they
      * change the referenced Pokéathlon stat
+     *
      * @return increase a list of {@link NaturePokeathlonStatAffect} natures
      */
-    public List<NaturePokeathlonStatAffect> getIncrease() { return increase; }
+    public List<NaturePokeathlonStatAffect> getIncrease() {
+        return increase;
+    }
+
     /**
      * Set a list of natures and how they
      * change the referenced Pokéathlon stat
+     *
      * @param increase a list of {@link NaturePokeathlonStatAffect} natures
      */
-    public void setIncrease(List<NaturePokeathlonStatAffect> increase) { this.increase = increase; }
+    public void setIncrease(List<NaturePokeathlonStatAffect> increase) {
+        this.increase = increase;
+    }
 
     /**
      * Get a list of natures and how they
      * change the referenced Pokéathlon stat
+     *
      * @return decrease a list of {@link NaturePokeathlonStatAffect} natures
      */
-    public List<NaturePokeathlonStatAffect> getDecrease() { return decrease; }
+    public List<NaturePokeathlonStatAffect> getDecrease() {
+        return decrease;
+    }
+
     /**
      * Set a list of natures and how they
      * change the referenced Pokéathlon stat
+     *
      * @param decrease a list of {@link NaturePokeathlonStatAffect} natures
      */
-    public void setDecrease(List<NaturePokeathlonStatAffect> decrease) { this.decrease = decrease; }
+    public void setDecrease(List<NaturePokeathlonStatAffect> decrease) {
+        this.decrease = decrease;
+    }
 
     /**
      * Returns whether the given object o is
      * equal to this instance of NaturePokeathlonStatAffectSets
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -48,6 +63,7 @@ public class NaturePokeathlonStatAffectSets {
 
     /**
      * Returns the hash code of the NaturePokeathlonStatAffectSets
+     *
      * @return the hash code
      */
     @Override
@@ -57,6 +73,7 @@ public class NaturePokeathlonStatAffectSets {
 
     /**
      * Returns a string representation of the NaturePokeathlonStatAffectSets
+     *
      * @return the string representation
      */
     @Override

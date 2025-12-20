@@ -15,13 +15,16 @@ public class GenerationVI {
 
     /**
      * Gets the omega ruby alpha sapphire sprites of this GenerationVI
+     *
      * @return the {@link Sprites} for omega ruby alpha sapphire
      */
     public Sprites getOmegaRubyAlphaSapphire() {
         return omegaRubyAlphaSapphire;
     }
+
     /**
      * Sets the omega ruby alpha sapphire sprites of this GenerationVI
+     *
      * @param omegaRubyAlphaSapphire the {@link Sprites} for omega ruby alpha sapphire
      */
     public void setOmegaRubyAlphaSapphire(Sprites omegaRubyAlphaSapphire) {
@@ -30,13 +33,16 @@ public class GenerationVI {
 
     /**
      * Get the xY sprites of this GenerationVI
+     *
      * @return the {@link Sprites} for x-y
      */
     public Sprites getxY() {
         return xY;
     }
+
     /**
      * Sets the xY sprites of this GenerationVI
+     *
      * @param xY the {@link Sprites} x-y sprites
      */
     public void setxY(Sprites xY) {
@@ -46,6 +52,7 @@ public class GenerationVI {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationVI
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -57,6 +64,7 @@ public class GenerationVI {
 
     /**
      * Returns the hash code of the GenerationVI
+     *
      * @return the hash code
      */
     @Override
@@ -66,6 +74,7 @@ public class GenerationVI {
 
     /**
      * Returns a string representation of the GenerationVI
+     *
      * @return the string representation
      */
     @Override

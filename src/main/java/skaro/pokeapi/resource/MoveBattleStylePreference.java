@@ -17,14 +17,17 @@ public class MoveBattleStylePreference {
     /**
      * Get the chance of using the move,
      * in percent, if HP is under one half
+     *
      * @return the high hp preference
      */
     public Integer getHighHpPreference() {
         return highHpPreference;
     }
+
     /**
      * Set the chance of using the move,
      * in percent, if HP is under one half
+     *
      * @param highHpPreference the high hp preference
      */
     public void setHighHpPreference(Integer highHpPreference) {
@@ -34,14 +37,17 @@ public class MoveBattleStylePreference {
     /**
      * Get the chance of using the move,
      * in percent, if HP is over one half
+     *
      * @return the low hp preference
      */
     public Integer getLowHpPreference() {
         return lowHpPreference;
     }
+
     /**
      * Set the chance of using the move,
      * in percent, if HP is over one half
+     *
      * @param lowHpPreference the low hp preference
      */
     public void setLowHpPreference(Integer lowHpPreference) {
@@ -50,13 +56,16 @@ public class MoveBattleStylePreference {
 
     /**
      * Get the move battle style
+     *
      * @return the {@link MoveBattleStyle} move battle style
      */
     public NamedApiResource<MoveBattleStyle> getMoveBattleStyle() {
         return moveBattleStyle;
     }
+
     /**
      * Set the move battle style
+     *
      * @param moveBattleStyle the {@link MoveBattleStyle} move battle style
      */
     public void setMoveBattleStyle(NamedApiResource<MoveBattleStyle> moveBattleStyle) {
@@ -66,6 +75,7 @@ public class MoveBattleStylePreference {
     /**
      * Returns whether the given object o is
      * equal to this instance of MoveBattleStylePreference
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -77,6 +87,7 @@ public class MoveBattleStylePreference {
 
     /**
      * Returns the hash code of the MoveBattleStylePreference
+     *
      * @return the hash code
      */
     @Override
@@ -86,6 +97,7 @@ public class MoveBattleStylePreference {
 
     /**
      * Returns a string representation of the MoveBattleStylePreference
+     *
      * @return the string representation
      */
     @Override

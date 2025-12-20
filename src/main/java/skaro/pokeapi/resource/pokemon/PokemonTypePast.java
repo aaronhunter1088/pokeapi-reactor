@@ -13,13 +13,16 @@ public class PokemonTypePast {
 
     /**
      * Get the last generation in which the referenced pokémon had the listed types
+     *
      * @return the {@link Generation}
      */
     public NamedApiResource<Generation> getGeneration() {
         return generation;
     }
+
     /**
      * Set the last generation in which the referenced pokémon had the listed types
+     *
      * @param generation the {@link Generation}
      */
     public void setGeneration(NamedApiResource<Generation> generation) {
@@ -28,13 +31,16 @@ public class PokemonTypePast {
 
     /**
      * Get the types the referenced pokémon had up to and including the listed generation
+     *
      * @return the {@link PokemonType}
      */
     public List<PokemonType> getTypes() {
         return types;
     }
+
     /**
      * Set the types the referenced pokémon had up to and including the listed generation
+     *
      * @param types the {@link PokemonType}
      */
     public void setTypes(List<PokemonType> types) {
@@ -44,6 +50,7 @@ public class PokemonTypePast {
     /**
      * Returns whether the given object o is
      * equal to this instance of PokemonTypePast
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -55,6 +62,7 @@ public class PokemonTypePast {
 
     /**
      * Returns the hash code of the PokemonTypePast
+     *
      * @return the hash code
      */
     @Override
@@ -64,6 +72,7 @@ public class PokemonTypePast {
 
     /**
      * Returns a string representation of the PokemonTypePast
+     *
      * @return the string representation
      */
     @Override

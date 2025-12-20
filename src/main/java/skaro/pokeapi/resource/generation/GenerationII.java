@@ -12,13 +12,16 @@ public class GenerationII {
 
     /**
      * Get the gold sprites
+     *
      * @return the {@link Sprites} for gold
      */
     public Sprites getGold() {
         return gold;
     }
+
     /**
      * Set the gold sprites
+     *
      * @param gold the {@link Sprites} for gold
      */
     public void setGold(Sprites gold) {
@@ -27,13 +30,16 @@ public class GenerationII {
 
     /**
      * Get the silver sprites
+     *
      * @return the {@link Sprites} for silver
      */
     public Sprites getSilver() {
         return silver;
     }
+
     /**
      * Set the silver sprites
+     *
      * @param silver the {@link Sprites} for silver
      */
     public void setSilver(Sprites silver) {
@@ -42,13 +48,16 @@ public class GenerationII {
 
     /**
      * Get the crystal sprites
+     *
      * @return the {@link Sprites} for crystal
      */
     public Sprites getCrystal() {
         return crystal;
     }
+
     /**
      * Set the crystal sprites
+     *
      * @param crystal the {@link Sprites} for crystal
      */
     public void setCrystal(Sprites crystal) {
@@ -58,6 +67,7 @@ public class GenerationII {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationII
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -69,6 +79,7 @@ public class GenerationII {
 
     /**
      * Returns the hash code of the GenerationII
+     *
      * @return the hash code
      */
     @Override
@@ -78,6 +89,7 @@ public class GenerationII {
 
     /**
      * Returns a string representation of the GenerationII
+     *
      * @return the string representation
      */
     @Override

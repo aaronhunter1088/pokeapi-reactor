@@ -16,13 +16,16 @@ public class OtherSprites {
 
     /**
      * Get the dream world sprites
+     *
      * @return the {@link Sprites} dreamWorld sprites
      */
     public Sprites getDreamWorld() {
         return dreamWorld;
     }
+
     /**
      * Set the dream world sprites
+     *
      * @param dreamWorld the {@link Sprites} dreamWorld sprites
      */
     public void setDreamWorld(Sprites dreamWorld) {
@@ -31,13 +34,16 @@ public class OtherSprites {
 
     /**
      * Get the home sprites
+     *
      * @return the {@link Sprites} home sprites
      */
     public Sprites getHome() {
         return home;
     }
+
     /**
      * Set the home sprites
+     *
      * @param home the {@link Sprites} home sprites
      */
     public void setHome(Sprites home) {
@@ -46,13 +52,16 @@ public class OtherSprites {
 
     /**
      * Get the official artwork sprites
+     *
      * @return the {@link Sprites} officialArtwork sprites
      */
     public Sprites getOfficialArtwork() {
         return officialArtwork;
     }
+
     /**
      * Set the official artwork sprites
+     *
      * @param officialArtwork the {@link Sprites} officialArtwork sprites
      */
     public void setOfficialArtwork(Sprites officialArtwork) {
@@ -61,13 +70,16 @@ public class OtherSprites {
 
     /**
      * Get the showdown sprites
+     *
      * @return the {@link Sprites} showdown sprites
      */
     public Sprites getShowdown() {
         return showdown;
     }
+
     /**
      * Set the showdown sprites
+     *
      * @param showdown the {@link Sprites} showdown sprites
      */
     public void setShowdown(Sprites showdown) {
@@ -77,6 +89,7 @@ public class OtherSprites {
     /**
      * Returns whether the given object o is
      * equal to this instance of OtherSprites
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -88,6 +101,7 @@ public class OtherSprites {
 
     /**
      * Returns the hash code of the OtherSprites
+     *
      * @return the hash code
      */
     @Override
@@ -97,6 +111,7 @@ public class OtherSprites {
 
     /**
      * Returns a string representation of the OtherSprites
+     *
      * @return the string representation
      */
     @Override

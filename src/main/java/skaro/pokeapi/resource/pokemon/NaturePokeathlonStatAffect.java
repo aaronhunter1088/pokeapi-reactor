@@ -14,29 +14,44 @@ public class NaturePokeathlonStatAffect {
 
     /**
      * Get the maximum amount of change to the referenced Pokéathlon stat
+     *
      * @return the maximum amount of change
      */
-    public Integer getMaxChange() { return maxChange; }
+    public Integer getMaxChange() {
+        return maxChange;
+    }
+
     /**
      * Set the maximum amount of change to the referenced Pokéathlon stat
+     *
      * @param maxChange the maximum amount of change
      */
-    public void setMaxChange(Integer maxChange) { this.maxChange = maxChange; }
+    public void setMaxChange(Integer maxChange) {
+        this.maxChange = maxChange;
+    }
 
     /**
      * Get the nature that causes the change
+     *
      * @return the {@link Nature} that causes the change
      */
-    public NamedApiResource<Nature> getNature() { return nature; }
+    public NamedApiResource<Nature> getNature() {
+        return nature;
+    }
+
     /**
      * Set the nature that causes the change
+     *
      * @param nature the {@link Nature} that causes the change
      */
-    public void setNature(NamedApiResource<Nature> nature) { this.nature = nature; }
+    public void setNature(NamedApiResource<Nature> nature) {
+        this.nature = nature;
+    }
 
     /**
      * Returns whether the given object o is
      * equal to this instance of NaturePokeathlonStatAffect
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -48,6 +63,7 @@ public class NaturePokeathlonStatAffect {
 
     /**
      * Returns the hash code of the NaturePokeathlonStatAffect
+     *
      * @return the hash code
      */
     @Override
@@ -57,6 +73,7 @@ public class NaturePokeathlonStatAffect {
 
     /**
      * Returns a string representation of the NaturePokeathlonStatAffect
+     *
      * @return the string representation
      */
     @Override

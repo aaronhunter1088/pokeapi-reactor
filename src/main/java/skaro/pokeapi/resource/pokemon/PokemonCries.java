@@ -9,13 +9,16 @@ public class PokemonCries {
 
     /**
      * Get the latest depiction of this Pokémon's cry
+     *
      * @return latest
      */
     public String getLatest() {
         return latest;
     }
+
     /**
      * Set the latest depiction of this Pokémon's cry
+     *
      * @param latest the latest
      */
     public void setLatest(String latest) {
@@ -24,13 +27,16 @@ public class PokemonCries {
 
     /**
      * Get the legacy depiction of this Pokémon's cry
+     *
      * @return legacy
      */
     public String getLegacy() {
         return legacy;
     }
+
     /**
      * Set the legacy depiction of this Pokémon's cry
+     *
      * @param legacy the legacy
      */
     public void setLegacy(String legacy) {
@@ -40,6 +46,7 @@ public class PokemonCries {
     /**
      * Returns whether the given object o is
      * equal to this instance of PokemonCries
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -51,6 +58,7 @@ public class PokemonCries {
 
     /**
      * Returns the hash code of the PokemonCries
+     *
      * @return the hash code
      */
     @Override
@@ -60,6 +68,7 @@ public class PokemonCries {
 
     /**
      * Returns a string representation of the PokemonCries
+     *
      * @return the string representation
      */
     @Override

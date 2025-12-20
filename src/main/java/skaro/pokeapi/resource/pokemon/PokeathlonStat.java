@@ -18,53 +18,82 @@ public class PokeathlonStat implements PokeApiResource, Localizable {
 
     /**
      * Get the id
+     *
      * @return the id
      */
-    public Integer getId() { return id; }
+    public Integer getId() {
+        return id;
+    }
+
     /**
      * Set the id
+     *
      * @param id the id
      */
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     /**
      * Get the name for this resource
+     *
      * @return the name
      */
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
+
     /**
      * Set the name for this resource
+     *
      * @param name the name
      */
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * Get the name of this resource listed in different languages
+     *
      * @return a list of names
      */
-    public List<Name> getNames() { return names; }
+    public List<Name> getNames() {
+        return names;
+    }
+
     /**
      * Set the name of this resource listed in different languages
+     *
      * @param names a list of names
      */
-    public void setNames(List<Name> names) { this.names = names; }
+    public void setNames(List<Name> names) {
+        this.names = names;
+    }
 
     /**
      * Get a detail of natures which affect this
      * Pokéathlon stat positively or negatively.
+     *
      * @return the {@link NaturePokeathlonStatAffectSets} affectingNatures
      */
-    public NaturePokeathlonStatAffectSets getAffectingNatures() { return affectingNatures; }
+    public NaturePokeathlonStatAffectSets getAffectingNatures() {
+        return affectingNatures;
+    }
+
     /**
      * Set a detail of natures which affect this
      * Pokéathlon stat positively or negatively.
+     *
      * @param affectingNatures the {@link NaturePokeathlonStatAffectSets} affectingNatures
      */
-    public void setAffectingNatures(NaturePokeathlonStatAffectSets affectingNatures) { this.affectingNatures = affectingNatures; }
+    public void setAffectingNatures(NaturePokeathlonStatAffectSets affectingNatures) {
+        this.affectingNatures = affectingNatures;
+    }
 
     /**
      * Returns whether the given object o is
      * equal to this instance of PokeathlonStat
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -76,6 +105,7 @@ public class PokeathlonStat implements PokeApiResource, Localizable {
 
     /**
      * Returns the hash code of the PokeathlonStat
+     *
      * @return the hash code
      */
     @Override
@@ -85,6 +115,7 @@ public class PokeathlonStat implements PokeApiResource, Localizable {
 
     /**
      * Returns a string representation of the PokeathlonStat
+     *
      * @return the string representation
      */
     @Override

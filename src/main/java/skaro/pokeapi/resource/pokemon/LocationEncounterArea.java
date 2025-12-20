@@ -17,30 +17,44 @@ public class LocationEncounterArea {
 
     /**
      * Get the location area
+     *
      * @return the {@link LocationArea} location area
      */
-    public NamedApiResource<LocationArea> getLocationArea() { return locationArea; }
+    public NamedApiResource<LocationArea> getLocationArea() {
+        return locationArea;
+    }
+
     /**
      * Set the location area
+     *
      * @param locationArea the {@link LocationArea} location area
      */
-    public void setLocationArea(NamedApiResource<LocationArea> locationArea) { this.locationArea = locationArea; }
+    public void setLocationArea(NamedApiResource<LocationArea> locationArea) {
+        this.locationArea = locationArea;
+    }
 
     /**
      * Get the version details
+     *
      * @return the list of {@link VersionEncounterDetail} version details
      */
-    public List<VersionEncounterDetail> getVersionDetails() { return versionDetails; }
+    public List<VersionEncounterDetail> getVersionDetails() {
+        return versionDetails;
+    }
 
     /**
      * Set the version details
+     *
      * @param versionDetails the list of {@link VersionEncounterDetail} version details
      */
-    public void setVersionDetails(List<VersionEncounterDetail> versionDetails) { this.versionDetails = versionDetails; }
+    public void setVersionDetails(List<VersionEncounterDetail> versionDetails) {
+        this.versionDetails = versionDetails;
+    }
 
     /**
      * Returns whether the given object o is
      * equal to this instance of LocationEncounterArea
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -52,6 +66,7 @@ public class LocationEncounterArea {
 
     /**
      * Returns the hash code of the LocationEncounterArea
+     *
      * @return the hash code
      */
     @Override
@@ -61,6 +76,7 @@ public class LocationEncounterArea {
 
     /**
      * Returns a string representation of the LocationEncounterArea
+     *
      * @return the string representation
      */
     @Override

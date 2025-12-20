@@ -18,88 +18,100 @@ import java.util.Objects;
  */
 public class FlavorText {
 
-	@JsonProperty("flavor_text")
-	private String flavorText;
-	private NamedApiResource<Language> language;
-	private NamedApiResource<Version> version;
+    @JsonProperty("flavor_text")
+    private String flavorText;
+    private NamedApiResource<Language> language;
+    private NamedApiResource<Version> version;
 
-	/**
-	 * Get the localized flavor text for an
-	 * API resource in a specific language.
-	 * @return the flavor text
-	 */
-	public String getFlavorText() {
-		return flavorText;
-	}
-	/**
-	 * Set the localized flavor text for an
-	 * @param flavorText the flavor text
-	 */
-	public void setFlavorText(String flavorText) {
-		this.flavorText = flavorText;
-	}
+    /**
+     * Get the localized flavor text for an
+     * API resource in a specific language.
+     *
+     * @return the flavor text
+     */
+    public String getFlavorText() {
+        return flavorText;
+    }
 
-	/**
-	 * Get the language this name is in
-	 * @return the {@link Language} language
-	 */
-	public NamedApiResource<Language> getLanguage() {
-		return language;
-	}
-	/**
-	 * Set the language this name is in
-	 * @param language the {@link Language} language
-	 */
-	public void setLanguage(NamedApiResource<Language> language) {
-		this.language = language;
-	}
+    /**
+     * Set the localized flavor text for an
+     *
+     * @param flavorText the flavor text
+     */
+    public void setFlavorText(String flavorText) {
+        this.flavorText = flavorText;
+    }
 
-	/**
-	 * Get the game version this flavor text is extracted from
-	 * @return the {@link Version} version
-	 */
-	public NamedApiResource<Version> getVersion() {
-		return version;
-	}
-	/**
-	 * Set the game version this flavor text is extracted from
-	 * @param version the {@link Version} version
-	 */
-	public void setVersion(NamedApiResource<Version> version) {
-		this.version = version;
-	}
+    /**
+     * Get the language this name is in
+     *
+     * @return the {@link Language} language
+     */
+    public NamedApiResource<Language> getLanguage() {
+        return language;
+    }
 
-	/**
-	 * Returns whether the given object o is
-	 * equal to this instance of FlavorText
-	 * @param o the object to compare
-	 * @return true if equal otherwise false
-	 */
-	@Override
-	public boolean equals(Object o) {
-		if (!(o instanceof FlavorText that)) return false;
+    /**
+     * Set the language this name is in
+     *
+     * @param language the {@link Language} language
+     */
+    public void setLanguage(NamedApiResource<Language> language) {
+        this.language = language;
+    }
+
+    /**
+     * Get the game version this flavor text is extracted from
+     *
+     * @return the {@link Version} version
+     */
+    public NamedApiResource<Version> getVersion() {
+        return version;
+    }
+
+    /**
+     * Set the game version this flavor text is extracted from
+     *
+     * @param version the {@link Version} version
+     */
+    public void setVersion(NamedApiResource<Version> version) {
+        this.version = version;
+    }
+
+    /**
+     * Returns whether the given object o is
+     * equal to this instance of FlavorText
+     *
+     * @param o the object to compare
+     * @return true if equal otherwise false
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof FlavorText that)) return false;
         return Objects.equals(getFlavorText(), that.getFlavorText()) && Objects.equals(getLanguage(), that.getLanguage()) && Objects.equals(getVersion(), that.getVersion());
-	}
+    }
 
-	/**
-	 * Returns the hash code of the FlavorText
-	 * @return the hash code
-	 */
-	@Override
-	public int hashCode() {
-		return Objects.hash(getFlavorText(), getLanguage(), getVersion());
-	}
+    /**
+     * Returns the hash code of the FlavorText
+     *
+     * @return the hash code
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFlavorText(), getLanguage(), getVersion());
+    }
 
-	/**
-	 * Returns a string representation of the FlavorText
-	 * @return the string representation
-	 */
-	@Override
-	public String toString() {
-		return "FlavorText{" +
-				"flavorText='" + flavorText + '\'' +
-				", language=" + language +
-				", version=" + version +
-				'}';
-	}
+    /**
+     * Returns a string representation of the FlavorText
+     *
+     * @return the string representation
+     */
+    @Override
+    public String toString() {
+        return "FlavorText{" +
+                "flavorText='" + flavorText + '\'' +
+                ", language=" + language +
+                ", version=" + version +
+                '}';
+    }
 }

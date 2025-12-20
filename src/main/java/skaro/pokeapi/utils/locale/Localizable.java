@@ -1,11 +1,11 @@
 package skaro.pokeapi.utils.locale;
 
-import java.util.List;
-
 import skaro.pokeapi.resource.Name;
+
+import java.util.List;
 
 public interface Localizable {
 
-	List<Name> getNames();
-	
+    List<Name> getNames();
+
 }

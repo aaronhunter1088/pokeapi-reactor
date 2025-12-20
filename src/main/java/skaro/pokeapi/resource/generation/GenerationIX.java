@@ -12,13 +12,16 @@ public class GenerationIX {
 
     /**
      * Get the sprites for the generation
+     *
      * @return the {@link Sprites} for scarletViolet
      */
     public Sprites getScarletViolet() {
         return scarletViolet;
     }
+
     /**
      * Set the sprites for the generation
+     *
      * @param scarletViolet the {@link Sprites} for scarletViolet
      */
     public void setScarletViolet(Sprites scarletViolet) {
@@ -28,6 +31,7 @@ public class GenerationIX {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationIX
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -39,6 +43,7 @@ public class GenerationIX {
 
     /**
      * Returns the hash code of the GenerationIX
+     *
      * @return the hash code
      */
     @Override
@@ -48,6 +53,7 @@ public class GenerationIX {
 
     /**
      * Returns a string representation of the GenerationIX
+     *
      * @return the string representation
      */
     @Override

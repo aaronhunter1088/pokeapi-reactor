@@ -13,13 +13,16 @@ public class GenerationI {
 
     /**
      * Get the red-blue sprites
+     *
      * @return the {@link Sprites} for red-blue
      */
     public Sprites getRedBlue() {
         return redBlue;
     }
+
     /**
      * Set the red-blue sprites
+     *
      * @param redBlue the {@link Sprites} for red-blue
      */
     public void setRedBlue(Sprites redBlue) {
@@ -28,13 +31,16 @@ public class GenerationI {
 
     /**
      * Get the yellow sprites
+     *
      * @return the {@link Sprites} for yellow
      */
     public Sprites getYellow() {
         return yellow;
     }
+
     /**
      * Set the yellow sprites
+     *
      * @param yellow the {@link Sprites} for yellow
      */
     public void setYellow(Sprites yellow) {
@@ -44,6 +50,7 @@ public class GenerationI {
     /**
      * Returns whether the given object o is
      * equal to this instance of GenerationI
+     *
      * @param o the object to compare
      * @return true if equal otherwise false
      */
@@ -55,6 +62,7 @@ public class GenerationI {
 
     /**
      * Returns the hash code of the GenerationI
+     *
      * @return the hash code
      */
     @Override
@@ -64,6 +72,7 @@ public class GenerationI {
 
     /**
      * Returns a string representation of the GenerationI
+     *
      * @return the string representation
      */
     @Override
