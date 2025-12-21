@@ -3,11 +3,19 @@
 ![Branches](.github/badges/branches.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# pokeapi-reactor
+# pokeapi-reactor v2.0.0
 
 A non-blocking, reactive API client for [PokeAPI](https://pokeapi.co/) with caching for Spring Boot projects.
-Spring Boot Version: 4.0.0
-Java Version: 21.0.7
+To see a full list of all available [resources](https://pokeapi.co/api/v2), click the resources link.
+<br>
+## Changes in this major release: 2.0.0
+- Spring Boot Version: 4.0.0
+- Java Major Version: 21
+- Pom changes: 
+  - Updated parent pom to 4.0.0, and this project's version to 2.0.0
+  - Removed redundant dependencies. 
+- Readme updates: 
+  - Described the changes to the major release, 2.0.0.
 
 ### Features
 

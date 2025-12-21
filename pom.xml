@@ -3,43 +3,68 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>4.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>skaro.pokeapi</groupId>
     <artifactId>pokeapi-reactor</artifactId>
-    <version>1.0.9</version>
+    <version>2.0.0</version>
     <name>pokeapi-reactor</name>
     <description>Non-blocking, reactive API client for PokeAPI</description>
+    <url>https://pokeapi.co</url>
 
     <properties>
         <java.version>21</java.version>
-        <okhttp3.version>4.10.0</okhttp3.version>
         <jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>
         <javax.validation.version>3.1.1</javax.validation.version>
         <maven.source.plugin.version>3.4.0</maven.source.plugin.version>
+        <!-- test dependencies versions -->
+        <okhttp3.version>4.10.0</okhttp3.version>
     </properties>
 
     <dependencies>
+        <!-- Spring Boot WebFlux Starter --><!--
+             Wires Reactor in and (by default) uses reactor-netty
+             as the runtime. Controllers or functional handlers
+             return Mono/Flux. WebClient is the reactive HTTP client
+             provided by WebFlux and returns Reactor types. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
+        <!-- Spring Boot Validation Starter --><!--
+             Provides support for validating
+             method parameters and return values
+             using Jakarta Bean Validation API. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+        <!-- Reactor-core --><!--
+             Provides core classes used to build
+             non-blocking reactive applications on the JVM. -->
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
         </dependency>
+        <!-- Reactor-extra --><!--
+             Offers additional operators, utilities,
+             and extensions to enhance the capabilities
+             of Reactor Core. -->
         <dependency>
             <groupId>io.projectreactor.addons</groupId>
             <artifactId>reactor-extra</artifactId>
         </dependency>
+        <!-- Reactor-netty --><!--
+             Netty-based reactive networking implementation used for non-blocking
+             HTTP/TCP clients and servers (used by Spring WebFlux as the default
+             reactive HTTP runtime).
+              -->
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty</artifactId>
@@ -49,7 +74,9 @@
             <artifactId>jakarta.validation-api</artifactId>
             <version>${javax.validation.version}</version>
         </dependency>
-        <!-- test dependencies below -->
+
+        <!-- Test Dependencies -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
