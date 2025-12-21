@@ -63,7 +63,7 @@ class ReactiveCachingPokeApiClientTest {
                 .verify();
 
         CacheSpec<PokeApiResource> usedCacheSpec = cacheSpecCaptor.getValue();
-        StepVerifier.create(usedCacheSpec.getMonoSupplier().get())
+        StepVerifier.create(usedCacheSpec.monoSupplier().get())
                 .expectNext(resource)
                 .expectComplete()
                 .verify();
@@ -85,7 +85,7 @@ class ReactiveCachingPokeApiClientTest {
                 .verify();
 
         CacheSpec<PokeApiResource> usedCacheSpec = cacheSpecCaptor.getValue();
-        StepVerifier.create(usedCacheSpec.getMonoSupplier().get())
+        StepVerifier.create(usedCacheSpec.monoSupplier().get())
                 .expectNext(resource)
                 .expectComplete()
                 .verify();
@@ -108,7 +108,7 @@ class ReactiveCachingPokeApiClientTest {
                 .verify();
 
         CacheSpec<PokeApiResource> usedCacheSpec = cacheSpecCaptor.getValue();
-        StepVerifier.create(usedCacheSpec.getMonoSupplier().get())
+        StepVerifier.create(usedCacheSpec.monoSupplier().get())
                 .expectNext(resource)
                 .expectComplete()
                 .verify();
@@ -131,7 +131,7 @@ class ReactiveCachingPokeApiClientTest {
                 .verify();
 
         CacheSpec<PokeApiResource> usedCacheSpec = cacheSpecCaptor.getValue();
-        StepVerifier.create(usedCacheSpec.getMonoSupplier().get())
+        StepVerifier.create(usedCacheSpec.monoSupplier().get())
                 .expectNext(resource)
                 .expectComplete()
                 .verify();
@@ -158,7 +158,7 @@ class ReactiveCachingPokeApiClientTest {
 
         List<CacheSpec<Pokemon>> usedCacheSpecs = cacheSpecListCaptor.getValue();
         List<Mono<Pokemon>> resourceMonos = usedCacheSpecs.stream()
-                .map(CacheSpec::getMonoSupplier)
+                .map(CacheSpec::monoSupplier)
                 .map(Supplier::get)
                 .collect(Collectors.toList());
 
