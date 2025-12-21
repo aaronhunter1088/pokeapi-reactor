@@ -6,8 +6,7 @@ import java.util.function.Supplier;
 
 /**
  * Specification for a cache entry.
- * @param <T> Type of the cached object
- * <p>
+ * @param <T> Type of the cached object.
  * Existed with @author skaro @since 0.0.1-SNAPSHOT
  * as a class until this version.
  *           
