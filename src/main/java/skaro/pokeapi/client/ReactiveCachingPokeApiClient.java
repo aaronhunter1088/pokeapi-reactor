@@ -14,20 +14,17 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
- * Reactive PokeApi client with caching capabilities
+ * Reactive PokeApi client with caching capabilities.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
-public class ReactiveCachingPokeApiClient implements PokeApiClient {
-
-    private final PokeApiEntityFactory entityFactory;
-    private final CacheFacade cacheFacade;
-
-    public ReactiveCachingPokeApiClient(PokeApiEntityFactory entityFactory, CacheFacade cacheFacade) {
-        this.entityFactory = entityFactory;
-        this.cacheFacade = cacheFacade;
-    }
+public record ReactiveCachingPokeApiClient (
+        PokeApiEntityFactory entityFactory,
+        CacheFacade cacheFacade
+) implements PokeApiClient {
 
     @Override
     public <T extends PokeApiResource> Mono<T> getResource(Class<T> cls, String idOrName) {
