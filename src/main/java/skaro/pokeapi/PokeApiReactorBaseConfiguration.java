@@ -24,7 +24,7 @@ import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.PropertyNamingStrategies;
 import tools.jackson.databind.json.JsonMapper;
 
-import static skaro.pokeapi.utils.locale.PokeApiConstants.*;
+import static skaro.pokeapi.utils.PokeApiConstants.*;
 
 /**
  * Base configuration for PokeApi Reactor client

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.net.URI;
 
-import static skaro.pokeapi.utils.locale.PokeApiConstants.CONFIGURATION_PROPERTIES_PREFIX;
+import static skaro.pokeapi.utils.PokeApiConstants.CONFIGURATION_PROPERTIES_PREFIX;
 
 /**
  * Configuration properties for PokeApi client

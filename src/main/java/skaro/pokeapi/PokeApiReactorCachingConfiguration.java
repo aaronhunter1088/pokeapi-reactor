@@ -10,7 +10,7 @@ import skaro.pokeapi.client.PokeApiClient;
 import skaro.pokeapi.client.PokeApiEntityFactory;
 import skaro.pokeapi.client.ReactiveCachingPokeApiClient;
 
-import static skaro.pokeapi.utils.locale.PokeApiConstants.CACHE_FACADE_BEAN;
+import static skaro.pokeapi.utils.PokeApiConstants.CACHE_FACADE_BEAN;
 
 /**
  * Configuration for PokeApi Reactor client with caching support.
