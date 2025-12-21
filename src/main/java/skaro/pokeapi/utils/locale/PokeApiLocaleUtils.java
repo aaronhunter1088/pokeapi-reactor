@@ -10,7 +10,7 @@ import java.util.Optional;
  * @author skaro
  * @since 1.0.1
  */
-public class PokeApiLocaleUtils {
+public record PokeApiLocaleUtils() {
 
     /**
      * Returns an Optional containing the Name object in
