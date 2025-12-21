@@ -14,20 +14,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * WebClient-based implementation of PokeApiEntityFactory
+ * WebClient-based implementation of PokeApiEntityFactory.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
-public class WebClientEntityFactory implements PokeApiEntityFactory {
-
-    private final WebClient webClient;
-    private final PokeApiEndpointRegistry endpointRegistry;
-
-    public WebClientEntityFactory(WebClient webClient, PokeApiEndpointRegistry endpointRegistry) {
-        this.webClient = webClient;
-        this.endpointRegistry = endpointRegistry;
-    }
+public record WebClientEntityFactory (
+        WebClient webClient,
+        PokeApiEndpointRegistry endpointRegistry
+) implements PokeApiEntityFactory {
 
     @Override
     public <T extends PokeApiResource> Mono<T> getResource(Class<T> resourceClass, String nameOrId) {
