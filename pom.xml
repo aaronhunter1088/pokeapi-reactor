@@ -31,8 +31,8 @@
         <!-- Spring Boot WebFlux Starter --><!--
              Wires Reactor in and (by default) uses reactor-netty
              as the runtime. Controllers or functional handlers
-             return Mono/Flux. WebClient is the reactive HTTP client
-             provided by WebFlux and returns Reactor types. -->
+             return Mono/Flux. WebClient is the reactive HTTP
+             client provided by WebFlux and returns Reactor types. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
@@ -45,13 +45,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-        <!-- Reactor-core --><!--
-             Provides core classes used to build
-             non-blocking reactive applications on the JVM. -->
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-        </dependency>
+        <!-- Reactor-core: brought in by spring-boot-starter-webflux -->
         <!-- Reactor-extra --><!--
              Offers additional operators, utilities,
              and extensions to enhance the capabilities
@@ -63,8 +57,7 @@
         <!-- Reactor-netty --><!--
              Netty-based reactive networking implementation used for non-blocking
              HTTP/TCP clients and servers (used by Spring WebFlux as the default
-             reactive HTTP runtime).
-              -->
+             reactive HTTP runtime). -->
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty</artifactId>
