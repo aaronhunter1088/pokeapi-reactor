@@ -11,18 +11,16 @@ import java.util.List;
 import java.util.function.Supplier;
 
 /**
- * Reactive PokeApi client without caching capabilities
+ * Reactive PokeApi client without caching capabilities.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
-public class ReactiveNonCachingPokeApiClient implements PokeApiClient {
-
-    private final PokeApiEntityFactory entityFactory;
-
-    public ReactiveNonCachingPokeApiClient(PokeApiEntityFactory entityFactory) {
-        this.entityFactory = entityFactory;
-    }
+public record ReactiveNonCachingPokeApiClient (
+        PokeApiEntityFactory entityFactory
+) implements PokeApiClient {
 
     @Override
     public <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls) {
