@@ -129,10 +129,8 @@ class WebClientEntityFactoryTest {
     @Test
     void testGetBaseResourceWithQuery() throws InterruptedException {
         String resourceEndpoint = "ability";
-        Ability ability1 = new Ability();
-        ability1.setName("Levitate");
-        Ability ability2 = new Ability();
-        ability2.setName("Pressure");
+        Ability ability1 = new Ability("Levitate");
+        Ability ability2 = new Ability("Pressure");
         NamedApiResourceList<PokeApiResource> resourceListResponse = createResourceList(List.of(ability1, ability2));
         PageQuery query = new PageQuery(5, 10);
 
