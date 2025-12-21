@@ -5,10 +5,12 @@ import skaro.pokeapi.resource.Name;
 import java.util.Optional;
 
 /**
- * Utility class for handling localization in PokeApi resources
+ * Utility class for handling localization in PokeApi resources.
+ * Existed with @author skaro @since 1.0.1
+ * as a class until this version.
  *
- * @author skaro
- * @since 1.0.1
+ * @author michael ball
+ * @since 2.0.0
  */
 public record PokeApiLocaleUtils() {
 

@@ -12,10 +12,12 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Represents the Ability resource
+ * Represents the Ability resource.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
 public record Ability (
     Integer id,
@@ -34,7 +36,6 @@ public record Ability (
 ) implements PokeApiResource, Localizable {
 
     public Ability(String name) { this(null, name, null, null, null, null, null, null, null); }
-
 
     /**
      * Get the id

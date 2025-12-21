@@ -1,7 +1,7 @@
 package skaro.pokeapi.utils.locale;
 
 /**
- * Constants used in PokeApi module
+ * Constants used in PokeApi module.
  *
  * @author michael ball
  * @since 2.0.0
