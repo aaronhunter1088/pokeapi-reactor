@@ -18,7 +18,7 @@ import skaro.pokeapi.client.ReactiveNonCachingPokeApiClient;
 public class PokeApiReactorNonCachingConfiguration {
 
     @Bean
-    public PokeApiClient pokeApiClient(PokeApiEntityFactory entityFactory) {
+    public PokeApiClient pokeApiClient(final PokeApiEntityFactory entityFactory) {
         return new ReactiveNonCachingPokeApiClient(entityFactory);
     }
 

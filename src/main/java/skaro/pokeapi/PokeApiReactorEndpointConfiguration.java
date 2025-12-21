@@ -67,7 +67,7 @@ public class PokeApiReactorEndpointConfiguration {
 
     @Bean
     public PokeApiEndpointRegistry endpointRegistry() {
-        Map<Class<?>, String> endpoints = new HashMap<>();
+        final Map<Class<?>, String> endpoints = new HashMap<>();
         endpoints.put(Ability.class, "ability");
         endpoints.put(Berry.class, "berry");
         endpoints.put(BerryFirmness.class, "berry-firmness");

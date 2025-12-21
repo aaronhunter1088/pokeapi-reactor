@@ -60,10 +60,10 @@ public class PokeApiReactorBaseConfiguration {
     }
 
     @Bean(POKEAPI_WEBCLIENT_BEAN)
-    public WebClient webClient(HttpClient httpClient,
-                               @Qualifier(POKEAPI_JSON_ENCODER_BEAN) JacksonJsonEncoder encoder,
-                               @Qualifier(POKEAPI_JSON_DECODER_BEAN) JacksonJsonDecoder decoder,
-                               PokeApiConfigurationProperties configurationProperties) {
+    public WebClient webClient(final HttpClient httpClient,
+                               @Qualifier(POKEAPI_JSON_ENCODER_BEAN) final JacksonJsonEncoder encoder,
+                               @Qualifier(POKEAPI_JSON_DECODER_BEAN) final JacksonJsonDecoder decoder,
+                               final PokeApiConfigurationProperties configurationProperties) {
 
         ExchangeStrategies strategies = ExchangeStrategies.builder()
                 .codecs(clientDefaultCodecsConfigurer -> {
@@ -89,7 +89,8 @@ public class PokeApiReactorBaseConfiguration {
     }
 
     @Bean
-    public PokeApiEntityFactory pokeApiEntityFactory(WebClient webClient, PokeApiEndpointRegistry registry) {
+    public PokeApiEntityFactory pokeApiEntityFactory(@Qualifier(POKEAPI_WEBCLIENT_BEAN) final WebClient webClient,
+                                                     final PokeApiEndpointRegistry registry) {
         return new WebClientEntityFactory(webClient, registry);
     }
 
