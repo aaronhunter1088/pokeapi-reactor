@@ -2,7 +2,8 @@ package skaro.pokeapi.query;
 
 /**
  * Represents a pagination query with limit and offset
- * Existed since 0.0.1-SNAPSHOT as a class until this version.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
  * @author michael ball
  * @since 2.0.0
