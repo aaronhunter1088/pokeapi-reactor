@@ -19,24 +19,22 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
- * CacheFacade implementation for Spring's Reactive CacheManager
+ * CacheFacade implementation for Spring's Reactive CacheManager.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
-public class ReactiveCacheManagerCacheFacade implements CacheFacade {
+public record ReactiveCacheManagerCacheFacade (
+        CacheManager cacheManager
+) implements CacheFacade {
 
-    private final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
-    private final CacheManager cacheManager;
-
-    public ReactiveCacheManagerCacheFacade(CacheManager cacheManager) {
-        this.cacheManager = cacheManager;
-    }
+    private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Override
     public <T extends PokeApiResource> Mono<T> get(CacheSpec<T> cacheSpec) {
-        return getOrCache(cacheSpec.getType(), cacheSpec.getKey(), cacheSpec.getMonoSupplier());
+        return getOrCache(cacheSpec.type(), cacheSpec.key(), cacheSpec.monoSupplier());
     }
 
     @Override
