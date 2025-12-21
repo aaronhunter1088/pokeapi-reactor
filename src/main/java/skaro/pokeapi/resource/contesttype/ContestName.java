@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.language.Language;
 
 import java.util.Objects;
 
+/**
+ * Represents a localized name for a Contest Type
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ContestName {
 
     private String name;

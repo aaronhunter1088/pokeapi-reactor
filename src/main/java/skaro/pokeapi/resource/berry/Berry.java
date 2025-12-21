@@ -10,6 +10,12 @@ import skaro.pokeapi.resource.type.Type;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the Berry resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class Berry implements PokeApiResource {
 
     private Integer id;

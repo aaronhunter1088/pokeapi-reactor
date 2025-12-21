@@ -6,6 +6,13 @@ import skaro.pokeapi.resource.NamedApiResource;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the type relations of a Pokémon type,
+ * detailing its effectiveness against other types
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class TypeRelations {
 
     @JsonProperty("no_damage_to")

@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.language.Language;
 
 import java.util.Objects;
 
+/**
+ * Represents the Genus resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class Genus {
 
     private String genus;

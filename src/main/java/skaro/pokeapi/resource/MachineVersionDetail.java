@@ -6,6 +6,13 @@ import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
 import java.util.Objects;
 
+/**
+ * Represents a specific machine that
+ * teaches a move in a specific version group
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class MachineVersionDetail {
 
     private NamedApiResource<Machine> machine;

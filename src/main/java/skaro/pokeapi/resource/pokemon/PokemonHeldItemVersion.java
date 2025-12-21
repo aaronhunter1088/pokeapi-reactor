@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.version.Version;
 
 import java.util.Objects;
 
+/**
+ * Represents the PokemonHeldItemVersion resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonHeldItemVersion {
 
     private NamedApiResource<Version> version;

@@ -4,6 +4,12 @@ import jakarta.validation.constraints.NotNull;
 
 import java.net.URI;
 
+/**
+ * Configuration properties for PokeApi client
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokeApiConfigurationProperties {
 
     @NotNull

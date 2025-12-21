@@ -24,6 +24,12 @@ import java.util.UUID;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+/**
+ * Unit tests for ReactiveCachingPokeApiClient
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @ExtendWith(MockitoExtension.class)
 class ReactiveCachingPokeApiClientTest {
 

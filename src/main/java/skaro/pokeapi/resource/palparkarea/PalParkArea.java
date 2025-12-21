@@ -8,6 +8,12 @@ import skaro.pokeapi.utils.locale.Localizable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents a Pal Park area
+ *
+ * @author michael ball
+ * @since 1.0.7
+ */
 public class PalParkArea implements PokeApiResource, Localizable {
 
     private Integer id;

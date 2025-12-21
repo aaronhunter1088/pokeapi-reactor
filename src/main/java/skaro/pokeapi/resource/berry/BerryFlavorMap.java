@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.berryflavor.BerryFlavor;
 
 import java.util.Objects;
 
+/**
+ * Represents a mapping of a BerryFlavor to its potency for a specific Berry
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class BerryFlavorMap {
 
     private Integer potency;

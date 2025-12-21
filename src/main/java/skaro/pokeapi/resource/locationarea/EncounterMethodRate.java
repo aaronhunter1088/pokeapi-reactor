@@ -7,6 +7,13 @@ import skaro.pokeapi.resource.encountermethod.EncounterMethod;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the encounter methods and their rates
+ * in which Pokémon may be encountered in an area
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class EncounterMethodRate {
 
     @JsonProperty("encounter_method")

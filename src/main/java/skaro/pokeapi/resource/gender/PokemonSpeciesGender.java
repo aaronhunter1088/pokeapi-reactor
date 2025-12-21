@@ -6,6 +6,14 @@ import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 
 import java.util.Objects;
 
+/**
+ * Represents details of a Pokémon species
+ * related to gender.
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ *
+ */
 public class PokemonSpeciesGender {
 
     private Integer rate;

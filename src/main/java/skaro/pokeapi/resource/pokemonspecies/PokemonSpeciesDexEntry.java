@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.pokedex.Pokedex;
 
 import java.util.Objects;
 
+/**
+ * Represents a Pokédex entry for a Pokémon species
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonSpeciesDexEntry {
 
     @JsonProperty("entry_number")

@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.language.Language;
 
 import java.util.Objects;
 
+/**
+ * Represents the localized effect text
+ * for an API resource in a specific language
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class VerboseEffect {
 
     private String effect;

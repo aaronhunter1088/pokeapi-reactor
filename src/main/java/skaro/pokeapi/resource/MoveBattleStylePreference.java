@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.movebattlestyle.MoveBattleStyle;
 
 import java.util.Objects;
 
+/**
+ * Represents the preference of a move
+ * battle style when used by a Pokémon
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class MoveBattleStylePreference {
 
     @JsonProperty("high_hp_preference")

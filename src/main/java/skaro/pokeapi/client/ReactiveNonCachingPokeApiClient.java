@@ -10,6 +10,12 @@ import skaro.pokeapi.resource.PokeApiResource;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Reactive PokeApi client without caching capabilities
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ReactiveNonCachingPokeApiClient implements PokeApiClient {
 
     private final PokeApiEntityFactory entityFactory;

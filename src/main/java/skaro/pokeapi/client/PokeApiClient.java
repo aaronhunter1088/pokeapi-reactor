@@ -10,6 +10,12 @@ import skaro.pokeapi.resource.PokeApiResource;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Client interface for accessing PokeApi resources
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public interface PokeApiClient {
 
     <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls);

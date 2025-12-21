@@ -4,6 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
+/**
+ * Represents the sprites used to depict a Pokémon
+ * form in various in-game situations
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class Sprites {
 
     @JsonProperty("front_default")

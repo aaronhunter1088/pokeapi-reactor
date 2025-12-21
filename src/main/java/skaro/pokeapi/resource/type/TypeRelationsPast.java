@@ -6,6 +6,13 @@ import skaro.pokeapi.resource.generation.Generation;
 
 import java.util.Objects;
 
+/**
+ * Represents the past damage relations
+ * of a type up to and including a specific generation
+ *
+ * @author JoostFranssen
+ * @since 1.0.4
+ */
 public class TypeRelationsPast {
 
     private NamedApiResource<Generation> generation;

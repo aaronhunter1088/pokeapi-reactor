@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.pokemon.Pokemon;
 
 import java.util.Objects;
 
+/**
+ * Represents a variety of a Pokémon species
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonSpeciesVariety {
 
     @JsonProperty("is_default")

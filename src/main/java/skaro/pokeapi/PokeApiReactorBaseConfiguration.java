@@ -25,6 +25,12 @@ import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.PropertyNamingStrategies;
 import tools.jackson.databind.json.JsonMapper;
 
+/**
+ * Base configuration for PokeApi Reactor client
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @Configuration
 @Import(PokeApiReactorEndpointConfiguration.class)
 public class PokeApiReactorBaseConfiguration {

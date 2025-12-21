@@ -3,6 +3,12 @@ package skaro.pokeapi.resource.stat;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents sets of moves that affect a stat
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class MoveStatAffectSets {
 
     private List<MoveStatAffect> increase;

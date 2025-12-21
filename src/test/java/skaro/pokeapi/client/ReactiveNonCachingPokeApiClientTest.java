@@ -19,6 +19,12 @@ import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Unit tests for ReactiveNonCachingPokeApiClient
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @ExtendWith(SpringExtension.class)
 public class ReactiveNonCachingPokeApiClientTest {
 

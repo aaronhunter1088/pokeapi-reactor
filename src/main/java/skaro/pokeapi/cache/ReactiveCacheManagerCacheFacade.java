@@ -18,6 +18,12 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+/**
+ * CacheFacade implementation for Spring's Reactive CacheManager
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ReactiveCacheManagerCacheFacade implements CacheFacade {
 
     private final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

@@ -8,6 +8,13 @@ import skaro.pokeapi.resource.locationarea.LocationArea;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents encounter information
+ * for a specific location area
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class LocationEncounterArea {
 
     @JsonProperty("location_area")

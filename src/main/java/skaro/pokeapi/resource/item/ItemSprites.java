@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
+/**
+ * Represents the sprites of an Item
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ItemSprites {
 
     private String imageUrl;

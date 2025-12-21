@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.move.Move;
 
 import java.util.Objects;
 
+/**
+ * Represents a move that affects a stat
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class MoveStatAffect {
 
     private Integer change;

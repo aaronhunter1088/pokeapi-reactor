@@ -13,6 +13,12 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * WebClient-based implementation of PokeApiEntityFactory
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class WebClientEntityFactory implements PokeApiEntityFactory {
 
     private final WebClient webClient;

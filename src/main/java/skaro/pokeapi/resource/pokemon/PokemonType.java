@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.type.Type;
 
 import java.util.Objects;
 
+/**
+ * Represents the PokemonType resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonType {
 
     private Integer slot;

@@ -10,7 +10,10 @@ import java.util.Objects;
 
 /**
  * Represents a Pokémon species that can
- * be encountered in a pal park area
+ * be encountered in a pal park area.
+ *
+ * @author michael ball
+ * @since 1.0.7
  */
 public class PalParkEncounterSpecies {
 

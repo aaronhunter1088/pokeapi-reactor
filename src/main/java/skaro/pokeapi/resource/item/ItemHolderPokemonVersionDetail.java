@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.version.Version;
 
 import java.util.Objects;
 
+/**
+ * Represents the details of an item held by a Pokémon
+ * in a specific version
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ItemHolderPokemonVersionDetail {
 
     private Integer rarity;

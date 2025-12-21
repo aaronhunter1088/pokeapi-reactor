@@ -6,6 +6,13 @@ import skaro.pokeapi.resource.generation.Generation;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents a Pokémon's abilities
+ * from past generations
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class PokemonPastAbility {
 
     private List<PokemonAbility> abilities;

@@ -33,6 +33,12 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Unit tests for WebClientEntityFactory
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @ExtendWith(SpringExtension.class)
 class WebClientEntityFactoryTest {
 

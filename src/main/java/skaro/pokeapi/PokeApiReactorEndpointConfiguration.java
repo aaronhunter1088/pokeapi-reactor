@@ -56,6 +56,12 @@ import skaro.pokeapi.resource.versiongroup.VersionGroup;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Configuration for PokeApi Reactor endpoints
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @Configuration
 public class PokeApiReactorEndpointConfiguration {
 

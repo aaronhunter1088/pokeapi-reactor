@@ -7,6 +7,12 @@ import skaro.pokeapi.utils.locale.Localizable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the EncounterMethod resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class EncounterMethod implements PokeApiResource, Localizable {
 
     private Integer id;

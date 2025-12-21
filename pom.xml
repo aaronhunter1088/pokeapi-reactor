@@ -17,6 +17,7 @@
     <name>pokeapi-reactor</name>
     <description>Non-blocking, reactive API client for PokeAPI</description>
     <url>https://pokeapi.co</url>
+    <inceptionYear>2024</inceptionYear>
 
     <properties>
         <jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>

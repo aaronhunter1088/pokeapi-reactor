@@ -8,6 +8,12 @@ import skaro.pokeapi.resource.versiongroup.VersionGroup;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the AbilityEffectChange resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class AbilityEffectChange {
 
     @JsonProperty("effect_entries")

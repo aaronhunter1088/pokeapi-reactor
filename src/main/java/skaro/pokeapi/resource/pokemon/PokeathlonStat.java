@@ -8,6 +8,12 @@ import skaro.pokeapi.utils.locale.Localizable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents a Pokéathlon stat
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class PokeathlonStat implements PokeApiResource, Localizable {
 
     private Integer id;

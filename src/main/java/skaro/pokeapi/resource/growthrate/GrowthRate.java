@@ -9,6 +9,12 @@ import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the GrowthRate resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class GrowthRate implements PokeApiResource {
 
     private Integer id;

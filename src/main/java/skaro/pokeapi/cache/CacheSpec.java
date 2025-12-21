@@ -4,6 +4,14 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.Supplier;
 
+/**
+ * Specification for a cache entry
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ *
+ * @param <T> Type of the cached object
+ */
 public class CacheSpec<T> {
 
     private String key;

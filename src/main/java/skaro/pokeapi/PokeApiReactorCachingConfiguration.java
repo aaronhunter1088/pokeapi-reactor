@@ -10,6 +10,12 @@ import skaro.pokeapi.client.PokeApiClient;
 import skaro.pokeapi.client.PokeApiEntityFactory;
 import skaro.pokeapi.client.ReactiveCachingPokeApiClient;
 
+/**
+ * Configuration for PokeApi Reactor client with caching support
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @Configuration
 @Import(PokeApiReactorBaseConfiguration.class)
 public class PokeApiReactorCachingConfiguration {

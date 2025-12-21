@@ -13,6 +13,12 @@ import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+/**
+ * Reactive PokeApi client with caching capabilities
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ReactiveCachingPokeApiClient implements PokeApiClient {
 
     private final PokeApiEntityFactory entityFactory;

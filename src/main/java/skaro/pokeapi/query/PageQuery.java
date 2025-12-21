@@ -1,5 +1,11 @@
 package skaro.pokeapi.query;
 
+/**
+ * Represents a pagination query with limit and offset
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PageQuery {
 
     private Integer limit;

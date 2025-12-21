@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
+/**
+ * Represents the fifth generation
+ * of Pokémon games and their sprites
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class GenerationV {
 
     @JsonProperty("black-white")

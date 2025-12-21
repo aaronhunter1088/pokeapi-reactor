@@ -7,6 +7,12 @@ import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents a link in an evolution chain
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ChainLink {
 
     @JsonProperty("is_baby")

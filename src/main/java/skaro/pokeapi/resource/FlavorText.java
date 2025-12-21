@@ -15,6 +15,9 @@ import java.util.Objects;
  * de-code-able version. Please check out this
  * <a href="https://github.com/veekun/pokedex/issues/218#issuecomment-339841781">
  * issue</a> to find out more.
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
  */
 public class FlavorText {
 

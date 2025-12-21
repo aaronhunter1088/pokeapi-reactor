@@ -7,6 +7,9 @@ import java.util.List;
 /**
  * NamedApiResponseList, the response from
  * calling endpoints in the registry
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
  */
 public class NamedApiResourceList<T extends PokeApiResource> implements PokeApiResource {
 

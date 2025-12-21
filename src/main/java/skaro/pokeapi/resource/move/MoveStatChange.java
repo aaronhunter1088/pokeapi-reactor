@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.stat.Stat;
 
 import java.util.Objects;
 
+/**
+ * Represents the MoveStatChange resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class MoveStatChange {
 
     private Integer change;

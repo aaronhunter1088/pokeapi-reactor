@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.language.Language;
 
 import java.util.Objects;
 
+/**
+ * Represents the AwesomeName resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class AwesomeName {
 
     @JsonProperty("awesome_name")

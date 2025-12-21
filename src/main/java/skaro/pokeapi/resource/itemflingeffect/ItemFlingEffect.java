@@ -9,6 +9,12 @@ import skaro.pokeapi.resource.item.Item;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the ItemFlingEffect resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ItemFlingEffect implements PokeApiResource {
 
     private Integer id;

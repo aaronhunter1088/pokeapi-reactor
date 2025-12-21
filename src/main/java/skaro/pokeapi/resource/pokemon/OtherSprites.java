@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.Sprites;
 
 import java.util.Objects;
 
+/**
+ * Represents other sprite
+ * variations of a Pokémon
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class OtherSprites {
 
     @JsonProperty("dream_world")

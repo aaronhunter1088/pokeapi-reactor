@@ -7,6 +7,12 @@ import skaro.pokeapi.utils.locale.Localizable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents a move battle style
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class MoveBattleStyle implements PokeApiResource, Localizable {
 
     private Integer id;

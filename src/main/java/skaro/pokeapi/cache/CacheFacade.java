@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.PokeApiResource;
 
 import java.util.List;
 
+/**
+ * Facade for cache access
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public interface CacheFacade {
 
     <T extends PokeApiResource> Mono<T> get(CacheSpec<T> cacheSpec);
