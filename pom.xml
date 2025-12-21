@@ -19,9 +19,8 @@
     <url>https://pokeapi.co</url>
 
     <properties>
-        <java.version>21</java.version>
         <jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>
-        <javax.validation.version>3.1.1</javax.validation.version>
+        <java.version>21</java.version>
         <maven.source.plugin.version>3.4.0</maven.source.plugin.version>
         <!-- test dependencies versions -->
         <okhttp3.version>4.10.0</okhttp3.version>
@@ -65,22 +64,30 @@
 
         <!-- Test Dependencies -->
 
+        <!-- Spring Boot Starter Test --><!--
+             Test utilities for Spring Boot applications -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Reactor Test --><!--
+             Utilities for testing Reactor code -->
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- okhttp3 --><!--
+             Mockwebserver for mocking HTTP calls in tests -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>${okhttp3.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- MockWebServer --><!--
+             Mock HTTP server for testing HTTP clients -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>mockwebserver</artifactId>
@@ -126,12 +133,13 @@
                     <excludes>
                         <exclude>**/*Configuration.class</exclude> <!-- Exclude @Configuration classes -->
                         <exclude>**/*Properties.class</exclude> <!-- Exclude properties classes -->
-                        <exclude>skaro/pokeapi/resource/**/*</exclude> <!-- Exclude POJOs -->
+                        <exclude>skaro/pokeapi/resource/**/*.class</exclude> <!-- Exclude POJOs -->
                     </excludes>
                 </configuration>
                 <executions>
                     <!-- prepares the JaCoCo agent -->
                     <execution>
+                        <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
