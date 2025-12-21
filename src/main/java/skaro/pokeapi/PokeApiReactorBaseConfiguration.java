@@ -4,7 +4,6 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -37,12 +36,11 @@ import static skaro.pokeapi.utils.locale.PokeApiConstants.*;
 @Import(PokeApiReactorEndpointConfiguration.class)
 public class PokeApiReactorBaseConfiguration {
 
-//    @Bean
-//    @Valid
-//    @ConfigurationProperties(CONFIGURATION_PROPERTIES_PREFIX)
-//    public PokeApiConfigurationProperties pokeApiConfigurationProperties() {
-//        return new PokeApiConfigurationProperties();
-//    }
+    @Bean
+    @Valid
+    public PokeApiConfigurationProperties pokeApiConfigurationProperties() {
+        return new PokeApiConfigurationProperties();
+    }
 
     @Bean(POKEAPI_JSON_DECODER_BEAN)
     public JacksonJsonDecoder jsonDecoder() {
