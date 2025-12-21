@@ -6,7 +6,7 @@ package skaro.pokeapi.utils.locale;
  * @author michael ball
  * @since 2.0.0
  */
-public class PokeApiConstants {
+public record PokeApiConstants() {
 
     public static final String CONFIGURATION_PROPERTIES_PREFIX = "skaro.pokeapi";
     public static final String POKEAPI_WEBCLIENT_BEAN = "pokeapiWebClientBean";
