@@ -2,55 +2,15 @@ package skaro.pokeapi.query;
 
 /**
  * Represents a pagination query with limit and offset
+ * Existed since 0.0.1-SNAPSHOT as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
-public class PageQuery {
-
-    private Integer limit;
-    private Integer offset;
-
-    public PageQuery(int limit, int offset) {
-        this.limit = limit;
-        this.offset = offset;
-    }
-
-    /**
-     * Get the limit
-     *
-     * @return The limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    /**
-     * Set the limit
-     *
-     * @param limit The limit
-     */
-    private void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    /**
-     * Get the offset
-     *
-     * @return The offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    /**
-     * Set the offset
-     *
-     * @param offset The offset
-     */
-    private void setOffset(Integer offset) {
-        this.offset = offset;
-    }
+public record PageQuery (
+    int limit,
+    int offset
+) {
 
     /**
      * Returns a string representation of the PageQuery

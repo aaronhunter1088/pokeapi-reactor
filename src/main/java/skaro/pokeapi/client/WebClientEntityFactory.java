@@ -57,8 +57,8 @@ public class WebClientEntityFactory implements PokeApiEntityFactory {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path(endpoint)
-                        .queryParam("limit", query.getLimit())
-                        .queryParam("offset", query.getOffset())
+                        .queryParam("limit", query.limit())
+                        .queryParam("offset", query.offset())
                         .build())
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<NamedApiResourceList<T>>() {

@@ -161,8 +161,8 @@ class WebClientEntityFactoryTest {
         assert recordedRequest.getRequestUrl() != null;
         assertEquals(resourceEndpoint, recordedRequest.getRequestUrl().pathSegments().get(0));
         assertEquals(2, recordedRequest.getRequestUrl().querySize());
-        assertEquals(query.getLimit().toString(), recordedRequest.getRequestUrl().queryParameter("limit"));
-        assertEquals(query.getOffset().toString(), recordedRequest.getRequestUrl().queryParameter("offset"));
+        assertEquals(Integer.toString(query.limit()), recordedRequest.getRequestUrl().queryParameter("limit"));
+        assertEquals(Integer.toString(query.offset()), recordedRequest.getRequestUrl().queryParameter("offset"));
     }
 
     @Test

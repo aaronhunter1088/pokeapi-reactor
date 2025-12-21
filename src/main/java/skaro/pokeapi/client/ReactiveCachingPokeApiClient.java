@@ -51,7 +51,7 @@ public class ReactiveCachingPokeApiClient implements PokeApiClient {
     @Override
     public <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls, PageQuery query) {
         Class<NamedApiResourceList<T>> collectionResourceClass = (Class<NamedApiResourceList<T>>) (Class<?>) NamedApiResourceList.class;
-        String key = String.format("collection-offset%d-limit%d", query.getOffset(), query.getLimit());
+        String key = String.format("collection-offset%d-limit%d", query.offset(), query.limit());
         CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceClass, key)
                 .orCache(() -> entityFactory.getBaseResource(cls, query));
 
