@@ -25,6 +25,8 @@ import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.PropertyNamingStrategies;
 import tools.jackson.databind.json.JsonMapper;
 
+import static skaro.pokeapi.utils.locale.PokeApiConstants.*;
+
 /**
  * Base configuration for PokeApi Reactor client
  *
@@ -34,17 +36,13 @@ import tools.jackson.databind.json.JsonMapper;
 @Configuration
 @Import(PokeApiReactorEndpointConfiguration.class)
 public class PokeApiReactorBaseConfiguration {
-    public static final String CONFIGURATION_PROPERTIES_PREFIX = "skaro.pokeapi";
-    public static final String POKEAPI_WEBCLIENT_BEAN = "pokeapiWebClientBean";
-    public static final String POKEAPI_JSON_DECODER_BEAN = "pokeapiDecoderBean";
-    public static final String POKEAPI_JSON_ENCODER_BEAN = "pokeapiEncoderBean";
 
-    @Bean
-    @Valid
-    @ConfigurationProperties(CONFIGURATION_PROPERTIES_PREFIX)
-    public PokeApiConfigurationProperties pokeApiConfigurationProperties() {
-        return new PokeApiConfigurationProperties();
-    }
+//    @Bean
+//    @Valid
+//    @ConfigurationProperties(CONFIGURATION_PROPERTIES_PREFIX)
+//    public PokeApiConfigurationProperties pokeApiConfigurationProperties() {
+//        return new PokeApiConfigurationProperties();
+//    }
 
     @Bean(POKEAPI_JSON_DECODER_BEAN)
     public JacksonJsonDecoder jsonDecoder() {

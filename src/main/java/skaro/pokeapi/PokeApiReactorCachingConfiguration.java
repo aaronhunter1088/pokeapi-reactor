@@ -10,8 +10,14 @@ import skaro.pokeapi.client.PokeApiClient;
 import skaro.pokeapi.client.PokeApiEntityFactory;
 import skaro.pokeapi.client.ReactiveCachingPokeApiClient;
 
+import static skaro.pokeapi.utils.locale.PokeApiConstants.CACHE_FACADE_BEAN;
+
 /**
- * Configuration for PokeApi Reactor client with caching support
+ * Configuration for PokeApi Reactor client with caching support.
+ *
+ * SuppressWarnings("SpringJavaAutowiringInspection") added
+ * because cacheFacade will warn us that the cacheManager bean is
+ * missing when it is provided later by the consumer.
  *
  * @author skaro
  * @since 0.0.1-SNAPSHOT
@@ -19,7 +25,6 @@ import skaro.pokeapi.client.ReactiveCachingPokeApiClient;
 @Configuration
 @Import(PokeApiReactorBaseConfiguration.class)
 public class PokeApiReactorCachingConfiguration {
-    public static final String CACHE_FACADE_BEAN = "pokeApiReactorCacheFacade";
 
     @Bean(CACHE_FACADE_BEAN)
     public CacheFacade cacheFacade(CacheManager cacheManager) {
