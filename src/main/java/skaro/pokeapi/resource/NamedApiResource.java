@@ -1,89 +1,31 @@
 package skaro.pokeapi.resource;
 
-import java.util.Objects;
+import org.jspecify.annotations.NonNull;
 
 /**
  * A generic type that holds a reference
  * to the name and url of the resource.
  * NamedApiResourceList has results of this type.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
-public class NamedApiResource<T extends PokeApiResource> {
+public record NamedApiResource<T extends PokeApiResource> (
+        String name,
+        String url
+) {
+    /* No-args constructor */
+    public NamedApiResource() { this(null, null); }
 
-    private String name;
-    private String url;
-
-    /**
-     * Get the name of the {@link PokeApiResource}
-     *
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Set the name of the {@link PokeApiResource}
-     *
-     * @param name the name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Get the url of the {@link PokeApiResource}
-     *
-     * @return the url
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * Set the url of the {@link PokeApiResource}
-     *
-     * @param url the url
-     */
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    /**
-     * Returns whether the given object o is
-     * equal to this instance of NamedApiResource
-     *
-     * @param o the object to compare
-     * @return true if equal otherwise false
-     */
     @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof NamedApiResource<?> that)) return false;
-        return Objects.equals(getName(), that.getName()) && Objects.equals(getUrl(), that.getUrl());
-    }
-
-    /**
-     * Returns the hash code of the NamedApiResource
-     *
-     * @return the hash code
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getUrl());
-    }
-
-    /**
-     * Gets the string representation of the NamedApiResource
-     *
-     * @return the string representation
-     */
-    @Override
-    public String toString() {
-        return "NamedApiResource{" +
-                "name='" + name + '\'' +
-                "url='" + url + '\'' +
-                '}';
+    public @NonNull String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("NamedApiResource{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", url='").append(url).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
