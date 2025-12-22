@@ -19,6 +19,9 @@ import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 import java.util.List;
 import java.util.UUID;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 /**
  * Unit tests for ReactiveNonCachingPokeApiClient
  *
@@ -41,7 +44,7 @@ public class ReactiveNonCachingPokeApiClientTest {
     void testGetResource() {
         NamedApiResourceList<Pokemon> resourceList = new NamedApiResourceList<>();
 
-        Mockito.when(entityFactory.getBaseResource(Pokemon.class))
+        when(entityFactory.getBaseResource(Pokemon.class))
                 .thenReturn(Mono.just(resourceList));
 
         StepVerifier.create(pokeApiClient.getResource(Pokemon.class))
@@ -55,7 +58,7 @@ public class ReactiveNonCachingPokeApiClientTest {
         String resourceId = UUID.randomUUID().toString();
         Pokemon pokemon = new Pokemon();
 
-        Mockito.when(entityFactory.getResource(Pokemon.class, resourceId))
+        when(entityFactory.getResource(Pokemon.class, resourceId))
                 .thenReturn(Mono.just(pokemon));
 
         StepVerifier.create(pokeApiClient.getResource(Pokemon.class, resourceId))
@@ -69,7 +72,7 @@ public class ReactiveNonCachingPokeApiClientTest {
         NamedApiResourceList<Pokemon> resourceList = new NamedApiResourceList<>();
         PageQuery query = new PageQuery(1, 1);
 
-        Mockito.when(entityFactory.getBaseResource(Pokemon.class, query))
+        when(entityFactory.getBaseResource(Pokemon.class, query))
                 .thenReturn(Mono.just(resourceList));
 
         StepVerifier.create(pokeApiClient.getResource(Pokemon.class, query))
@@ -82,13 +85,13 @@ public class ReactiveNonCachingPokeApiClientTest {
     void testFollowResource() {
         NamedApiResource<PokemonSpecies> speciesResource = new NamedApiResource<>();
         PokemonSpecies species = new PokemonSpecies();
-        Pokemon pokemon = new Pokemon();
-        pokemon.setSpecies(speciesResource);
+        Pokemon pokemon = mock(Pokemon.class);
+        when(pokemon.species()).thenReturn(speciesResource);
 
         Mockito.when(entityFactory.getNamedResource(speciesResource, PokemonSpecies.class))
                 .thenReturn(Mono.just(species));
 
-        StepVerifier.create(pokeApiClient.followResource(pokemon::getSpecies, PokemonSpecies.class))
+        StepVerifier.create(pokeApiClient.followResource(pokemon::species, PokemonSpecies.class))
                 .expectNext(species)
                 .expectComplete()
                 .verify();
@@ -101,13 +104,13 @@ public class ReactiveNonCachingPokeApiClientTest {
         List<NamedApiResource<PokemonForm>> resourcesList = List.of(formResource1, formResource2);
         PokemonForm form1 = new PokemonForm();
         PokemonForm form2 = new PokemonForm();
-        Pokemon pokemon = new Pokemon();
-        pokemon.setForms(resourcesList);
+        Pokemon pokemon = mock(Pokemon.class);
+        when(pokemon.forms()).thenReturn(resourcesList);
 
-        Mockito.when(entityFactory.getNamedResources(resourcesList, PokemonForm.class))
+        when(entityFactory.getNamedResources(resourcesList, PokemonForm.class))
                 .thenReturn(Flux.fromIterable(List.of(form1, form2)));
 
-        StepVerifier.create(pokeApiClient.followResources(pokemon::getForms, PokemonForm.class))
+        StepVerifier.create(pokeApiClient.followResources(pokemon::forms, PokemonForm.class))
                 .expectNext(form1)
                 .expectNext(form2)
                 .expectComplete()

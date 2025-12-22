@@ -73,8 +73,7 @@ class WebClientEntityFactoryTest {
     @Test
     void testGetResource() throws InterruptedException {
         String resourceEndpoint = "/pokemon";
-        Pokemon pokemon = new Pokemon();
-        pokemon.setName("Mienfoobar");
+        Pokemon pokemon = new Pokemon("Mienfoo");
 
         Mockito.when(registry.getEndpoint(Pokemon.class))
                 .thenReturn(resourceEndpoint);
