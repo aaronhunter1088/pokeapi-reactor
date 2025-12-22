@@ -1,90 +1,56 @@
 package skaro.pokeapi.resource.berry;
 
+import org.jspecify.annotations.NonNull;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.berryflavor.BerryFlavor;
-
-import java.util.Objects;
+import skaro.pokeapi.utils.ToStringFormat;
 
 /**
- * Represents a mapping of a BerryFlavor to its potency for a specific Berry
+ * Represents a mapping of a BerryFlavor to
+ * its potency for a specific Berry.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
  *
- * @author skaro
- * @since 0.0.1-SNAPSHOT
+ * @author michael ball
+ * @since 2.0.0
  */
-public class BerryFlavorMap {
-
-    private Integer potency;
-    private NamedApiResource<BerryFlavor> flavor;
-
-    /**
-     * Get how powerful the referenced flavor is for this berry
-     *
-     * @return potency the potency
-     */
-    public Integer getPotency() {
-        return potency;
-    }
+public record BerryFlavorMap (
+    Integer potency,
+    NamedApiResource<BerryFlavor> flavor
+) {
+    /* No-args constructor */
+    public BerryFlavorMap() { this(null, null); }
 
     /**
-     * Set how powerful the referenced flavor is for this berry
-     *
-     * @param potency the potency
-     */
-    public void setPotency(Integer potency) {
-        this.potency = potency;
-    }
-
-    /**
-     * Get the referenced berry flavor
-     *
-     * @return the {@link BerryFlavor} berry flavor
-     */
-    public NamedApiResource<BerryFlavor> getFlavor() {
-        return flavor;
-    }
-
-    /**
-     * Set the referenced berry flavor
-     *
-     * @param flavor the {@link BerryFlavor} berry flavor
-     */
-    public void setFlavor(NamedApiResource<BerryFlavor> flavor) {
-        this.flavor = flavor;
-    }
-
-    /**
-     * Returns whether the given object o is
-     * equal to this instance of BerryFlavorMap
-     *
-     * @param o the object to compare
-     * @return true if equal otherwise false
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof BerryFlavorMap that)) return false;
-        return Objects.equals(getPotency(), that.getPotency()) && Objects.equals(getFlavor(), that.getFlavor());
-    }
-
-    /**
-     * Returns the hash code of the BerryFlavorMap
-     *
-     * @return the hash code
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(getPotency(), getFlavor());
-    }
-
-    /**
-     * Returns a string representation of the BerryFlavorMap
+     * Returns a string representation
+     * of the BerryFlavorMap.
      *
      * @return the string representation
      */
     @Override
-    public String toString() {
-        return "BerryFlavorMap{" +
-                "potency=" + potency +
-                ", flavor=" + flavor +
-                '}';
+    public @NonNull String toString() {
+        return toString(ToStringFormat.MINIMAL);
+    }
+
+    /**
+     * Returns a string representation of the BerryFlavorMap.
+     *
+     * @param format the desired {@link ToStringFormat} format
+     * @return the string representation
+     */
+    public String toString(ToStringFormat format) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("BerryFlavorMap{");
+        return switch (format) {
+            case MINIMAL,
+                 BASIC,
+                 DETAILED-> {
+                sb.append("potency=").append(potency)
+                .append(", flavor=").append(flavor)
+                .append('}');
+                yield sb.toString();
+            }
+            case DEFAULT -> getClass().getName() + "@" + Integer.toHexString(hashCode());
+        };
     }
 }
