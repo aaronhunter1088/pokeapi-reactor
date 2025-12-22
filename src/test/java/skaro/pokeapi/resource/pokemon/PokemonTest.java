@@ -64,7 +64,7 @@ class PokemonTest
     @ParameterizedTest
     @DisplayName("Test Pokemon toString() method")
     @EnumSource(ToStringFormat.class)
-    void testPokemonToString(ToStringFormat format)
+    void testToString(ToStringFormat format)
     {
         Pokemon pokemon = new Pokemon(150, "Mewtwo", 79, 269, "Green");
 

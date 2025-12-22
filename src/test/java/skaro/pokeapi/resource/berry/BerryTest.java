@@ -65,7 +65,7 @@ public class BerryTest
     @ParameterizedTest
     @DisplayName("Test Berry toString() method")
     @EnumSource(ToStringFormat.class)
-    void testBerryToString(ToStringFormat format)
+    void testToString(ToStringFormat format)
     {
         Berry cheri = new Berry(1, "cheri");
 

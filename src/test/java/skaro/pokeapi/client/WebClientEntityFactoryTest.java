@@ -167,9 +167,10 @@ class WebClientEntityFactoryTest {
         String namedResourceEndpoint = "item";
         Item item = new Item();
         item.setName("Leftovers");
-        NamedApiResource<Item> namedResource = new NamedApiResource<>();
-        namedResource.setUrl(String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, item.getName()));
-
+        NamedApiResource<Item> namedResource = new NamedApiResource<>(
+                item.getName(),
+                String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, item.getName())
+        );
         mockPokeApiServer.enqueue(createMockResponseWithBody(item));
 
         StepVerifier.create(factory.getNamedResource(namedResource, Item.class))
@@ -192,11 +193,14 @@ class WebClientEntityFactoryTest {
         stat2.setName("defense");
         Set<String> resourceIds = new HashSet<>(Set.of(stat1.getName(), stat2.getName()));
 
-        NamedApiResource<Stat> namedResource1 = new NamedApiResource<>();
-        namedResource1.setUrl(String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat1.getName()));
-        NamedApiResource<Stat> namedResource2 = new NamedApiResource<>();
-        namedResource2.setUrl(String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat2.getName()));
-
+        NamedApiResource<Stat> namedResource1 = new NamedApiResource<>(
+                stat1.getName(),
+                String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat1.getName())
+        );
+        NamedApiResource<Stat> namedResource2 = new NamedApiResource<>(
+                stat2.getName(),
+                String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat2.getName())
+        );
         mockPokeApiServer.enqueue(createMockResponseWithBody(stat1));
         mockPokeApiServer.enqueue(createMockResponseWithBody(stat2));
 
@@ -230,13 +234,9 @@ class WebClientEntityFactoryTest {
 
     private NamedApiResourceList<PokeApiResource> createResourceList(List<? extends PokeApiResource> names) {
         List<NamedApiResource<PokeApiResource>> resources = names.stream()
-                .map(pokeApiResource -> {
-                    NamedApiResource<PokeApiResource> resource = new NamedApiResource<>();
-                    resource.setName(pokeApiResource.getName());
-                    return resource;
-                }).collect(Collectors.toList());
-
-
+                .map(pokeApiResource ->
+                        new NamedApiResource<>(pokeApiResource.getName(), null))
+                .collect(Collectors.toList());
         NamedApiResourceList<PokeApiResource> moveResources = new NamedApiResourceList<>();
         moveResources.setResults(resources);
 

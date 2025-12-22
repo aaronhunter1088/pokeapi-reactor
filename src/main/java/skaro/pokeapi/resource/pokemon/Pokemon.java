@@ -149,7 +149,7 @@ public record Pokemon (
     }
 
     /**
-     * Returns a string representation of the Pokemon
+     * Returns a string representation of the Pokemon.
      *
      * @return the string representation
      */
@@ -159,7 +159,7 @@ public record Pokemon (
     }
 
     /**
-     * Returns a string representation of the Pokemon
+     * Returns a string representation of the Pokemon.
      *
      * @param format the desired {@link ToStringFormat} format
      * @return the string representation
