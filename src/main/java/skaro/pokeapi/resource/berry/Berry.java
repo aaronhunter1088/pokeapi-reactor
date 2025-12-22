@@ -72,7 +72,7 @@ public record Berry (
     }
 
     /**
-     * Returns a string representation of the Berry
+     * Returns a string representation of the Berry.
      *
      * @param format the desired {@link ToStringFormat} format
      * @return the string representation
