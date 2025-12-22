@@ -65,7 +65,7 @@ public record WebClientEntityFactory (
     @Override
     public <T extends PokeApiResource> Mono<T> getNamedResource(NamedApiResource<T> resource, Class<T> resourceClass) {
         return webClient.get()
-                .uri(URI.create(resource.getUrl()))
+                .uri(URI.create(resource.url()))
                 .retrieve()
                 .bodyToMono(resourceClass);
     }

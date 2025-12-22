@@ -70,7 +70,7 @@ public record ReactiveCachingPokeApiClient (
     }
 
     private <T extends PokeApiResource> CacheSpec<T> resourceToCacheSpec(NamedApiResource<T> resource, Class<T> cls) {
-        return CacheSpec.get(cls, resource.getName())
+        return CacheSpec.get(cls, resource.name())
                 .orCache(() -> entityFactory.getNamedResource(resource, cls));
     }
 

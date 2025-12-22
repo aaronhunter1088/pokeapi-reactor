@@ -109,7 +109,7 @@ class WebClientEntityFactoryTest {
             assertEquals(2, resources.size());
 
             Set<String> resourceNames = resources.stream()
-                    .map(NamedApiResource::getName)
+                    .map(NamedApiResource::name)
                     .collect(Collectors.toSet());
             Assertions.assertTrue(resourceNames.contains(move1.getName()));
             Assertions.assertTrue(resourceNames.contains(move2.getName()));
@@ -142,7 +142,7 @@ class WebClientEntityFactoryTest {
             assertEquals(2, resources.size());
 
             Set<String> resourceNames = resources.stream()
-                    .map(NamedApiResource::getName)
+                    .map(NamedApiResource::name)
                     .collect(Collectors.toSet());
             Assertions.assertTrue(resourceNames.contains(ability1.getName()));
             Assertions.assertTrue(resourceNames.contains(ability2.getName()));

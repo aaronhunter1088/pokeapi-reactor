@@ -6,11 +6,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.berryflavor.BerryFlavor;
-import skaro.pokeapi.resource.pokemon.Pokemon;
 import skaro.pokeapi.utils.ToStringFormat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static skaro.pokeapi.utils.PokeApiConstants.BERRY_FLAVOR_API_NAME;
+import static skaro.pokeapi.utils.PokeApiConstants.BERRY_FLAVOR_API_URL;
 
 /**
  * Tests for the {@link BerryFlavorMap} resource
@@ -20,9 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  */
 public class BerryFlavorMapTest {
 
-    private static final String BERRY_FLAVOR_NAME = "berry-flavor";
-    private static final String BERRY_FLAVOR_URL = "https://pokeapi.co/api/v2/berry/berry-flavor";
-
     @Test
     @DisplayName("Test BerryFlavorMap is created")
     void testBerryFlavorMapIsCreated()
@@ -31,13 +29,13 @@ public class BerryFlavorMapTest {
         assertNotNull(emptyBerryFlavorMap, "No-args BerryFlavorMap should not be null");
 
         NamedApiResource<BerryFlavor> berryFlavorResource
-                = new NamedApiResource<>(BERRY_FLAVOR_NAME, BERRY_FLAVOR_URL);
+                = new NamedApiResource<>(BERRY_FLAVOR_API_NAME, BERRY_FLAVOR_API_URL);
         BerryFlavorMap berryFlavorMap = new BerryFlavorMap(
                 1, berryFlavorResource);
 
         assertNotNull(berryFlavorMap.toString());
-        assertEquals(BERRY_FLAVOR_NAME, berryFlavorMap.flavor().getName(), "BerryFlavor.name should be berry-flavor");
-        assertEquals(BERRY_FLAVOR_URL, berryFlavorMap.flavor().getUrl(), "BerryFlavor.url may need to be updated");
+        assertEquals(BERRY_FLAVOR_API_NAME, berryFlavorMap.flavor().name(), "BerryFlavor.name should be berry-flavor");
+        assertEquals(BERRY_FLAVOR_API_URL, berryFlavorMap.flavor().url(), "BerryFlavor.url may need to be updated");
     }
 
     @ParameterizedTest
@@ -46,14 +44,14 @@ public class BerryFlavorMapTest {
     void testToString(ToStringFormat format)
     {
         NamedApiResource<BerryFlavor> berryFlavorResource
-                = new NamedApiResource<>(BERRY_FLAVOR_NAME, BERRY_FLAVOR_URL);
+                = new NamedApiResource<>(BERRY_FLAVOR_API_NAME, BERRY_FLAVOR_API_URL);
         BerryFlavorMap berryFlavorMap = new BerryFlavorMap(
                 1, berryFlavorResource);
 
         String detailed = berryFlavorMap.toString(ToStringFormat.DETAILED);
         String defaultWithHash = berryFlavorMap.toString(ToStringFormat.DEFAULT);
         String expectedString = switch (format) {
-            case MINIMAL -> "BerryFlavorMap{potency=1, flavor=NamedApiResource{name='"+BERRY_FLAVOR_NAME+"', url='"+BERRY_FLAVOR_URL+"'}}";
+            case MINIMAL -> "BerryFlavorMap{potency=1, flavor=NamedApiResource{name='"+ BERRY_FLAVOR_API_NAME +"', url='"+ BERRY_FLAVOR_API_URL +"'}}";
             case BASIC -> detailed;
             case DETAILED -> detailed;
             case DEFAULT -> defaultWithHash;

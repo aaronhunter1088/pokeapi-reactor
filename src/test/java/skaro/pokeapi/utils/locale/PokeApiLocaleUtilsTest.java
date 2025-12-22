@@ -29,7 +29,7 @@ class PokeApiLocaleUtilsTest {
 
         Mockito.when(localizable.getNames())
                 .thenReturn(List.of(localizedName));
-        Mockito.when(localizedName.getLanguage().getName())
+        Mockito.when(localizedName.getLanguage().name())
                 .thenReturn(locale);
 
         Optional<Name> result = PokeApiLocaleUtils.getInLocale(localizable, locale);

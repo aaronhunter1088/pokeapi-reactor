@@ -113,7 +113,7 @@ public record Pokemon (
         }
         return moves.stream()
                 .map(skaro.pokeapi.resource.pokemon.PokemonMove::getMove)
-                .map(NamedApiResource::getName)
+                .map(NamedApiResource::name)
                 .sorted()
                 .toList();
     }

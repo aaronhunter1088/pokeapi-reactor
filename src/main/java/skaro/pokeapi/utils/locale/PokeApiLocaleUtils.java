@@ -25,7 +25,7 @@ public record PokeApiLocaleUtils() {
      */
     public static Optional<Name> getInLocale(Localizable localizable, String locale) {
         return localizable.getNames().stream()
-                .filter(name -> name.getLanguage().getName().equalsIgnoreCase(locale))
+                .filter(name -> name.getLanguage().name().equalsIgnoreCase(locale))
                 .findFirst();
     }
 
