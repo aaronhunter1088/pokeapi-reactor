@@ -50,7 +50,7 @@ class PokemonTest
 
     @Test
     @DisplayName("Test Pokemon != 'same' Pokemon")
-    void testHavingSamePokemonSeeThemAsNotEqual()
+    void testHavingSomePokemonNotEqualToSamePokemon()
     {
         Pokemon tommy = new Pokemon(25, "Pikachu", 16, 13);
 
