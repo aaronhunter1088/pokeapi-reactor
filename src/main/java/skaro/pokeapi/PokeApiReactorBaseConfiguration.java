@@ -89,7 +89,7 @@ public class PokeApiReactorBaseConfiguration {
     }
 
     @Bean
-    public PokeApiEntityFactory pokeApiEntityFactory(@Qualifier(POKEAPI_WEBCLIENT_BEAN) final WebClient webClient,
+    public PokeApiEntityFactory pokeApiEntityFactory(final WebClient webClient,
                                                      final PokeApiEndpointRegistry registry) {
         return new WebClientEntityFactory(webClient, registry);
     }
