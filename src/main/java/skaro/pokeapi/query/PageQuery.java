@@ -1,5 +1,7 @@
 package skaro.pokeapi.query;
 
+import org.jspecify.annotations.NonNull;
+
 /**
  * Represents a pagination query with limit and offset
  * Existed with @author skaro @since 0.0.1-SNAPSHOT
@@ -19,7 +21,7 @@ public record PageQuery (
      * @return the string representation
      */
     @Override
-    public String toString() {
+    public @NonNull String toString() {
         return "PageQuery{" +
                 "limit=" + limit +
                 ", offset=" + offset +
