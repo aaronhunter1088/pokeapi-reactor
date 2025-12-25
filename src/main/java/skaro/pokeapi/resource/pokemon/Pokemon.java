@@ -9,9 +9,11 @@ import skaro.pokeapi.resource.VersionGameIndex;
 import skaro.pokeapi.resource.pokemonform.PokemonForm;
 import skaro.pokeapi.resource.pokemonspecies.PokemonSpecies;
 import skaro.pokeapi.utils.ToStringFormat;
+import tools.jackson.databind.json.JsonMapper;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Represents the Pokemon resource.
@@ -55,15 +57,18 @@ public record Pokemon (
         List<String> moveNames
 ) implements PokeApiResource, Comparable<Pokemon> {
 
-    /* Construct with another Pokemon, changing name, nickname, height, weight, and color */
-    public Pokemon(Pokemon previous, String name, String nickname, Integer height, Integer weight, String color) {
-        this(previous.id, (name != null ? name : previous.name), previous.baseExperience, previous.pokemonCries,
-                (height != null ? height : previous.height), previous.isDefault, previous.order, (weight != null ? weight : previous.weight),
-                previous.abilities, previous.pastAbilities, previous.forms, previous.gameIndices, previous.heldItems,
-                previous.locationAreaEncounters, previous.moves, previous.sprites, previous.species, previous.stats, previous.types,
-                previous.pastTypes, (nickname != null ? nickname : previous.nickname), previous.type, previous.defaultImage,
-                previous.officialImage, previous.gifImage, previous.shinyImage, (color != null ? color : previous.color),
-                previous.descriptions, previous.description, previous.locations, previous.moveNames);
+    /* Construct with another Pokemon, changing whatever is provided in the map */
+    @SuppressWarnings("unchecked")
+    public static Pokemon from(Pokemon previous, Map<String, Object> updates) {
+        JsonMapper mapper = JsonMapper.builder().build();
+
+        Map<String, Object> newFromBase = previous != null
+                ? mapper.convertValue(previous, Map.class)
+                : new java.util.HashMap<>();
+
+        if (updates != null && !updates.isEmpty()) newFromBase.putAll(updates);
+
+        return mapper.convertValue(newFromBase, Pokemon.class);
     }
     /* Construct with id, name, nickname, height, weight, and color */
     public Pokemon(Integer id, String name, String nickname, Integer height, Integer weight, String color) { this(id, name, null, null, height, null, null, weight, null, null, null, null, null, null, null, null, null, null, null, null, nickname, null, null, null, null, null, color, null, null, null, null); }
@@ -107,7 +112,7 @@ public record Pokemon (
      *
      * @return the moveNames
      */
-    public List<String> getPokemonMoveNames() {
+    public List<String> pokemonMoveNames() {
         if (moves == null) {
             return List.of();
         }
@@ -123,7 +128,7 @@ public record Pokemon (
      *
      * @return the capitalized color
      */
-    public String getCapitalizedColor() {
+    public String capitalizedColor() {
         if (color == null || color.isEmpty()) {
             return "";
         }
@@ -135,7 +140,7 @@ public record Pokemon (
      *
      * @return the height in inches
      */
-    public String getHeightInInches() {
+    public String heightInInches() {
         return String.format("%.0f", height != null ? height * 3.93701 : 0);
     }
 
@@ -144,7 +149,7 @@ public record Pokemon (
      *
      * @return the weight in pounds
      */
-    public String getWeightInPounds() {
+    public String weightInPounds() {
         return String.format("%.0f", weight != null ? weight * 0.220462 : 0);
     }
 

@@ -4,10 +4,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import skaro.pokeapi.utils.ToStringFormat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,10 +31,10 @@ class PokemonTest
         assertEquals(1, pokemon.getId(), "Pokemon ID should be 1");
         assertEquals("Bulbasaur", pokemon.getName(), "Pokemon name should be Bulbasaur");
         assertEquals(7, pokemon.height(), "Pokemon height should be 7");
-        assertNotNull(pokemon.getHeightInInches());
+        assertNotNull(pokemon.heightInInches());
         assertEquals(69, pokemon.weight(), "Pokemon weight should be 69");
-        assertNotNull(pokemon.getWeightInPounds());
-        assertNotNull(pokemon.getPokemonMoveNames());
+        assertNotNull(pokemon.weightInPounds());
+        assertNotNull(pokemon.pokemonMoveNames());
     }
 
     @Test
@@ -80,7 +82,7 @@ class PokemonTest
         };
 
         assertEquals(expectedString, pokemon.toString(format));
-        assertEquals("Green", pokemon.getCapitalizedColor());
+        assertEquals("Green", pokemon.capitalizedColor());
     }
 
     @Test
@@ -109,5 +111,29 @@ class PokemonTest
         assertEquals(flame, pkmnList.get(0), "Flame should be first after sorting by ID and name");
         assertEquals(charmander, pkmnList.get(1), "Charmander should be second after sorting by ID and name");
         assertEquals(charmeleon, pkmnList.get(2), "Charmeleon should be third after sorting by ID and name");
+    }
+
+    @ParameterizedTest
+    @DisplayName("Test Creating Pokemon from")
+    @MethodSource("getParty")
+    void testCreatingPokemonFrom(Pokemon partyPokemon)
+    {
+        assertNotNull(partyPokemon);
+        assertNull(partyPokemon.nickname(), "Pokemon nickname should be null");
+
+        Pokemon pokemon = Pokemon.from(partyPokemon, Map.of("nickname", "Boss"));
+
+        assertEquals(partyPokemon.getId(), pokemon.getId(), "Pokemon ID should match");
+        assertEquals("Boss", pokemon.nickname(), "Pokemon nickname should be 'Boss'");
+    }
+    private static List<Pokemon> getParty()
+    {
+        List<Pokemon> party = new ArrayList<>();
+        party.add(new Pokemon(99, "Kingler", 13, 60));
+        party.add(new Pokemon(4, "Charmander", 6, 85));
+        party.add(new Pokemon(7, "Squirtle", 5, 90));
+        party.add(new Pokemon(25, "Pikachu", 16, 13));
+        party.add(new Pokemon(169, "Crobat", 18, 750));
+        return party;
     }
 }
