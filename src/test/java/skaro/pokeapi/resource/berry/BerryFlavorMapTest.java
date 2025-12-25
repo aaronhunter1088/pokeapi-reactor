@@ -10,7 +10,7 @@ import skaro.pokeapi.utils.ToStringFormat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static skaro.pokeapi.utils.PokeApiConstants.BERRY_FLAVOR_API_NAME;
+import static skaro.pokeapi.utils.PokeApiConstants.BERRY_FLAVOR_API;
 import static skaro.pokeapi.utils.PokeApiConstants.BERRY_FLAVOR_API_URL;
 
 /**
@@ -19,8 +19,8 @@ import static skaro.pokeapi.utils.PokeApiConstants.BERRY_FLAVOR_API_URL;
  * @author michael ball
  * @since 2.0.0
  */
-public class BerryFlavorMapTest {
-
+public class BerryFlavorMapTest
+{
     @Test
     @DisplayName("Test BerryFlavorMap is created")
     void testBerryFlavorMapIsCreated()
@@ -29,12 +29,12 @@ public class BerryFlavorMapTest {
         assertNotNull(emptyBerryFlavorMap, "No-args BerryFlavorMap should not be null");
 
         NamedApiResource<BerryFlavor> berryFlavorResource
-                = new NamedApiResource<>(BERRY_FLAVOR_API_NAME, BERRY_FLAVOR_API_URL);
+                = new NamedApiResource<>(BERRY_FLAVOR_API, BERRY_FLAVOR_API_URL);
         BerryFlavorMap berryFlavorMap = new BerryFlavorMap(
                 1, berryFlavorResource);
 
         assertNotNull(berryFlavorMap.toString());
-        assertEquals(BERRY_FLAVOR_API_NAME, berryFlavorMap.flavor().name(), "BerryFlavor.name should be berry-flavor");
+        assertEquals(BERRY_FLAVOR_API, berryFlavorMap.flavor().name(), "BerryFlavor.name should be berry-flavor");
         assertEquals(BERRY_FLAVOR_API_URL, berryFlavorMap.flavor().url(), "BerryFlavor.url may need to be updated");
     }
 
@@ -44,14 +44,14 @@ public class BerryFlavorMapTest {
     void testToString(ToStringFormat format)
     {
         NamedApiResource<BerryFlavor> berryFlavorResource
-                = new NamedApiResource<>(BERRY_FLAVOR_API_NAME, BERRY_FLAVOR_API_URL);
+                = new NamedApiResource<>(BERRY_FLAVOR_API, BERRY_FLAVOR_API_URL);
         BerryFlavorMap berryFlavorMap = new BerryFlavorMap(
                 1, berryFlavorResource);
 
         String detailed = berryFlavorMap.toString(ToStringFormat.DETAILED);
         String defaultWithHash = berryFlavorMap.toString(ToStringFormat.DEFAULT);
         String expectedString = switch (format) {
-            case MINIMAL -> "BerryFlavorMap{potency=1, flavor=NamedApiResource{name='"+ BERRY_FLAVOR_API_NAME +"', url='"+ BERRY_FLAVOR_API_URL +"'}}";
+            case MINIMAL -> "BerryFlavorMap{potency=1, flavor=NamedApiResource{name='"+ BERRY_FLAVOR_API +"', url='"+ BERRY_FLAVOR_API_URL +"'}}";
             case BASIC -> detailed;
             case DETAILED -> detailed;
             case DEFAULT -> defaultWithHash;

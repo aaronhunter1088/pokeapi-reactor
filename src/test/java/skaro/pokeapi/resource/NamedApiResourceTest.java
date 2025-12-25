@@ -25,7 +25,7 @@ public class NamedApiResourceTest {
         assertNotNull(unknownResource.toString(), "NamedApiResource toString() should not be null");
 
         NamedApiResource<Pokemon> pokemonResource
-                = new NamedApiResource<>(POKEMON_API_NAME, POKEMON_API_URL);
+                = new NamedApiResource<>(POKEMON_API, POKEMON_API_URL);
         assertNotNull(pokemonResource, "NamedApiResource should not be null");
         assertNotNull(pokemonResource.toString(), "NamedApiResource toString() should not be null");
     }
