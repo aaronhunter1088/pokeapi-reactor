@@ -28,17 +28,19 @@ import java.util.stream.Collectors;
  */
 public record ReactiveCacheManagerCacheFacade (
         CacheManager cacheManager
-) implements CacheFacade {
-
+) implements CacheFacade
+{
     private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Override
-    public <T extends PokeApiResource> Mono<T> get(CacheSpec<T> cacheSpec) {
+    public <T extends PokeApiResource> Mono<T> get(CacheSpec<T> cacheSpec)
+    {
         return getOrCache(cacheSpec.type(), cacheSpec.key(), cacheSpec.monoSupplier());
     }
 
     @Override
-    public <T extends PokeApiResource> Flux<T> getMany(List<CacheSpec<T>> cacheSpecs) {
+    public <T extends PokeApiResource> Flux<T> getMany(List<CacheSpec<T>> cacheSpecs)
+    {
         List<Mono<T>> resourceMonos = cacheSpecs.stream()
                 .map(this::get)
                 .collect(Collectors.toList());
@@ -46,13 +48,15 @@ public record ReactiveCacheManagerCacheFacade (
         return Flux.merge(resourceMonos);
     }
 
-    private <T extends PokeApiResource> Mono<T> getOrCache(Class<T> cls, String resourceName, Supplier<Mono<T>> onCacheMiss) {
+    private <T extends PokeApiResource> Mono<T> getOrCache(Class<T> cls, String resourceName, Supplier<Mono<T>> onCacheMiss)
+    {
         return CacheMono.lookup(key -> checkCache(cls, key), resourceName)
                 .onCacheMissResume(onCacheMiss)
                 .andWriteWith((key, value) -> writeToCache(cls, key, value));
     }
 
-    private <T extends PokeApiResource> Mono<Signal<? extends T>> checkCache(Class<T> cls, String key) {
+    private <T extends PokeApiResource> Mono<Signal<? extends T>> checkCache(Class<T> cls, String key)
+    {
         String cacheName = getCacheNameForClassResource(cls);
         Optional<Signal<? extends T>> resourceFromCache = Optional.ofNullable(cacheManager.getCache(cacheName))
                 .map(cache -> cache.get(key))
@@ -62,7 +66,8 @@ public record ReactiveCacheManagerCacheFacade (
         return Mono.<Signal<? extends T>>justOrEmpty(resourceFromCache);
     }
 
-    private <T extends PokeApiResource> Mono<Void> writeToCache(Class<T> cls, String key, Signal<? extends T> value) {
+    private <T extends PokeApiResource> Mono<Void> writeToCache(Class<T> cls, String key, Signal<? extends T> value)
+    {
         String cacheName = getCacheNameForClassResource(cls);
         Consumer<Cache> writeToCache = cache -> cache.put(key, value);
         Runnable logCacheFailure = () -> LOG.warn("Cache '{}' does not exist. Could not cache PokeApi resource. Please ensure cache '{}' exists or allow lazy creation of caches.",
@@ -75,7 +80,8 @@ public record ReactiveCacheManagerCacheFacade (
         });
     }
 
-    private <T extends PokeApiResource> String getCacheNameForClassResource(Class<T> resourceClass) {
+    private <T extends PokeApiResource> String getCacheNameForClassResource(Class<T> resourceClass)
+    {
         return resourceClass.getName();
     }
 

@@ -105,7 +105,7 @@ class WebClientEntityFactoryTest {
         mockPokeApiServer.enqueue(createMockResponseWithBody(resourceListResponse));
 
         Consumer<NamedApiResourceList<Move>> assertListHasNames = resourceList -> {
-            List<NamedApiResource<Move>> resources = resourceList.getResults();
+            List<NamedApiResource<Move>> resources = resourceList.results();
             assertEquals(2, resources.size());
 
             Set<String> resourceNames = resources.stream()
@@ -138,7 +138,7 @@ class WebClientEntityFactoryTest {
         mockPokeApiServer.enqueue(createMockResponseWithBody(resourceListResponse));
 
         Consumer<NamedApiResourceList<Ability>> assertListHasNames = resourceList -> {
-            List<NamedApiResource<Ability>> resources = resourceList.getResults();
+            List<NamedApiResource<Ability>> resources = resourceList.results();
             assertEquals(2, resources.size());
 
             Set<String> resourceNames = resources.stream()
@@ -237,10 +237,9 @@ class WebClientEntityFactoryTest {
                 .map(pokeApiResource ->
                         new NamedApiResource<>(pokeApiResource.getName(), null))
                 .collect(Collectors.toList());
-        NamedApiResourceList<PokeApiResource> moveResources = new NamedApiResourceList<>();
-        moveResources.setResults(resources);
-
-        return moveResources;
+        return new NamedApiResourceList<>(
+                resources.size(), null, null, resources
+        );
     }
 
 }
