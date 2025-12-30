@@ -1,13 +1,17 @@
 package skaro.pokeapi.resource.ability;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.jspecify.annotations.NonNull;
 import skaro.pokeapi.resource.Name;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.PokeApiResource;
 import skaro.pokeapi.resource.VerboseEffect;
+import skaro.pokeapi.resource.berry.Berry;
 import skaro.pokeapi.resource.generation.Generation;
+import skaro.pokeapi.utils.ToStringFormat;
 import skaro.pokeapi.utils.locale.Localizable;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,29 +26,28 @@ import java.util.Objects;
 public record Ability (
     Integer id,
     String name,
-    @JsonProperty("is_main_series")
-    Boolean mainSeries,
+    @JsonProperty("is_main_series") Boolean mainSeries,
     NamedApiResource<Generation> generation,
     List<Name> names,
-    @JsonProperty("effect_entries")
-    List<VerboseEffect> effectEntries,
-    @JsonProperty("effect_changes")
-    List<AbilityEffectChange> effectChanges,
-    @JsonProperty("flavor_text_entries")
-    List<AbilityFlavorText> flavorTextEntries,
+    @JsonProperty("effect_entries") List<VerboseEffect> effectEntries,
+    @JsonProperty("effect_changes") List<AbilityEffectChange> effectChanges,
+    @JsonProperty("flavor_text_entries") List<AbilityFlavorText> flavorTextEntries,
     List<AbilityPokemon> pokemon
-) implements PokeApiResource, Localizable {
+) implements PokeApiResource, Localizable, Comparable<Ability> {
 
-    public Ability(String name) { this(null, name, null, null, null, null, null, null, null); }
+    /* Constructor with id and name */
+    public Ability(Integer id, String name) { this(id, name, null, null, null, null, null, null, null); }
+    /* Constructor with name */
+    public Ability(String name) { this(null, name); }
+    /* No-args constructor */
+    public Ability() { this(null); }
 
     /**
      * Get the id
      * @return the id
      */
     @Override
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
     /**
      * Get the name for this resource
@@ -65,49 +68,66 @@ public record Ability (
     }
 
     /**
-     * Returns whether the given object o is
-     * equal to this instance of Ability
-     *
-     * @param o the object to compare
-     * @return true if equal otherwise false
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Ability ability)) return false;
-        return Objects.equals(id, ability.id) && Objects.equals(name, ability.name) && Objects.equals(mainSeries, ability.mainSeries)
-                && Objects.equals(generation, ability.generation) && Objects.equals(names, ability.names)
-                && Objects.equals(effectEntries, ability.effectEntries) && Objects.equals(effectChanges, ability.effectChanges)
-                && Objects.equals(flavorTextEntries, ability.flavorTextEntries) && Objects.equals(pokemon, ability.pokemon);
-    }
-
-    /**
-     * Returns the hash code of the Ability
-     *
-     * @return the hash code
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, mainSeries, generation, name, effectEntries,
-                effectChanges, flavorTextEntries, pokemon);
-    }
-
-    /**
      * Returns a string representation of the Ability
      *
      * @return the string representation
      */
     @Override
-    public String toString() {
-        return "Ability{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", isMainSeries=" + mainSeries +
-                ", generation=" + generation +
-                ", names=" + names +
-                ", effectEntries=" + effectEntries +
-                ", effectChanges=" + effectChanges +
-                ", flavorTextEntries=" + flavorTextEntries +
-                ", pokemon=" + pokemon +
-                '}';
+    public @NonNull String toString() {
+        return toString(ToStringFormat.MINIMAL);
+    }
+
+    /**
+     * Returns a string representation of the Ability.
+     *
+     * @param format the desired {@link ToStringFormat} format
+     * @return the string representation
+     */
+    public String toString(ToStringFormat format) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Ability{");
+        return switch (format) {
+            case MINIMAL -> {
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
+                .append('}');
+                yield sb.toString();
+            }
+            case BASIC -> {
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
+                .append(", generation=").append(generation)
+                .append(", effectEntries=").append(effectEntries)
+                .append('}');
+                yield sb.toString();
+            }
+            case DETAILED -> {
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
+                .append(", mainSeries=").append(mainSeries)
+                .append(", generation=").append(generation)
+                .append(", names=").append(getNames())
+                .append(", effectEntries=").append(effectEntries)
+                .append(", effectChanges=").append(effectChanges)
+                .append(", flavorTextEntries=").append(flavorTextEntries)
+                .append(", pokemon=").append(pokemon)
+                .append('}');
+                yield sb.toString();
+            }
+            case DEFAULT -> getClass().getName() + "@" + Integer.toHexString(hashCode());
+        };
+    }
+
+    /**
+     * Compares this id to other ability's id.
+     *
+     * @param other the other ability to be compared.
+     * @return comparison result
+     */
+    @Override
+    public int compareTo(@NonNull Ability other) {
+        Comparator<Ability> cmp = Comparator
+                .comparing(Ability::getId, Comparator.nullsFirst(Integer::compareTo));
+        return cmp.compare(this, other);
     }
 }
