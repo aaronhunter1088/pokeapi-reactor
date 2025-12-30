@@ -19,31 +19,35 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author michael ball
  * @since 2.0.0
  */
+@SuppressWarnings("NonAsciiCharacters") // for usage of: é
 class PokemonTest
 {
     @Test
-    @DisplayName("Test Pokemon is created")
-    void testPokemonIsCreated()
+    @DisplayName("Test Pokémon is created")
+    void testPokémonIsCreated()
     {
-        Pokemon pokemon = new Pokemon(1, "Bulbasaur", 7, 69);
+        Pokemon pokemon = new Pokemon(1, "Bulbasaur", 7, 69, "Green");
 
         assertNotNull(pokemon.toString());
-        assertEquals(1, pokemon.getId(), "Pokemon ID should be 1");
-        assertEquals("Bulbasaur", pokemon.getName(), "Pokemon name should be Bulbasaur");
-        assertEquals(7, pokemon.height(), "Pokemon height should be 7");
+        assertEquals(1, pokemon.getId(), "Pokémon ID should be 1");
+        assertEquals("Bulbasaur", pokemon.getName(), "Pokémon name should be Bulbasaur");
+        assertEquals(7, pokemon.height(), "Pokémon height should be 7");
         assertNotNull(pokemon.heightInInches());
-        assertEquals(69, pokemon.weight(), "Pokemon weight should be 69");
+        assertEquals(69, pokemon.weight(), "Pokémon weight should be 69");
         assertNotNull(pokemon.weightInPounds());
         assertNotNull(pokemon.pokemonMoveNames());
+        assertEquals("Green", pokemon.capitalizedColor());
+        assertEquals("28", pokemon.heightInInches(), "Pokémon height in inches should be 28");
+        assertEquals("15", pokemon.weightInPounds(), "Pokémon weight in pounds should be approximately 15");
     }
 
     @Test
-    @DisplayName("Test Pokemon != another Pokemon")
-    void testPokemonIsNotEqualToAnotherPokemon()
+    @DisplayName("Test Pokémon != another Pokémon")
+    void testPokémonIsNotEqualToAnotherPokemon()
     {
-        Pokemon pichu = new Pokemon(172, "Pichu", 12, 4);
+        Pokemon pichu = new Pokemon();
 
-        Pokemon pikachu = new Pokemon(25, "Pikachu", 16, 13);
+        Pokemon pikachu = new Pokemon("Pikachu");
 
         assertNotNull(pichu);
         assertNotNull(pikachu);
@@ -51,8 +55,8 @@ class PokemonTest
     }
 
     @Test
-    @DisplayName("Test Pokemon != 'same' Pokemon")
-    void testHavingSomePokemonNotEqualToSamePokemon()
+    @DisplayName("Test Pokémon != 'same' Pokémon")
+    void testPokémonNotEqualToSamePokemon()
     {
         Pokemon tommy = new Pokemon(25, "Pikachu", 16, 13);
 
@@ -64,7 +68,7 @@ class PokemonTest
     }
 
     @ParameterizedTest
-    @DisplayName("Test Pokemon toString() method")
+    @DisplayName("Test Pokémon toString() method")
     @EnumSource(ToStringFormat.class)
     void testToString(ToStringFormat format)
     {
@@ -75,23 +79,22 @@ class PokemonTest
         String defaultWithHash = pokemon.toString(ToStringFormat.DEFAULT);
 
         String expectedString = switch (format) {
-            case MINIMAL -> "Pokemon{id=150, name='Mewtwo'}";
+            case MINIMAL -> "Pokémon{id=150, name='Mewtwo'}";
             case BASIC -> basic;
             case DETAILED -> detailed;
             case DEFAULT -> defaultWithHash;
         };
 
         assertEquals(expectedString, pokemon.toString(format));
-        assertEquals("Green", pokemon.capitalizedColor());
     }
 
     @Test
-    @DisplayName("Test How Pokemon Are Compared")
-    void testHowPokemonAreCompared()
+    @DisplayName("Test How Pokémon Are Compared")
+    void testHowPokémonAreCompared()
     {
-        Pokemon charmander = new Pokemon(4, "Charmander", 6, 85);
+        Pokemon charmander = new Pokemon(4, "Charmander");
 
-        Pokemon charmeleon = new Pokemon(5, "Charmeleon", 11, 190);
+        Pokemon charmeleon = new Pokemon(5, "Charmeleon");
 
         List<Pokemon> pkmnList = new ArrayList<>();
         pkmnList.add(charmeleon);
@@ -103,7 +106,7 @@ class PokemonTest
         assertEquals(charmander, pkmnList.get(0), "Charmander should be first after sorting by ID");
         assertEquals(charmeleon, pkmnList.get(1), "Charmeleon should be second after sorting by ID");
 
-        Pokemon flame = new Pokemon(4, "Charmander", "Flame", 5, 65);
+        Pokemon flame = new Pokemon(4, "Charmander", "Flame");
 
         pkmnList.add(flame);
         pkmnList.sort(Pokemon::compareTo);
@@ -114,17 +117,26 @@ class PokemonTest
     }
 
     @ParameterizedTest
-    @DisplayName("Test Creating Pokemon from")
+    @DisplayName("Test Adjusting Pokémon from Another Pokémon")
     @MethodSource("getParty")
-    void testCreatingPokemonFrom(Pokemon partyPokemon)
+    void testAdjustingPokémonFrom(Pokemon partyPokémon)
     {
-        assertNotNull(partyPokemon);
-        assertNull(partyPokemon.nickname(), "Pokemon nickname should be null");
+        assertNotNull(partyPokémon);
+        assertNull(partyPokémon.nickname(), "Pokémon nickname should be null");
+        int id = partyPokémon.getId();
+        String originalName = partyPokémon.getName();
+        int originalHeight = partyPokémon.height();
+        int originalWeight = partyPokémon.weight();
 
-        Pokemon pokemon = Pokemon.from(partyPokemon, Map.of("nickname", "Boss"));
+        // Pokémon.setNickname no longer works since Pokémon is immutable
+        // so we use from() to recreate a new Pokémon with the desired nickname
+        Pokemon updated = Pokemon.from(partyPokémon, Map.of("nickname", "Boss"));
 
-        assertEquals(partyPokemon.getId(), pokemon.getId(), "Pokemon ID should match");
-        assertEquals("Boss", pokemon.nickname(), "Pokemon nickname should be 'Boss'");
+        assertEquals("Boss", updated.nickname(), "Pokémon nickname should be 'Boss'");
+        assertEquals(partyPokémon.getId(), updated.getId(), "Pokémon ID should match");
+        assertEquals(originalName, updated.getName(), "Pokémon name should match");
+        assertEquals(originalHeight, updated.height(), "Pokémon height should match");
+        assertEquals(originalWeight, updated.weight(), "Pokémon weight should match");
     }
     private static List<Pokemon> getParty()
     {

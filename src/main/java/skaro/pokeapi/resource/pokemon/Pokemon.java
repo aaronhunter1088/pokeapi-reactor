@@ -55,9 +55,9 @@ public record Pokemon (
         String description,
         List<String> locations,
         List<String> moveNames
-) implements PokeApiResource, Comparable<Pokemon> {
-
-    /* Construct with another Pokemon, changing whatever is provided in the map */
+) implements PokeApiResource, Comparable<Pokemon>
+{
+    /* Construct from another Pokemon, changing whatever is provided in the map */
     @SuppressWarnings("unchecked")
     public static Pokemon from(Pokemon previous, Map<String, Object> updates) {
         JsonMapper mapper = JsonMapper.builder().build();
@@ -117,7 +117,7 @@ public record Pokemon (
             return List.of();
         }
         return moves.stream()
-                .map(skaro.pokeapi.resource.pokemon.PokemonMove::getMove)
+                .map(PokemonMove::getMove)
                 .map(NamedApiResource::name)
                 .sorted()
                 .toList();
@@ -171,7 +171,7 @@ public record Pokemon (
      */
     public String toString(ToStringFormat format) {
         StringBuilder sb = new StringBuilder();
-        sb.append("Pokemon{");
+        sb.append("Pokémon{");
         return switch (format) {
             case MINIMAL -> {
                 sb.append("id=").append(id)
