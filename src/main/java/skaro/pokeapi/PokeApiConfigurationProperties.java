@@ -1,6 +1,6 @@
 package skaro.pokeapi;
 
-import jakarta.validation.constraints.NotNull;
+import org.jspecify.annotations.NonNull;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,13 +16,12 @@ import static skaro.pokeapi.utils.PokeApiConstants.CONFIGURATION_PROPERTIES_PREF
  */
 @Configuration
 @ConfigurationProperties(CONFIGURATION_PROPERTIES_PREFIX)
-public class PokeApiConfigurationProperties {
-
-    @NotNull
+public class PokeApiConfigurationProperties
+{
     private URI baseUri;
     private int maxBytesToBuffer = 565_000;
 
-    public URI getBaseUri() {
+    public @NonNull URI getBaseUri() {
         return baseUri;
     }
 
