@@ -82,22 +82,22 @@ public record Berry (
         sb.append("Berry{");
         return switch (format) {
             case MINIMAL -> {
-                sb.append("id=").append(id)
-                .append(", name='").append(name).append('\'')
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
                 .append('}');
                 yield sb.toString();
             }
             case BASIC -> {
-                sb.append("id=").append(id)
-                .append(", name='").append(name).append('\'')
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
                 .append(", growthTime=").append(growthTime)
                 .append(", size=").append(size)
                 .append('}');
                 yield sb.toString();
             }
             case DETAILED -> {
-                sb.append("id=").append(id)
-                .append(", name='").append(name).append('\'')
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
                 .append(", growthTime=").append(growthTime)
                 .append(", maxHarvest=").append(maxHarvest)
                 .append(", naturalGiftPower=").append(naturalGiftPower)

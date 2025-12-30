@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 /**
- * Tests for the {@link skaro.pokeapi.resource.berry.Berry} resource
+ * Tests for the {@link Berry} resource
  *
  * @author michael ball
  * @since 2.0.0
@@ -27,13 +27,18 @@ public class BerryTest
     void testBerryIsCreated()
     {
         Berry emptyBerry = new Berry();
-        assertNotNull(emptyBerry, "No-args Berry should not be null");
+        assertNotNull(emptyBerry, "Expected emptyBerry to not be null");
 
-        Berry berry = new Berry(1, "cheri");
+        Berry cheri = new Berry("cheri");
+        assertNotNull(cheri.toString());
+        assertEquals(null, cheri.getId(), "Berry ID should be null");
+        assertEquals("cheri", cheri.getName(), "Berry name should be cheri");
 
-        assertNotNull(berry.toString());
-        assertEquals(1, berry.getId(), "Berry ID should be 1");
-        assertEquals("cheri", berry.getName(), "Berry name should be cheri");
+        Berry chesto = new Berry(2, "chesto");
+        assertNotNull(chesto.toString());
+        assertEquals(2, chesto.getId(), "Berry ID should be 1");
+        assertEquals("chesto", chesto.getName(), "Berry name should be chesto");
+
     }
 
     @Test
@@ -41,8 +46,7 @@ public class BerryTest
     void testBerryIsNotEqualToAnotherBerry()
     {
         Berry cheri = new Berry(1, "cheri");
-
-        Berry chesto = new Berry(1, "chesto");
+        Berry chesto = new Berry(2, "chesto");
 
         assertNotNull(cheri);
         assertNotNull(chesto);
@@ -54,7 +58,6 @@ public class BerryTest
     void testHavingSomeBerryNotEqualToSameBerry()
     {
         Berry cheri = new Berry(1, "cheri");
-
         Berry chesto = new Berry(1, "chesto");
 
         assertNotNull(cheri);
@@ -88,15 +91,14 @@ public class BerryTest
     void testHowBerriesAreCompared()
     {
         Berry cheri = new Berry(1, "cheri");
-
         Berry chesto = new Berry(2, "chesto");
 
         List<Berry> berryList = new ArrayList<>();
         berryList.add(chesto);
         berryList.add(cheri);
 
-        assertEquals(chesto, berryList.get(0), "chesto should be first after sorting by ID");
-        assertEquals(cheri, berryList.get(1), "cheri should be second after sorting by ID");
+        assertEquals(chesto, berryList.get(0), "chesto should be first before sorting by ID");
+        assertEquals(cheri, berryList.get(1), "cheri should be second before sorting by ID");
 
         //berryList.sort(Comparator.comparingInt(Berry::getId));
         berryList.sort(Berry::compareTo);
@@ -111,6 +113,6 @@ public class BerryTest
 
         assertEquals(cheri, berryList.get(0), "cheri should now be first after sorting by ID");
         assertEquals(chesto, berryList.get(1), "chesto should now be second after sorting by ID");
-        assertEquals(pecha, berryList.get(2), "pecha should be third after sorting by ID and name");
+        assertEquals(pecha, berryList.get(2), "pecha should be third after sorting by ID");
     }
 }
