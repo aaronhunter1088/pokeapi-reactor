@@ -46,7 +46,6 @@ class PokemonTest
     void testPokémonIsNotEqualToAnotherPokemon()
     {
         Pokemon pichu = new Pokemon();
-
         Pokemon pikachu = new Pokemon("Pikachu");
 
         assertNotNull(pichu);
@@ -59,7 +58,6 @@ class PokemonTest
     void testPokémonNotEqualToSamePokemon()
     {
         Pokemon tommy = new Pokemon(25, "Pikachu", 16, 13);
-
         Pokemon jimmy = new Pokemon(25, "Pikachu", 16, 13);
 
         assertNotNull(tommy);
@@ -93,27 +91,29 @@ class PokemonTest
     void testHowPokémonAreCompared()
     {
         Pokemon charmander = new Pokemon(4, "Charmander");
-
         Pokemon charmeleon = new Pokemon(5, "Charmeleon");
 
         List<Pokemon> pkmnList = new ArrayList<>();
         pkmnList.add(charmeleon);
         pkmnList.add(charmander);
 
+        assertEquals(charmeleon, pkmnList.get(0), "charmeleon should be first before sorting by ID");
+        assertEquals(charmander, pkmnList.get(1), "charmander should be second before sorting by ID");
+
         //pkmnList.sort(Comparator.comparingInt(Pokemon::getId));
         pkmnList.sort(Pokemon::compareTo);
 
-        assertEquals(charmander, pkmnList.get(0), "Charmander should be first after sorting by ID");
-        assertEquals(charmeleon, pkmnList.get(1), "Charmeleon should be second after sorting by ID");
+        assertEquals(charmander, pkmnList.get(0), "charmander should be first after sorting by ID");
+        assertEquals(charmeleon, pkmnList.get(1), "charmeleon should be second after sorting by ID");
 
         Pokemon flame = new Pokemon(4, "Charmander", "Flame");
 
         pkmnList.add(flame);
         pkmnList.sort(Pokemon::compareTo);
 
-        assertEquals(flame, pkmnList.get(0), "Flame should be first after sorting by ID and name");
-        assertEquals(charmander, pkmnList.get(1), "Charmander should be second after sorting by ID and name");
-        assertEquals(charmeleon, pkmnList.get(2), "Charmeleon should be third after sorting by ID and name");
+        assertEquals(flame, pkmnList.get(0), "flame should be first after sorting by ID and name");
+        assertEquals(charmander, pkmnList.get(1), "charmander should be second after sorting by ID and name");
+        assertEquals(charmeleon, pkmnList.get(2), "charmeleon should be third after sorting by ID and name");
     }
 
     @ParameterizedTest

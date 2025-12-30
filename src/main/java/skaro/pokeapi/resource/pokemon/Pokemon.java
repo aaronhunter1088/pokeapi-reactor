@@ -174,14 +174,14 @@ public record Pokemon (
         sb.append("Pokémon{");
         return switch (format) {
             case MINIMAL -> {
-                sb.append("id=").append(id)
-                .append(", name='").append(name).append('\'')
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
                 .append('}');
                 yield sb.toString();
             }
             case BASIC -> {
-                sb.append("id=").append(id)
-                .append(", name='").append(name).append('\'');
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'');
                 if (nickname != null) sb.append(", nickname='").append(nickname).append('\'');
                 sb.append(", height=").append(height)
                 .append(", weight=").append(weight)
@@ -190,8 +190,8 @@ public record Pokemon (
                 yield sb.toString();
             }
             case DETAILED -> {
-                sb.append("id=").append(id)
-                .append(", name='").append(name).append('\'')
+                sb.append("id=").append(getId())
+                .append(", name='").append(getName()).append('\'')
                 .append(", nickname='").append(nickname).append('\'')
                 .append(", baseExperience=").append(baseExperience)
                 .append(", pokemonCries=").append(pokemonCries)
