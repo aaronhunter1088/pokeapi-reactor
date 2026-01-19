@@ -10,6 +10,9 @@ import java.util.Objects;
 /**
  * Encounter methods are the ways that
  * Pokémon may be encountered in the wild.
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
  */
 public class Encounter {
 

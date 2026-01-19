@@ -9,6 +9,12 @@ import skaro.pokeapi.utils.locale.Localizable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the ItemPocket resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ItemPocket implements PokeApiResource, Localizable {
 
     private Integer id;

@@ -8,6 +8,13 @@ import skaro.pokeapi.resource.pokemon.Pokemon;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents an encounter with a Pokémon
+ * that might happen in a referenced location area
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonEncounter {
 
     @JsonProperty("pokemon")

@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.NamedApiResource;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the ContestComboDetail resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ContestComboDetail {
 
     @JsonProperty("use_before")

@@ -2,6 +2,12 @@ package skaro.pokeapi.resource.pokemon;
 
 import java.util.Objects;
 
+/**
+ * Represents the cries of a Pokémon
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class PokemonCries {
 
     private String latest;

@@ -7,6 +7,12 @@ import skaro.pokeapi.resource.item.Item;
 
 import java.util.Objects;
 
+/**
+ * Represents the EvolutionChain resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class EvolutionChain implements PokeApiResource {
 
     private Integer id;

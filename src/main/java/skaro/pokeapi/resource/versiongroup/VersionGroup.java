@@ -12,6 +12,12 @@ import skaro.pokeapi.resource.version.Version;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the VersionGroup resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class VersionGroup implements PokeApiResource {
 
     private Integer id;

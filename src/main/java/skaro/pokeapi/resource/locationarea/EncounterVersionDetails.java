@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.version.Version;
 
 import java.util.Objects;
 
+/**
+ * Represents the details of an encounter in a specific version of the game
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class EncounterVersionDetails {
 
     private Integer rate;

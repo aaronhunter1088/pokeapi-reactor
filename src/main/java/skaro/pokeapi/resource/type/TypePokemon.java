@@ -5,6 +5,12 @@ import skaro.pokeapi.resource.pokemon.Pokemon;
 
 import java.util.Objects;
 
+/**
+ * Represents a Pokémon that has a referenced type
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class TypePokemon {
 
     private Integer slot;

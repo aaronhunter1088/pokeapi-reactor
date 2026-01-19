@@ -7,6 +7,12 @@ import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
 import java.util.Objects;
 
+/**
+ * Represents the AbilityFlavorText resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class AbilityFlavorText {
 
     @JsonProperty("flavor_text")

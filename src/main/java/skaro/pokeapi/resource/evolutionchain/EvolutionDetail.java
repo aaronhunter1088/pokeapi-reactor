@@ -11,6 +11,12 @@ import skaro.pokeapi.resource.type.Type;
 
 import java.util.Objects;
 
+/**
+ * Represents the details of a Pokémon evolution
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class EvolutionDetail {
 
     private NamedApiResource<Item> item;

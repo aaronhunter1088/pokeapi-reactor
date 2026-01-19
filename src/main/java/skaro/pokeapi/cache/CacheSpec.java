@@ -4,45 +4,43 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.Supplier;
 
-public class CacheSpec<T> {
-
-    private String key;
-    private Class<T> type;
-    private Supplier<Mono<T>> monoSupplier;
-
+/**
+ * Specification for a cache entry.
+ * @param <T> Type of the cached object.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
+ *           
+ * @author michael ball
+ * @since 2.0.0
+ */
+public record CacheSpec<T> (
+    String key,
+    Class<T> type,
+    Supplier<Mono<T>> monoSupplier
+) {
     public static <T> CacheSpecBuilder<T> get(Class<T> type, String key) {
-        CacheSpecBuilder<T> builder = new CacheSpecBuilder<>();
-        builder.spec = new CacheSpec<>();
-        builder.spec.key = key;
-        builder.spec.type = type;
-
-        return builder;
+        return new CacheSpecBuilder<>(key, type);
     }
 
-    public String getKey() {
-        return key;
-    }
+    public static record CacheSpecBuilder<T> (
+            String key,
+            Class<T> type,
+            Supplier<Mono<T>> monoSupplier
+    ) {
 
-    public Class<T> getType() {
-        return type;
-    }
-
-    public Supplier<Mono<T>> getMonoSupplier() {
-        return monoSupplier;
-    }
-
-    public static class CacheSpecBuilder<T> {
-        private CacheSpec<T> spec;
-
-        private CacheSpecBuilder() {
-
-        }
+        public CacheSpecBuilder(String key, Class<T> type) { this(key, type, null); }
 
         public CacheSpec<T> orCache(Supplier<Mono<T>> monoSupplier) {
-            this.spec.monoSupplier = monoSupplier;
-            return this.spec;
+            return build(monoSupplier);
         }
 
+        public CacheSpec<T> build() {
+            return build(null);
+        }
+
+        public CacheSpec<T> build(Supplier<Mono<T>> monoSupplier) {
+            return new CacheSpec<>(key, type, monoSupplier);
+        }
     }
 
 }

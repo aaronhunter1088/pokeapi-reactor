@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.generation.Generation;
 
 import java.util.Objects;
 
+/**
+ * Represents the internal id of an API resource
+ * within game data for a specific generation
+ *
+ * @author JoostFranssen
+ * @since 0.0.1-SNAPSHOT
+ */
 public class GenerationGameIndex {
 
     @JsonProperty("game_index")

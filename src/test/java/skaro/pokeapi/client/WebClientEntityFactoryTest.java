@@ -33,6 +33,12 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Unit tests for WebClientEntityFactory
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @ExtendWith(SpringExtension.class)
 class WebClientEntityFactoryTest {
 
@@ -67,8 +73,7 @@ class WebClientEntityFactoryTest {
     @Test
     void testGetResource() throws InterruptedException {
         String resourceEndpoint = "/pokemon";
-        Pokemon pokemon = new Pokemon();
-        pokemon.setName("Mienfoobar");
+        Pokemon pokemon = new Pokemon("Mienfoo");
 
         Mockito.when(registry.getEndpoint(Pokemon.class))
                 .thenReturn(resourceEndpoint);
@@ -100,11 +105,11 @@ class WebClientEntityFactoryTest {
         mockPokeApiServer.enqueue(createMockResponseWithBody(resourceListResponse));
 
         Consumer<NamedApiResourceList<Move>> assertListHasNames = resourceList -> {
-            List<NamedApiResource<Move>> resources = resourceList.getResults();
+            List<NamedApiResource<Move>> resources = resourceList.results();
             assertEquals(2, resources.size());
 
             Set<String> resourceNames = resources.stream()
-                    .map(NamedApiResource::getName)
+                    .map(NamedApiResource::name)
                     .collect(Collectors.toSet());
             Assertions.assertTrue(resourceNames.contains(move1.getName()));
             Assertions.assertTrue(resourceNames.contains(move2.getName()));
@@ -123,10 +128,8 @@ class WebClientEntityFactoryTest {
     @Test
     void testGetBaseResourceWithQuery() throws InterruptedException {
         String resourceEndpoint = "ability";
-        Ability ability1 = new Ability();
-        ability1.setName("Levitate");
-        Ability ability2 = new Ability();
-        ability2.setName("Pressure");
+        Ability ability1 = new Ability("Levitate");
+        Ability ability2 = new Ability("Pressure");
         NamedApiResourceList<PokeApiResource> resourceListResponse = createResourceList(List.of(ability1, ability2));
         PageQuery query = new PageQuery(5, 10);
 
@@ -135,11 +138,11 @@ class WebClientEntityFactoryTest {
         mockPokeApiServer.enqueue(createMockResponseWithBody(resourceListResponse));
 
         Consumer<NamedApiResourceList<Ability>> assertListHasNames = resourceList -> {
-            List<NamedApiResource<Ability>> resources = resourceList.getResults();
+            List<NamedApiResource<Ability>> resources = resourceList.results();
             assertEquals(2, resources.size());
 
             Set<String> resourceNames = resources.stream()
-                    .map(NamedApiResource::getName)
+                    .map(NamedApiResource::name)
                     .collect(Collectors.toSet());
             Assertions.assertTrue(resourceNames.contains(ability1.getName()));
             Assertions.assertTrue(resourceNames.contains(ability2.getName()));
@@ -155,8 +158,8 @@ class WebClientEntityFactoryTest {
         assert recordedRequest.getRequestUrl() != null;
         assertEquals(resourceEndpoint, recordedRequest.getRequestUrl().pathSegments().get(0));
         assertEquals(2, recordedRequest.getRequestUrl().querySize());
-        assertEquals(query.getLimit().toString(), recordedRequest.getRequestUrl().queryParameter("limit"));
-        assertEquals(query.getOffset().toString(), recordedRequest.getRequestUrl().queryParameter("offset"));
+        assertEquals(Integer.toString(query.limit()), recordedRequest.getRequestUrl().queryParameter("limit"));
+        assertEquals(Integer.toString(query.offset()), recordedRequest.getRequestUrl().queryParameter("offset"));
     }
 
     @Test
@@ -164,9 +167,10 @@ class WebClientEntityFactoryTest {
         String namedResourceEndpoint = "item";
         Item item = new Item();
         item.setName("Leftovers");
-        NamedApiResource<Item> namedResource = new NamedApiResource<>();
-        namedResource.setUrl(String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, item.getName()));
-
+        NamedApiResource<Item> namedResource = new NamedApiResource<>(
+                item.getName(),
+                String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, item.getName())
+        );
         mockPokeApiServer.enqueue(createMockResponseWithBody(item));
 
         StepVerifier.create(factory.getNamedResource(namedResource, Item.class))
@@ -189,11 +193,14 @@ class WebClientEntityFactoryTest {
         stat2.setName("defense");
         Set<String> resourceIds = new HashSet<>(Set.of(stat1.getName(), stat2.getName()));
 
-        NamedApiResource<Stat> namedResource1 = new NamedApiResource<>();
-        namedResource1.setUrl(String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat1.getName()));
-        NamedApiResource<Stat> namedResource2 = new NamedApiResource<>();
-        namedResource2.setUrl(String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat2.getName()));
-
+        NamedApiResource<Stat> namedResource1 = new NamedApiResource<>(
+                stat1.getName(),
+                String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat1.getName())
+        );
+        NamedApiResource<Stat> namedResource2 = new NamedApiResource<>(
+                stat2.getName(),
+                String.format("%s/%s/%s", getMockPokeApiServerBaseUrl(), namedResourceEndpoint, stat2.getName())
+        );
         mockPokeApiServer.enqueue(createMockResponseWithBody(stat1));
         mockPokeApiServer.enqueue(createMockResponseWithBody(stat2));
 
@@ -227,17 +234,12 @@ class WebClientEntityFactoryTest {
 
     private NamedApiResourceList<PokeApiResource> createResourceList(List<? extends PokeApiResource> names) {
         List<NamedApiResource<PokeApiResource>> resources = names.stream()
-                .map(pokeApiResource -> {
-                    NamedApiResource<PokeApiResource> resource = new NamedApiResource<>();
-                    resource.setName(pokeApiResource.getName());
-                    return resource;
-                }).collect(Collectors.toList());
-
-
-        NamedApiResourceList<PokeApiResource> moveResources = new NamedApiResourceList<>();
-        moveResources.setResults(resources);
-
-        return moveResources;
+                .map(pokeApiResource ->
+                        new NamedApiResource<>(pokeApiResource.getName(), null))
+                .collect(Collectors.toList());
+        return new NamedApiResourceList<>(
+                resources.size(), null, null, resources
+        );
     }
 
 }

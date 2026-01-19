@@ -3,6 +3,13 @@ package skaro.pokeapi.resource.pokemon;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents natures and how they
+ * change Pokéathlon stats
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class NaturePokeathlonStatAffectSets {
 
     private List<NaturePokeathlonStatAffect> increase;

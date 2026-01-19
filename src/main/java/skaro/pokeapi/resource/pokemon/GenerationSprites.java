@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.generation.*;
 
 import java.util.Objects;
 
+/**
+ * Represents the various sprite
+ * images available for a Pokémon
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class GenerationSprites {
 
     @JsonProperty("generation-i")

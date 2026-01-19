@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.stat.Stat;
 
 import java.util.Objects;
 
+/**
+ * Represents the changes to a Pokémon's
+ * stats due to its nature
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class NatureStatChange {
 
     @JsonProperty("max_change")

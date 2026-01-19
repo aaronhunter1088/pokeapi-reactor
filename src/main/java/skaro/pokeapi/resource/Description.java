@@ -7,6 +7,9 @@ import java.util.Objects;
 /**
  * The localized description for an
  * API resource in a specific language.
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
  */
 public class Description {
 

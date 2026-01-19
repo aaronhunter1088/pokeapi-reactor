@@ -2,6 +2,12 @@ package skaro.pokeapi.resource.growthrate;
 
 import java.util.Objects;
 
+/**
+ * Represents a level and the experience required to reach it
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class GrowthRateExperienceLevel {
 
     private Integer level;

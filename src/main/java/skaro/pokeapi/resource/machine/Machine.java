@@ -9,6 +9,12 @@ import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
 import java.util.Objects;
 
+/**
+ * Represents the Machine resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class Machine implements PokeApiResource {
 
     private Integer id;

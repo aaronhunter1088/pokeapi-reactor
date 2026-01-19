@@ -5,6 +5,13 @@ import skaro.pokeapi.resource.version.Version;
 
 import java.util.Objects;
 
+/**
+ * Represents the internal id of an API resource
+ * within game data for a specific version
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class VersionGameIndex {
 
     @JsonProperty("game_index")

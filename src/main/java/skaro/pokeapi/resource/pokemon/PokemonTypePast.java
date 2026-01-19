@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.generation.Generation;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the types a Pokémon had in a past generation
+ *
+ * @author Joost Franssen
+ * @since 1.0.4
+ */
 public class PokemonTypePast {
 
     private NamedApiResource<Generation> generation;

@@ -12,6 +12,12 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Unit tests for PokeApiLocaleUtils
+ *
+ * @author skaro
+ * @since 1.0.2
+ */
 @ExtendWith(SpringExtension.class)
 class PokeApiLocaleUtilsTest {
 
@@ -23,7 +29,7 @@ class PokeApiLocaleUtilsTest {
 
         Mockito.when(localizable.getNames())
                 .thenReturn(List.of(localizedName));
-        Mockito.when(localizedName.getLanguage().getName())
+        Mockito.when(localizedName.getLanguage().name())
                 .thenReturn(locale);
 
         Optional<Name> result = PokeApiLocaleUtils.getInLocale(localizable, locale);

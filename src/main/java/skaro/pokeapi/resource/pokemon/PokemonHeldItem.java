@@ -7,6 +7,12 @@ import skaro.pokeapi.resource.item.Item;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the PokemonHeldItem resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonHeldItem {
 
     private NamedApiResource<Item> item;

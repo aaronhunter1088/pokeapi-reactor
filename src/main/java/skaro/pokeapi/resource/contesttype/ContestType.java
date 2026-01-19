@@ -8,6 +8,12 @@ import skaro.pokeapi.resource.berryflavor.BerryFlavor;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the ContestType resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class ContestType implements PokeApiResource {
 
     private Integer id;

@@ -6,6 +6,13 @@ import skaro.pokeapi.resource.versiongroup.VersionGroup;
 
 import java.util.Objects;
 
+/**
+ * Represents the localized flavor text
+ * for an API resource in a specific version group
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class VersionGroupFlavorText {
 
     private String text;

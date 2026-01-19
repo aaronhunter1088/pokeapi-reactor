@@ -4,7 +4,15 @@ import skaro.pokeapi.resource.Name;
 
 import java.util.Optional;
 
-public class PokeApiLocaleUtils {
+/**
+ * Utility class for handling localization in PokeApi resources.
+ * Existed with @author skaro @since 1.0.1
+ * as a class until this version.
+ *
+ * @author michael ball
+ * @since 2.0.0
+ */
+public record PokeApiLocaleUtils() {
 
     /**
      * Returns an Optional containing the Name object in
@@ -17,7 +25,7 @@ public class PokeApiLocaleUtils {
      */
     public static Optional<Name> getInLocale(Localizable localizable, String locale) {
         return localizable.getNames().stream()
-                .filter(name -> name.getLanguage().getName().equalsIgnoreCase(locale))
+                .filter(name -> name.getLanguage().name().equalsIgnoreCase(locale))
                 .findFirst();
     }
 

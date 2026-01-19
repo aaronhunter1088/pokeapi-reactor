@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.ability.Ability;
 
 import java.util.Objects;
 
+/**
+ * Represents the PokemonAbility resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonAbility {
 
     @JsonProperty("is_hidden")

@@ -9,6 +9,12 @@ import skaro.pokeapi.resource.stat.Stat;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the Characteristic resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class Characteristic implements PokeApiResource {
 
     private Integer id;

@@ -6,6 +6,13 @@ import skaro.pokeapi.resource.nature.Nature;
 
 import java.util.Objects;
 
+/**
+ * Represents how a specific nature
+ * affects a Pokéathlon stat
+ *
+ * @author michael ball
+ * @since 1.0.8
+ */
 public class NaturePokeathlonStatAffect {
 
     @JsonProperty("max_change")

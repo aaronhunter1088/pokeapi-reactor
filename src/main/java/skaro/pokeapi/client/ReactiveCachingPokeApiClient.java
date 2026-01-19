@@ -13,15 +13,18 @@ import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class ReactiveCachingPokeApiClient implements PokeApiClient {
-
-    private final PokeApiEntityFactory entityFactory;
-    private final CacheFacade cacheFacade;
-
-    public ReactiveCachingPokeApiClient(PokeApiEntityFactory entityFactory, CacheFacade cacheFacade) {
-        this.entityFactory = entityFactory;
-        this.cacheFacade = cacheFacade;
-    }
+/**
+ * Reactive PokeApi client with caching capabilities.
+ * Existed with @author skaro @since 0.0.1-SNAPSHOT
+ * as a class until this version.
+ *
+ * @author michael ball
+ * @since 2.0.0
+ */
+public record ReactiveCachingPokeApiClient (
+        PokeApiEntityFactory entityFactory,
+        CacheFacade cacheFacade
+) implements PokeApiClient {
 
     @Override
     public <T extends PokeApiResource> Mono<T> getResource(Class<T> cls, String idOrName) {
@@ -45,7 +48,7 @@ public class ReactiveCachingPokeApiClient implements PokeApiClient {
     @Override
     public <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls, PageQuery query) {
         Class<NamedApiResourceList<T>> collectionResourceClass = (Class<NamedApiResourceList<T>>) (Class<?>) NamedApiResourceList.class;
-        String key = String.format("collection-offset%d-limit%d", query.getOffset(), query.getLimit());
+        String key = String.format("collection-offset%d-limit%d", query.offset(), query.limit());
         CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceClass, key)
                 .orCache(() -> entityFactory.getBaseResource(cls, query));
 
@@ -67,7 +70,7 @@ public class ReactiveCachingPokeApiClient implements PokeApiClient {
     }
 
     private <T extends PokeApiResource> CacheSpec<T> resourceToCacheSpec(NamedApiResource<T> resource, Class<T> cls) {
-        return CacheSpec.get(cls, resource.getName())
+        return CacheSpec.get(cls, resource.name())
                 .orCache(() -> entityFactory.getNamedResource(resource, cls));
     }
 

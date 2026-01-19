@@ -4,7 +4,6 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -25,17 +24,20 @@ import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.PropertyNamingStrategies;
 import tools.jackson.databind.json.JsonMapper;
 
+import static skaro.pokeapi.utils.PokeApiConstants.*;
+
+/**
+ * Base configuration for PokeApi Reactor client
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 @Configuration
 @Import(PokeApiReactorEndpointConfiguration.class)
 public class PokeApiReactorBaseConfiguration {
-    public static final String CONFIGURATION_PROPERTIES_PREFIX = "skaro.pokeapi";
-    public static final String POKEAPI_WEBCLIENT_BEAN = "pokeapiWebClientBean";
-    public static final String POKEAPI_JSON_DECODER_BEAN = "pokeapiDecoderBean";
-    public static final String POKEAPI_JSON_ENCODER_BEAN = "pokeapiEncoderBean";
 
     @Bean
     @Valid
-    @ConfigurationProperties(CONFIGURATION_PROPERTIES_PREFIX)
     public PokeApiConfigurationProperties pokeApiConfigurationProperties() {
         return new PokeApiConfigurationProperties();
     }
@@ -58,10 +60,10 @@ public class PokeApiReactorBaseConfiguration {
     }
 
     @Bean(POKEAPI_WEBCLIENT_BEAN)
-    public WebClient webClient(HttpClient httpClient,
-                               @Qualifier(POKEAPI_JSON_ENCODER_BEAN) JacksonJsonEncoder encoder,
-                               @Qualifier(POKEAPI_JSON_DECODER_BEAN) JacksonJsonDecoder decoder,
-                               PokeApiConfigurationProperties configurationProperties) {
+    public WebClient webClient(final HttpClient httpClient,
+                               @Qualifier(POKEAPI_JSON_ENCODER_BEAN) final JacksonJsonEncoder encoder,
+                               @Qualifier(POKEAPI_JSON_DECODER_BEAN) final JacksonJsonDecoder decoder,
+                               final PokeApiConfigurationProperties configurationProperties) {
 
         ExchangeStrategies strategies = ExchangeStrategies.builder()
                 .codecs(clientDefaultCodecsConfigurer -> {
@@ -87,7 +89,8 @@ public class PokeApiReactorBaseConfiguration {
     }
 
     @Bean
-    public PokeApiEntityFactory pokeApiEntityFactory(WebClient webClient, PokeApiEndpointRegistry registry) {
+    public PokeApiEntityFactory pokeApiEntityFactory(final WebClient webClient,
+                                                     final PokeApiEndpointRegistry registry) {
         return new WebClientEntityFactory(webClient, registry);
     }
 

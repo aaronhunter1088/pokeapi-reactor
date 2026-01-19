@@ -6,6 +6,12 @@ import skaro.pokeapi.resource.stat.Stat;
 
 import java.util.Objects;
 
+/**
+ * Represents the PokemonStat resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class PokemonStat {
 
     private NamedApiResource<Stat> stat;

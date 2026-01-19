@@ -6,6 +6,13 @@ import skaro.pokeapi.resource.version.Version;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents encounter details for a
+ * specific version of the game
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class VersionEncounterDetail {
 
     private NamedApiResource<Version> version;

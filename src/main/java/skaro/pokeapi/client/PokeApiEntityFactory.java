@@ -9,6 +9,12 @@ import skaro.pokeapi.resource.PokeApiResource;
 
 import java.util.List;
 
+/**
+ * Factory interface for creating PokeApi entities
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public interface PokeApiEntityFactory {
 
     <T extends PokeApiResource> Mono<T> getResource(Class<T> resourceClass, String nameOrId);

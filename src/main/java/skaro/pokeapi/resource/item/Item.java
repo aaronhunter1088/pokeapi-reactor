@@ -12,6 +12,12 @@ import skaro.pokeapi.utils.locale.Localizable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents the Item resource
+ *
+ * @author skaro
+ * @since 0.0.1-SNAPSHOT
+ */
 public class Item implements PokeApiResource, Localizable, Comparable<Item> {
 
     private Integer id;
