@@ -9,8 +9,8 @@ A non-blocking, reactive API client for [PokeAPI](https://pokeapi.co/) with cach
 To see a full list of all available [resources](https://pokeapi.co/api/v2), click the resources link.
 <br>
 ## Changes in this major release: 2.0.0
-- Spring Boot Version: 4.0.0
-- Java Major Version: 21
+- Spring Boot Version: 4.x
+- Java Major Version: 25
 - Pom changes: 
   - Updated parent pom to 4.0.0, and this project's version to 2.0.0
   - Removed redundant dependencies. 
