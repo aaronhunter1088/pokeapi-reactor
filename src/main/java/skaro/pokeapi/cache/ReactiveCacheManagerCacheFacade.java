@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.Cache;
 import org.springframework.cache.Cache.ValueWrapper;
 import org.springframework.cache.CacheManager;
-import reactor.cache.CacheMono;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Signal;
@@ -48,11 +47,35 @@ public record ReactiveCacheManagerCacheFacade (
         return Flux.merge(resourceMonos);
     }
 
-    private <T extends PokeApiResource> Mono<T> getOrCache(Class<T> cls, String resourceName, Supplier<Mono<T>> onCacheMiss)
-    {
-        return CacheMono.lookup(key -> checkCache(cls, key), resourceName)
-                .onCacheMissResume(onCacheMiss)
-                .andWriteWith((key, value) -> writeToCache(cls, key, value));
+    private <T extends PokeApiResource> Mono<T> getOrCache(
+            Class<T> cls,
+            String resourceName,
+            Supplier<Mono<T>> onCacheMiss) {
+
+        return Mono.defer(() ->
+                checkCache(cls, resourceName)
+                        .flatMap(signal -> {
+                            if (signal.isOnError()) {
+                                return Mono.<T>error(signal.getThrowable());
+                            }
+
+                            if (signal.hasValue()) {
+                                return Mono.just(cls.cast(signal.get()));
+                            }
+
+                            return Mono.<T>empty();
+                        })
+                        .switchIfEmpty(Mono.defer(() ->
+                                onCacheMiss.get()
+                                        .flatMap(value ->
+                                                writeToCache(
+                                                        cls,
+                                                        resourceName,
+                                                        Signal.next(value)
+                                                ).thenReturn(value)
+                                        )
+                        ))
+        );
     }
 
     private <T extends PokeApiResource> Mono<Signal<? extends T>> checkCache(Class<T> cls, String key)
