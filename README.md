@@ -34,7 +34,7 @@ To see a full list of all available [resources](https://pokeapi.co/api/v2), clic
 #### Properties
 
 You can (must) configure the location of the PokeAPI instance you want to use.
-Add the following property to your`application.properties`:
+Add the following property to your`pokedexapi.properties`:
 
 ```
 skaro.pokeapi.base-uri=https://pokeapi.co/api/v2/ #or the url of your own instance
@@ -43,7 +43,7 @@ skaro.pokeapi.base-uri=https://pokeapi.co/api/v2/ #or the url of your own instan
 You may also configure the max buffer size for the WebClient, which is used to fetch resources from PokeAPI.
 Its default value is 565000 bytes, while the API request for "/pokemon/mew" can grow over the time, you may want to
 increase it yourself to a higher value.
-To achieve this, add the following property to your `application.properties`:
+To achieve this, add the following property to your `pokedexapi.properties`:
 
 ```
 skaro.pokeapi.max-buffer-size=565000
