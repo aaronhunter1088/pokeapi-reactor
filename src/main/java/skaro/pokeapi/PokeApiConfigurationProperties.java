@@ -2,7 +2,6 @@ package skaro.pokeapi;
 
 import org.jspecify.annotations.NonNull;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 import java.net.URI;
 
@@ -14,12 +13,11 @@ import static skaro.pokeapi.utils.PokeApiConstants.CONFIGURATION_PROPERTIES_PREF
  * @author skaro
  * @since 0.0.1-SNAPSHOT
  */
-@Configuration
 @ConfigurationProperties(CONFIGURATION_PROPERTIES_PREFIX)
 public class PokeApiConfigurationProperties
 {
-    private URI baseUri;
-    private int maxBytesToBuffer = 565_000;
+    private URI baseUri = URI.create("https://pokeapi.co/api/v2/");
+    private int maxBytesToBuffer = 5_065_000;
 
     public @NonNull URI getBaseUri() {
         return baseUri;
