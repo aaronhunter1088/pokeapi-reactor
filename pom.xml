@@ -14,7 +14,7 @@
 
     <groupId>skaro.pokeapi</groupId>
     <artifactId>pokeapi-reactor</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.2</version>
     <name>pokeapi-reactor</name>
     <description>Non-blocking, reactive API client for PokéAPI</description>
     <url>https://pokeapi.co</url>
