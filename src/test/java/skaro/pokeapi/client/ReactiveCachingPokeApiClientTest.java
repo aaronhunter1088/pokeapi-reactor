@@ -1,6 +1,8 @@
 package skaro.pokeapi.client;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -17,8 +19,10 @@ import skaro.pokeapi.query.PageQuery;
 import skaro.pokeapi.resource.NamedApiResource;
 import skaro.pokeapi.resource.NamedApiResourceList;
 import skaro.pokeapi.resource.PokeApiResource;
+import skaro.pokeapi.resource.item.Item;
 import skaro.pokeapi.resource.pokemon.Pokemon;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Supplier;
@@ -112,6 +116,37 @@ class ReactiveCachingPokeApiClientTest {
                 .expectNext(resource)
                 .expectComplete()
                 .verify();
+    }
+
+    @Test
+    @DisplayName("getResourceTest_samePageQueryDifferentTypesUseDifferentCacheKeys")
+    void getResourceTest_samePageQueryDifferentTypesUseDifferentCacheKeys() {
+        PageQuery query = new PageQuery(10, 0);
+        List<CacheSpec<PokeApiResource>> usedSpecs = new ArrayList<>();
+
+        Mockito.when(cacheFacade.get(cacheSpecCaptor.capture()))
+                .thenReturn(Mono.empty());
+
+        pokeApiClient.getResource(Pokemon.class, query);
+        pokeApiClient.getResource(Item.class, query);
+        usedSpecs.addAll(cacheSpecCaptor.getAllValues());
+
+        Assertions.assertEquals(2, usedSpecs.size());
+        Assertions.assertNotEquals(usedSpecs.get(0).key(), usedSpecs.get(1).key());
+    }
+
+    @Test
+    @DisplayName("getResourceTest_differentTypesUseDifferentCollectionCacheKeys")
+    void getResourceTest_differentTypesUseDifferentCollectionCacheKeys() {
+        Mockito.when(cacheFacade.get(cacheSpecCaptor.capture()))
+                .thenReturn(Mono.empty());
+
+        pokeApiClient.getResource(Pokemon.class);
+        pokeApiClient.getResource(Item.class);
+        List<CacheSpec<PokeApiResource>> usedSpecs = cacheSpecCaptor.getAllValues();
+
+        Assertions.assertEquals(2, usedSpecs.size());
+        Assertions.assertNotEquals(usedSpecs.get(0).key(), usedSpecs.get(1).key());
     }
 
     @SuppressWarnings("unchecked")

@@ -38,7 +38,7 @@ public record ReactiveCachingPokeApiClient (
     @Override
     public <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls) {
         Class<NamedApiResourceList<T>> collectionResourceClass = (Class<NamedApiResourceList<T>>) (Class<?>) NamedApiResourceList.class;
-        CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceClass, "collection")
+        CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceClass, cls.getSimpleName() + "-collection")
                 .orCache(() -> entityFactory.getBaseResource(cls));
 
         return cacheFacade.get(cacheSpec);
@@ -48,7 +48,7 @@ public record ReactiveCachingPokeApiClient (
     @Override
     public <T extends PokeApiResource> Mono<NamedApiResourceList<T>> getResource(Class<T> cls, PageQuery query) {
         Class<NamedApiResourceList<T>> collectionResourceClass = (Class<NamedApiResourceList<T>>) (Class<?>) NamedApiResourceList.class;
-        String key = String.format("collection-offset%d-limit%d", query.offset(), query.limit());
+        String key = String.format("%s-collection-offset%d-limit%d", cls.getSimpleName(), query.offset(), query.limit());
         CacheSpec<NamedApiResourceList<T>> cacheSpec = CacheSpec.get(collectionResourceClass, key)
                 .orCache(() -> entityFactory.getBaseResource(cls, query));
 
